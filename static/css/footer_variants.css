@@ -1,0 +1,341 @@
+/* =========================================
+   DARK MONOLITH COLLECTION (5 Dark Alternatives)
+   ========================================= */
+
+:root {
+    --dark-bg-pure: #000000;
+    --dark-bg-off: #0F0F0F;
+    --dark-bg-navy: #0B1120;
+    --dark-text-main: #FFFFFF;
+    --dark-text-muted: #888888;
+    --dark-accent: #C2A25D;
+    /* Gold/Luxury accent */
+    --dark-border: #333333;
+}
+
+/* Base wrapper reset */
+.variant-wrapper {
+    margin-bottom: 100px;
+    background: #fff;
+    /* Separation between dark footers */
+}
+
+.variant-label {
+    background: #000;
+    color: #fff;
+    padding: 10px 20px;
+    font-weight: 700;
+    display: inline-block;
+    margin: 40px 0 0 0;
+    border-radius: 0 4px 0 0;
+}
+
+/* =========================================
+   VARIANT 1: THE EXECUTIVE GRID
+   (Luxury, Gold Accents, Structured)
+   ========================================= */
+.footer-dark-1 {
+    background: var(--dark-bg-off);
+    color: var(--dark-text-main);
+    padding: 80px 5%;
+    border-top: 4px solid var(--dark-accent);
+}
+
+.d1-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1.5fr;
+    gap: 60px;
+}
+
+.d1-brand-area {
+    padding-right: 40px;
+    border-right: 1px solid var(--dark-border);
+}
+
+.d1-logo {
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 25px;
+}
+
+.d1-logo span {
+    color: var(--dark-accent);
+}
+
+.d1-desc {
+    color: var(--dark-text-muted);
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.d1-header {
+    color: var(--dark-accent);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.d1-link {
+    display: block;
+    color: #ccc;
+    text-decoration: none;
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+    transition: 0.3s;
+}
+
+.d1-link:hover {
+    color: var(--dark-accent);
+    transform: translateX(5px);
+}
+
+/* =========================================
+   VARIANT 2: THE MIDNIGHT MINIMAL
+   (Pure Black, Centered, Spacious)
+   ========================================= */
+.footer-dark-2 {
+    background: var(--dark-bg-pure);
+    color: var(--dark-text-main);
+    padding: 120px 5%;
+    text-align: center;
+}
+
+.d2-nav {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+}
+
+.d2-nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 600;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.d2-nav a:hover {
+    opacity: 1;
+}
+
+.d2-brand {
+    font-size: 4rem;
+    font-weight: 900;
+    letter-spacing: -2px;
+    margin-bottom: 60px;
+    background: linear-gradient(to bottom, #fff, #555);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    display: inline-block;
+}
+
+.d2-bottom {
+    border-top: 1px solid #222;
+    padding-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    color: #444;
+    font-size: 0.85rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* =========================================
+   VARIANT 3: THE TECHNICAL DARK
+   (Blueprint Style, Monospace, Lines)
+   ========================================= */
+.footer-dark-3 {
+    background: #111;
+    color: #eee;
+    padding: 60px 5%;
+    font-family: 'Space Mono', monospace;
+    /* Requires font import or fallback */
+    border-top: 1px dashed #444;
+}
+
+.d3-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    border-left: 1px solid #333;
+    border-top: 1px solid #333;
+}
+
+.d3-cell {
+    padding: 30px;
+    border-right: 1px solid #333;
+    border-bottom: 1px solid #333;
+}
+
+.d3-label {
+    font-size: 0.7rem;
+    color: #555;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.d3-content {
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+.d3-link {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+    margin-bottom: 5px;
+}
+
+.d3-link::before {
+    content: '>';
+    margin-right: 8px;
+    color: #555;
+}
+
+.d3-link:hover::before {
+    color: #fff;
+}
+
+/* =========================================
+   VARIANT 4: THE BOLD EDITORIAL
+   (Serif, High Fashion, Big Type)
+   ========================================= */
+.footer-dark-4 {
+    background: #050505;
+    color: #fff;
+    padding: 100px 5%;
+}
+
+.d4-top {
+    border-bottom: 2px solid #fff;
+    padding-bottom: 60px;
+    margin-bottom: 60px;
+}
+
+.d4-headline {
+    font-family: 'Playfair Display', serif;
+    /* Requires import */
+    font-size: 5rem;
+    line-height: 1;
+    font-style: italic;
+}
+
+.d4-columns {
+    display: flex;
+    justify-content: space-between;
+}
+
+.d4-col-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    font-style: italic;
+}
+
+.d4-link {
+    display: block;
+    color: #888;
+    text-decoration: none;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    transition: 0.3s;
+}
+
+.d4-link:hover {
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+/* =========================================
+   VARIANT 5: THE DEEP IMMERSION
+   (Deep Blue/Navy Gradient, Corporate)
+   ========================================= */
+.footer-dark-5 {
+    background: linear-gradient(to bottom, #0F172A, #020617);
+    color: #fff;
+    padding: 0;
+}
+
+.d5-cta {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 60px 5%;
+    text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.d5-cta h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.d5-btn {
+    background: #2C5F7C;
+    color: #fff;
+    padding: 15px 40px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 700;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+.d5-btn:hover {
+    background: #fff;
+    color: #020617;
+}
+
+.d5-main {
+    padding: 80px 5%;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 40px;
+}
+
+.d5-col h4 {
+    color: #2C5F7C;
+    /* Brand Blue */
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+}
+
+.d5-link {
+    display: block;
+    color: #94A3B8;
+    text-decoration: none;
+    margin-bottom: 12px;
+    transition: color 0.2s;
+}
+
+.d5-link:hover {
+    color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+
+    .d1-grid,
+    .d3-grid,
+    .d5-main {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .d2-brand,
+    .d4-headline {
+        font-size: 3rem;
+    }
+
+    .d4-columns {
+        flex-direction: column;
+        gap: 40px;
+    }
+}

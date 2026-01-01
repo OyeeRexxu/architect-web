@@ -1,0 +1,415 @@
+/* ===================================
+   HIGH-END ANIMATED CARDS (2025 TRENDS)
+   =================================== */
+
+:root {
+    --primary: #2c5f7c;
+    --secondary: #d4745e;
+    --text-dark: #222;
+    --text-light: #666;
+    --radius: 12px;
+}
+
+body {
+    background: #f0f2f5;
+    font-family: 'Inter', sans-serif;
+}
+
+.page-wrapper {
+    padding: 60px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.variant-section {
+    padding: 80px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.section-label {
+    text-align: center;
+    text-transform: uppercase;
+    color: #999;
+    letter-spacing: 2px;
+    font-weight: 600;
+    margin-bottom: 50px;
+    font-size: 0.9rem;
+}
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+/* ===================================
+   1. GLASSMORPHISM (FROSTED)
+   =================================== */
+.card-glass {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.05);
+    transition: all 0.4s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-glass:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px 0 rgba(31, 38, 135, 0.15);
+    border-color: rgba(255, 255, 255, 0.8);
+}
+
+.card-glass .icon-box {
+    width: 50px;
+    height: 50px;
+    background: rgba(44, 95, 124, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary);
+    margin-bottom: 20px;
+    transition: all 0.4s ease;
+}
+
+.card-glass:hover .icon-box {
+    background: var(--primary);
+    color: white;
+    transform: rotate(5deg);
+}
+
+.card-glass h3 {
+    margin: 0 0 15px 0;
+    color: #2c3e50;
+    font-size: 1.4rem;
+}
+
+.card-glass ul {
+    list-style: none;
+    padding: 0;
+    color: #555;
+    flex-grow: 1;
+}
+
+.card-glass li {
+    padding: 5px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.btn-glass {
+    display: inline-block;
+    margin-top: auto;
+    background: rgba(44, 95, 124, 0.1);
+    color: var(--primary);
+    padding: 10px 24px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(44, 95, 124, 0.2);
+    width: fit-content;
+}
+
+.btn-glass:hover {
+    background: var(--primary);
+    color: white;
+    box-shadow: 0 4px 15px rgba(44, 95, 124, 0.2);
+}
+
+/* ===================================
+   2. 3D HOVER LIFT
+   =================================== */
+.card-3d-wrap {
+    perspective: 1000px;
+    height: 100%;
+}
+
+.card-3d {
+    background: white;
+    border-radius: 16px;
+    padding: 30px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.5s ease;
+    transform-style: preserve-3d;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.card-3d:hover {
+    transform: translateY(-15px) rotateX(5deg);
+    box-shadow: 0 30px 50px -10px rgba(0, 0, 0, 0.15);
+}
+
+.card-3d .icon-circle {
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin: 0 auto 20px auto;
+    box-shadow: 0 10px 20px rgba(253, 160, 133, 0.3);
+    transform: translateZ(20px);
+}
+
+.card-3d h3 {
+    text-align: center;
+    transform: translateZ(10px);
+}
+
+.card-3d ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    transform: translateZ(5px);
+}
+
+.card-3d .btn-3d {
+    margin-top: auto;
+    background: #222;
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+    transform: translateZ(15px);
+    transition: background 0.3s;
+}
+
+.card-3d .btn-3d:hover {
+    background: black;
+}
+
+/* ===================================
+   3. SLIDING REVEAL
+   =================================== */
+.card-reveal {
+    background: white;
+    border-radius: 12px;
+    height: 300px;
+    /* Fixed height for effect */
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+.card-reveal-content {
+    padding: 30px;
+    position: relative;
+    z-index: 2;
+    background: white;
+    height: 100%;
+    transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.card-reveal:hover .card-reveal-content {
+    transform: translateY(-100px);
+    /* Content moves up */
+}
+
+.reveal-hidden {
+    position: absolute;
+    bottom: -150px;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: var(--primary);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: bottom 0.5s cubic-bezier(0.25, 1, 0.5, 1);
+    z-index: 1;
+}
+
+.card-reveal:hover .reveal-hidden {
+    bottom: 0;
+}
+
+.card-reveal .icon-large {
+    font-size: 2rem;
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+/* ===================================
+   4. NEON GRADIENT GLOW
+   =================================== */
+.card-neon {
+    background: #111;
+    color: white;
+    padding: 3px;
+    /* Border thickness */
+    border-radius: 16px;
+    position: relative;
+    height: 100%;
+    transition: transform 0.3s ease;
+}
+
+.card-neon::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    padding: 3px;
+    background: linear-gradient(45deg, #ff357a, #fff172);
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+}
+
+.card-neon:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 30px rgba(255, 53, 122, 0.3);
+}
+
+.card-neon:hover::before {
+    opacity: 1;
+}
+
+.neon-inner {
+    background: #1a1a1a;
+    border-radius: 13px;
+    /* 16 - 3 */
+    padding: 25px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-neon h3 {
+    background: linear-gradient(to right, #fff, #aaa);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 20px;
+}
+
+.neon-icon {
+    color: #ff357a;
+    margin-bottom: 15px;
+}
+
+.card-neon ul {
+    list-style: none;
+    padding: 0;
+    color: #888;
+}
+
+.card-neon li {
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+}
+
+.card-neon li::before {
+    content: "•";
+    color: #fff172;
+    margin-right: 10px;
+}
+
+/* ===================================
+   5. FLOATING ORGANIC
+   =================================== */
+.card-organic {
+    background: white;
+    border-radius: 20px;
+    padding: 30px;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+    transition: all 0.4s ease;
+    border: 1px solid #eee;
+}
+
+.card-organic:hover {
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+}
+
+.organic-blob {
+    position: absolute;
+    top: -50px;
+    right: -50px;
+    width: 150px;
+    height: 150px;
+    background: var(--primary);
+    border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+    opacity: 0.1;
+    transition: all 5s linear infinite;
+    animation: blob-float 8s infinite alternate;
+}
+
+@keyframes blob-float {
+    0% {
+        transform: translate(0, 0) rotate(0deg);
+        border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+    }
+
+    100% {
+        transform: translate(-20px, 20px) rotate(180deg);
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    }
+}
+
+.organic-content {
+    position: relative;
+    z-index: 1;
+}
+
+.card-organic .icon-float {
+    color: var(--primary);
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(44, 95, 124, 0.08);
+    border-radius: 50%;
+    margin-bottom: 20px;
+    transition: transform 0.4s ease;
+}
+
+.card-organic:hover .icon-float {
+    transform: scale(1.2) rotate(10deg);
+}
+
+.btn-organic {
+    display: inline-block;
+    margin-top: 20px;
+    background: var(--primary);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.4s ease;
+    border: none;
+    width: fit-content;
+    box-shadow: 0 4px 15px rgba(44, 95, 124, 0.3);
+}
+
+.btn-organic:hover {
+    border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(44, 95, 124, 0.4);
+}

@@ -1,0 +1,603 @@
+/* ===================================
+   ARCHITECTURE-FOCUSED DESIGN VARIANTS
+   Professional, Clean, Elegant
+   WITH SCROLL-TRIGGERED ANIMATIONS
+   =================================== */
+
+/* Scroll Animation States */
+.scroll-animate {
+    opacity: 0;
+}
+
+.scroll-animate.animate-in {
+    animation-fill-mode: forwards;
+}
+
+/* Professional Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes drawLine {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* VARIANT 1: Minimalist Side-by-Side */
+.variant-1 {
+    padding: 0;
+    background: white;
+}
+
+.variant-1 .vm-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 1400px;
+    margin: 0 auto;
+    min-height: 500px;
+}
+
+.variant-1 .vm-section {
+    padding: 4rem 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.variant-1 .vm-section.vision.animate-in {
+    animation: slideInLeft 0.8s ease-out forwards;
+}
+
+.variant-1 .vm-section.mission.animate-in {
+    animation: slideInRight 0.8s ease-out forwards;
+}
+
+.variant-1 .vm-section.vision {
+    background: #f8f9fa;
+    border-right: 1px solid #e0e0e0;
+}
+
+.variant-1 .vm-section.mission {
+    background: white;
+}
+
+.variant-1 .vm-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+}
+
+.variant-1 .vm-heading {
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: var(--text-dark);
+    margin-bottom: 2rem;
+    line-height: 1.2;
+}
+
+.variant-1 .vm-heading strong {
+    font-weight: 600;
+}
+
+.variant-1 .vm-description {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+/* VARIANT 2: Clean Stacked with Lines */
+.variant-2 {
+    padding: var(--spacing-xl) 0;
+    background: white;
+}
+
+.variant-2 .vm-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.variant-2 .vm-item {
+    padding: 3rem 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.variant-2 .vm-item.animate-in {
+    animation: slideUp 0.8s ease-out forwards;
+}
+
+.variant-2 .vm-item:last-child {
+    border-bottom: none;
+}
+
+.variant-2 .vm-header {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.variant-2 .vm-number {
+    font-size: 3rem;
+    font-weight: 200;
+    color: var(--primary-color);
+    line-height: 1;
+}
+
+.variant-2 .vm-title-group h3 {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+}
+
+.variant-2 .vm-title-group h2 {
+    font-size: 2rem;
+    font-weight: 300;
+    color: var(--text-dark);
+}
+
+.variant-2 .vm-content p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+/* VARIANT 3: Modern Grid Layout */
+.variant-3 {
+    padding: var(--spacing-xl) 0;
+    background: #fafafa;
+}
+
+.variant-3 .vm-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: #e0e0e0;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.variant-3 .vm-box {
+    background: white;
+    padding: 3.5rem 3rem;
+}
+
+.variant-3 .vm-box:first-child.animate-in {
+    animation: slideInLeft 0.8s ease-out forwards;
+}
+
+.variant-3 .vm-box:last-child.animate-in {
+    animation: slideInRight 0.8s ease-out forwards;
+    animation-delay: 0.2s;
+}
+
+.variant-3 .vm-tag {
+    display: inline-block;
+    padding: 0.4rem 1.2rem;
+    background: var(--primary-color);
+    color: white;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+}
+
+.variant-3 .vm-headline {
+    font-size: 2.25rem;
+    font-weight: 300;
+    color: var(--text-dark);
+    margin-bottom: 2rem;
+    line-height: 1.3;
+}
+
+.variant-3 .vm-text {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+/* VARIANT 4: Centered Elegant */
+.variant-4 {
+    padding: var(--spacing-xl) 0;
+    background: white;
+}
+
+.variant-4 .vm-section {
+    max-width: 900px;
+    margin: 0 auto 5rem;
+    text-align: center;
+}
+
+.variant-4 .vm-section.animate-in {
+    animation: slideUp 0.8s ease-out forwards;
+}
+
+.variant-4 .vm-section:last-child {
+    margin-bottom: 0;
+}
+
+.variant-4 .vm-line {
+    width: 60px;
+    height: 2px;
+    background: var(--primary-color);
+    margin: 0 auto 2rem;
+}
+
+.variant-4 .vm-section.animate-in .vm-line {
+    animation: drawLine 1s ease-out forwards;
+    animation-delay: 0.3s;
+}
+
+.variant-4 .vm-sup {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+.variant-4 .vm-h1 {
+    font-size: 2.75rem;
+    font-weight: 300;
+    color: var(--text-dark);
+    margin-bottom: 2.5rem;
+    line-height: 1.2;
+}
+
+.variant-4 .vm-p {
+    font-size: 1.05rem;
+    line-height: 1.9;
+    color: #555;
+    margin-bottom: 1.5rem;
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* VARIANT 5: Asymmetric Professional */
+.variant-5 {
+    padding: var(--spacing-xl) 0;
+    background: white;
+}
+
+.variant-5 .vm-layout {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.variant-5 .vm-row {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 4rem;
+    margin-bottom: 4rem;
+    padding-bottom: 4rem;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.variant-5 .vm-row.animate-in {
+    animation: slideUp 0.8s ease-out forwards;
+}
+
+.variant-5 .vm-row:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.variant-5 .vm-row:nth-child(2) {
+    grid-template-columns: 0.8fr 1.2fr;
+}
+
+.variant-5 .vm-row:nth-child(2) .vm-main {
+    order: 2;
+}
+
+.variant-5 .vm-row:nth-child(2) .vm-side {
+    order: 1;
+}
+
+.variant-5 .vm-main h3 {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.variant-5 .vm-main h2 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: var(--text-dark);
+    margin-bottom: 2rem;
+    line-height: 1.2;
+}
+
+.variant-5 .vm-main p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.variant-5 .vm-side {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.variant-5 .vm-stat {
+    text-align: center;
+}
+
+.variant-5 .vm-stat-number {
+    font-size: 4rem;
+    font-weight: 200;
+    color: var(--primary-color);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.variant-5 .vm-stat-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #999;
+}
+
+/* VARIANT 6: Minimal Border Design */
+.variant-6 {
+    padding: 0;
+    background: white;
+}
+
+.variant-6 .vm-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    border: 1px solid #e0e0e0;
+}
+
+.variant-6 .vm-block {
+    padding: 4rem 3rem;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.variant-6 .vm-block.animate-in {
+    animation: scaleIn 0.8s ease-out forwards;
+}
+
+.variant-6 .vm-block:last-child {
+    border-bottom: none;
+}
+
+.variant-6 .vm-block:nth-child(2) {
+    background: #fafafa;
+}
+
+.variant-6 .vm-meta {
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--primary-color);
+    margin-bottom: 2rem;
+}
+
+.variant-6 .vm-title {
+    font-size: 2.25rem;
+    font-weight: 300;
+    color: var(--text-dark);
+    margin-bottom: 2rem;
+    max-width: 700px;
+}
+
+.variant-6 .vm-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.variant-6 .vm-body p {
+    font-size: 0.95rem;
+    line-height: 1.8;
+    color: #666;
+}
+
+/* VARIANT 5: Asymmetric Professional */
+.variant-5 {
+    padding: var(--spacing-xl) 0;
+    background: white;
+}
+
+.variant-5 .vm-layout {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.variant-5 .vm-row {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 4rem;
+    margin-bottom: 4rem;
+    padding-bottom: 4rem;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.variant-5 .vm-row.animate-in {
+    animation: slideUp 0.8s ease-out forwards;
+}
+
+.variant-5 .vm-row:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.variant-5 .vm-row:nth-child(2) {
+    grid-template-columns: 0.8fr 1.2fr;
+}
+
+.variant-5 .vm-row:nth-child(2) .vm-main {
+    order: 2;
+}
+
+.variant-5 .vm-row:nth-child(2) .vm-side {
+    order: 1;
+}
+
+.variant-5 .vm-main h3 {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.variant-5 .vm-main h2 {
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: var(--text-dark);
+    margin-bottom: 2rem;
+    line-height: 1.2;
+}
+
+.variant-5 .vm-main p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.variant-5 .vm-side {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.variant-5 .vm-stat {
+    text-align: center;
+}
+
+.variant-5 .vm-stat-number {
+    font-size: 4rem;
+    font-weight: 200;
+    color: var(--primary-color);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+}
+
+.variant-5 .vm-stat-label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #999;
+}
+
+/* Variant Labels */
+.variant-label {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: var(--text-dark);
+    color: white;
+    border-radius: 0;
+    font-weight: 600;
+    margin-bottom: 3rem;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+
+    .variant-1 .vm-wrapper,
+    .variant-3 .vm-grid,
+    .variant-5 .vm-row,
+    .variant-5 .vm-row:nth-child(2),
+    .variant-6 .vm-body {
+        grid-template-columns: 1fr;
+    }
+
+    .variant-1 .vm-section.vision {
+        border-right: none;
+        border-bottom: 1px solid #e0e0e0;
+    }
+
+    .variant-5 .vm-row:nth-child(2) .vm-main,
+    .variant-5 .vm-row:nth-child(2) .vm-side {
+        order: 0;
+    }
+}

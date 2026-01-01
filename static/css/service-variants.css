@@ -1,0 +1,533 @@
+/* ===================================
+   ARCHITECTURAL SERVICE VARIANTS V2
+   Precision, Alignment, and Polish
+   =================================== */
+
+:root {
+    --arch-primary: #2c5f7c;
+    --arch-secondary: #4a8aad;
+    --arch-dark: #1a1a1a;
+    --arch-light: #f4f6f8;
+    --arch-border: #e2e8f0;
+}
+
+/* Global Reset for these sections */
+.service-variant * {
+    box-sizing: border-box;
+}
+
+.service-variant {
+    padding: 6rem 0;
+    position: relative;
+    width: 100%;
+}
+
+.service-variant .container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Common Grid Setup - Bulletproof Equal Heights */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    margin-top: 4rem;
+    align-items: stretch;
+    /* Ensures equal height */
+}
+
+/* ===================================
+   VARIANT 1: THE PRECISION (Clean Lines)
+   =================================== */
+.variant-1 {
+    background: #ffffff;
+}
+
+.variant-1 .service-card {
+    background: white;
+    padding: 3rem 2.5rem;
+    border: 1px solid var(--arch-border);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    /* Fills the grid cell */
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle accent line on top */
+.variant-1 .service-card::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--arch-primary);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.variant-1 .service-card:hover {
+    border-color: transparent;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    /* Smoother shadow */
+    transform: translateY(-5px);
+}
+
+.variant-1 .service-card:hover::after {
+    transform: scaleX(1);
+}
+
+.variant-1 .service-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 2rem;
+}
+
+.variant-1 .service-icon svg {
+    width: 100%;
+    height: 100%;
+    fill: var(--arch-dark);
+    transition: fill 0.3s ease;
+}
+
+.variant-1 .service-card:hover .service-icon svg {
+    fill: var(--arch-primary);
+}
+
+.variant-1 h3 {
+    font-size: 1.5rem;
+    color: var(--arch-dark);
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.variant-1 .service-list {
+    flex-grow: 1;
+    /* Pushes button to bottom */
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem 0;
+}
+
+.variant-1 .service-list li {
+    padding: 0.5rem 0;
+    color: #666;
+    border-bottom: 1px dashed #eee;
+    font-size: 0.95rem;
+}
+
+.variant-1 .btn-read-more {
+    margin-top: auto;
+    /* Secure bottom alignment */
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--arch-dark);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.variant-1 .btn-read-more:hover {
+    color: var(--arch-primary);
+}
+
+.variant-1 .btn-read-more svg {
+    width: 16px;
+    height: 16px;
+    transition: transform 0.3s ease;
+}
+
+.variant-1 .btn-read-more:hover svg {
+    transform: translateX(5px);
+}
+
+
+/* ===================================
+   VARIANT 2: THE STUDIO (Boxed & Bold)
+   =================================== */
+.variant-2 {
+    background: #f8f9fa;
+}
+
+.variant-2 .service-card {
+    background: white;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.variant-2 .card-content {
+    padding: 3rem 2.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.variant-2 .service-card:hover {
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    background: white;
+    transform: translateY(-5px);
+}
+
+.variant-2 .service-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--arch-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 2rem;
+    transition: background 0.3s ease;
+}
+
+.variant-2 .service-card:hover .service-icon {
+    background: var(--arch-primary);
+}
+
+.variant-2 .service-icon svg {
+    width: 28px;
+    height: 28px;
+    fill: var(--arch-primary);
+    transition: fill 0.3s ease;
+}
+
+.variant-2 .service-card:hover .service-icon svg {
+    fill: white;
+}
+
+.variant-2 h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--arch-dark);
+}
+
+.variant-2 .service-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1;
+}
+
+.variant-2 .service-list li {
+    padding: 0.25rem 0;
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+.variant-2 .btn-read-more {
+    width: 100%;
+    padding: 1.5rem;
+    background: #111;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    transition: background 0.3s ease;
+    margin-top: auto;
+}
+
+.variant-2 .btn-read-more:hover {
+    background: var(--arch-primary);
+}
+
+
+/* ===================================
+   VARIANT 3: THE FOCUS (Minimalist Focus)
+   =================================== */
+.variant-3 {
+    background: white;
+}
+
+.variant-3 .service-card {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 2.5rem;
+    border: 1px solid #eee;
+    transition: all 0.3s ease;
+    background: #fff;
+}
+
+.variant-3 .service-card:hover {
+    border-color: var(--arch-dark);
+}
+
+.variant-3 .service-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 2.5rem;
+}
+
+.variant-3 h3 {
+    font-size: 1.75rem;
+    font-weight: 300;
+    /* Thin architectural font */
+    color: var(--arch-dark);
+    margin: 0;
+    max-width: 70%;
+}
+
+.variant-3 .service-icon svg {
+    width: 32px;
+    height: 32px;
+    fill: #999;
+    transition: fill 0.3s ease;
+}
+
+.variant-3 .service-card:hover .service-icon svg {
+    fill: var(--arch-primary);
+}
+
+.variant-3 .service-list {
+    flex-grow: 1;
+    list-style: none;
+    padding: 0;
+    margin: 0 0 2rem 0;
+}
+
+.variant-3 .service-list li {
+    color: #666;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.variant-3 .service-list li::before {
+    content: '—';
+    margin-right: 0.5rem;
+    color: #ccc;
+}
+
+.variant-3 .btn-read-more {
+    align-self: flex-start;
+    padding: 0.75rem 2rem;
+    border: 1px solid #ddd;
+    border-radius: 50px;
+    text-decoration: none;
+    color: var(--arch-dark);
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.variant-3 .btn-read-more:hover {
+    border-color: var(--arch-dark);
+    background: var(--arch-dark);
+    color: white;
+}
+
+
+/* ===================================
+   VARIANT 4: THE ELEVATION (Depth & Layers)
+   =================================== */
+.variant-4 {
+    background: #f0f2f5;
+}
+
+.variant-4 .service-card {
+    background: white;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 3rem;
+    position: relative;
+    /* Brutalist Shadow */
+    box-shadow: 12px 12px 0 rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    border: 1px solid white;
+}
+
+.variant-4 .service-card:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 16px 16px 0 var(--arch-primary);
+    border-color: var(--arch-primary);
+}
+
+.variant-4 .service-icon {
+    margin-bottom: 2rem;
+}
+
+.variant-4 .service-icon svg {
+    width: 48px;
+    height: 48px;
+    fill: var(--arch-dark);
+}
+
+.variant-4 h3 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--arch-dark);
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.5px;
+}
+
+.variant-4 .service-list {
+    flex-grow: 1;
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2.5rem;
+}
+
+.variant-4 .service-list li {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f0f0f0;
+    color: #444;
+}
+
+.variant-4 .btn-read-more {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    background: transparent;
+    border: 2px solid var(--arch-dark);
+    color: var(--arch-dark);
+    text-align: center;
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.variant-4 .btn-read-more:hover {
+    background: var(--arch-dark);
+    color: white;
+}
+
+
+/* ===================================
+   VARIANT 5: THE DARKROOM (High Contrast)
+   =================================== */
+.variant-5 {
+    background: #111;
+    color: white;
+}
+
+.variant-5 .section-header h2 {
+    color: white !important;
+}
+
+.variant-5 .section-header p {
+    color: #888 !important;
+}
+
+.variant-5 .service-card {
+    background: #1a1a1a;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 3rem;
+    border: 1px solid #333;
+    transition: all 0.4s ease;
+}
+
+.variant-5 .service-card:hover {
+    background: #222;
+    border-color: #555;
+}
+
+.variant-5 .service-icon {
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-bottom: 2rem;
+}
+
+.variant-5 .service-icon svg {
+    width: 30px;
+    height: 30px;
+    fill: white;
+}
+
+.variant-5 h3 {
+    font-family: "Playfair Display", serif;
+    /* Ensure fallback in HTML head */
+    font-size: 1.75rem;
+    color: white;
+    margin-bottom: 1.5rem;
+    font-style: italic;
+}
+
+.variant-5 .service-list {
+    flex-grow: 1;
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2.5rem;
+    color: #aaa;
+}
+
+.variant-5 .service-list li {
+    margin-bottom: 0.75rem;
+}
+
+.variant-5 .btn-read-more {
+    display: inline-flex;
+    align-items: center;
+    gap: 1rem;
+    color: white;
+    text-decoration: none;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.variant-5 .btn-read-more::after {
+    content: '→';
+    transition: transform 0.3s ease;
+}
+
+.variant-5 .btn-read-more:hover {
+    opacity: 1;
+    padding-left: 10px;
+}
+
+/* ===================================
+   RESPONSIVE ADJUSTMENTS
+   =================================== */
+@media (max-width: 1024px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .service-variant {
+        padding: 4rem 0;
+    }
+
+    .service-card {
+        padding: 2rem !important;
+        /* Slightly less padding on mobile */
+    }
+}

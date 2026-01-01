@@ -1,0 +1,180 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Dark Monolith Collection{% endblock %}
+
+{% block extra_css %}
+<!-- Only specific variant css -->
+<link rel="stylesheet" href="{% static 'css/footer_variants.css' %}">
+{% endblock %}
+
+{% block content %}
+<div style="background:#000; padding:80px 5%; text-align:left; color:#fff;">
+    <h1 style="font-family:'Outfit', sans-serif; font-weight:900; font-size:3rem; margin-bottom:10px;">Dark Mode
+        Collection</h1>
+    <p style="color:#888; font-size:1.2rem;">5 High-Contrast, Premium Dark Alternatives.</p>
+</div>
+
+<!-- =========================================
+     VARIANT 1: THE EXECUTIVE GRID
+     ========================================= -->
+<div class="variant-label">1. The Executive Grid</div>
+<footer class="footer-dark-1">
+    <div class="d1-grid">
+        <div class="d1-brand-area">
+            <a href="#" class="d1-logo">Construct<span>Pro</span>.</a>
+            <p class="d1-desc">
+                Setting the gold standard in modern architecture. We don't just build structures; we forge legacies.
+            </p>
+        </div>
+
+        <div>
+            <div class="d1-header">Navigate</div>
+            <a href="#" class="d1-link">The Studio</a>
+            <a href="#" class="d1-link">Projects</a>
+            <a href="#" class="d1-link">Thinking</a>
+        </div>
+
+        <div>
+            <div class="d1-header">Services</div>
+            {% for service in services|slice:":3" %}
+            <a href="{% url 'service_detail' service.slug %}" class="d1-link">{{ service.title }}</a>
+            {% endfor %}
+        </div>
+
+        <div>
+            <div class="d1-header">Inquiries</div>
+            <a href="#" class="d1-link">hello@construct.pro</a>
+            <a href="#" class="d1-link">+1 800 555 0199</a>
+            <a href="#" class="d1-link">Book Consultation →</a>
+        </div>
+    </div>
+</footer>
+
+<!-- =========================================
+     VARIANT 2: THE MIDNIGHT MINIMAL
+     ========================================= -->
+<div class="variant-label">2. The Midnight Minimal</div>
+<footer class="footer-dark-2">
+    <div class="d2-brand">CONSTRUCT PRO</div>
+
+    <nav class="d2-nav">
+        <a href="#">Work</a>
+        <a href="#">Studio</a>
+        <a href="#">News</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <div class="d2-bottom">
+        <div>&copy; 2025 CP Inc.</div>
+        <div>Designed in Texas</div>
+    </div>
+</footer>
+
+<!-- =========================================
+     VARIANT 3: THE TECHNICAL DARK
+     ========================================= -->
+<div class="variant-label">3. The Technical Dark</div>
+<footer class="footer-dark-3">
+    <div class="d3-grid">
+        <div class="d3-cell">
+            <span class="d3-label">ID: SYSTEM</span>
+            <div class="d3-content" style="font-weight:700; color:#fff;">CP-WEB-V2.0</div>
+        </div>
+
+        <div class="d3-cell">
+            <span class="d3-label">DIR: ROOT</span>
+            <a href="#" class="d3-link">Home</a>
+            <a href="#" class="d3-link">About</a>
+            <a href="#" class="d3-link">Services</a>
+        </div>
+
+        <div class="d3-cell">
+            <span class="d3-label">DIR: SOCIAL</span>
+            <a href="#" class="d3-link">Instagram</a>
+            <a href="#" class="d3-link">Twitter</a>
+            <a href="#" class="d3-link">LinkedIn</a>
+        </div>
+
+        <div class="d3-cell">
+            <span class="d3-label">STATUS</span>
+            <div class="d3-content" style="color:#0f0;">● OPERATIONAL</div>
+            <div class="d3-content" style="margin-top:5px; font-size:0.8rem; color:#666;">All rights reserved.</div>
+        </div>
+    </div>
+</footer>
+
+<!-- =========================================
+     VARIANT 4: THE BOLD EDITORIAL
+     ========================================= -->
+<div class="variant-label">4. The Bold Editorial</div>
+<footer class="footer-dark-4">
+    <div class="d4-top">
+        <div class="d4-headline">Building the<br>Unimaginable.</div>
+    </div>
+
+    <div class="d4-columns">
+        <div>
+            <div class="d4-col-title">Index</div>
+            <a href="#" class="d4-link">01 &mdash; Home</a>
+            <a href="#" class="d4-link">02 &mdash; Architecture</a>
+            <a href="#" class="d4-link">03 &mdash; Interiors</a>
+        </div>
+
+        <div>
+            <div class="d4-col-title">Studio</div>
+            <a href="#" class="d4-link">About Us</a>
+            <a href="#" class="d4-link">Awards</a>
+            <a href="#" class="d4-link">Press</a>
+        </div>
+
+        <div>
+            <div class="d4-col-title">Connect</div>
+            <a href="#" class="d4-link">Instagram</a>
+            <a href="#" class="d4-link">Email Us</a>
+        </div>
+    </div>
+</footer>
+
+<!-- =========================================
+     VARIANT 5: THE DEEP IMMERSION
+     ========================================= -->
+<div class="variant-label">5. The Deep Immersion</div>
+<footer class="footer-dark-5">
+    <div class="d5-cta">
+        <h2>Ready to start?</h2>
+        <a href="#" class="d5-btn">Get in Touch</a>
+    </div>
+
+    <div class="d5-main">
+        <div class="d5-col">
+            <h4 style="color:#fff; opacity:0.5;">ConstructPro</h4>
+            <p style="color:#94A3B8; font-size:0.9rem; line-height:1.6;">
+                1364 E US Highway 377<br>Granbury, Texas 76048
+            </p>
+        </div>
+
+        <div class="d5-col">
+            <h4>Quick Links</h4>
+            <a href="#" class="d5-link">Home</a>
+            <a href="#" class="d5-link">About</a>
+            <a href="#" class="d5-link">Services</a>
+        </div>
+
+        <div class="d5-col">
+            <h4>Expertise</h4>
+            {% for service in services|slice:":3" %}
+            <a href="{% url 'service_detail' service.slug %}" class="d5-link">{{ service.title }}</a>
+            {% endfor %}
+        </div>
+
+        <div class="d5-col">
+            <h4>Legal</h4>
+            <a href="#" class="d5-link">Privacy</a>
+            <a href="#" class="d5-link">Terms</a>
+            <a href="#" class="d5-link">&copy; 2025</a>
+        </div>
+    </div>
+</footer>
+
+{% endblock %}

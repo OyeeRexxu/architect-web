@@ -1,0 +1,309 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Service Detail Layout Options{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/service-detail-variants.css' %}">
+<link
+    href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+<div class="variants-nav">
+    <span>Jump to layout:</span>
+    <a href="#layout-1">1. Classic Sidebar</a>
+    <a href="#layout-2">2. Modern Split</a>
+    <a href="#layout-3">3. Feature Grid</a>
+    <a href="#layout-4">4. Minimal Reader</a>
+    <a href="#layout-5">5. Technical Dark</a>
+</div>
+
+<!-- ==============================================
+     1. CLASSIC SIDEBAR
+     Standard, robust, trustworthy.
+=============================================== -->
+<section id="layout-1" class="layout-wrapper layout-sidebar">
+    <div class="layout-label">01. Classic Sidebar</div>
+
+    <div class="ls-hero">
+        <div class="container">
+            <h1>{{ service.title }}</h1>
+            <p class="ls-lead">{{ service.subtitle }}</p>
+        </div>
+    </div>
+
+    <div class="container ls-container">
+        <!-- Main Content -->
+        <div class="ls-main">
+            {% if service.image %}
+            <div class="ls-image-wrapper" style="margin-bottom: 30px;">
+                <img src="{% static 'images/' %}{{ service.image }}" alt="{{ service.title }}"
+                    style="width: 100%; height: 280px; object-fit: cover; border-radius: 8px;">
+            </div>
+            {% endif %}
+            <div class="ls-block">
+                <h2>Overview</h2>
+                <p>{{ service.overview }}</p>
+            </div>
+
+            <div class="ls-block">
+                <h2>How It Works</h2>
+                <div class="ls-steps">
+                    {% for step in service.process %}
+                    <div class="ls-step">
+                        <span class="ls-step-num">{{ forloop.counter }}</span>
+                        <p>{{ step }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="ls-sidebar">
+            <div class="ls-widget ls-widget-primary">
+                <h3>Included Services</h3>
+                <ul>
+                    {% for item in service.services_included %}
+                    <li>✓ {{ item }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="ls-widget">
+                <h3>Who Can Benefit</h3>
+                <div class="ls-tags">
+                    {% for item in service.who_can_benefit %}
+                    <span class="ls-tag">{{ item }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <div class="ls-cta-box">
+                <h4>Ready to start?</h4>
+                <a href="#" class="btn-sidebar">Get a Quote</a>
+            </div>
+        </aside>
+    </div>
+</section>
+
+
+<!-- ==============================================
+     2. MODERN SPLIT (Editorial)
+     Immersive, fixed imagery.
+=============================================== -->
+<section id="layout-2" class="layout-wrapper layout-split">
+    <div class="layout-label">02. Modern Split</div>
+
+    <div class="split-container">
+        <!-- Left (Sticky) -->
+        <div class="split-left"
+            style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('{% static 'images/' %}{{ service.image }}'); background-size: cover; background-position: center; color: white;">
+            <div class="split-content-fixed">
+                <span class="split-eyebrow">Service Detail</span>
+                <h1>{{ service.title }}</h1>
+                <p>{{ service.subtitle }}</p>
+                <a href="#" class="btn-split">Start Project →</a>
+            </div>
+        </div>
+
+        <!-- Right (Scrollable) -->
+        <div class="split-right">
+            <div class="split-section">
+                <h3>Overview</h3>
+                <p class="split-text-lg">{{ service.overview }}</p>
+            </div>
+
+            <div class="split-section">
+                <h3>Scope of Work</h3>
+                <ul class="split-list-grid">
+                    {% for item in service.services_included %}
+                    <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <div class="split-section">
+                <h3>Key Benefits</h3>
+                <div class="split-benefits">
+                    {% for benefit in service.benefits %}
+                    <div class="sb-card">
+                        <span class="sb-check">●</span>
+                        <p>{{ benefit }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ==============================================
+     3. FEATURE GRID (Dashboard)
+     Scannable, card-based.
+=============================================== -->
+<section id="layout-3" class="layout-wrapper layout-grid">
+    <div class="layout-label">03. Feature Grid</div>
+
+    <div class="container">
+        <div class="lg-header">
+            {% if service.image %}
+            <div class="lg-banner"
+                style="width: 100%; height: 250px; overflow: hidden; border-radius: 12px; margin-bottom: 2rem;">
+                <img src="{% static 'images/' %}{{ service.image }}"
+                    style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            {% endif %}
+            <h1>{{ service.title }}</h1>
+            <p>{{ service.overview }}</p>
+        </div>
+
+        <div class="lg-dashboard">
+            <!-- Included Module -->
+            <div class="lg-card lg-span-2">
+                <h3>Included Services</h3>
+                <div class="lg-pill-grid">
+                    {% for item in service.services_included %}
+                    <span class="lg-pill">{{ item }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+
+            <!-- Stats/Benefits Module -->
+            <div class="lg-card">
+                <h3>Why Us?</h3>
+                <ul class="lg-check-list">
+                    {% for benefit in service.benefits %}
+                    <li>{{ benefit }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+
+            <!-- Process Module -->
+            <div class="lg-card lg-span-3">
+                <h3>Process Roadmap</h3>
+                <div class="lg-timeline">
+                    {% for step in service.process %}
+                    <div class="lg-t-step">
+                        <div class="lg-t-dot"></div>
+                        <div class="lg-t-content">{{ step }}</div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ==============================================
+     4. MINIMAL READER
+     Type-focused, distraction free.
+=============================================== -->
+<section id="layout-4" class="layout-wrapper layout-minimal">
+    <div class="layout-label">04. Minimal Reader</div>
+
+    <div class="lm-container">
+        <header class="lm-header">
+            <h1>Estimation.</h1>
+            <p class="lm-subtitle">Precision Construction Quantities</p>
+        </header>
+
+        <div class="lm-body">
+            {% if service.image %}
+            <div class="lm-image" style="margin: 0 auto 3rem; max-width: 600px;">
+                <img src="{% static 'images/' %}{{ service.image }}"
+                    style="width: 100%; height: auto; filter: grayscale(100%);">
+            </div>
+            {% endif %}
+            <p class="lm-lead">{{ service.overview }}</p>
+
+            <hr class="lm-divider">
+
+            <h3>Services</h3>
+            <ul class="lm-list">
+                {% for item in service.services_included %}
+                <li>{{ item }}</li>
+                {% endfor %}
+            </ul>
+
+            <hr class="lm-divider">
+
+            <h3>Client Profile</h3>
+            <p>Ideal for:</p>
+            <div class="lm-inline-list">
+                {% for item in service.who_can_benefit %}
+                <span>{{ item }}</span> /
+                {% endfor %}
+            </div>
+
+            <div class="lm-action">
+                <a href="#" class="btn-minimal">Proceed</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- ==============================================
+     5. TECHNICAL DARK
+     Blueprint style, data-heavy look.
+=============================================== -->
+<section id="layout-5" class="layout-wrapper layout-technical">
+    <div class="layout-label">05. Technical Dark</div>
+
+    <div class="lt-frame">
+        <div class="lt-header-bar">
+            <span class="lt-code">ID: {{ service.id }}</span>
+            <span class="lt-name">SERVICE_DETAIL_VIEW</span>
+            <span class="lt-status">STATUS: ACTIVE</span>
+        </div>
+
+        <div class="lt-grid">
+            <div class="lt-col-main">
+                <h1 class="lt-title">{{ service.title|upper }}</h1>
+                <div class="lt-data-block">
+                    <span class="lt-label">DESCRIPTION</span>
+                    <p class="lt-text">{{ service.overview }}</p>
+                </div>
+
+                <div class="lt-data-block">
+                    <span class="lt-label">SCOPE_OF_WORK</span>
+                    <ul class="lt-list">
+                        {% for item in service.services_included %}
+                        <li>[x] {{ item }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+
+            <div class="lt-col-side">
+                {% if service.image %}
+                <div class="lt-visual" style="margin-bottom: 20px; border: 1px solid #333; padding: 5px;">
+                    <img src="{% static 'images/' %}{{ service.image }}"
+                        style="width: 100%; height: auto; display: block; filter: sepia(20%) hue-rotate(180deg) saturate(200%);">
+                </div>
+                {% endif %}
+
+                <div class="lt-panel">
+                    <span class="lt-label">PARAMETERS</span>
+                    <ul class="lt-params">
+                        {% for benefit in service.benefits %}
+                        <li>>> {{ benefit }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+
+                <div class="lt-actions">
+                    <button class="btn-tech">INITIATE_QUOTE</button>
+                    <button class="btn-tech-outline">EXPORT_PDF</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

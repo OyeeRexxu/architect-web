@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="ConstructPro - Building with Nature's Wisdom. Thoughtful construction advancing the balance between sustainability and architectural global innovation.">
+    <meta name="keywords" content="construction, architecture, sustainable building, design, 3D visualization">
+    <title>{% block title %}ConstructPro - Building with Nature's Wisdom{% endblock %}</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Stylesheet -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}?v=2">
+    <link rel="stylesheet" href="{% static 'css/hero-options.css' %}">
+    <link rel="stylesheet" href="{% static 'css/process-section.css' %}">
+    <link rel="stylesheet" href="{% static 'css/testimonials-options.css' %}">
+    <link rel="stylesheet" href="{% static 'css/new-sections.css' %}">
+    <link rel="stylesheet" href="{% static 'css/vision-section.css' %}">
+    <link rel="stylesheet" href="{% static 'css/design-variants.css' %}">
+
+    {% block extra_css %}{% endblock %}
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="{% url 'home' %}" class="logo">
+                <div class="logo-icon">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
+                        <path d="M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3z" />
+                    </svg>
+                </div>
+                <span>ConstructPro</span>
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="{% url 'home' %}">Home</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li class="nav-dropdown">
+                    <a href="#services" class="dropdown-toggle">
+                        Services
+                        <i class="fa-solid fa-chevron-down dropdown-arrow"></i>
+                    </a>
+                    <div class="dropdown-menu">
+                        {% for service in global_services %}
+                        <a href="{% url 'service_detail' service.slug %}" class="dropdown-item">{{ service.title }}</a>
+                        {% endfor %}
+                    </div>
+                </li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+            </ul>
+
+            <a href="{% url 'contact' %}" class="btn-primary">Get Started</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <!-- CTA Section -->
+        <!-- ===================================
+         FOOTER: THE EXECUTIVE GRID (THEMED)
+         =================================== -->
+        <footer class="footer-executive">
+            <!-- New Clean CTA Section -->
+            <div class="footer-cta-clean">
+                <h2>Ready to build <span class="text-highlight">together?</span></h2>
+                <p>Let's start a conversation about your next project!</p>
+                <a href="{% url 'contact' %}" class="btn-cta-pill">Start Your Project &rarr;</a>
+            </div>
+
+            <div class="footer-grid-executive">
+                <!-- Brand Area -->
+                <div class="footer-brand-area">
+                    <a href="{% url 'home' %}" class="footer-logo-executive">
+                        Construct<span>Pro</span>.
+                    </a>
+                    <p class="footer-desc">
+                        Setting the gold standard in modern architecture. We don't just build structures; we forge
+                        legacies.
+                    </p>
+                    <div class="footer-socials">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <!-- Navigation -->
+                <div class="footer-col-executive">
+                    <div class="footer-header">Navigate</div>
+                    <a href="{% url 'home' %}" class="footer-link">The Studio</a>
+                    <a href="{% url 'about' %}" class="footer-link">About</a>
+                    <a href="{% url 'contact' %}" class="footer-link">Contact</a>
+                </div>
+
+                <!-- Services -->
+                <div class="footer-col-executive">
+                    <div class="footer-header">Expertise</div>
+                    {% for service in footer_services|slice:":4" %}
+                    <a href="{% url 'service_detail' service.slug %}" class="footer-link">{{ service.title }}</a>
+                    {% endfor %}
+                </div>
+
+                <!-- Inquiries -->
+                <div class="footer-col-executive">
+                    <div class="footer-header">Inquiries</div>
+                    <a href="mailto:hello@construct.pro" class="footer-link">hello@construct.pro</a>
+                    <a href="tel:+11234567890add " class="footer-link">+1 123 456 7890</a>
+                    <div class="footer-address">
+                        111 Main St<br> New York, NY 10001
+                    </div>
+                    <a href="{% url 'contact' %}" class="btn-footer-consult">Book Consultation →</a>
+                </div>
+            </div>
+
+            <div class="footer-bottom-executive">
+                <div class="copyright">&copy; 2025 ConstructPro Inc. All rights reserved.</div>
+                <div class="legal-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                </div>
+            </div>
+        </footer>
+
+        <!-- JavaScript -->
+        <script src="{% static 'js/main.js' %}"></script>
+        <script src="{% static 'js/stats-counter.js' %}"></script>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                const dropdown = document.querySelector('.nav-dropdown');
+                const toggle = document.querySelector('.dropdown-toggle');
+
+                if (dropdown && toggle) {
+                    toggle.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        dropdown.classList.toggle('active');
+                    });
+
+                    // Close when clicking outside
+                    document.addEventListener('click', function (e) {
+                        if (!dropdown.contains(e.target)) {
+                            dropdown.classList.remove('active');
+                        }
+                    });
+                }
+            });
+        </script>
+        {% block extra_js %}{% endblock %}
+</body>
+
+</html>

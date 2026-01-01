@@ -1,0 +1,71 @@
+/* ===================================
+   VISION SECTION
+   =================================== */
+
+.vision-section {
+    padding: var(--spacing-xl) 0;
+    background: linear-gradient(135deg, rgba(44, 95, 124, 0.03) 0%, rgba(74, 138, 173, 0.05) 100%);
+    position: relative;
+}
+
+.vision-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.vision-text {
+    margin-top: var(--spacing-lg);
+}
+
+.vision-text p {
+    font-size: 1.1rem;
+    line-height: 1.9;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+    text-align: justify;
+}
+
+.vision-text strong {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.vision-text p:last-child {
+    margin-bottom: 0;
+}
+
+/* ===================================
+   MISSION SECTION
+   =================================== */
+
+.mission-section {
+    padding: var(--spacing-xl) 0;
+    background: white;
+    position: relative;
+}
+
+.mission-content {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.mission-text {
+    margin-top: var(--spacing-lg);
+}
+
+.mission-text p {
+    font-size: 1.1rem;
+    line-height: 1.9;
+    color: var(--text-dark);
+    margin-bottom: 1.5rem;
+    text-align: justify;
+}
+
+.mission-text strong {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.mission-text p:last-child {
+    margin-bottom: 0;
+}

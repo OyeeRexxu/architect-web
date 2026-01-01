@@ -1,0 +1,195 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Minimal Services{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/service-variants-animated.css' %}">
+{% endblock %}
+
+{% block content %}
+
+<div class="page-wrapper">
+    <div class="intro">
+        <h1>Minimal Architectural Cards</h1>
+        <p>Clean. Simple. Functional.</p>
+    </div>
+
+    <!-- 1. GLASSMORPHISM (FROSTED) -->
+    <section class="variant-section"
+        style="background: url('https://images.unsplash.com/photo-1579546929518-9e396f3cc809?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') center/cover fixed;">
+        <div class="container">
+            <div class="section-label" style="color:white; text-shadow:0 1px 2px rgba(0,0,0,0.5);">1. Glassmorphism
+                (Frosted)</div>
+            <div class="grid-3">
+                {% for service in services %}
+                <div class="card-glass">
+                    <div class="icon-box">
+                        <!-- Icon Logic -->
+                        {% if service.icon == 'calculator' %} <svg width="24" height="24" viewBox="0 0 24 24"
+                            fill="currentColor">
+                            <path
+                                d="M7 2H17C18.1 2 19 2.9 19 4V20C19 21.1 18.1 22 17 22H7C5.9 22 5 21.1 5 20V4C5 2.9 5.9 2 7 2M7 4V9H17V4H7M7 11V13H9V11H7M11 11V13H13V11H11M15 11V13H17V11H15M7 15V17H9V15H7M11 15V17H13V15H11M15 15V17H17V15H15M7 19V21H9V19H7M11 19V21H13V19H11M15 19V21H17V19H15Z" />
+                        </svg>
+                        {% elif service.icon == 'cabinet' %} <svg width="24" height="24" viewBox="0 0 24 24"
+                            fill="currentColor">
+                            <path
+                                d="M4 2H20C21.1 2 22 2.9 22 4V20C22 21.1 21.1 22 20 22H4C2.9 22 2 21.1 2 20V4C2 2.9 2.9 2 4 2M4 4V20H20V4H4M6 6H11V18H6V6M13 6H18V18H13V6M8 8V11H9V8H8M15 8V11H16V8H15Z" />
+                        </svg>
+                        {% elif service.icon == 'cad' %} <svg width="24" height="24" viewBox="0 0 24 24"
+                            fill="currentColor">
+                            <path
+                                d="M21 16.5C21 16.88 20.79 17.21 20.47 17.38L12.57 21.82C12.41 21.94 12.21 22 12 22C11.79 22 11.59 21.94 11.43 21.82L3.53 17.38C3.21 17.21 3 16.88 3 16.5V7.5C3 7.12 3.21 6.79 3.53 6.62L11.43 2.18C11.59 2.06 11.79 2 12 2C12.21 2 12.41 2.06 12.57 2.18L20.47 6.62C20.79 6.79 21 7.12 21 7.5V16.5M12 4.15L5 8.09V15.91L12 19.85L19 15.91V8.09L12 4.15Z" />
+                        </svg>
+                        {% elif service.icon == 'cnc' %} <svg width="24" height="24" viewBox="0 0 24 24"
+                            fill="currentColor">
+                            <path d="M3 3H21V21H3V3M5 5V19H19V5H5M7 7H17V9H7V7M7 11H17V13H7V11M7 15H17V17H7V15Z" />
+                        </svg>
+                        {% elif service.icon == 'architecture' %} <svg width="24" height="24" viewBox="0 0 24 24"
+                            fill="currentColor">
+                            <path d="M12 2L2 12H5V20H19V12H22L12 2M12 6.5L16 10.5V18H8V10.5L12 6.5Z" />
+                        </svg>
+                        {% elif service.icon == 'interior' %} <svg width="24" height="24" viewBox="0 0 24 24"
+                            fill="currentColor">
+                            <path
+                                d="M17 11V5C17 3.9 16.1 3 15 3H9C7.9 3 7 3.9 7 5V11C5.3 11.5 4 12.9 4 15V21H6V19H18V21H20V15C20 12.9 18.7 11.5 17 11M9 5H15V11H9V5M18 17H6V15C6 14.2 6.5 13.5 7.3 13.2L8 13V12.7C8 12.3 8.3 12 8.8 12H15.3C15.7 12 16 12.3 16 12.8V13.1L16.8 13.3C17.5 13.5 18 14.2 18 15V17Z" />
+                        </svg>
+                        {% else %} <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M12 2L1 21H23L12 2M12 6L19.53 19H4.47L12 6Z" />
+                        </svg> {% endif %}
+                    </div>
+                    <h3>{{ service.title }}</h3>
+                    <ul>
+                        {% for item in service.get_preview_items %}
+                        <li>{{ item }}</li>
+                        {% endfor %}
+                    </ul>
+                    <a href="#" class="btn-glass">Read More</a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- 2. 3D HOVER LIFT -->
+    <section class="variant-section" style="background:#f8f9fa;">
+        <div class="container">
+            <div class="section-label">2. 3D Perspective Lift</div>
+            <div class="grid-3">
+                {% for service in services %}
+                <div class="card-3d-wrap">
+                    <div class="card-3d">
+                        <div class="icon-circle">
+                            {% if service.icon == 'calculator' %} <svg width="32" height="32" viewBox="0 0 24 24"
+                                fill="currentColor">
+                                <path
+                                    d="M7 2H17C18.1 2 19 2.9 19 4V20C19 21.1 18.1 22 17 22H7C5.9 22 5 21.1 5 20V4C5 2.9 5.9 2 7 2M7 4V9H17V4H7M7 11V13H9V11H7M11 11V13H13V11H11M15 11V13H17V11H15M7 15V17H9V15H7M11 15V17H13V15H11M15 15V17H17V15H15M7 19V21H9V19H7M11 19V21H13V19H11M15 19V21H17V19H15Z" />
+                            </svg> {% else %} <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2L1 21H23L12 2M12 6L19.53 19H4.47L12 6Z" />
+                            </svg> {% endif %}
+                        </div>
+                        <h3>{{ service.title }}</h3>
+                        <ul>
+                            {% for item in service.get_preview_items %}
+                            <li>{{ item }}</li>
+                            {% endfor %}
+                        </ul>
+                        <a href="#" class="btn-3d">Learn More</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- 3. SLIDING REVEAL -->
+    <section class="variant-section">
+        <div class="container">
+            <div class="section-label">3. Sliding Content Reveal</div>
+            <div class="grid-3">
+                {% for service in services %}
+                <div class="card-reveal">
+                    <div class="card-reveal-content">
+                        <div class="icon-large">
+                            {% if service.icon == 'calculator' %} <svg width="48" height="48" viewBox="0 0 24 24"
+                                fill="currentColor">
+                                <path
+                                    d="M7 2H17C18.1 2 19 2.9 19 4V20C19 21.1 18.1 22 17 22H7C5.9 22 5 21.1 5 20V4C5 2.9 5.9 2 7 2M7 4V9H17V4H7M7 11V13H9V11H7M11 11V13H13V11H11M15 11V13H17V11H15M7 15V17H9V15H7M11 15V17H13V15H11M15 15V17H17V15H15M7 19V21H9V19H7M11 19V21H13V19H11M15 19V21H17V19H15Z" />
+                            </svg> {% else %} <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2L1 21H23L12 2M12 6L19.53 19H4.47L12 6Z" />
+                            </svg> {% endif %}
+                        </div>
+                        <h3>{{ service.title }}</h3>
+                    </div>
+                    <div class="reveal-hidden">
+                        <span style="font-weight:600; text-transform:uppercase; letter-spacing:1px;">View Details
+                            &rarr;</span>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. NEON GRADIENT -->
+    <section class="variant-section" style="background:#000;">
+        <div class="container">
+            <div class="section-label" style="color:#555;">4. Neon Gradient Glow</div>
+            <div class="grid-3">
+                {% for service in services %}
+                <div class="card-neon">
+                    <div class="neon-inner">
+                        <div class="neon-icon">
+                            {% if service.icon == 'calculator' %} <svg width="32" height="32" viewBox="0 0 24 24"
+                                fill="currentColor">
+                                <path
+                                    d="M7 2H17C18.1 2 19 2.9 19 4V20C19 21.1 18.1 22 17 22H7C5.9 22 5 21.1 5 20V4C5 2.9 5.9 2 7 2M7 4V9H17V4H7M7 11V13H9V11H7M11 11V13H13V11H11M15 11V13H17V11H15M7 15V17H9V15H7M11 15V17H13V15H11M15 15V17H17V15H15M7 19V21H9V19H7M11 19V21H13V19H11M15 19V21H17V19H15Z" />
+                            </svg> {% else %} <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2L1 21H23L12 2M12 6L19.53 19H4.47L12 6Z" />
+                            </svg> {% endif %}
+                        </div>
+                        <h3>{{ service.title }}</h3>
+                        <ul>
+                            {% for item in service.get_preview_items %}
+                            <li>{{ item }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. FLOATING ORGANIC -->
+    <section class="variant-section" style="background:rgba(44, 95, 124, 0.03);">
+        <div class="container">
+            <div class="section-label">5. Floating Organic Shapes</div>
+            <div class="grid-3">
+                {% for service in services %}
+                <div class="card-organic">
+                    <div class="organic-blob"></div>
+                    <div class="organic-content">
+                        <div class="icon-float">
+                            {% if service.icon == 'calculator' %} <svg width="24" height="24" viewBox="0 0 24 24"
+                                fill="currentColor">
+                                <path
+                                    d="M7 2H17C18.1 2 19 2.9 19 4V20C19 21.1 18.1 22 17 22H7C5.9 22 5 21.1 5 20V4C5 2.9 5.9 2 7 2M7 4V9H17V4H7M7 11V13H9V11H7M11 11V13H13V11H11M15 11V13H17V11H15M7 15V17H9V15H7M11 15V17H13V15H11M15 15V17H17V15H15M7 19V21H9V19H7M11 19V21H13V19H11M15 19V21H17V19H15Z" />
+                            </svg> {% else %} <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2L1 21H23L12 2M12 6L19.53 19H4.47L12 6Z" />
+                            </svg> {% endif %}
+                        </div>
+                        <h3>{{ service.title }}</h3>
+                        <p style="color:#777; line-height:1.6; font-size:0.95rem;">
+                            {{ service.overview|truncatewords:20 }}
+                        </p>
+                        <a href="#" class="btn-organic">Read More</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+</div>
+
+{% endblock %}

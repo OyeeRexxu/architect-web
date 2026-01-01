@@ -1,0 +1,165 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}About Us - ConstructPro
+<script>
+    // Scroll-triggered animations for Vision & Mission
+    document.addEventListener('DOMContentLoaded', function () {
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function (entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe Vision & Mission rows
+        const elementsToAnimate = document.querySelectorAll('.vm-row');
+        elementsToAnimate.forEach(el => {
+            el.classList.add('scroll-animate');
+            observer.observe(el);
+        });
+    });
+</script>
+{% endblock %}
+
+{% block content %}
+<!-- About Hero -->
+<section class="about-hero">
+    <div class="container">
+        <div class="about-hero-content">
+            <h1>About <span class="text-gradient">ConstructPro</span></h1>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section class="about-section">
+    <div class="container">
+        <div class="about-content">
+            <div class="about-image-wrapper">
+                <div class="about-image">
+                    <div class="about-image-placeholder">
+                        <svg width="200" height="200" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12,3L2,12H5V20H19V12H22L12,3M12,8.75A2.25,2.25 0 0,1 14.25,11A2.25,2.25 0 0,1 12,13.25A2.25,2.25 0 0,1 9.75,11A2.25,2.25 0 0,1 12,8.75M12,15C13.5,15 16.5,15.75 16.5,17.25V18H7.5V17.25C7.5,15.75 10.5,15 12,15Z" />
+                        </svg>
+                    </div>
+                    <div class="about-badge">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
+                            <path
+                                d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
+                        </svg>
+                        <div class="badge-text">
+                            <div class="badge-number">20+</div>
+                            <div class="badge-label">Years</div>
+                        </div>
+                    </div>
+                    <div class="about-accent-shape"></div>
+                </div>
+            </div>
+
+            <div class="about-text">
+                <div class="section-subtitle">About Us</div>
+                <h2 class="section-title">Building <span class="text-gradient">Global Partnerships</span></h2>
+
+                <p class="about-description">
+                    <strong>ConstructPro</strong> is at the forefront of the worldwide market, merging the technology
+                    and construction industries by connecting fabricators, builders, and architects with highly trained
+                    experts. With a tradition of quality, we are unrelenting in our dedication to building solid
+                    connections and providing our partners and clients with the best technical and design expertise.
+                </p>
+
+                <p class="about-description">
+                    We deliver our services remotely, anytime and from anywhere, using advanced technology through our
+                    modern facility in India.
+                </p>
+
+                <p class="about-description">
+                    At <strong>ConstructPro</strong>, our focus is not only on services but on creating lasting
+                    partnerships based on trust, quality, and outcomes.
+                </p>
+
+                <p class="about-description">
+                    We provide unrivaled, cost-effective engineering design and technology solutions to our clients
+                    throughout the world, 24 hours a day, 365 days a year, to meet the needs of an ever-changing
+                    industry. Our extensive expertise spanning two decades has allowed us to partner with organizations
+                    all over the world, offering support and services that enable firms to focus on growth and
+                    developing new business relationships.
+                </p>
+
+                <a href="{% url 'home' %}#services" class="btn-primary">Explore Our Services →</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Vision & Mission - Variant 5: Asymmetric Professional -->
+<section class="variant-5">
+    <div class="vm-layout">
+        <div class="vm-row">
+            <div class="vm-main">
+                <h3>Our Vision</h3>
+                <h2>Shaping the Future Together</h2>
+                <p>Our vision is to become a <strong>trusted global technology partner</strong> by delivering reliable,
+                    scalable, and remote services that enable businesses to operate seamlessly beyond geographical
+                    boundaries.</p>
+                <p>We strive to create long-term value by leveraging modern technology, industry expertise, and proven
+                    processes, while building strong and lasting relationships founded on trust, quality, and
+                    consistency.</p>
+                <p>Through innovation and commitment, we aim to support our clients' growth and help them achieve
+                    sustainable success in an ever-evolving digital landscape.</p>
+            </div>
+            <div class="vm-side">
+                <div class="vm-stat">
+                    <div class="vm-stat-number">20<sup style="font-size: 2rem;">+</sup></div>
+                    <div class="vm-stat-label">Years of Excellence</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="vm-row">
+            <div class="vm-main">
+                <h3>Our Mission</h3>
+                <h2>Delivering Excellence in Every Project</h2>
+                <p>Our mission is to provide innovative engineering design and technology solutions, with expertise in
+                    <strong>2D-3D CAD designing</strong> and precise <strong>estimation & take-offs</strong>.
+                </p>
+                <p>We are dedicated to delivering excellence in every project by leveraging over <strong>20 years of
+                        generational experience</strong>, ensuring impactful and reliable results for our clients.</p>
+            </div>
+            <div class="vm-side">
+                <div class="vm-stat">
+                    <div class="vm-stat-number">11.5<span style="font-size: 2rem;">K</span></div>
+                    <div class="vm-stat-label">Projects Completed</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Stats Section -->
+<section class="stats-opt-7">
+    <div class="wrapper-pills">
+        <div class="stat-item">
+            <span class="num" data-target="10" data-suffix="+">0+</span> Years
+        </div>
+        <div class="stat-item">
+            <span class="num" data-target="26">0</span> Team
+        </div>
+        <div class="stat-item">
+            <span class="num" data-target="40" data-suffix="+">0+</span> Clients
+        </div>
+        <div class="stat-item">
+            <span class="num" data-target="11.5" data-suffix="K">0K</span> Projects
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}

@@ -1,0 +1,414 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Service Variants V2 - Architectural Precision{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/service-variants.css' %}">
+<!-- Import Playfair Display for Accent Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap"
+    rel="stylesheet">
+<style>
+    /* Demo Header Enhancement */
+    .demo-header {
+        background: #1a1a1a;
+        color: white;
+        padding: 5rem 0;
+        text-align: center;
+        border-bottom: 1px solid #333;
+    }
+
+    .demo-header h1 {
+        font-family: "Playfair Display", serif;
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+        letter-spacing: -0.5px;
+    }
+
+    .demo-header p {
+        font-size: 1.1rem;
+        opacity: 0.6;
+        font-weight: 300;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+    }
+
+    .variant-label {
+        text-align: center;
+        margin: 0 auto 3rem;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1rem;
+    }
+
+    .variant-label::before,
+    .variant-label::after {
+        content: '';
+        height: 1px;
+        width: 50px;
+        background: #ddd;
+    }
+
+    .variant-label span {
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        font-size: 0.85rem;
+        color: #999;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+
+<!-- Page Global Header -->
+<div class="demo-header">
+    <div class="container">
+        <h1>Architectural Precision</h1>
+        <p>V2.0 Perfected Layouts</p>
+    </div>
+</div>
+
+<!-- VARIANT 1: THE PRECISION -->
+<section class="service-variant variant-1">
+    <div class="variant-label"><span>01. The Precision</span></div>
+    <div class="container">
+        <div class="section-header" style="text-align: center; margin-bottom: 4rem;">
+            <div style="width: 40px; height: 1px; background: var(--primary-color); margin: 0 auto 1.5rem;"></div>
+            <h2 class="section-title"
+                style="font-size: 2.25rem; margin-bottom: 1rem; font-weight: 700; letter-spacing: -1px; color: #111;">
+                Technical Accuracy</h2>
+            <p style="color: #666; max-width: 600px; margin: 0 auto;">Engineered for clarity and structural integrity.
+            </p>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M7,2H17A2,2 0 0,1 19,4V20A2,2 0 0,1 17,22H7A2,2 0 0,1 5,20V4A2,2 0 0,1 7,2M7,4V8H17V4H7M7,10V12H9V10H7M11,10V12H13V10H11M15,10V12H17V10H15M7,14V16H9V14H7M11,14V16H13V14H11M15,14V16H17V14H15M7,18V20H9V18H7M11,18V20H13V18H11M15,18V20H17V18H15Z" />
+                    </svg>
+                </div>
+                <h3>Quantity Take-Off</h3>
+                <ul class="service-list">
+                    <li>Countertop & Cabinet Estimation</li>
+                    <li>Flooring & Walls Take-Off</li>
+                    <li>Stone & Tile Calculation</li>
+                    <li>Door Frame Analysis</li>
+                </ul>
+                <a href="#" class="btn-read-more">
+                    View Specs
+                    <svg viewBox="0 0 24 24">
+                        <path d="M5,12H19M12,5L19,12L12,19" fill="none" stroke="currentColor" stroke-width="2" />
+                    </svg>
+                </a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M4,2H20A2,2 0 0,1 22,4V20A2,2 0 0,1 20,22H4A2,2 0 0,1 2,20V4A2,2 0 0,1 4,2M4,4V11H20V4H4M4,13V20H11V13H4M13,13V20H20V13H13M15,15H18V18H15V15Z" />
+                    </svg>
+                </div>
+                <h3>Cabinetry Design</h3>
+                <ul class="service-list">
+                    <li>Design 2020 & Cabinet Vision</li>
+                    <li>Shop Drawing Generation</li>
+                    <li>CNC Preparation</li>
+                </ul>
+                <a href="#" class="btn-read-more">
+                    View Specs
+                    <svg viewBox="0 0 24 24">
+                        <path d="M5,12H19M12,5L19,12L12,19" fill="none" stroke="currentColor" stroke-width="2" />
+                    </svg>
+                </a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M12,6A6,6 0 0,0 6,12A6,6 0 0,0 12,18A6,6 0 0,0 18,12A6,6 0 0,0 12,6M12,8L14,11H13V16H11V11H10L12,8Z" />
+                    </svg>
+                </div>
+                <h3>CAD Drafting</h3>
+                <ul class="service-list">
+                    <li>Architectural Plans</li>
+                    <li>Construction Documents</li>
+                    <li>MEP Systems</li>
+                </ul>
+                <a href="#" class="btn-read-more">
+                    View Specs
+                    <svg viewBox="0 0 24 24">
+                        <path d="M5,12H19M12,5L19,12L12,19" fill="none" stroke="currentColor" stroke-width="2" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- VARIANT 2: THE STUDIO -->
+<section class="service-variant variant-2">
+    <div class="variant-label"><span>02. The Studio</span></div>
+    <div class="container">
+        <div class="section-header" style="text-align: left;">
+            <h2 class="section-title"
+                style="font-size: 2.5rem; font-weight: 800; text-transform: uppercase; color: #111;">Studio Services
+            </h2>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="card-content">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M7,2H17A2,2 0 0,1 19,4V20A2,2 0 0,1 17,22H7A2,2 0 0,1 5,20V4A2,2 0 0,1 7,2M7,4V8H17V4H7M7,10V12H9V10H7M11,10V12H13V10H11M15,10V12H17V10H15M7,14V16H9V14H7M11,14V16H13V14H11M15,14V16H17V14H15M7,18V20H9V18H7M11,18V20H13V18H11M15,18V20H17V18H15Z" />
+                        </svg>
+                    </div>
+                    <h3>Estimation</h3>
+                    <ul class="service-list">
+                        <li>Precise Material Counts</li>
+                        <li>Budget Analysis</li>
+                        <li>Vendor Coordination</li>
+                    </ul>
+                </div>
+                <a href="#" class="btn-read-more">Consult</a>
+            </div>
+
+            <div class="service-card">
+                <div class="card-content">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M4,2H20A2,2 0 0,1 22,4V20A2,2 0 0,1 20,22H4A2,2 0 0,1 2,20V4A2,2 0 0,1 4,2M4,4V11H20V4H4M4,13V20H11V13H4M13,13V20H20V13H13M15,15H18V18H15V15Z" />
+                        </svg>
+                    </div>
+                    <h3>Millwork</h3>
+                    <ul class="service-list">
+                        <li>Custom Fabrication Plans</li>
+                        <li>Material Optimization</li>
+                        <li>Installation Guides</li>
+                    </ul>
+                </div>
+                <a href="#" class="btn-read-more">Consult</a>
+            </div>
+
+            <div class="service-card">
+                <div class="card-content">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M12,6A6,6 0 0,0 6,12A6,6 0 0,0 12,18A6,6 0 0,0 18,12A6,6 0 0,0 12,6M12,8L14,11H13V16H11V11H10L12,8Z" />
+                        </svg>
+                    </div>
+                    <h3>Drafting</h3>
+                    <ul class="service-list">
+                        <li>Full Set Documentation</li>
+                        <li>Permit Expediting</li>
+                        <li>As-Built Surveys</li>
+                    </ul>
+                </div>
+                <a href="#" class="btn-read-more">Consult</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- VARIANT 3: THE FOCUS -->
+<section class="service-variant variant-3">
+    <div class="variant-label"><span>03. The Focus</span></div>
+    <div class="container">
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-header">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M7,2H17A2,2 0 0,1 19,4V20A2,2 0 0,1 17,22H7A2,2 0 0,1 5,20V4A2,2 0 0,1 7,2M7,4V8H17V4H7M7,10V12H9V10H7M11,10V12H13V10H11M15,10V12H17V10H15M7,14V16H9V14H7M11,14V16H13V14H11M15,14V16H17V14H15M7,18V20H9V18H7M11,18V20H13V18H11M15,18V20H17V18H15Z" />
+                        </svg>
+                    </div>
+                    <h3>Quantity<br>Take-Off</h3>
+                </div>
+                <ul class="service-list">
+                    <li>Countertop Estimation</li>
+                    <li>Flooring Take-Off</li>
+                    <li>Stone Calculation</li>
+                </ul>
+                <a href="#" class="btn-read-more">More</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-header">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M4,2H20A2,2 0 0,1 22,4V20A2,2 0 0,1 20,22H4A2,2 0 0,1 2,20V4A2,2 0 0,1 4,2M4,4V11H20V4H4M4,13V20H11V13H4M13,13V20H20V13H13M15,15H18V18H15V15Z" />
+                        </svg>
+                    </div>
+                    <h3>Cabinetry<br>Design</h3>
+                </div>
+                <ul class="service-list">
+                    <li>Cabinet Vision</li>
+                    <li>Shop Drawings</li>
+                    <li>CNC Ready</li>
+                </ul>
+                <a href="#" class="btn-read-more">More</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-header">
+                    <div class="service-icon">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M12,6A6,6 0 0,0 6,12A6,6 0 0,0 12,18A6,6 0 0,0 18,12A6,6 0 0,0 12,6M12,8L14,11H13V16H11V11H10L12,8Z" />
+                        </svg>
+                    </div>
+                    <h3>CAD<br>Drafting</h3>
+                </div>
+                <ul class="service-list">
+                    <li>Floor Plans</li>
+                    <li>Permit Sets</li>
+                    <li>Conversion</li>
+                </ul>
+                <a href="#" class="btn-read-more">More</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- VARIANT 4: THE ELEVATION -->
+<section class="service-variant variant-4">
+    <div class="variant-label"><span>04. The Elevation</span></div>
+    <div class="container">
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M7,2H17A2,2 0 0,1 19,4V20A2,2 0 0,1 17,22H7A2,2 0 0,1 5,20V4A2,2 0 0,1 7,2M7,4V8H17V4H7M7,10V12H9V10H7M11,10V12H13V10H11M15,10V12H17V10H15M7,14V16H9V14H7M11,14V16H13V14H11M15,14V16H17V14H15M7,18V20H9V18H7M11,18V20H13V18H11M15,18V20H17V18H15Z" />
+                    </svg>
+                </div>
+                <h3>Estimation</h3>
+                <ul class="service-list">
+                    <li>Accurate Counts</li>
+                    <li>Detailed Reports</li>
+                    <li>Material Lists</li>
+                </ul>
+                <a href="#" class="btn-read-more">Details</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M4,2H20A2,2 0 0,1 22,4V20A2,2 0 0,1 20,22H4A2,2 0 0,1 2,20V4A2,2 0 0,1 4,2M4,4V11H20V4H4M4,13V20H11V13H4M13,13V20H20V13H13M15,15H18V18H15V15Z" />
+                    </svg>
+                </div>
+                <h3>Millwork</h3>
+                <ul class="service-list">
+                    <li>Custom Design</li>
+                    <li>Fabrication</li>
+                    <li>Installation</li>
+                </ul>
+                <a href="#" class="btn-read-more">Details</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M12,6A6,6 0 0,0 6,12A6,6 0 0,0 12,18A6,6 0 0,0 18,12A6,6 0 0,0 12,6M12,8L14,11H13V16H11V11H10L12,8Z" />
+                    </svg>
+                </div>
+                <h3>Drafting</h3>
+                <ul class="service-list">
+                    <li>2D Plans</li>
+                    <li>3D Models</li>
+                    <li>Permits</li>
+                </ul>
+                <a href="#" class="btn-read-more">Details</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- VARIANT 5: THE DARKROOM -->
+<section class="service-variant variant-5">
+    <div class="variant-label"><span style="color: #666;">05. The Darkroom</span></div>
+    <div class="container">
+        <div class="section-header" style="text-align: center; margin-bottom: 5rem;">
+            <p style="text-transform: uppercase; letter-spacing: 3px; font-size: 0.8rem; margin-bottom: 1rem;">Exclusive
+            </p>
+            <h2 class="section-title"
+                style="font-family: 'Playfair Display', serif; font-size: 3rem; font-style: italic;">Designed for
+                Architects</h2>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M7,2H17A2,2 0 0,1 19,4V20A2,2 0 0,1 17,22H7A2,2 0 0,1 5,20V4A2,2 0 0,1 7,2M7,4V8H17V4H7M7,10V12H9V10H7M11,10V12H13V10H11M15,10V12H17V10H15M7,14V16H9V14H7M11,14V16H13V14H11M15,14V16H17V14H15M7,18V20H9V18H7M11,18V20H13V18H11M15,18V20H17V18H15Z" />
+                    </svg>
+                </div>
+                <h3>Estimation</h3>
+                <ul class="service-list">
+                    <li>Material & Cost</li>
+                    <li>Stone Calculation</li>
+                    <li>Detailed Reports</li>
+                </ul>
+                <a href="#" class="btn-read-more">Discover</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M4,2H20A2,2 0 0,1 22,4V20A2,2 0 0,1 20,22H4A2,2 0 0,1 2,20V4A2,2 0 0,1 4,2M4,4V11H20V4H4M4,13V20H11V13H4M13,13V20H20V13H13M15,15H18V18H15V15Z" />
+                    </svg>
+                </div>
+                <h3>Millwork</h3>
+                <ul class="service-list">
+                    <li>Cabinet Vision</li>
+                    <li>Shop Drawings</li>
+                    <li>CNC Plans</li>
+                </ul>
+                <a href="#" class="btn-read-more">Discover</a>
+            </div>
+
+            <div class="service-card">
+                <div class="service-icon">
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M12,6A6,6 0 0,0 6,12A6,6 0 0,0 12,18A6,6 0 0,0 18,12A6,6 0 0,0 12,6M12,8L14,11H13V16H11V11H10L12,8Z" />
+                    </svg>
+                </div>
+                <h3>Drafting</h3>
+                <ul class="service-list">
+                    <li>2D & 3D Plans</li>
+                    <li>Permit Sets</li>
+                    <li>MEP Systems</li>
+                </ul>
+                <a href="#" class="btn-read-more">Discover</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Back to Home -->
+<section style="padding: 4rem 0; background: #fff; text-align: center; border-top: 1px solid #eee;">
+    <div class="container">
+        <a href="{% url 'home' %}"
+            style="display: inline-block; padding: 1rem 3rem; background: #111; color: white; text-decoration: none; text-transform: uppercase; font-weight: 600; letter-spacing: 1px; transition: all 0.3s ease;">Return
+            to Home</a>
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,697 @@
+/* =========================================
+   SERVICE DETAIL VARIANTS CSS
+   ========================================= */
+
+/* General Wrapper Styles */
+.layout-wrapper {
+    padding: 80px 0;
+    border-bottom: 2px solid #ddd;
+    position: relative;
+    background: #fff;
+    overflow: hidden;
+}
+
+.layout-label {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 0.8rem;
+    font-family: monospace;
+    background: #000;
+    color: #fff;
+    padding: 4px 10px;
+    z-index: 100;
+}
+
+/* Nav Jump Links */
+.variants-nav {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: white;
+    padding: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.variants-nav span {
+    font-weight: bold;
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+}
+
+.variants-nav a {
+    text-decoration: none;
+    color: #333;
+    font-size: 0.85rem;
+}
+
+.variants-nav a:hover {
+    color: #2c5f7c;
+}
+
+
+/* =========================================
+   1. CLASSIC SIDEBAR (.layout-sidebar)
+   ========================================= */
+.layout-sidebar .ls-hero {
+    background: #f4f6f8;
+    padding: 80px 0 60px;
+    border-bottom: 1px solid #e1e1e1;
+}
+
+.layout-sidebar h1 {
+    font-family: 'Outfit', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #111;
+}
+
+.layout-sidebar .ls-lead {
+    font-size: 1.2rem;
+    color: #555;
+    max-width: 800px;
+}
+
+.ls-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 60px;
+    padding-top: 60px;
+}
+
+.ls-block {
+    margin-bottom: 50px;
+}
+
+.ls-block h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #2c5f7c;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.ls-block p {
+    line-height: 1.8;
+    color: #444;
+}
+
+.ls-step {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    align-items: flex-start;
+}
+
+.ls-step-num {
+    background: #2c5f7c;
+    color: white;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.ls-sidebar {
+    position: sticky;
+    top: 100px;
+}
+
+.ls-widget {
+    background: #f9f9f9;
+    padding: 25px;
+    margin-bottom: 30px;
+    border-radius: 6px;
+}
+
+.ls-widget-primary {
+    background: #fff;
+    border: 1px solid #eee;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.ls-widget h3 {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #222;
+}
+
+.ls-widget ul {
+    list-style: none;
+    padding: 0;
+}
+
+.ls-widget li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.ls-tag {
+    display: inline-block;
+    background: #e0e7ec;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    margin: 0 5px 5px 0;
+    color: #333;
+}
+
+.btn-sidebar {
+    display: block;
+    text-align: center;
+    background: #2c5f7c;
+    color: white;
+    padding: 12px;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+
+/* =========================================
+   2. MODERN SPLIT (.layout-split)
+   ========================================= */
+.layout-split {
+    padding: 0;
+    height: 100vh;
+    overflow: visible;
+}
+
+.split-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: stretch;
+    min-height: 100vh;
+}
+
+.split-left {
+    flex: 1;
+    background: #1a3a4c;
+    color: white;
+    padding: 80px 60px;
+    display: flex;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+}
+
+.split-right {
+    flex: 1;
+    background: white;
+    padding: 80px 60px;
+    overflow-y: auto;
+}
+
+.split-eyebrow {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    opacity: 0.7;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.split-left h1 {
+    font-size: 3.5rem;
+    line-height: 1.1;
+    margin-bottom: 30px;
+    font-family: 'Playfair Display', serif;
+}
+
+.split-left p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin-bottom: 40px;
+    line-height: 1.6;
+    max-width: 500px;
+}
+
+.btn-split {
+    display: inline-block;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 15px 30px;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 0.8rem;
+    transition: all 0.3s;
+}
+
+.btn-split:hover {
+    background: white;
+    color: #1a3a4c;
+}
+
+.split-section {
+    margin-bottom: 60px;
+}
+
+.split-section h3 {
+    font-size: 1.5rem;
+    margin-bottom: 25px;
+    color: #1a3a4c;
+    border-left: 4px solid #1a3a4c;
+    padding-left: 15px;
+}
+
+.split-text-lg {
+    font-size: 1.3rem;
+    line-height: 1.7;
+    color: #444;
+    font-family: 'Playfair Display', serif;
+}
+
+.split-list-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    padding: 0;
+    list-style: none;
+}
+
+.split-list-grid li {
+    background: #f4f6f8;
+    padding: 15px;
+    font-weight: 500;
+    color: #333;
+}
+
+.sb-card {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.sb-check {
+    color: #2c5f7c;
+}
+
+
+/* =========================================
+   3. FEATURE GRID (.layout-grid)
+   ========================================= */
+.layout-grid {
+    background: #fdfdfd;
+}
+
+.lg-header {
+    text-align: center;
+    margin-bottom: 60px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.lg-header h1 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    color: #111;
+    font-weight: 800;
+}
+
+.lg-header p {
+    font-size: 1.1rem;
+    color: #666;
+}
+
+.lg-dashboard {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.lg-card {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border: 1px solid #f0f0f0;
+}
+
+.lg-span-2 {
+    grid-column: span 2;
+}
+
+.lg-span-3 {
+    grid-column: span 3;
+}
+
+.lg-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: #888;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.lg-pill-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.lg-pill {
+    background: #eef2f5;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: #333;
+    font-weight: 500;
+}
+
+.lg-check-list {
+    list-style: none;
+    padding: 0;
+}
+
+.lg-check-list li {
+    margin-bottom: 12px;
+    padding-left: 20px;
+    position: relative;
+    color: #555;
+}
+
+.lg-check-list li::before {
+    content: '•';
+    color: #2c5f7c;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 1.2rem;
+    line-height: 1;
+}
+
+.lg-timeline {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    padding-top: 20px;
+}
+
+.lg-timeline::before {
+    content: '';
+    position: absolute;
+    top: 25px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: #eee;
+    z-index: 0;
+}
+
+.lg-t-step {
+    position: relative;
+    z-index: 1;
+    width: 23%;
+}
+
+.lg-t-dot {
+    width: 12px;
+    height: 12px;
+    background: white;
+    border: 3px solid #2c5f7c;
+    border-radius: 50%;
+    margin-bottom: 15px;
+    box-shadow: 0 0 0 5px white;
+}
+
+.lg-t-content {
+    font-size: 0.9rem;
+    color: #444;
+    background: #fff;
+    padding: 10px;
+    border: 1px solid #eee;
+    border-radius: 6px;
+}
+
+
+/* =========================================
+   4. MINIMAL READER (.layout-minimal)
+   ========================================= */
+.layout-minimal .lm-container {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.lm-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.lm-header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    margin-bottom: 10px;
+    color: #111;
+    letter-spacing: -1px;
+}
+
+.lm-subtitle {
+    font-family: 'Space Mono', monospace;
+    color: #999;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 2px;
+}
+
+.lm-body {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #333;
+    font-family: 'Georgia', serif;
+}
+
+.lm-lead {
+    font-size: 1.4rem;
+    font-style: italic;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+.lm-divider {
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 40px 0;
+    width: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.lm-list {
+    padding-left: 20px;
+    color: #444;
+}
+
+.lm-list li {
+    margin-bottom: 10px;
+}
+
+.lm-inline-list {
+    color: #666;
+    font-size: 0.95rem;
+    font-family: 'Inter', sans-serif;
+}
+
+.lm-action {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.btn-minimal {
+    border-bottom: 2px solid #111;
+    color: #111;
+    text-decoration: none;
+    padding-bottom: 5px;
+    font-family: 'Inter', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.btn-minimal:hover {
+    color: #666;
+    border-color: #666;
+}
+
+
+/* =========================================
+   5. TECHNICAL DARK (.layout-technical)
+   ========================================= */
+.layout-technical {
+    background: #111;
+    color: #fff;
+    font-family: 'Space Mono', monospace;
+}
+
+.lt-frame {
+    border: 1px solid #333;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2px;
+    background: #1a1a1a;
+}
+
+.lt-header-bar {
+    background: #000;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #333;
+    margin-bottom: 2px;
+}
+
+.lt-code {
+    color: #666;
+}
+
+.lt-name {
+    color: #fff;
+    font-weight: bold;
+}
+
+.lt-status {
+    color: #0f0;
+}
+
+.lt-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2px;
+}
+
+.lt-col-main {
+    background: #111;
+    padding: 40px;
+    border: 1px solid #333;
+}
+
+.lt-col-side {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.lt-panel {
+    background: #161616;
+    padding: 20px;
+    flex-grow: 1;
+    border: 1px solid #333;
+}
+
+.lt-title {
+    font-size: 1.8rem;
+    border-bottom: 1px dashed #444;
+    padding-bottom: 20px;
+    margin-bottom: 30px;
+    letter-spacing: -1px;
+}
+
+.lt-label {
+    display: block;
+    font-size: 0.7rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.lt-text {
+    font-size: 0.9rem;
+    color: #aaa;
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.lt-list {
+    list-style: none;
+    padding: 0;
+    color: #ccc;
+    font-size: 0.85rem;
+}
+
+.lt-list li {
+    margin-bottom: 8px;
+}
+
+.lt-params {
+    list-style: none;
+    padding: 0;
+    font-size: 0.8rem;
+    color: #2c5f7c;
+}
+
+.lt-params li {
+    margin-bottom: 8px;
+    border-bottom: 1px solid #222;
+    padding-bottom: 4px;
+}
+
+.lt-actions {
+    padding: 20px;
+    background: #000;
+    border: 1px solid #333;
+    display: flex;
+    gap: 10px;
+}
+
+.btn-tech {
+    background: #2c5f7c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-family: 'Space Mono', monospace;
+    cursor: pointer;
+    flex: 1;
+}
+
+.btn-tech-outline {
+    background: transparent;
+    color: #2c5f7c;
+    border: 1px solid #2c5f7c;
+    padding: 10px 20px;
+    font-family: 'Space Mono', monospace;
+    cursor: pointer;
+    flex: 1;
+}
+
+.btn-tech:hover {
+    background: #0f0;
+    color: black;
+}
+
+/* Responsive adjustments */
+@media (max-width: 900px) {
+
+    .ls-container,
+    .split-container,
+    .lg-dashboard,
+    .lt-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .split-left {
+        height: auto;
+        position: relative;
+        padding: 60px 40px;
+    }
+
+    .split-right {
+        height: auto;
+    }
+}
