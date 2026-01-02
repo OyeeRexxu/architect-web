@@ -20,6 +20,38 @@
     .ls-sidebar {
         top: 120px;
     }
+
+    /* Back to Services Link */
+    .back-to-services-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 30px;
+        margin-bottom: 20px;
+        padding: 0;
+        background: transparent;
+        border: none;
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 0.95rem;
+        transition: all 0.3s ease;
+        opacity: 0.9;
+    }
+
+    .back-to-services-link:hover {
+        opacity: 1;
+        transform: translateX(-5px);
+    }
+
+    .back-to-services-link i {
+        font-size: 0.9rem;
+        transition: transform 0.3s ease;
+    }
+
+    .back-to-services-link:hover i {
+        transform: translateX(-3px);
+    }
 </style>
 {% endblock %}
 
@@ -28,9 +60,10 @@
     <div class="ls-hero"
         style="{% if service.image %}background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('{% static 'images/' %}{{ service.image }}'); background-size: cover; background-position: center; color: white;{% endif %}">
         <div class="container">
-            <a href="{% url 'home' %}#services"
-                style="display:inline-block; margin-bottom: 20px; color: {% if service.image %}#ddd{% else %}#666{% endif %}; text-decoration: none;">←
-                Back to Services</a>
+            <a href="{% url 'home' %}#services" class="back-to-services-link">
+                <i class="fa-solid fa-arrow-left"></i>
+                Back to Services
+            </a>
             <h1 style="{% if service.image %}color: white;{% endif %}">{{ service.title }}</h1>
             <p class="ls-lead" style="{% if service.image %}color: #eee;{% endif %}">{{ service.subtitle }}</p>
         </div>

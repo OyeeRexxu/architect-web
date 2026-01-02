@@ -1,0 +1,509 @@
+/* ===================================
+   CONTACT PAGE ENHANCEMENTS
+   =================================== */
+
+/* Response Time Promise Section */
+.response-time-section {
+    padding: var(--spacing-lg) 0;
+    background: linear-gradient(135deg, rgba(44, 95, 124, 0.05) 0%, rgba(74, 138, 173, 0.05) 100%);
+}
+
+.response-promise-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    padding: 2rem 3rem;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 8px 24px rgba(44, 95, 124, 0.1);
+    gap: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.response-promise-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 100%;
+    background: var(--gradient-primary);
+}
+
+.promise-icon {
+    flex-shrink: 0;
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, rgba(44, 95, 124, 0.1) 0%, rgba(74, 138, 173, 0.1) 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+}
+
+.promise-content {
+    flex: 1;
+}
+
+.promise-content h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.promise-content p {
+    font-size: 1rem;
+    color: var(--text-light);
+    margin: 0;
+}
+
+.promise-badge {
+    flex-shrink: 0;
+    color: #FFB800;
+}
+
+/* File Upload Section */
+.file-upload-section {
+    padding: var(--spacing-xl) 0;
+    background: white;
+}
+
+.file-upload-section .section-header {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.file-upload-section h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.file-upload-section .section-header p {
+    font-size: 1.125rem;
+    color: var(--text-light);
+}
+
+.upload-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.upload-area {
+    border: 2px dashed rgba(44, 95, 124, 0.3);
+    border-radius: var(--radius-lg);
+    padding: 3rem 2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    background: #FAFBFC;
+}
+
+.upload-area:hover,
+.upload-area.drag-over {
+    border-color: var(--primary-color);
+    background: rgba(44, 95, 124, 0.05);
+    transform: translateY(-2px);
+}
+
+.upload-area svg {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.upload-area h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.upload-area p {
+    color: var(--text-light);
+    margin-bottom: 1rem;
+}
+
+.file-types {
+    font-size: 0.875rem;
+    color: var(--text-light);
+    margin-top: 1rem;
+}
+
+.file-list {
+    margin-top: 1.5rem;
+}
+
+.file-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    background: white;
+    border: 1px solid #E5E7EB;
+    border-radius: var(--radius-md);
+    margin-bottom: 0.75rem;
+}
+
+.file-item-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.file-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(44, 95, 124, 0.1);
+    border-radius: var(--radius-sm);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+}
+
+.file-remove {
+    background: none;
+    border: none;
+    color: #EF4444;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: var(--radius-sm);
+    transition: background var(--transition-base);
+}
+
+.file-remove:hover {
+    background: rgba(239, 68, 68, 0.1);
+}
+
+/* Compact File Upload (Inline in Form) */
+.compact-upload-area {
+    border: 2px dashed rgba(44, 95, 124, 0.3);
+    border-radius: var(--radius-md);
+    padding: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all var(--transition-base);
+    background: #FAFBFC;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.compact-upload-area:hover {
+    border-color: var(--primary-color);
+    background: rgba(44, 95, 124, 0.05);
+}
+
+.compact-upload-area svg {
+    color: var(--primary-color);
+}
+
+.compact-upload-area span {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--text-dark);
+}
+
+.compact-upload-area small {
+    font-size: 0.8125rem;
+    color: var(--text-light);
+}
+
+.compact-file-list {
+    margin-top: 1rem;
+}
+
+/* Alternative Contact Methods (Inline) */
+.alternative-contact-inline {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 2px solid #E5E7EB;
+}
+
+.alternative-contact-inline h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.contact-methods-inline {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.contact-method-inline {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 1rem;
+    background: white;
+    border: 2px solid #E5E7EB;
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    transition: all var(--transition-base);
+}
+
+.contact-method-inline:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(44, 95, 124, 0.12);
+}
+
+.contact-method-inline.whatsapp {
+    border-color: #25D366;
+}
+
+.contact-method-inline.whatsapp:hover {
+    background: rgba(37, 211, 102, 0.05);
+}
+
+.contact-method-inline.whatsapp svg {
+    color: #25D366;
+}
+
+.contact-method-inline.phone svg,
+.contact-method-inline.email svg {
+    color: var(--primary-color);
+}
+
+.contact-method-inline span {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--text-dark);
+}
+
+/* File Upload Section */
+.alternative-contact-section {
+    padding: var(--spacing-xl) 0;
+    background: linear-gradient(to bottom, white 0%, #FAF8F5 100%);
+}
+
+.alternative-contact-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: var(--spacing-lg);
+}
+
+.contact-methods-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.contact-method-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem;
+    background: white;
+    border-radius: var(--radius-lg);
+    border: 2px solid #E5E7EB;
+    text-decoration: none;
+    transition: all var(--transition-base);
+}
+
+.contact-method-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 32px rgba(44, 95, 124, 0.15);
+    border-color: var(--primary-color);
+}
+
+.contact-method-card.whatsapp {
+    border-color: #25D366;
+}
+
+.contact-method-card.whatsapp:hover {
+    background: linear-gradient(135deg, rgba(37, 211, 102, 0.05) 0%, rgba(37, 211, 102, 0.1) 100%);
+    border-color: #25D366;
+}
+
+.contact-method-card.whatsapp svg {
+    color: #25D366;
+}
+
+.contact-method-card.phone svg {
+    color: var(--primary-color);
+}
+
+.contact-method-card.email svg {
+    color: var(--primary-color);
+}
+
+.contact-method-card h4 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin: 0;
+}
+
+.contact-method-card p {
+    font-size: 0.9375rem;
+    color: var(--text-light);
+    margin: 0;
+}
+
+/* FAQ Section */
+.faq-section {
+    padding: var(--spacing-xl) 0;
+    background: white;
+}
+
+.faq-section .section-header {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+}
+
+.faq-section h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+.faq-section .section-header p {
+    font-size: 1.125rem;
+    color: var(--text-light);
+}
+
+.faq-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.faq-item {
+    margin-bottom: 1rem;
+    border: 1px solid #E5E7EB;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    background: white;
+    transition: all var(--transition-base);
+}
+
+.faq-item:hover {
+    box-shadow: 0 4px 12px rgba(44, 95, 124, 0.1);
+}
+
+.faq-question {
+    width: 100%;
+    padding: 1.25rem 1.5rem;
+    background: white;
+    border: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    text-align: left;
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: var(--text-dark);
+    transition: all var(--transition-base);
+}
+
+.faq-question:hover {
+    background: #FAFBFC;
+}
+
+.faq-question svg {
+    flex-shrink: 0;
+    color: var(--primary-color);
+    transition: transform var(--transition-base);
+}
+
+.faq-item.active .faq-question svg {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    padding: 0 1.5rem;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 500px;
+    padding: 0 1.5rem 1.25rem 1.5rem;
+}
+
+.faq-answer p {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--text-light);
+    margin: 0;
+}
+
+/* Map Section */
+.map-section {
+    padding: var(--spacing-xl) 0;
+    background: #FAF8F5;
+}
+
+.map-section h2 {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: var(--spacing-lg);
+}
+
+.map-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(44, 95, 124, 0.15);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .response-promise-card {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem;
+    }
+
+    .response-promise-card::before {
+        width: 100%;
+        height: 5px;
+    }
+
+    .contact-methods-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-methods-inline {
+        grid-template-columns: 1fr;
+    }
+
+    .upload-area {
+        padding: 2rem 1rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .faq-question {
+        font-size: 1rem;
+        padding: 1rem;
+    }
+
+    .faq-answer {
+        padding: 0 1rem;
+    }
+
+    .faq-item.active .faq-answer {
+        padding: 0 1rem 1rem 1rem;
+    }
+}

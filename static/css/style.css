@@ -279,6 +279,125 @@ img {
     display: none !important;
 }
 
+/* ===================================
+   HAMBURGER MENU (MOBILE)
+   =================================== */
+
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 8px;
+    background: transparent;
+    border: none;
+    z-index: 1001;
+}
+
+.hamburger-menu span {
+    width: 25px;
+    height: 3px;
+    background: var(--text-dark);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.hamburger-menu.active span:nth-child(1) {
+    transform: rotate(45deg) translate(7px, 7px);
+}
+
+.hamburger-menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger-menu.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Mobile Menu Overlay */
+.mobile-menu-overlay {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 280px;
+    height: 100vh;
+    background: white;
+    box-shadow: 2px 0 20px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+    transition: left 0.3s ease;
+    padding-top: 80px;
+    overflow-y: auto;
+}
+
+.mobile-menu-overlay.active {
+    left: 0;
+}
+
+.mobile-nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    list-style: none;
+    padding: 20px 0;
+}
+
+.mobile-nav-links li {
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.mobile-nav-links a {
+    display: block;
+    padding: 15px 30px;
+    color: var(--text-dark);
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.mobile-nav-links a:hover {
+    background: var(--bg-cream);
+    padding-left: 40px;
+    color: var(--primary-color);
+}
+
+/* Mobile Dropdown */
+.mobile-nav-dropdown {
+    position: relative;
+}
+
+.mobile-dropdown-toggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    cursor: pointer;
+}
+
+.mobile-dropdown-menu {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background: #f8f9fa;
+}
+
+.mobile-nav-dropdown.active .mobile-dropdown-menu {
+    max-height: 500px;
+}
+
+.mobile-dropdown-menu a {
+    padding: 12px 30px 12px 50px;
+    font-size: 0.95rem;
+}
+
+.mobile-menu-cta {
+    padding: 20px 30px;
+    margin-top: 20px;
+}
+
+.mobile-menu-cta .btn-primary {
+    width: 100%;
+    text-align: center;
+}
+
 .nav-links a {
     color: var(--text-dark);
     font-weight: 500;
@@ -1081,6 +1200,20 @@ img {
    =================================== */
 
 @media (max-width: 768px) {
+
+    /* Show hamburger, hide desktop nav and button */
+    .hamburger-menu {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .navbar .btn-primary {
+        display: none;
+    }
+
     .hero-content {
         grid-template-columns: 1fr;
         text-align: center;
@@ -1093,10 +1226,6 @@ img {
     .hero-circle {
         width: 300px;
         height: 300px;
-    }
-
-    .nav-links {
-        display: none;
     }
 
     .stats-grid {

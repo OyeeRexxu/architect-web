@@ -60,9 +60,39 @@
                 <li><a href="{% url 'contact' %}">Contact</a></li>
             </ul>
 
+            <!-- Hamburger Menu Button (Mobile) -->
+            <button class="hamburger-menu" id="hamburger-btn" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
             <a href="{% url 'contact' %}" class="btn-primary">Get Started</a>
         </div>
     </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-menu-overlay" id="mobile-menu">
+        <ul class="mobile-nav-links">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'about' %}">About</a></li>
+            <li class="mobile-nav-dropdown">
+                <div class="mobile-dropdown-toggle" id="mobile-services-toggle">
+                    <span>Services</span>
+                    <i class="fa-solid fa-chevron-down dropdown-arrow"></i>
+                </div>
+                <div class="mobile-dropdown-menu">
+                    {% for service in global_services %}
+                    <a href="{% url 'service_detail' service.slug %}">{{ service.title }}</a>
+                    {% endfor %}
+                </div>
+            </li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+        </ul>
+        <div class="mobile-menu-cta">
+            <a href="{% url 'contact' %}" class="btn-primary">Get Started</a>
+        </div>
+    </div>
 
     <!-- Main Content -->
     <main>
@@ -104,7 +134,7 @@
                 <!-- Navigation -->
                 <div class="footer-col-executive">
                     <div class="footer-header">Navigate</div>
-                    <a href="{% url 'home' %}" class="footer-link">The Studio</a>
+                    <a href="{% url 'home' %}" class="footer-link">Home</a>
                     <a href="{% url 'about' %}" class="footer-link">About</a>
                     <a href="{% url 'contact' %}" class="footer-link">Contact</a>
                 </div>
@@ -144,6 +174,7 @@
 
         <script>
             document.addEventListener('DOMContentLoaded', function () {
+                // Desktop dropdown toggle
                 const dropdown = document.querySelector('.nav-dropdown');
                 const toggle = document.querySelector('.dropdown-toggle');
 
@@ -158,6 +189,39 @@
                         if (!dropdown.contains(e.target)) {
                             dropdown.classList.remove('active');
                         }
+                    });
+                }
+
+                // Mobile menu toggle
+                const hamburger = document.getElementById('hamburger-btn');
+                const mobileMenu = document.getElementById('mobile-menu');
+                const mobileServicesToggle = document.getElementById('mobile-services-toggle');
+                const mobileDropdown = document.querySelector('.mobile-nav-dropdown');
+
+                if (hamburger && mobileMenu) {
+                    hamburger.addEventListener('click', function () {
+                        hamburger.classList.toggle('active');
+                        mobileMenu.classList.toggle('active');
+                        // Prevent body scroll when menu is open
+                        document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+                    });
+
+                    // Close mobile menu when clicking on a link
+                    const mobileLinks = mobileMenu.querySelectorAll('a');
+                    mobileLinks.forEach(link => {
+                        link.addEventListener('click', function () {
+                            hamburger.classList.remove('active');
+                            mobileMenu.classList.remove('active');
+                            document.body.style.overflow = '';
+                        });
+                    });
+                }
+
+                // Mobile services dropdown
+                if (mobileServicesToggle && mobileDropdown) {
+                    mobileServicesToggle.addEventListener('click', function (e) {
+                        e.stopPropagation();
+                        mobileDropdown.classList.toggle('active');
                     });
                 }
             });
