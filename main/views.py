@@ -13,7 +13,6 @@ def home(request):
         ],
         'services': services
     }
-    services = Service.objects.all()
     context = {
         'stats': [
             {'number': '500+', 'label': 'Projects'},
