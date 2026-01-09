@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.conf import settings
 from .models import Service
+import os
 
 def home(request):
     """Home page view with hero section, services, and statistics"""
@@ -100,3 +102,45 @@ def footer_variants(request):
         'services': services
     }
     return render(request, 'footer_variants.html', context)
+
+def demo_service(request):
+    """Demo service page"""
+    return render(request, 'demo_service.html')
+
+def backup_files(request):
+    """Display list of all backup template files and variant page links"""
+    backup_dir = os.path.join(settings.BASE_DIR, 'templates', 'backup')
+    backup_files = []
+    
+    if os.path.exists(backup_dir):
+        for filename in os.listdir(backup_dir):
+            if filename.endswith('.html'):
+                filepath = os.path.join(backup_dir, filename)
+                file_stat = os.stat(filepath)
+                backup_files.append({
+                    'name': filename,
+                    'display_name': filename.replace('_', ' ').replace('.html', '').title(),
+                    'size': f"{file_stat.st_size / 1024:.1f} KB",
+                    'path': f'backup/{filename}'
+                })
+    
+    # Variant page links
+    variant_pages = [
+        {'name': 'Design Variants', 'url': 'design_variants'},
+        {'name': 'Service Variants', 'url': 'service_variants'},
+        {'name': 'Service Variants Animated', 'url': 'service_variants_animated'},
+        {'name': 'Demo Service', 'url': 'demo_service'},
+        {'name': 'Service Detail Variants', 'url': 'service_detail_variants'},
+        {'name': 'Footer Variants', 'url': 'footer_variants'},
+        {'name': 'Hero Variants', 'url': 'hero_variants'},
+        {'name': 'Service Header Variants', 'url': 'service_header_variants'},
+        {'name': 'Software Variants', 'url': 'software_variants'},
+        {'name': 'About Intro Variants', 'url': 'about_intro_variants'},
+        {'name': 'Vertical Slice Variants', 'url': 'vertical_slice_variants'},
+    ]
+    
+    context = {
+        'backup_files': backup_files,
+        'variant_pages': variant_pages
+    }
+    return render(request, 'backup_list.html', context)

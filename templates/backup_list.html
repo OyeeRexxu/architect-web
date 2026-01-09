@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Backup Files - ConstructPro{% endblock %}
+
+{% block content %}
+<div style="background: linear-gradient(135deg, #1a3a4d 0%, #2c5f7c 100%); padding: 4rem 0 2rem;">
+    <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+        <h1 style="color: white; font-size: 2.5rem; margin-bottom: 0.5rem;">
+            <i class="fa-solid fa-archive" style="margin-right: 15px;"></i>Backup Files
+        </h1>
+        <p style="color: rgba(255,255,255,0.8); font-size: 1.1rem;">
+            View and manage all backed up template sections
+        </p>
+    </div>
+</div>
+
+<section style="padding: 3rem 0;">
+    <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+
+        <!-- Variant Pages Links -->
+        {% if variant_pages %}
+        <div
+            style="background: white; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.08); overflow: hidden; margin-top: 2rem;">
+            <div style="background: #f8f9fa; padding: 1.5rem; border-bottom: 2px solid #e9ecef;">
+                <h2 style="margin: 0; font-size: 1.5rem; color: #2c3e50;">
+                    <i class="fa-solid fa-palette" style="color: #2c5f7c; margin-right: 10px;"></i>
+                    Design & Variant Pages ({{ variant_pages|length }})
+                </h2>
+            </div>
+
+            <div
+                style="display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 1px; background: #e9ecef;">
+                {% for page in variant_pages %}
+                <a href="{% url page.url %}" target="_blank"
+                    style="background: white; padding: 1.5rem; text-decoration: none; transition: all 0.2s; display: flex; align-items: center; gap: 12px;"
+                    onmouseover="this.style.background='#f8f9fa'; this.style.transform='translateX(5px)'"
+                    onmouseout="this.style.background='white'; this.style.transform='translateX(0)'">
+                    <div
+                        style="background: #e3f2fd; color: #2c5f7c; width: 36px; height: 36px; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0;">
+                        <i class="fa-solid fa-swatchbook" style="font-size: 16px;"></i>
+                    </div>
+                    <div>
+                        <div style="color: #2c3e50; font-weight: 600; margin-bottom: 2px;">{{ page.name }}</div>
+                        <div style="color: #6c757d; font-size: 0.75rem;">View design options</div>
+                    </div>
+                    <i class="fa-solid fa-arrow-right" style="color: #cbd5e0; margin-left: auto;"></i>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+
+        <div style="margin-top: 2rem; text-align: center;">
+            <a href="{% url 'home' %}"
+                style="display: inline-flex; align-items: center; gap: 8px; color: #2c5f7c; text-decoration: none; font-weight: 600; padding: 12px 24px; border: 2px solid #2c5f7c; border-radius: 8px; transition: all 0.2s;"
+                onmouseover="this.style.background='#2c5f7c'; this.style.color='white'"
+                onmouseout="this.style.background='transparent'; this.style.color='#2c5f7c'">
+                <i class="fa-solid fa-arrow-left"></i>
+                Back to Home
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %}

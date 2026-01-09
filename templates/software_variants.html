@@ -1,0 +1,348 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{% static 'css/software_variants.css' %}">
+
+<div class="container" style="margin-top: 120px; margin-bottom: 50px; text-align: center;">
+    <h1>Software Variants: Professional Edition</h1>
+    <p>10 High-End Corporate & Architectural Layouts.</p>
+</div>
+
+<!-- 1. HONEYCOMB WALL (Gold) -->
+<section class="variant-section v1-bg">
+    <div class="sw-split-layout">
+        <div class="sw-text-side">
+            <span class="sw-label lbl-gold">Option 1</span>
+            <h2 class="text-white">Mastered <br><span style="color: var(--gold);">Software</span></h2>
+            <p style="color: #888;">Honeycomb Wall.</p>
+        </div>
+        <div class="sw-separator" style="background: var(--gold);"></div>
+        <div class="sw-content-side">
+            <div class="layout-wall">
+                <div class="wall-row">
+                    <div class="track-base animate-right">
+                        {% for i in "12" %}
+                        <div class="sw-item item-hex"><img src="{% static 'images/software/autodesk autocad.png' %}">
+                        </div>
+                        <div class="sw-item item-hex"><img src="{% static 'images/software/Revit.png' %}"></div>
+                        <div class="sw-item item-hex"><img src="{% static 'images/software/sketchUP.png' %}"></div>
+                        <div class="sw-item item-hex"><img src="{% static 'images/software/alphacam.png' %}"></div>
+                        <div class="sw-item item-hex"><img src="{% static 'images/software/bluebeam.png' %}"></div>
+                        <div class="sw-item item-hex"><img src="{% static 'images/software/mastercam.png' %}"></div>
+                        <div class="sw-item item-hex"><img src="{% static 'images/software/mozaik.png' %}"></div>
+                        <div class="sw-item item-hex"><img src="{% static 'images/software/design 2020.png' %}"></div>
+                        {% endfor %}
+                    </div>
+                </div>
+                <div class="wall-row">
+                    <div class="track-base animate-left">
+                        {% for i in "12" %}
+                        <div class="sw-item item-hex"><img src="{% static 'images/software/Capture.png' %}"></div>
+                        <div class="sw-item item-hex"><img src="{% static 'images/software/inventor cam.png' %}"></div>
+                        <div class="sw-item item-hex"><img src="{% static 'images/software/autodesk autocad.png' %}">
+                        </div>
+                        <div class="sw-item item-hex"><img src="{% static 'images/software/Revit.png' %}"></div>
+                        <div class="sw-item item-hex"><img src="{% static 'images/software/bluebeam.png' %}"></div>
+                        <div class="sw-item item-hex"><img src="{% static 'images/software/alphacam.png' %}"></div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 2. CLEAN SQUARE GRID (Dark) -->
+<section class="variant-section v2-bg">
+    <div class="sw-split-layout">
+        <div class="sw-text-side v2">
+            <span class="sw-label lbl-white">Option 2</span>
+            <h2 class="text-white">Technical <br><span>Precision</span></h2>
+            <p style="color: #888;">Minimalist Square Grid.</p>
+        </div>
+        <div class="sw-separator" style="background: white;"></div>
+        <div class="sw-content-side">
+            <div class="layout-clean-grid">
+                <div class="track-clean-grid animate-right">
+                    {% for i in "123" %}
+                    <div class="sw-item item-square"><img src="{% static 'images/software/autodesk autocad.png' %}">
+                    </div>
+                    <div class="sw-item item-square"><img src="{% static 'images/software/Revit.png' %}"></div>
+                    <div class="sw-item item-square"><img src="{% static 'images/software/sketchUP.png' %}"></div>
+                    <div class="sw-item item-square"><img src="{% static 'images/software/alphacam.png' %}"></div>
+                    <div class="sw-item item-square"><img src="{% static 'images/software/bluebeam.png' %}"></div>
+                    {% endfor %}
+                </div>
+                <div class="track-clean-grid animate-left">
+                    {% for i in "123" %}
+                    <div class="sw-item item-square"><img src="{% static 'images/software/mastercam.png' %}"></div>
+                    <div class="sw-item item-square"><img src="{% static 'images/software/mozaik.png' %}"></div>
+                    <div class="sw-item item-square"><img src="{% static 'images/software/design 2020.png' %}"></div>
+                    <div class="sw-item item-square"><img src="{% static 'images/software/inventor cam.png' %}"></div>
+                    <div class="sw-item item-square"><img src="{% static 'images/software/Capture.png' %}"></div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 3. CIRCULAR BADGES (Light Minimal) -->
+<section class="variant-section v3-bg">
+    <div class="sw-split-layout">
+        <div class="sw-text-side v3">
+            <span class="sw-label lbl-dark">Option 3</span>
+            <h2>Digital <br><span>Ecosystem</span></h2>
+            <p>Clean Circular Badges.</p>
+        </div>
+        <div class="sw-separator" style="background: #333;"></div>
+        <div class="sw-content-side">
+            <div class="layout-badges">
+                <div class="track-base animate-right animate-slow">
+                    {% for i in "123" %}
+                    <div class="sw-item item-badge"><img src="{% static 'images/software/mastercam.png' %}"></div>
+                    <div class="sw-item item-badge"><img src="{% static 'images/software/mozaik.png' %}"></div>
+                    <div class="sw-item item-badge"><img src="{% static 'images/software/design 2020.png' %}"></div>
+                    <div class="sw-item item-badge"><img src="{% static 'images/software/inventor cam.png' %}"></div>
+                    <div class="sw-item item-badge"><img src="{% static 'images/software/Capture.png' %}"></div>
+                    {% endfor %}
+                </div>
+                <div class="track-base animate-left animate-fast">
+                    {% for i in "123" %}
+                    <div class="sw-item item-badge"><img src="{% static 'images/software/autodesk autocad.png' %}">
+                    </div>
+                    <div class="sw-item item-badge"><img src="{% static 'images/software/Revit.png' %}"></div>
+                    <div class="sw-item item-badge"><img src="{% static 'images/software/sketchUP.png' %}"></div>
+                    <div class="sw-item item-badge"><img src="{% static 'images/software/alphacam.png' %}"></div>
+                    <div class="sw-item item-badge"><img src="{% static 'images/software/bluebeam.png' %}"></div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 4. GLASS INTERFACE (Modern UI) -->
+<section class="variant-section v4-bg">
+    <div class="sw-split-layout">
+        <div class="sw-text-side">
+            <span class="sw-label lbl-white">Option 4</span>
+            <h2 class="text-white">Modern <br><span style="opacity: 0.7;">Interface</span></h2>
+            <p style="color: #ccc;">Frosted Glass Cards.</p>
+        </div>
+        <div class="sw-separator" style="background: white;"></div>
+        <div class="sw-content-side">
+            <div class="layout-glass">
+                <div class="track-base animate-left animate-slow">
+                    {% for i in "123" %}
+                    <div class="sw-item item-glass"><img src="{% static 'images/software/autodesk autocad.png' %}">
+                    </div>
+                    <div class="sw-item item-glass"><img src="{% static 'images/software/Revit.png' %}"></div>
+                    <div class="sw-item item-glass"><img src="{% static 'images/software/sketchUP.png' %}"></div>
+                    <div class="sw-item item-glass"><img src="{% static 'images/software/alphacam.png' %}"></div>
+                    <div class="sw-item item-glass"><img src="{% static 'images/software/bluebeam.png' %}"></div>
+                    <div class="sw-item item-glass"><img src="{% static 'images/software/mastercam.png' %}"></div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 5. BLUEPRINT (Technical) -->
+<section class="variant-section v5-bg">
+    <div class="sw-split-layout">
+        <div class="sw-text-side v5">
+            <span class="sw-label" style="background: #2aa198; color: white;">Option 5</span>
+            <h2 class="text-white">Design <br><span>Schematic</span></h2>
+            <p style="color: #839496;">Architectural Blueprint.</p>
+        </div>
+        <div class="sw-separator" style="background: #2aa198;"></div>
+        <div class="sw-content-side">
+            <div class="layout-blueprint">
+                <div class="track-clean-grid animate-right">
+                    {% for i in "123" %}
+                    <div class="sw-item item-blueprint"><img src="{% static 'images/software/autodesk autocad.png' %}">
+                    </div>
+                    <div class="sw-item item-blueprint"><img src="{% static 'images/software/Revit.png' %}"></div>
+                    <div class="sw-item item-blueprint"><img src="{% static 'images/software/sketchUP.png' %}"></div>
+                    <div class="sw-item item-blueprint"><img src="{% static 'images/software/alphacam.png' %}"></div>
+                    <div class="sw-item item-blueprint"><img src="{% static 'images/software/bluebeam.png' %}"></div>
+                    {% endfor %}
+                </div>
+                <div class="track-clean-grid animate-left">
+                    {% for i in "123" %}
+                    <div class="sw-item item-blueprint"><img src="{% static 'images/software/mastercam.png' %}"></div>
+                    <div class="sw-item item-blueprint"><img src="{% static 'images/software/mozaik.png' %}"></div>
+                    <div class="sw-item item-blueprint"><img src="{% static 'images/software/design 2020.png' %}"></div>
+                    <div class="sw-item item-blueprint"><img src="{% static 'images/software/inventor cam.png' %}">
+                    </div>
+                    <div class="sw-item item-blueprint"><img src="{% static 'images/software/Capture.png' %}"></div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 6. LINEAR TIMELINE (Dark) -->
+<section class="variant-section v6-bg">
+    <div class="sw-split-layout">
+        <div class="sw-text-side">
+            <span class="sw-label lbl-white">Option 6</span>
+            <h2 class="text-white">Verified <br><span>Stack</span></h2>
+            <p style="color: #666;">Linear Timeline Stream.</p>
+        </div>
+        <div class="sw-separator" style="background: #333;"></div>
+        <div class="sw-content-side">
+            <div class="layout-linear">
+                <div class="track-clean-grid animate-right animate-slow">
+                    {% for i in "123" %}
+                    <div class="sw-item item-linear"><img src="{% static 'images/software/autodesk autocad.png' %}">
+                    </div>
+                    <div class="sw-item item-linear"><img src="{% static 'images/software/Revit.png' %}"></div>
+                    <div class="sw-item item-linear"><img src="{% static 'images/software/sketchUP.png' %}"></div>
+                    <div class="sw-item item-linear"><img src="{% static 'images/software/alphacam.png' %}"></div>
+                    <div class="sw-item item-linear"><img src="{% static 'images/software/bluebeam.png' %}"></div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 7. COMPACT CHIPS (Vertical) -->
+<section class="variant-section v7-bg">
+    <div class="sw-split-layout">
+        <div class="sw-text-side">
+            <span class="sw-label lbl-white">Option 7</span>
+            <h2 class="text-white">Data <br><span>Modules</span></h2>
+            <p style="color: #666;">Vertical Chip Stack.</p>
+        </div>
+        <div class="sw-separator" style="background: #333;"></div>
+        <div class="sw-content-side">
+            <div class="layout-chips">
+                <div class="col-chips">
+                    {% for i in "12" %}
+                    <div class="sw-item item-chip"><img src="{% static 'images/software/autodesk autocad.png' %}"></div>
+                    <div class="sw-item item-chip"><img src="{% static 'images/software/Revit.png' %}"></div>
+                    <div class="sw-item item-chip"><img src="{% static 'images/software/sketchUP.png' %}"></div>
+                    <div class="sw-item item-chip"><img src="{% static 'images/software/alphacam.png' %}"></div>
+                    <div class="sw-item item-chip"><img src="{% static 'images/software/bluebeam.png' %}"></div>
+                    <div class="sw-item item-chip"><img src="{% static 'images/software/mastercam.png' %}"></div>
+                    {% endfor %}
+                </div>
+                <div class="col-chips down">
+                    {% for i in "12" %}
+                    <div class="sw-item item-chip"><img src="{% static 'images/software/mastercam.png' %}"></div>
+                    <div class="sw-item item-chip"><img src="{% static 'images/software/mozaik.png' %}"></div>
+                    <div class="sw-item item-chip"><img src="{% static 'images/software/design 2020.png' %}"></div>
+                    <div class="sw-item item-chip"><img src="{% static 'images/software/inventor cam.png' %}"></div>
+                    <div class="sw-item item-chip"><img src="{% static 'images/software/Capture.png' %}"></div>
+                    <div class="sw-item item-chip"><img src="{% static 'images/software/autodesk autocad.png' %}"></div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 8. PILL TAGS (White) -->
+<section class="variant-section v8-bg">
+    <div class="sw-split-layout">
+        <div class="sw-text-side v8">
+            <span class="sw-label lbl-dark">Option 8</span>
+            <h2>Core <br><span>Competencies</span></h2>
+            <p>Clean Text Tags.</p>
+        </div>
+        <div class="sw-separator v8"></div>
+        <div class="sw-content-side">
+            <div class="layout-pills">
+                <div class="track-base animate-right animate-slow">
+                    <!-- Text Only Variant -->
+                    {% for i in "12" %}
+                    <div class="sw-item item-pill" data-name="AutoCAD">AutoCAD</div>
+                    <div class="sw-item item-pill" data-name="Revit">Revit</div>
+                    <div class="sw-item item-pill" data-name="SketchUp">SketchUp</div>
+                    <div class="sw-item item-pill" data-name="AlphaCAM">AlphaCAM</div>
+                    <div class="sw-item item-pill" data-name="Bluebeam">Bluebeam</div>
+                    <div class="sw-item item-pill" data-name="MasterCAM">MasterCAM</div>
+                    <div class="sw-item item-pill" data-name="Mozaik">Mozaik</div>
+                    <div class="sw-item item-pill" data-name="Design2020">Design 2020</div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 9. DARK MOSAIC -->
+<section class="variant-section v9-bg">
+    <div class="sw-split-layout">
+        <div class="sw-text-side">
+            <span class="sw-label lbl-white">Option 9</span>
+            <h2 class="text-white">Grid <br><span style="color: #666;">View</span></h2>
+            <p style="color: #666;">Dense Mosaic.</p>
+        </div>
+        <div class="sw-separator" style="background: #333;"></div>
+        <div class="sw-content-side">
+            <div class="layout-mosaic">
+                <div class="track-mosaic animate-left">
+                    {% for i in "123" %}
+                    <div class="sw-item item-mosaic"><img src="{% static 'images/software/autodesk autocad.png' %}">
+                    </div>
+                    <div class="sw-item item-mosaic"><img src="{% static 'images/software/Revit.png' %}"></div>
+                    <div class="sw-item item-mosaic"><img src="{% static 'images/software/sketchUP.png' %}"></div>
+                    <div class="sw-item item-mosaic"><img src="{% static 'images/software/alphacam.png' %}"></div>
+                    <div class="sw-item item-mosaic"><img src="{% static 'images/software/bluebeam.png' %}"></div>
+                    <div class="sw-item item-mosaic"><img src="{% static 'images/software/mastercam.png' %}"></div>
+                    {% endfor %}
+                </div>
+                <div class="track-mosaic animate-right">
+                    {% for i in "123" %}
+                    <div class="sw-item item-mosaic"><img src="{% static 'images/software/mozaik.png' %}"></div>
+                    <div class="sw-item item-mosaic"><img src="{% static 'images/software/design 2020.png' %}"></div>
+                    <div class="sw-item item-mosaic"><img src="{% static 'images/software/inventor cam.png' %}"></div>
+                    <div class="sw-item item-mosaic"><img src="{% static 'images/software/Capture.png' %}"></div>
+                    <div class="sw-item item-mosaic"><img src="{% static 'images/software/autodesk autocad.png' %}">
+                    </div>
+                    <div class="sw-item item-mosaic"><img src="{% static 'images/software/Revit.png' %}"></div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- 10. CLASSIC STRIP (White) -->
+<section class="variant-section v10-bg">
+    <div class="sw-split-layout">
+        <div class="sw-text-side v10">
+            <span class="sw-label lbl-dark">Option 10</span>
+            <h2>Global <br><span>Standard</span></h2>
+            <p>Classic Mono Carousel.</p>
+        </div>
+        <div class="sw-separator v10"></div>
+        <div class="sw-content-side">
+            <div class="layout-strip">
+                <div class="track-base animate-right">
+                    {% for i in "12" %}
+                    <div class="sw-item item-strip"><img src="{% static 'images/software/autodesk autocad.png' %}">
+                    </div>
+                    <div class="sw-item item-strip"><img src="{% static 'images/software/Revit.png' %}"></div>
+                    <div class="sw-item item-strip"><img src="{% static 'images/software/sketchUP.png' %}"></div>
+                    <div class="sw-item item-strip"><img src="{% static 'images/software/alphacam.png' %}"></div>
+                    <div class="sw-item item-strip"><img src="{% static 'images/software/bluebeam.png' %}"></div>
+                    <div class="sw-item item-strip"><img src="{% static 'images/software/mastercam.png' %}"></div>
+                    <div class="sw-item item-strip"><img src="{% static 'images/software/mozaik.png' %}"></div>
+                    <div class="sw-item item-strip"><img src="{% static 'images/software/design 2020.png' %}"></div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

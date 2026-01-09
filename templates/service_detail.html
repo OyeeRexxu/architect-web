@@ -9,11 +9,13 @@
     /* Override or fixes for production */
     .layout-wrapper {
         padding-top: 0;
+        padding-bottom: 0;
         border: none;
     }
 
     .ls-hero {
-        padding-top: 120px;
+        padding: 66px 0 20px !important;
+        text-align: left;
     }
 
     /* Adjust for navbar */
@@ -52,6 +54,419 @@
     .back-to-services-link:hover i {
         transform: translateX(-3px);
     }
+
+    .subsection-title {
+        font-size: 1.05rem !important;
+        color: #2c3e50;
+        margin-top: 1.25rem;
+        margin-bottom: 0.5rem;
+        font-weight: 700;
+        border-bottom: none !important;
+        padding-bottom: 0 !important;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    /* Integrated Smart Pill Layout */
+    .service-glass-highlight-section {
+        margin-top: 2.5rem;
+        padding: 0;
+    }
+
+    .service-glass-highlight-section h2 {
+        color: #2c3e50;
+        margin-bottom: 1.5rem;
+        font-weight: 700;
+        text-align: left;
+        font-size: 1.4rem;
+        position: relative;
+        text-transform: none;
+        letter-spacing: normal;
+    }
+
+    .service-glass-highlight-section h2::after {
+        content: none;
+        display: none;
+    }
+
+    .glass-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 12px;
+    }
+
+    .glass-card {
+        background: #fff;
+        padding: 0.6rem 1rem;
+        border-radius: 50px;
+        border: 1px solid #e2e8f0;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
+        gap: 12px;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        animation: popIn 0.4s ease backwards;
+        height: auto;
+        /* Allow height to grow */
+        min-height: 50px;
+    }
+
+    .glass-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.05);
+        border-color: #2c5f7c;
+    }
+
+    .glass-icon-wrapper {
+        position: relative;
+        width: 32px;
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+
+    .glass-icon-bg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #f1f5f9;
+        border-radius: 50%;
+        transition: all 0.3s ease;
+    }
+
+    .glass-card:hover .glass-icon-bg {
+        background: #e3f2fd;
+        transform: scale(1.1);
+    }
+
+    .glass-icon-main {
+        font-size: 0.9rem;
+        color: #64748b;
+        z-index: 2;
+        transition: all 0.3s ease;
+    }
+
+    .glass-card:hover .glass-icon-main {
+        color: #2c5f7c;
+        animation: wobble 1s ease-in-out infinite;
+    }
+
+    .glass-text {
+        font-weight: 500;
+        color: #334155;
+        font-size: 0.9rem;
+        z-index: 2;
+        transition: color 0.3s ease;
+        flex-grow: 1;
+        line-height: 1.3;
+        /* Better readability for multi-line */
+    }
+
+    .glass-card:hover .glass-text {
+        color: #0f172a;
+    }
+
+    .glass-shine {
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 50%;
+        height: 100%;
+        background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(44, 95, 124, 0.1) 50%, rgba(255, 255, 255, 0) 100%);
+        transform: skewX(-25deg);
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    .glass-card:hover .glass-shine {
+        left: 200%;
+        transition: left 0.75s ease-in-out;
+    }
+
+    @keyframes popIn {
+        0% {
+            opacity: 0;
+            transform: scale(0.9) translateY(10px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+        }
+    }
+
+    @keyframes wobble {
+
+        0%,
+        100% {
+            transform: rotate(0deg);
+        }
+
+        15% {
+            transform: rotate(-5deg);
+        }
+
+        30% {
+            transform: rotate(3deg);
+        }
+
+        45% {
+            transform: rotate(-3deg);
+        }
+
+        60% {
+            transform: rotate(2deg);
+        }
+
+        75% {
+            transform: rotate(-1deg);
+        }
+    }
+
+    /* Carousel Styles */
+    .carousel-container {
+        position: relative;
+        width: 100%;
+        margin-top: 2rem;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .carousel-track-wrapper {
+        overflow: hidden;
+        width: 100%;
+        border-radius: 8px;
+    }
+
+    .carousel-track {
+        display: flex;
+        gap: 20px;
+        transition: transform 0.5s ease-in-out;
+        padding: 10px 5px;
+    }
+
+    .gallery-item-slide {
+        flex: 0 0 calc(33.333% - 14px);
+        aspect-ratio: 4/3;
+        position: relative;
+        cursor: pointer;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+    }
+
+    .gallery-item-slide:hover {
+        transform: scale(1.02);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    .gallery-item-slide img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+
+    .gallery-item-slide:hover img {
+        transform: scale(1.1);
+    }
+
+    .gallery-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.3);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .gallery-item-slide:hover .gallery-overlay {
+        opacity: 1;
+    }
+
+    .gallery-overlay i {
+        color: white;
+        font-size: 1.5rem;
+        filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+    }
+
+    .carousel-nav {
+        background: #fff;
+        border: 1px solid #e2e8f0;
+        color: #2c5f7c;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.2s;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        flex-shrink: 0;
+        z-index: 2;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .carousel-nav.prev {
+        left: -20px;
+    }
+
+    .carousel-nav.next {
+        right: -20px;
+    }
+
+    .carousel-nav:hover {
+        background: #2c5f7c;
+        color: #fff;
+        border-color: #2c5f7c;
+        transform: translateY(-50%) scale(1.1);
+    }
+
+    @media (max-width: 992px) {
+        .gallery-item-slide {
+            flex: 0 0 calc(50% - 10px);
+        }
+    }
+
+    @media (max-width: 600px) {
+        .gallery-item-slide {
+            flex: 0 0 100%;
+        }
+    }
+
+    /* Lightbox Styles */
+    .lightbox {
+        display: none;
+        position: fixed;
+        z-index: 2000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        background-color: rgba(0, 0, 0, 0.95);
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .lightbox-content {
+        position: relative;
+        margin: auto;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    #lightbox-img {
+        max-width: 90%;
+        max-height: 90%;
+        object-fit: contain;
+        border-radius: 4px;
+        transition: transform 0.1s ease-out;
+        cursor: grab;
+        user-select: none;
+    }
+
+    #lightbox-img.grabbing {
+        cursor: grabbing;
+        transition: none;
+    }
+
+    .lightbox-close {
+        position: absolute;
+        top: 20px;
+        right: 35px;
+        color: #f1f1f1;
+        font-size: 40px;
+        font-weight: bold;
+        transition: 0.3s;
+        cursor: pointer;
+        z-index: 2001;
+    }
+
+    .lightbox-close:hover {
+        color: #bbb;
+        text-decoration: none;
+    }
+
+    .lightbox-prev,
+    .lightbox-next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 16px;
+        margin-top: -50px;
+        color: white;
+        font-weight: bold;
+        font-size: 30px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+        background: rgba(0, 0, 0, 0.2);
+        z-index: 2002;
+    }
+
+    .lightbox-next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+    }
+
+    .lightbox-prev {
+        left: 0;
+        border-radius: 3px 0 0 3px;
+    }
+
+    .lightbox-prev:hover,
+    .lightbox-next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .lightbox-controls {
+        position: absolute;
+        bottom: 20px;
+        background: rgba(0, 0, 0, 0.5);
+        padding: 10px 20px;
+        border-radius: 30px;
+        z-index: 2002;
+    }
+
+    .lightbox-controls button {
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.5);
+        color: white;
+        padding: 5px 15px;
+        cursor: pointer;
+        border-radius: 4px;
+        margin: 0 5px;
+        font-size: 1rem;
+    }
+
+    .lightbox-controls button:hover {
+        background: rgba(255, 255, 255, 0.2);
+        border-color: white;
+    }
 </style>
 {% endblock %}
 
@@ -72,120 +487,138 @@
     <div class="container ls-container">
         <!-- Main Content -->
         <div class="ls-main">
-            <!-- Main Overview -->
+            <!-- Main Overview (Start of First Block) -->
             <div class="ls-block">
                 <h2>Overview</h2>
                 <p>{{ service.overview }}</p>
-            </div>
 
-            <!-- Dynamic Sections (Main Column) -->
-            {% for section in service.sections.all %}
-            {% if section.section_type == 'text' %}
-            <div class="ls-block">
-                {% if section.heading %}<h2>{{ section.heading }}</h2>{% endif %}
+                <!-- Dynamic Sections Loop -->
+                {% for section in service.sections.all %}
+
+                <!-- TEXT Section -->
+                {% if section.section_type == 'text' %}
+                {% if section.heading %}
+                {% if section.is_subsection %}
+                <h4 class="subsection-title">{{ section.heading }}</h4>
+                {% else %}
+                <h2>{{ section.heading }}</h2>
+                {% endif %}
+                {% endif %}
                 <p>{{ section.content }}</p>
-            </div>
 
-            {% elif section.section_type == 'process' %}
-            <div class="ls-block">
-                {% if section.heading %}<h2>{{ section.heading }}</h2>{% endif %}
-                <div class="ls-steps">
+                <!-- TAGS Section -->
+                {% elif section.section_type == 'tags' %}
+                {% if section.heading %}<h4 class="subsection-title">{{ section.heading }}</h4>{% endif %}
+                <div class="ls-tags">
                     {% for item in section.get_items_list %}
-                    <div class="ls-step">
-                        <span class="ls-step-num">{{ forloop.counter }}</span>
-                        <p>{{ item }}</p>
-                    </div>
+                    <span class="ls-tag">{{ item }}</span>
                     {% endfor %}
                 </div>
-            </div>
 
-            {% elif section.section_type == 'benefits' %}
-            <div class="ls-block">
-                {% if section.heading %}<h2>{{ section.heading }}</h2>{% endif %}
-                <ul style="list-style: none; padding: 0;">
+                <!-- BENEFITS Section (Checkmarks) -->
+                {% elif section.section_type == 'benefits' %}
+                {% if section.heading %}
+                {% if section.is_subsection %}
+                <h4 class="subsection-title">{{ section.heading }}</h4>
+                {% else %}
+                <h2>{{ section.heading }}</h2>
+                {% endif %}
+                {% endif %}
+                <ul style="list-style: none; padding: 0; margin-top: 1rem;">
                     {% for item in section.get_items_list %}
-                    <li style="margin-bottom: 10px; display: flex; gap: 10px;">
-                        <span style="color: #2c5f7c; font-weight: bold;">✓</span> {{ item }}
+                    <li style="margin-bottom: 10px; display: flex; gap: 10px; align-items: start;">
+                        <span style="color: #2c5f7c; font-weight: bold; min-width: 20px;">✓</span>
+                        <span>{{ item }}</span>
                     </li>
                     {% endfor %}
                 </ul>
+
+                <!-- PROCESS Section (Numbered Steps) -->
+                {% elif section.section_type == 'process' %}
+                {% if section.heading %}
+                {% if section.is_subsection %}
+                <h4 class="subsection-title">{{ section.heading }}</h4>
+                {% else %}
+                <h2>{{ section.heading }}</h2>
+                {% endif %}
+                {% endif %}
+                <div class="ls-steps" style="margin-top: 1.5rem;">
+                    {% for item in section.get_items_list %}
+                    <div class="ls-step" style="display: flex; gap: 15px; margin-bottom: 20px;">
+                        <span class="ls-step-num"
+                            style="background: #2c5f7c; color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0;">{{
+                            forloop.counter }}</span>
+                        <p style="margin: 0; padding-top: 4px;">{{ item }}</p>
+                    </div>
+                    {% endfor %}
+                </div>
+
+                <!-- LIST Section (Standard Bullets) -->
+                {% elif section.section_type == 'list' %}
+                {% if section.heading %}
+                {% if section.is_subsection %}
+                <h4 class="subsection-title">{{ section.heading }}</h4>
+                {% else %}
+                <h2>{{ section.heading }}</h2>
+                {% endif %}
+                {% endif %}
+                <ul>
+                    {% for item in section.get_items_list %}
+                    <li>{{ item }}</li>
+                    {% endfor %}
+                </ul>
+
+                {% endif %}
+                {% endfor %}
+            </div>
+
+            <!-- Features Section (Smart Pills) -->
+            {% if service.features.count > 0 %}
+            <div class="ls-block service-glass-highlight-section">
+                <h2>Services Include</h2>
+                <div class="glass-grid">
+                    {% for feature in service.features.all %}
+                    <div class="glass-card" style="animation-delay: {{ forloop.counter|add:1|default:1 }}00ms">
+                        <div class="glass-icon-wrapper">
+                            <i class="{{ feature.icon }} glass-icon-main"></i>
+                            <div class="glass-icon-bg"></div>
+                        </div>
+                        <span class="glass-text">{{ feature.title }}</span>
+                        <div class="glass-shine"></div>
+                    </div>
+                    {% endfor %}
+                </div>
             </div>
             {% endif %}
-            {% endfor %}
-            <!-- Photo Gallery Section -->
+
+            <!-- Photo Gallery Section (Carousel) -->
             {% if service.images.count > 0 %}
             <div class="ls-block gallery-section">
-                <h2>{{ service.title }} Photos</h2>
-                <div class="gallery-grid">
-                    {% for img in service.images.all %}
-                    <div class="gallery-item" onclick="openLightbox('{{ forloop.counter0 }}')">
-                        <img src="{% static 'images/' %}{{ img.image }}" alt="{{ img.caption|default:service.title }}"
-                            data-index="{{ forloop.counter0 }}">
-                        <div class="gallery-overlay">
-                            <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round">
-                                <circle cx="11" cy="11" r="8"></circle>
-                                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-                                <line x1="11" y1="8" x2="11" y2="14"></line>
-                                <line x1="8" y1="11" x2="14" y2="11"></line>
-                            </svg>
+                <h2>Services Photos</h2>
+                <div class="carousel-container">
+                    <button class="carousel-nav prev" onclick="scrollGallery(-1)">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+
+                    <div class="carousel-track-wrapper">
+                        <div class="carousel-track" id="galleryTrack">
+                            {% for img in service.images.all %}
+                            <div class="gallery-item-slide" onclick="openLightbox('{{ forloop.counter0 }}')">
+                                <img src="{% static 'images/' %}{{ img.image }}"
+                                    alt="{{ img.caption|default:service.title }}">
+                                <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                            </div>
+                            {% endfor %}
                         </div>
                     </div>
-                    {% endfor %}
+
+                    <button class="carousel-nav next" onclick="scrollGallery(1)">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
                 </div>
             </div>
             {% endif %}
 
-            <!-- Software Section -->
-            {% if service.software.count > 0 %}
-            <div class="ls-block software-section">
-                <h2>{{ service.title }} Software</h2>
-                <div class="software-grid">
-                    {% for item in service.software.all %}
-                    <div class="software-item" title="{{ item.name }}">
-                        <img src="{% static 'images/' %}{{ item.logo }}" alt="{{ item.name }}">
-                    </div>
-                    {% endfor %}
-                </div>
-            </div>
-
-            <style>
-                .software-grid {
-                    display: grid;
-                    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-                    gap: 30px;
-                    margin-top: 25px;
-                    align-items: center;
-                }
-
-                .software-item {
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    padding: 15px;
-                    background: #f9f9f9;
-                    border-radius: 8px;
-                    transition: transform 0.3s ease;
-                    height: 80px;
-                }
-
-                .software-item:hover {
-                    transform: translateY(-5px);
-                    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-                }
-
-                .software-item img {
-                    max-width: 100%;
-                    max-height: 100%;
-                    object-fit: contain;
-                    transition: all 0.3s ease;
-                }
-
-                .software-item:hover img {
-                    transform: scale(1.05);
-                }
-            </style>
-            {% endif %}
         </div>
 
         <!-- Lightbox Modal -->
@@ -207,181 +640,6 @@
             </div>
         </div>
 
-        <style>
-            .gallery-grid {
-                display: grid;
-                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-                gap: 20px;
-                margin-top: 20px;
-            }
-
-            .gallery-item {
-                position: relative;
-                cursor: pointer;
-                overflow: hidden;
-                border-radius: 8px;
-                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-                aspect-ratio: 4/3;
-            }
-
-            .gallery-item img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                transition: transform 0.4s ease;
-            }
-
-            .gallery-item:hover img {
-                transform: scale(1.05);
-            }
-
-            .gallery-overlay {
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                background: rgba(0, 0, 0, 0.3);
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                opacity: 0;
-                transition: opacity 0.3s ease;
-            }
-
-            .gallery-item:hover .gallery-overlay {
-                opacity: 1;
-            }
-
-            /* Lightbox Styles */
-            .lightbox {
-                display: none;
-                /* Hidden by default */
-                position: fixed;
-                z-index: 2000;
-                left: 0;
-                top: 0;
-                width: 100%;
-                height: 100%;
-                overflow: hidden;
-                background-color: rgba(0, 0, 0, 0.95);
-                /* Flexbox for centering */
-                justify-content: center;
-                align-items: center;
-                flex-direction: column;
-            }
-
-            .lightbox-content {
-                position: relative;
-                margin: auto;
-                padding: 0;
-                width: 100%;
-                height: 100%;
-                text-align: center;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                overflow: hidden;
-                /* Contain the image */
-            }
-
-            #lightbox-img {
-                max-width: 90%;
-                max-height: 90%;
-                object-fit: contain;
-                border-radius: 4px;
-                transition: transform 0.1s ease-out;
-                /* Smooth drag, faster than 0.3s */
-                cursor: grab;
-                user-select: none;
-            }
-
-            #lightbox-img.grabbing {
-                cursor: grabbing;
-                transition: none;
-                /* Instant follow during drag */
-            }
-
-            .lightbox-close {
-                position: absolute;
-                top: 20px;
-                right: 35px;
-                color: #f1f1f1;
-                font-size: 40px;
-                font-weight: bold;
-                transition: 0.3s;
-                cursor: pointer;
-                z-index: 2001;
-            }
-
-            .lightbox-close:hover,
-            .lightbox-close:focus {
-                color: #bbb;
-                text-decoration: none;
-                cursor: pointer;
-            }
-
-            .lightbox-prev,
-            .lightbox-next {
-                cursor: pointer;
-                position: absolute;
-                top: 50%;
-                width: auto;
-                padding: 16px;
-                margin-top: -50px;
-                color: white;
-                font-weight: bold;
-                font-size: 30px;
-                transition: 0.6s ease;
-                border-radius: 0 3px 3px 0;
-                user-select: none;
-                -webkit-user-select: none;
-                background: rgba(0, 0, 0, 0.2);
-                z-index: 2002;
-            }
-
-            .lightbox-next {
-                right: 0;
-                border-radius: 3px 0 0 3px;
-            }
-
-            .lightbox-prev {
-                left: 0;
-                border-radius: 3px 0 0 3px;
-            }
-
-            .lightbox-prev:hover,
-            .lightbox-next:hover {
-                background-color: rgba(0, 0, 0, 0.8);
-            }
-
-            .lightbox-controls {
-                position: absolute;
-                bottom: 20px;
-                background: rgba(0, 0, 0, 0.5);
-                padding: 10px 20px;
-                border-radius: 30px;
-                z-index: 2002;
-            }
-
-            .lightbox-controls button {
-                background: transparent;
-                border: 1px solid rgba(255, 255, 255, 0.5);
-                color: white;
-                padding: 5px 15px;
-                cursor: pointer;
-                border-radius: 4px;
-                margin: 0 5px;
-                font-size: 1rem;
-            }
-
-            .lightbox-controls button:hover {
-                background: rgba(255, 255, 255, 0.2);
-                border-color: white;
-            }
-        </style>
-
         <script>
             let currentImageIndex = 0;
             let currentZoom = 1;
@@ -393,16 +651,69 @@
 
             // Initialize images array on load
             document.addEventListener("DOMContentLoaded", function () {
-                const imgElements = document.querySelectorAll('.gallery-grid img');
-                imgElements.forEach((img, index) => {
-                    images.push({
-                        src: img.src,
-                        caption: img.alt
-                    });
-                });
+                // Populate images array from Django template
+                {% if service.images.count > 0 %}
+                images = [
+                    {% for img in service.images.all %}
+                    {
+                    src: "{% static 'images/' %}{{ img.image }}",
+                    caption: "{{ img.caption|default:service.title }}"
+                },
+                {% endfor %}
+                ];
+            {% endif %}
 
-                // Attach events to lightbox image
-                const img = document.getElementById('lightbox-img');
+            // Initialize Carousel
+            const track = document.getElementById('galleryTrack');
+            const carouselContainer = document.querySelector('.carousel-container');
+            let autoPlayInterval;
+
+            if (track && carouselContainer) {
+                window.scrollGallery = function (direction) {
+                    const itemWidth = track.firstElementChild.offsetWidth + 20; // Width + gap
+                    const maxScroll = track.scrollWidth - track.parentElement.offsetWidth;
+
+                    // Current Translate Position
+                    const currentTransform = new WebKitCSSMatrix(window.getComputedStyle(track).transform);
+                    let currentX = currentTransform.m41;
+
+                    let newX = currentX - (direction * itemWidth);
+
+                    // Boundary Check / Loop
+                    // Simple loop: if scrolling right (dir=1) and at end, go to start
+                    // If scrolling left (dir=-1) and at start, go to end
+
+                    // Note: translateX is negative. 
+                    // Start = 0. End = -maxScroll.
+
+                    if (direction === 1 && Math.abs(currentX) >= maxScroll - 10) {
+                        newX = 0; // Reset to start
+                    } else if (direction === -1 && currentX >= 0) {
+                        newX = -maxScroll; // Go to end
+                    }
+
+                    track.style.transform = `translateX(${newX}px)`;
+                };
+
+                function startAutoPlay() {
+                    stopAutoPlay();
+                    autoPlayInterval = setInterval(() => {
+                        if (window.scrollGallery) window.scrollGallery(1);
+                    }, 3000);
+                }
+
+                function stopAutoPlay() {
+                    if (autoPlayInterval) clearInterval(autoPlayInterval);
+                }
+
+                startAutoPlay();
+                carouselContainer.addEventListener('mouseenter', stopAutoPlay);
+                carouselContainer.addEventListener('mouseleave', startAutoPlay);
+            }
+
+            // Attach events to lightbox image
+            const img = document.getElementById('lightbox-img');
+            if (img) {
                 img.addEventListener('mousedown', startDrag);
                 img.addEventListener('mousemove', drag);
                 img.addEventListener('mouseup', endDrag);
@@ -413,6 +724,7 @@
                 img.addEventListener('touchstart', touchStart);
                 img.addEventListener('touchmove', touchMove);
                 img.addEventListener('touchend', endDrag);
+            }
             });
 
             function openLightbox(index) {
@@ -444,8 +756,12 @@
             }
 
             function updateLightboxImage() {
-                const img = document.getElementById('lightbox-img');
-                img.src = images[currentImageIndex].src;
+                if (images.length > 0) {
+                    const img = document.getElementById('lightbox-img');
+                    img.src = images[currentImageIndex].src;
+                    const caption = document.getElementById('lightbox-caption');
+                    if (caption) caption.innerText = images[currentImageIndex].caption;
+                }
             }
 
             function updateTransform() {
@@ -487,7 +803,8 @@
 
             function endDrag() {
                 isDragging = false;
-                document.getElementById('lightbox-img').classList.remove('grabbing');
+                const img = document.getElementById('lightbox-img');
+                if (img) img.classList.remove('grabbing');
             }
 
             // Touch handlers
@@ -503,7 +820,7 @@
                 if (e.touches.length === 1) {
                     e.preventDefault(); // Prevent scrolling
                     translateX = e.touches[0].clientX - startX;
-                    translateY = e.touches[0].clientY - startY;
+                    startY = e.touches[0].clientY - translateY;
                     updateTransform();
                 }
             }
@@ -540,7 +857,6 @@
 
         <!-- Sidebar -->
         <aside class="ls-sidebar">
-            <!-- All Services Widget -->
             <div class="ls-widget ls-widget-primary">
                 <h3>
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -553,7 +869,7 @@
                 <ul>
                     {% for s in services %}
                     <li>
-                        <a href="{% url 'service_detail' s.id %}"
+                        <a href="{% url 'service_detail' s.slug %}"
                             style="text-decoration: none; color: {% if s.id == service.id %}#2c5f7c{% else %}inherit{% endif %}; font-weight: {% if s.id == service.id %}bold{% else %}normal{% endif %}; display: flex; align-items: center;">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                 stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -567,29 +883,6 @@
                     {% endfor %}
                 </ul>
             </div>
-            <!-- Dynamic Sections (Sidebar) -->
-            {% for section in service.sections.all %}
-            {% if section.section_type == 'list' %}
-            <div class="ls-widget ls-widget-primary">
-                {% if section.heading %}<h3>{{ section.heading }}</h3>{% endif %}
-                <ul>
-                    {% for item in section.get_items_list %}
-                    <li>{{ item }}</li>
-                    {% endfor %}
-                </ul>
-            </div>
-
-            {% elif section.section_type == 'tags' %}
-            <div class="ls-widget">
-                {% if section.heading %}<h3>{{ section.heading }}</h3>{% endif %}
-                <div class="ls-tags">
-                    {% for item in section.get_items_list %}
-                    <span class="ls-tag">{{ item }}</span>
-                    {% endfor %}
-                </div>
-            </div>
-            {% endif %}
-            {% endfor %}
 
             <div class="ls-cta-box">
                 <h4>Ready to start?</h4>

@@ -1,0 +1,1049 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Estimation & Quantity Take-Off Services - ConstructPro{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/service-detail-variants.css' %}">
+<style>
+    /* Override or fixes for production */
+    .layout-wrapper {
+        padding-top: 0;
+        padding-bottom: 0;
+        border: none;
+    }
+
+    .ls-hero {
+        padding: 66px 0 20px !important;
+        text-align: left;
+    }
+
+    /* Adjust for navbar */
+    .ls-sidebar {
+        top: 120px;
+    }
+
+    /* Back to Services Link */
+    .back-to-services-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-top: 30px;
+        margin-bottom: 20px;
+        padding: 0;
+        background: transparent;
+        border: none;
+        color: white;
+        text-decoration: none;
+        font-weight: 500;
+        font-size: 0.95rem;
+        transition: all 0.3s ease;
+        opacity: 0.9;
+    }
+
+    .back-to-services-link:hover {
+        opacity: 1;
+        transform: translateX(-5px);
+    }
+
+    .back-to-services-link i {
+        font-size: 0.9rem;
+        transition: transform 0.3s ease;
+    }
+
+    .back-to-services-link:hover i {
+        transform: translateX(-3px);
+    }
+
+    .subsection-title {
+        font-size: 1.05rem !important;
+        /* Smaller, just above body text */
+        color: #2c3e50;
+        margin-top: 1.25rem;
+        /* Reduced from 2rem */
+        margin-bottom: 0.5rem;
+        /* Reduced from 1rem */
+        font-weight: 700;
+        border-bottom: none !important;
+        padding-bottom: 0 !important;
+        text-transform: uppercase;
+        /* Making it look like a label */
+        letter-spacing: 0.5px;
+    }
+
+    /* Integrated Smart Pill Layout */
+    .service-glass-highlight-section {
+        margin-top: 2.5rem;
+        /* No container background/border -> Seamless integration */
+        padding: 0;
+    }
+
+    .service-glass-highlight-section h2 {
+        color: #2c3e50;
+        margin-bottom: 1.5rem;
+        font-weight: 700;
+        text-align: left;
+        /* Left align to match page flow */
+        font-size: 1.4rem;
+        position: relative;
+        text-transform: none;
+        /* Normal case looks less aggressive */
+        letter-spacing: normal;
+    }
+
+    /* Underline Removed */
+    .service-glass-highlight-section h2::after {
+        content: none;
+        display: none;
+    }
+
+    .glass-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+        /* Tighter columns */
+        gap: 12px;
+        /* reduced gap */
+    }
+
+    .glass-card {
+        background: #fff;
+        padding: 0.6rem 1rem;
+        /* Compact padding */
+        border-radius: 50px;
+        /* Slim Pill Shape */
+        border: 1px solid #e2e8f0;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        text-align: left;
+        gap: 12px;
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        animation: popIn 0.4s ease backwards;
+    }
+
+    .glass-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.05);
+        border-color: #2c5f7c;
+        /* Brand Blue Border */
+    }
+
+    .glass-icon-wrapper {
+        position: relative;
+        width: 32px;
+        /* Smaller icon wrapper */
+        height: 32px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+
+    .glass-icon-bg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: #f1f5f9;
+        border-radius: 50%;
+        transition: all 0.3s ease;
+    }
+
+    .glass-card:hover .glass-icon-bg {
+        background: #e3f2fd;
+        transform: scale(1.1);
+    }
+
+    .glass-icon-main {
+        font-size: 0.9rem;
+        /* Smaller Icon */
+        color: #64748b;
+        z-index: 2;
+        transition: all 0.3s ease;
+    }
+
+    .glass-card:hover .glass-icon-main {
+        color: #2c5f7c;
+        animation: wobble 1s ease-in-out infinite;
+        /* Active wobble on hover */
+    }
+
+    .glass-text {
+        font-weight: 500;
+        color: #334155;
+        font-size: 0.9rem;
+        z-index: 2;
+        transition: color 0.3s ease;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        flex-grow: 1;
+        /* Ensure text takes available space */
+    }
+
+    .glass-card:hover .glass-text {
+        color: #0f172a;
+    }
+
+    /* Visible Blue Shimmer for White Background */
+    .glass-shine {
+        position: absolute;
+        top: 0;
+        left: -100%;
+        width: 50%;
+        height: 100%;
+        /* Darker/Bluer shimmer to be visible on white */
+        background: linear-gradient(to right,
+                rgba(255, 255, 255, 0) 0%,
+                rgba(44, 95, 124, 0.1) 50%,
+                rgba(255, 255, 255, 0) 100%);
+        transform: skewX(-25deg);
+        z-index: 1;
+        pointer-events: none;
+    }
+
+    .glass-card:hover .glass-shine {
+        left: 200%;
+        transition: left 0.75s ease-in-out;
+    }
+
+    @keyframes popIn {
+        0% {
+            opacity: 0;
+            transform: scale(0.9) translateY(10px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: scale(1) translateY(0);
+        }
+    }
+
+    @keyframes wobble {
+
+        0%,
+        100% {
+            transform: rotate(0deg);
+        }
+
+        15% {
+            transform: rotate(-5deg);
+        }
+
+        30% {
+            transform: rotate(3deg);
+        }
+
+        45% {
+            transform: rotate(-3deg);
+        }
+
+        60% {
+            transform: rotate(2deg);
+        }
+
+        75% {
+            transform: rotate(-1deg);
+        }
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<section class="layout-wrapper layout-sidebar">
+    <div class="ls-hero"
+        style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('{% static 'images/services/estimation.png' %}'); background-size: cover; background-position: center; color: white;">
+        <div class="container">
+            <a href="{% url 'home' %}#services" class="back-to-services-link">
+                <i class="fa-solid fa-arrow-left"></i>
+                Back to Services
+            </a>
+            <h1 style="color: white;">Estimation & Quantity Take-Off Services</h1>
+            <p class="ls-lead" style="color: #eee;">Accurate and detailed cost estimation for your construction
+                projects.</p>
+        </div>
+    </div>
+
+    <div class="container ls-container">
+        <!-- Main Content -->
+        <div class="ls-main">
+            <!-- Main Overview (Start of First Block) -->
+            <div class="ls-block">
+                <h2>Overview</h2>
+                <p>We provide accurate, detailed, and cost-effective Construction Estimation & Quantity Take-Off
+                    Services to contractors, builders, developers, and consultants across the globe. By outsourcing your
+                    estimating work to us in India, you save time, reduce overhead costs, and improve bidding accuracy.
+                </p>
+
+                <!-- Sub-section: Who Can Benefit -->
+                <h4 class="subsection-title">Who Can Benefit?</h4>
+                <div class="ls-tags">
+                    <span class="ls-tag">General Contractors</span>
+                    <span class="ls-tag">Subcontractors</span>
+                    <span class="ls-tag">Builders & Developers</span>
+                    <span class="ls-tag">Architects & Engineers</span>
+                    <span class="ls-tag">Construction Consultants</span>
+                </div>
+
+                <!-- Sub-section: Note -->
+                <h4 class="subsection-title">Note</h4>
+                <p>Whether you bid on 2 projects per month or 50, we scale our services as per your needs.</p>
+            </div>
+
+            <!-- Second Block: Services Include (Interactive Glass Highlight) -->
+            <div class="ls-block service-glass-highlight-section">
+                <h2>Our Estimation Services Include</h2>
+                <div class="glass-grid">
+                    <div class="glass-card" style="animation-delay: 50ms">
+                        <div class="glass-icon-wrapper">
+                            <i class="fa-solid fa-layer-group glass-icon-main"></i>
+                            <div class="glass-icon-bg"></div>
+                        </div>
+                        <span class="glass-text">Countertop & Cabinet</span>
+                        <div class="glass-shine"></div>
+                    </div>
+                    <div class="glass-card" style="animation-delay: 100ms">
+                        <div class="glass-icon-wrapper">
+                            <i class="fa-solid fa-border-all glass-icon-main"></i>
+                            <div class="glass-icon-bg"></div>
+                        </div>
+                        <span class="glass-text">Flooring & Walls</span>
+                        <div class="glass-shine"></div>
+                    </div>
+                    <div class="glass-card" style="animation-delay: 150ms">
+                        <div class="glass-icon-wrapper">
+                            <i class="fa-solid fa-shapes glass-icon-main"></i>
+                            <div class="glass-icon-bg"></div>
+                        </div>
+                        <span class="glass-text">Stone & Tile</span>
+                        <div class="glass-shine"></div>
+                    </div>
+                    <div class="glass-card" style="animation-delay: 200ms">
+                        <div class="glass-icon-wrapper">
+                            <i class="fa-solid fa-door-open glass-icon-main"></i>
+                            <div class="glass-icon-bg"></div>
+                        </div>
+                        <span class="glass-text">Door & Window</span>
+                        <div class="glass-shine"></div>
+                    </div>
+                    <div class="glass-card" style="animation-delay: 250ms">
+                        <div class="glass-icon-wrapper">
+                            <i class="fa-solid fa-faucet glass-icon-main"></i>
+                            <div class="glass-icon-bg"></div>
+                        </div>
+                        <span class="glass-text">Plumbing Fixture</span>
+                        <div class="glass-shine"></div>
+                    </div>
+                    <div class="glass-card" style="animation-delay: 300ms">
+                        <div class="glass-icon-wrapper">
+                            <i class="fa-regular fa-lightbulb glass-icon-main"></i>
+                            <div class="glass-icon-bg"></div>
+                        </div>
+                        <span class="glass-text">Electrical & Lighting</span>
+                        <div class="glass-shine"></div>
+                    </div>
+                    <div class="glass-card" style="animation-delay: 350ms">
+                        <div class="glass-icon-wrapper">
+                            <i class="fa-solid fa-paint-roller glass-icon-main"></i>
+                            <div class="glass-icon-bg"></div>
+                        </div>
+                        <span class="glass-text">Paint</span>
+                        <div class="glass-shine"></div>
+                    </div>
+                    <div class="glass-card" style="animation-delay: 400ms">
+                        <div class="glass-icon-wrapper">
+                            <i class="fa-solid fa-house-chimney glass-icon-main"></i>
+                            <div class="glass-icon-bg"></div>
+                        </div>
+                        <span class="glass-text">Roofing & Siding</span>
+                        <div class="glass-shine"></div>
+                    </div>
+                    <div class="glass-card" style="animation-delay: 450ms">
+                        <div class="glass-icon-wrapper">
+                            <i class="fa-solid fa-blender glass-icon-main"></i>
+                            <div class="glass-icon-bg"></div>
+                        </div>
+                        <span class="glass-text">Appliances</span>
+                        <div class="glass-shine"></div>
+                    </div>
+                    <div class="glass-card" style="animation-delay: 500ms">
+                        <div class="glass-icon-wrapper">
+                            <i class="fa-solid fa-bath glass-icon-main"></i>
+                            <div class="glass-icon-bg"></div>
+                        </div>
+                        <span class="glass-text">Shower and Tub</span>
+                        <div class="glass-shine"></div>
+                    </div>
+                    <div class="glass-card" style="animation-delay: 550ms">
+                        <div class="glass-icon-wrapper">
+                            <i class="fa-solid fa-key glass-icon-main"></i>
+                            <div class="glass-icon-bg"></div>
+                        </div>
+                        <span class="glass-text">Door Hardware</span>
+                        <div class="glass-shine"></div>
+                    </div>
+                    <div class="glass-card" style="animation-delay: 600ms">
+                        <div class="glass-icon-wrapper">
+                            <i class="fa-solid fa-align-justify glass-icon-main"></i>
+                            <div class="glass-icon-bg"></div>
+                        </div>
+                        <span class="glass-text">Blinds</span>
+                        <div class="glass-shine"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Photo Gallery Section -->
+            <div class="ls-block gallery-section">
+                <h2>Estimation & Quantity Take-Off Services Photos</h2>
+                <div class="carousel-container">
+                    <button class="carousel-nav prev" onclick="scrollGallery(-1)">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+
+                    <div class="carousel-track-wrapper">
+                        <div class="carousel-track" id="galleryTrack">
+                            <!-- Items -->
+                            <div class="gallery-item-slide" onclick="openLightbox('0')">
+                                <img src="{% static 'images/services/estimation.png' %}" alt="Estimation Take-Off">
+                                <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                            </div>
+                            <div class="gallery-item-slide" onclick="openLightbox('1')">
+                                <img src="{% static 'images/services/architecture.png' %}" alt="Architecture Design">
+                                <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                            </div>
+                            <div class="gallery-item-slide" onclick="openLightbox('2')">
+                                <img src="{% static 'images/services/cabinetry.png' %}" alt="Cabinetry Solutions">
+                                <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                            </div>
+                            <div class="gallery-item-slide" onclick="openLightbox('3')">
+                                <img src="{% static 'images/services/cad.png' %}" alt="CAD Drafting">
+                                <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                            </div>
+                            <div class="gallery-item-slide" onclick="openLightbox('4')">
+                                <img src="{% static 'images/services/cnc.png' %}" alt="CNC Programming">
+                                <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                            </div>
+                            <div class="gallery-item-slide" onclick="openLightbox('5')">
+                                <img src="{% static 'images/services/data_entry.png' %}" alt="Data Entry">
+                                <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                            </div>
+                            <div class="gallery-item-slide" onclick="openLightbox('6')">
+                                <img src="{% static 'images/services/estimation.png' %}" alt="Detailed Estimation">
+                                <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                            </div>
+                            <div class="gallery-item-slide" onclick="openLightbox('7')">
+                                <img src="{% static 'images/services/architecture.png' %}" alt="Structural Design">
+                                <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                            </div>
+                            <div class="gallery-item-slide" onclick="openLightbox('8')">
+                                <img src="{% static 'images/services/cabinetry.png' %}" alt="Millwork Details">
+                                <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                            </div>
+                            <div class="gallery-item-slide" onclick="openLightbox('9')">
+                                <img src="{% static 'images/services/cad.png' %}" alt="3D Modeling">
+                                <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                            </div>
+                            <div class="gallery-item-slide" onclick="openLightbox('10')">
+                                <img src="{% static 'images/services/cnc.png' %}" alt="Machine Programming">
+                                <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="carousel-nav next" onclick="scrollGallery(1)">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Lightbox Modal -->
+        <div id="lightbox" class="lightbox">
+            <span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+            <div class="lightbox-content">
+                <img id="lightbox-img" src="" alt="Gallery Image">
+                <div class="lightbox-caption" id="lightbox-caption"></div>
+
+                <a class="lightbox-prev" onclick="changeSlide(-1)">&#10094;</a>
+                <a class="lightbox-next" onclick="changeSlide(1)">&#10095;</a>
+
+                <!-- Zoom Controls -->
+                <div class="lightbox-controls">
+                    <button onclick="zoomImage(0.2)">+</button>
+                    <button onclick="zoomImage(-0.2)">-</button>
+                    <button onclick="resetZoom()">Reset</button>
+                </div>
+            </div>
+        </div>
+
+        <style>
+            /* Carousel Styles */
+            .carousel-container {
+                position: relative;
+                width: 100%;
+                margin-top: 2rem;
+                display: flex;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .carousel-track-wrapper {
+                overflow: hidden;
+                width: 100%;
+                border-radius: 8px;
+            }
+
+            .carousel-track {
+                display: flex;
+                gap: 20px;
+                transition: transform 0.5s ease-in-out;
+                padding: 10px 5px;
+                /* Space for shadow */
+            }
+
+            .gallery-item-slide {
+                flex: 0 0 calc(33.333% - 14px);
+                /* 3 items visible */
+                aspect-ratio: 4/3;
+                position: relative;
+                cursor: pointer;
+                border-radius: 8px;
+                overflow: hidden;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                transition: all 0.3s ease;
+            }
+
+            .gallery-item-slide:hover {
+                transform: scale(1.02);
+                box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+            }
+
+            .gallery-item-slide img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.5s ease;
+            }
+
+            .gallery-item-slide:hover img {
+                transform: scale(1.1);
+            }
+
+            .gallery-overlay {
+                position: absolute;
+                inset: 0;
+                background: rgba(0, 0, 0, 0.3);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            }
+
+            .gallery-item-slide:hover .gallery-overlay {
+                opacity: 1;
+            }
+
+            .gallery-overlay i {
+                color: white;
+                font-size: 1.5rem;
+                filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+            }
+
+            /* Nav Buttons */
+            .carousel-nav {
+                background: #fff;
+                border: 1px solid #e2e8f0;
+                color: #2c5f7c;
+                width: 40px;
+                height: 40px;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                transition: all 0.2s;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                flex-shrink: 0;
+                z-index: 2;
+                position: absolute;
+                /* Absolute positioning */
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            .carousel-nav.prev {
+                left: -20px;
+            }
+
+            .carousel-nav.next {
+                right: -20px;
+            }
+
+            .carousel-nav:hover {
+                background: #2c5f7c;
+                color: #fff;
+                border-color: #2c5f7c;
+                transform: translateY(-50%) scale(1.1);
+            }
+
+            /* Responsive */
+            @media (max-width: 992px) {
+                .gallery-item-slide {
+                    flex: 0 0 calc(50% - 10px);
+                }
+            }
+
+            @media (max-width: 600px) {
+                .gallery-item-slide {
+                    flex: 0 0 100%;
+                }
+            }
+
+            /* Lightbox Styles */
+            .lightbox {
+                display: none;
+                /* Hidden by default */
+                position: fixed;
+                z-index: 2000;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+                background-color: rgba(0, 0, 0, 0.95);
+                /* Flexbox for centering */
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            }
+
+            .lightbox-content {
+                position: relative;
+                margin: auto;
+                padding: 0;
+                width: 100%;
+                height: 100%;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+                /* Contain the image */
+            }
+
+            #lightbox-img {
+                max-width: 90%;
+                max-height: 90%;
+                object-fit: contain;
+                border-radius: 4px;
+                transition: transform 0.1s ease-out;
+                /* Smooth drag, faster than 0.3s */
+                cursor: grab;
+                user-select: none;
+            }
+
+            #lightbox-img.grabbing {
+                cursor: grabbing;
+                transition: none;
+                /* Instant follow during drag */
+            }
+
+            .lightbox-close {
+                position: absolute;
+                top: 20px;
+                right: 35px;
+                color: #f1f1f1;
+                font-size: 40px;
+                font-weight: bold;
+                transition: 0.3s;
+                cursor: pointer;
+                z-index: 2001;
+            }
+
+            .lightbox-close:hover,
+            .lightbox-close:focus {
+                color: #bbb;
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+            .lightbox-prev,
+            .lightbox-next {
+                cursor: pointer;
+                position: absolute;
+                top: 50%;
+                width: auto;
+                padding: 16px;
+                margin-top: -50px;
+                color: white;
+                font-weight: bold;
+                font-size: 30px;
+                transition: 0.6s ease;
+                border-radius: 0 3px 3px 0;
+                user-select: none;
+                -webkit-user-select: none;
+                background: rgba(0, 0, 0, 0.2);
+                z-index: 2002;
+            }
+
+            .lightbox-next {
+                right: 0;
+                border-radius: 3px 0 0 3px;
+            }
+
+            .lightbox-prev {
+                left: 0;
+                border-radius: 3px 0 0 3px;
+            }
+
+            .lightbox-prev:hover,
+            .lightbox-next:hover {
+                background-color: rgba(0, 0, 0, 0.8);
+            }
+
+            .lightbox-controls {
+                position: absolute;
+                bottom: 20px;
+                background: rgba(0, 0, 0, 0.5);
+                padding: 10px 20px;
+                border-radius: 30px;
+                z-index: 2002;
+            }
+
+            .lightbox-controls button {
+                background: transparent;
+                border: 1px solid rgba(255, 255, 255, 0.5);
+                color: white;
+                padding: 5px 15px;
+                cursor: pointer;
+                border-radius: 4px;
+                margin: 0 5px;
+                font-size: 1rem;
+            }
+
+            .lightbox-controls button:hover {
+                background: rgba(255, 255, 255, 0.2);
+                border-color: white;
+            }
+        </style>
+
+        <script>
+            let currentImageIndex = 0;
+            let currentZoom = 1;
+            let translateX = 0;
+            let translateY = 0;
+            let isDragging = false;
+            let startX, startY;
+            let images = [];
+
+            // Initialize images array on load
+            document.addEventListener("DOMContentLoaded", function () {
+                images = [
+                    {
+                        src: "{% static 'images/services/estimation.png' %}",
+                        caption: "Estimation Take-Off"
+                    },
+                    {
+                        src: "{% static 'images/services/architecture.png' %}",
+                        caption: "Architecture Design"
+                    },
+                    {
+                        src: "{% static 'images/services/cabinetry.png' %}",
+                        caption: "Cabinetry Solutions"
+                    },
+                    {
+                        src: "{% static 'images/services/cad.png' %}",
+                        caption: "CAD Drafting"
+                    },
+                    {
+                        src: "{% static 'images/services/cnc.png' %}",
+                        caption: "CNC Programming"
+                    },
+                    {
+                        src: "{% static 'images/services/data_entry.png' %}",
+                        caption: "Data Entry"
+                    },
+                    {
+                        src: "{% static 'images/services/estimation.png' %}",
+                        caption: "Detailed Estimation"
+                    },
+                    {
+                        src: "{% static 'images/services/architecture.png' %}",
+                        caption: "Structural Design"
+                    },
+                    {
+                        src: "{% static 'images/services/cabinetry.png' %}",
+                        caption: "Millwork Details"
+                    },
+                    {
+                        src: "{% static 'images/services/cad.png' %}",
+                        caption: "3D Modeling"
+                    },
+                    {
+                        src: "{% static 'images/services/cnc.png' %}",
+                        caption: "Machine Programming"
+                    }
+                ];
+
+                // Attach events to lightbox image
+                const img = document.getElementById('lightbox-img');
+                img.addEventListener('mousedown', startDrag);
+                img.addEventListener('mousemove', drag);
+                img.addEventListener('mouseup', endDrag);
+                img.addEventListener('mouseleave', endDrag);
+                img.addEventListener('wheel', handleWheel);
+
+                // Touch support
+                img.addEventListener('touchstart', touchStart);
+                img.addEventListener('touchmove', touchMove);
+                img.addEventListener('touchend', endDrag);
+            });
+
+            function openLightbox(index) {
+                currentImageIndex = parseInt(index);
+                showLightbox();
+                updateLightboxImage();
+                resetZoom();
+            }
+
+            function closeLightbox() {
+                document.getElementById('lightbox').style.display = "none";
+                resetZoom();
+            }
+
+            function showLightbox() {
+                document.getElementById('lightbox').style.display = "flex";
+            }
+
+            function changeSlide(n) {
+                currentImageIndex += n;
+                if (currentImageIndex >= images.length) {
+                    currentImageIndex = 0;
+                }
+                if (currentImageIndex < 0) {
+                    currentImageIndex = images.length - 1;
+                }
+                updateLightboxImage();
+                resetZoom();
+            }
+
+            function updateLightboxImage() {
+                const img = document.getElementById('lightbox-img');
+                img.src = images[currentImageIndex].src;
+            }
+
+            function updateTransform() {
+                const img = document.getElementById('lightbox-img');
+                img.style.transform = `translate(${translateX}px, ${translateY}px) scale(${currentZoom})`;
+            }
+
+            function zoomImage(delta) {
+                const newZoom = currentZoom + delta;
+                if (newZoom >= 0.1 && newZoom <= 10) { // Limit zoom range
+                    currentZoom = newZoom;
+                    updateTransform();
+                }
+            }
+
+            function resetZoom() {
+                currentZoom = 1;
+                translateX = 0;
+                translateY = 0;
+                updateTransform();
+            }
+
+            // Drag Functionality
+            function startDrag(e) {
+                e.preventDefault();
+                isDragging = true;
+                startX = e.clientX - translateX;
+                startY = e.clientY - translateY;
+                document.getElementById('lightbox-img').classList.add('grabbing');
+            }
+
+            function drag(e) {
+                if (!isDragging) return;
+                e.preventDefault();
+                translateX = e.clientX - startX;
+                translateY = e.clientY - startY;
+                updateTransform();
+            }
+
+            function endDrag() {
+                isDragging = false;
+                document.getElementById('lightbox-img').classList.remove('grabbing');
+            }
+
+            // Touch handlers
+            function touchStart(e) {
+                if (e.touches.length === 1) {
+                    isDragging = true;
+                    startX = e.touches[0].clientX - translateX;
+                    startY = e.touches[0].clientY - translateY;
+                }
+            }
+            function touchMove(e) {
+                if (!isDragging) return;
+                if (e.touches.length === 1) {
+                    e.preventDefault(); // Prevent scrolling
+                    translateX = e.touches[0].clientX - startX;
+                    translateY = e.touches[0].clientY - startY;
+                    updateTransform();
+                }
+            }
+
+            // Wheel Zoom
+            function handleWheel(e) {
+                e.preventDefault();
+                const delta = Math.sign(e.deltaY) * -0.2;
+                zoomImage(delta);
+            }
+
+            // Close on outside click (if not dragging)
+            window.onclick = function (event) {
+                const modal = document.getElementById('lightbox');
+                const content = document.querySelector('.lightbox-content');
+                // Only close if clicking the dark overlay, not the content area
+                if (event.target == modal || event.target == content) {
+                    closeLightbox();
+                }
+            }
+
+            // Carousel Logic
+            document.addEventListener('DOMContentLoaded', function () {
+                let galleryPosition = 0;
+                const track = document.getElementById('galleryTrack');
+                const carouselContainer = document.querySelector('.carousel-container');
+                let autoPlayInterval;
+
+                if (!track || !carouselContainer) return;
+
+                window.scrollGallery = function (direction) {
+                    const itemWidth = track.firstElementChild.offsetWidth + 20; // Width + gap
+                    const maxScroll = track.scrollWidth - track.parentElement.offsetWidth;
+
+                    galleryPosition += direction * itemWidth;
+
+                    // Infinite Loop / Reset
+                    if (galleryPosition > maxScroll) {
+                        galleryPosition = 0; // Loop back to start
+                    } else if (galleryPosition < 0) {
+                        galleryPosition = maxScroll; // Loop to end
+                    }
+
+                    track.style.transform = `translateX(-${galleryPosition}px)`;
+                };
+
+                // Auto Play
+                function startAutoPlay() {
+                    stopAutoPlay(); // Clear existing
+                    autoPlayInterval = setInterval(() => {
+                        scrollGallery(1);
+                    }, 3000); // 3 seconds
+                }
+
+                function stopAutoPlay() {
+                    if (autoPlayInterval) clearInterval(autoPlayInterval);
+                }
+
+                // Start on load
+                startAutoPlay();
+
+                // Pause on hover
+                carouselContainer.addEventListener('mouseenter', stopAutoPlay);
+                carouselContainer.addEventListener('mouseleave', startAutoPlay);
+            });
+
+            // Keyboard nav
+            document.addEventListener('keydown', function (event) {
+                if (document.getElementById('lightbox').style.display === "flex") {
+                    if (event.key === "Escape") closeLightbox();
+                    if (event.key === "ArrowLeft") changeSlide(-1);
+                    if (event.key === "ArrowRight") changeSlide(1);
+                    if (event.key === "+" || event.key === "=") zoomImage(0.2);
+                    if (event.key === "-") zoomImage(-0.2);
+                    if (event.key === "0") resetZoom();
+                }
+            });
+        </script>
+
+        <!-- Sidebar -->
+        <aside class="ls-sidebar">
+            <div class="ls-widget ls-widget-primary">
+                <h3>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round"
+                        style="vertical-align: text-bottom; margin-right: 8px;">
+                        <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                        <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                    </svg>All Services
+                </h3>
+                <ul>
+                    <li><a href="#"
+                            style="text-decoration: none; color: inherit; display: flex; align-items: center;"><svg
+                                width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                style="margin-right: 8px; flex-shrink: 0;">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>Estimation & Quantity Take-Off Services</a></li>
+                    <li><a href="#"
+                            style="text-decoration: none; color: inherit; display: flex; align-items: center;"><svg
+                                width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                style="margin-right: 8px; flex-shrink: 0;">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>Cabinetry, Tops & Millwork Solutions</a></li>
+                    <li><a href="#"
+                            style="text-decoration: none; color: inherit; display: flex; align-items: center;"><svg
+                                width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                style="margin-right: 8px; flex-shrink: 0;">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>2D & 3D CAD Drafting Outsourcing Services</a></li>
+                    <li><a href="#"
+                            style="text-decoration: none; color: inherit; display: flex; align-items: center;"><svg
+                                width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                style="margin-right: 8px; flex-shrink: 0;">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>CNC Programming Support</a></li>
+                    <li><a href="#"
+                            style="text-decoration: none; color: inherit; display: flex; align-items: center;"><svg
+                                width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                style="margin-right: 8px; flex-shrink: 0;">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>Architecture, Interior & Structural Design</a></li>
+                    <li><a href="#"
+                            style="text-decoration: none; color: inherit; display: flex; align-items: center;"><svg
+                                width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                style="margin-right: 8px; flex-shrink: 0;">
+                                <line x1="5" y1="12" x2="19" y2="12"></line>
+                                <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>Data Entry Services</a></li>
+                </ul>
+            </div>
+
+            <div class="ls-cta-box">
+                <h4>Ready to start?</h4>
+                <p style="font-size: 0.9rem; margin-bottom: 15px; color: #666;">Contact us today to discuss your
+                    project.</p>
+                <a href="{% url 'contact' %}" class="btn-sidebar">Get a Free Quote</a>
+            </div>
+        </aside>
+    </div>
+</section>
+{% endblock %}

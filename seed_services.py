@@ -20,29 +20,39 @@ services_data = [
         "overview": "We provide accurate, detailed, and cost-effective Construction Estimation & Quantity Take-Off Services to contractors, builders, developers, and consultants across the globe. By outsourcing your estimating work to us in India, you save time, reduce overhead costs, and improve bidding accuracy.",
         "icon": "calculator",
         "image": "services/estimation.png",
+        "gallery": [
+            {"image": "services/estimation.png", "caption": "Estimation Take-Off"}
+        ],
         "sections": [
-            {
-                "heading": "Our Estimation Services Include",
-                "type": "list",
-                "items": "Countertop & Cabinet\nFlooring & Walls\nStone & Tile\nDoor & Window\nPlumbing Fixture\nElectrical & Lighting\nPaint\nRoofing & Siding\nAppliances\nShower and Tub\nDoor Hardware\nBlinds"
-            },
             {
                 "heading": "Who Can Benefit?",
                 "type": "tags",
-                "items": "General Contractors\nSubcontractors\nBuilders & Developers\nArchitects & Engineers\nConstruction Consultants"
+                "items": "General Contractors\nSubcontractors\nBuilders & Developers\nArchitects & Engineers\nConstruction Consultants",
+                "is_subsection": True
             },
             {
                 "heading": "Note",
                 "type": "text",
-                "content": "Whether you bid on 2 projects per month or 50, we scale our services as per your needs."
+                "content": "Whether you bid on 2 projects per month or 50, we scale our services as per your needs.",
+                "is_subsection": True
+            },
+            {
+                "heading": "Our Estimation Services Include",
+                "type": "list",
+                "items": "Countertop & Cabinet\nFlooring & Walls\nStone & Tile\nDoor & Window\nPlumbing Fixture\nElectrical & Lighting\nPaint\nRoofing & Siding\nAppliances\nShower and Tub\nDoor Hardware\nBlinds"
             }
         ]
     },
+
     {
         "title": "Cabinetry, Tops & Millwork Solutions",
         "overview": "We provide end-to-end Cabinetry, Countertop (Tops), and Millwork Drafting & Design Solutions to support fabricators and suppliers across the USA and Europe. Our outsourcing services are designed to streamline production, reduce errors, and ensure smooth coordination between design and fabrication. With deep industry understanding, we help you convert concepts, sketches, and specifications into precise, shop-ready drawings and 3D models.",
         "icon": "cabinet",
         "image": "services/cabinetry.png",
+
+        "gallery": [
+            {"image": "project_kitchen_cabinetry.png", "caption": "Modern Kitchen Cabinetry"}
+        ],
         "sections": [
             {
                 "heading": "Our Cabinetry, Top & Millwork Services",
@@ -66,6 +76,11 @@ services_data = [
         "overview": "We offer reliable and cost-effective 2D & 3D CAD Drafting Outsourcing Services to support architects, engineers, contractors, and manufacturing companies worldwide. By outsourcing your CAD drafting needs to us, you gain high-quality drawings, faster turnaround, and reduced operational costs without compromising accuracy.",
         "icon": "cad",
         "image": "services/cad.png",
+
+        "gallery": [
+             {"image": "project_commercial_complex.png", "caption": "Commercial Complex Drafting"},
+             {"image": "project_modern_residence.png", "caption": "Residential Layouts"}
+        ],
         "sections": [
             {
                 "heading": "Our Outsourced CAD Drafting Services",
@@ -89,6 +104,8 @@ services_data = [
         "overview": "We provide professional CNC programming support for companies in the countertops industry. Whether you work with granite, marble, quartz, or other materials, our experts create precise and optimized CNC programs tailored to your designs.",
         "icon": "cnc",
         "image": "services/cnc.png",
+
+        "gallery": [],
         "sections": [
             {
                 "heading": "Our Services Include",
@@ -109,9 +126,14 @@ services_data = [
     },
     {
         "title": "Architecture, Interior & Structural Design Services",
-        "overview": "At [Company name], we specialize in transforming your vision into reality with our comprehensive architecture, interior, and structural design services. Whether it’s a residential project, commercial space, or industrial building, our expert team ensures innovative, functional, and sustainable designs that exceed expectations.",
+        "overview": "At ConstructPro, we specialize in transforming your vision into reality with our comprehensive architecture, interior, and structural design services. Whether it’s a residential project, commercial space, or industrial building, our expert team ensures innovative, functional, and sustainable designs that exceed expectations.",
         "icon": "architecture",
         "image": "services/architecture.png",
+
+        "gallery": [
+            {"image": "project_modern_residence.png", "caption": "Modern Villa Design"},
+             {"image": "project_commercial_complex.png", "caption": "Office Tower Concept"}
+        ],
         "sections": [
             {
                 "heading": "Our Services Include",
@@ -132,9 +154,11 @@ services_data = [
     },
     {
         "title": "Data Entry Services",
-        "overview": "At [Company Name], we provide fast, accurate, and reliable data entry services to help businesses manage, organize, and utilize their data efficiently. Our experienced team ensures high-quality results while maintaining strict confidentiality.",
+        "overview": "At ConstructPro, we provide fast, accurate, and reliable data entry services to help businesses manage, organize, and utilize their data efficiently. Our experienced team ensures high-quality results while maintaining strict confidentiality.",
         "icon": "interior",
         "image": "services/data_entry.png",
+
+        "gallery": [],
         "sections": [
             {
                 "heading": "Our Data Entry Services Include",
@@ -156,6 +180,8 @@ services_data = [
 ]
 
 print("Starting Seed...")
+from main.models import Service, ServiceSection, ServiceSoftware, ServiceImage
+
 for index, s_data in enumerate(services_data):
     s = Service.objects.create(
         title=s_data["title"],
@@ -166,6 +192,7 @@ for index, s_data in enumerate(services_data):
     )
     print(f"Created Service: {s.title}")
     
+    # Text Sections
     for sect_index, sect_data in enumerate(s_data["sections"]):
         ServiceSection.objects.create(
             service=s,
@@ -173,8 +200,23 @@ for index, s_data in enumerate(services_data):
             section_type=sect_data.get("type", "text"),
             content=sect_data.get("content", ""),
             items=sect_data.get("items", ""),
+            is_subsection=sect_data.get("is_subsection", False),
             order=sect_index+1
         )
         print(f"  - Added Section: {sect_data.get('heading')}")
+
+
+
+    # Gallery
+    gallery_list = s_data.get("gallery", [])
+    for img_idx, img in enumerate(gallery_list):
+        ServiceImage.objects.create(
+            service=s,
+            image=img["image"],
+            caption=img.get("caption", ""),
+            order=img_idx
+        )
+    if gallery_list:
+        print(f"  - Added {len(gallery_list)} Gallery Images")
 
 print("Done!")

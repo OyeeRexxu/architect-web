@@ -4,7 +4,7 @@
 {% block title %}About Us - ConstructPro{% endblock %}
 
 {% block extra_css %}
-<link rel="stylesheet" href="{% static 'css/about-animations.css' %}">
+<link rel="stylesheet" href="{% static 'css/about-equalizer.css' %}">
 <script>
     // Scroll-triggered animations for all sections
     document.addEventListener('DOMContentLoaded', function () {
@@ -48,59 +48,35 @@
     </div>
 </section>
 
-<!-- About Section -->
-<section class="about-section">
-    <div class="container">
-        <div class="about-content">
-            <div class="about-image-wrapper scroll-fade">
-                <div class="about-image">
-                    <img src="{% static 'images/about_team.png' %}" alt="ConstructPro Team at Work"
-                        style="width: 100%; height: 500px; object-fit: cover; border-radius: var(--radius-lg);">
-                    <div class="about-badge">
-                        <svg width="32" height="32" viewBox="0 0 24 24" fill="white">
-                            <path
-                                d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
-                        </svg>
-                        <div class="badge-text">
-                            <div class="badge-number">20+</div>
-                            <div class="badge-label">Years</div>
-                        </div>
-                    </div>
-                    <div class="about-accent-shape"></div>
-                </div>
-            </div>
+<!-- About Section: Finalized Equalizer Layout -->
+<section class="about-equalizer-section">
+    <div class="about-equalizer-container">
+        <!-- Left Content -->
+        <div class="about-equalizer-content">
+            <h5>About Us</h5>
+            <h2>Building <span class="text-gradient">Global Partnerships</span></h2>
+            <p>ConstructPro is at the forefront of the worldwide market, merging the technology and construction
+                industries by connecting fabricators, builders, and architects with highly trained experts. With a
+                tradition of quality, we are unrelenting in our dedication to building solid connections and providing
+                our partners and clients with the best technical and design expertise.</p>
+            <p>We deliver our services remotely, anytime and from anywhere, using advanced technology through our modern
+                facility in India.</p>
+            <p>At ConstructPro, our focus is not only on services but on creating lasting partnerships based on trust,
+                quality, and outcomes.</p>
+        </div>
 
-            <div class="about-text scroll-fade">
-                <div class="section-subtitle">About Us</div>
-                <h2 class="section-title">Building <span class="text-gradient">Global Partnerships</span></h2>
-
-                <p class="about-description">
-                    <strong>ConstructPro</strong> is at the forefront of the worldwide market, merging the technology
-                    and construction industries by connecting fabricators, builders, and architects with highly trained
-                    experts. With a tradition of quality, we are unrelenting in our dedication to building solid
-                    connections and providing our partners and clients with the best technical and design expertise.
-                </p>
-
-                <p class="about-description">
-                    We deliver our services remotely, anytime and from anywhere, using advanced technology through our
-                    modern facility in India.
-                </p>
-
-                <p class="about-description">
-                    At <strong>ConstructPro</strong>, our focus is not only on services but on creating lasting
-                    partnerships based on trust, quality, and outcomes.
-                </p>
-
-                <p class="about-description">
-                    We provide unrivaled, cost-effective engineering design and technology solutions to our clients
-                    throughout the world, 24 hours a day, 365 days a year, to meet the needs of an ever-changing
-                    industry. Our extensive expertise spanning two decades has allowed us to partner with organizations
-                    all over the world, offering support and services that enable firms to focus on growth and
-                    developing new business relationships.
-                </p>
-
-                <a href="{% url 'home' %}#services" class="btn-primary">Explore Our Services →</a>
-            </div>
+        <!-- Right Visuals -->
+        <div class="about-equalizer-visual">
+            <div class="equalizer-strip"><img src="{% static 'images/generated/blueprint.png' %}" class="equalizer-img"
+                    alt="Tech"></div>
+            <div class="equalizer-strip"><img src="{% static 'images/generated/facade.png' %}" class="equalizer-img"
+                    alt="Build"></div>
+            <div class="equalizer-strip"><img src="{% static 'images/generated/detail.png' %}" class="equalizer-img"
+                    alt="Design"></div>
+            <div class="equalizer-strip"><img src="{% static 'images/generated/global.png' %}" class="equalizer-img"
+                    alt="Global"></div>
+            <div class="equalizer-strip"><img src="{% static 'images/generated/team.png' %}" class="equalizer-img"
+                    alt="Team"></div>
         </div>
     </div>
 </section>
@@ -331,63 +307,7 @@
     </div>
 </section>
 
-<!-- Team Section -->
-<section class="team-section">
-    <div class="container">
-        <div class="section-header">
-            <div class="section-subtitle">OUR TEAM</div>
-            <h2 class="section-title">Meet the <span class="text-gradient">Experts</span></h2>
-            <p class="section-description">Our talented team of architects, engineers, and designers working together to
-                bring your vision to life.</p>
-        </div>
 
-        <div class="team-grid">
-            <!-- Team Member 1 -->
-            <div class="team-card">
-                <div class="team-image">
-                    <img src="{% static 'images/team_architect.png' %}" alt="Senior Architect"
-                        style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover;">
-                </div>
-                <h3>Senior Architect</h3>
-                <p class="team-role">Lead Designer</p>
-                <p class="team-bio">20+ years of experience in architectural design and project management.</p>
-            </div>
-
-            <!-- Team Member 2 -->
-            <div class="team-card">
-                <div class="team-image">
-                    <img src="{% static 'images/team_cad_specialist.png' %}" alt="CAD Specialist"
-                        style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover;">
-                </div>
-                <h3>CAD Specialist</h3>
-                <p class="team-role">Technical Lead</p>
-                <p class="team-bio">Expert in 2D-3D CAD designing with advanced modeling techniques.</p>
-            </div>
-
-            <!-- Team Member 3 -->
-            <div class="team-card">
-                <div class="team-image">
-                    <img src="{% static 'images/team_project_manager.png' %}" alt="Project Manager"
-                        style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover;">
-                </div>
-                <h3>Project Manager</h3>
-                <p class="team-role">Operations Head</p>
-                <p class="team-bio">Ensures timely delivery and quality control for all projects.</p>
-            </div>
-
-            <!-- Team Member 4 -->
-            <div class="team-card">
-                <div class="team-image">
-                    <img src="{% static 'images/team_cad_specialist.png' %}" alt="CAD Specialist"
-                        style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover;">
-                </div>
-                <h3>Estimation Expert</h3>
-                <p class="team-role">Cost Analyst</p>
-                <p class="team-bio">Specialized in accurate quantity take-offs and cost estimation.</p>
-            </div>
-        </div>
-    </div>
-</section>
 
 <!-- Client Testimonials -->
 <section class="testimonials-section testimonials-opt-1">
@@ -506,88 +426,7 @@
     </div>
 </section>
 
-<!-- Featured Projects -->
-<section class="featured-projects-section">
-    <div class="container">
-        <div class="section-header">
-            <div class="section-subtitle">PORTFOLIO</div>
-            <h2 class="section-title">Featured <span class="text-gradient">Projects</span></h2>
-            <p class="section-description">Showcasing some of our best work in architectural design and construction​.
-            </p>
-        </div>
 
-        <div class="projects-grid">
-            <!-- Project 1 -->
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="{% static 'images/project_modern_residence.png' %}" alt="Modern Residence"
-                        style="width: 100%; height: 100%; object-fit: cover;">
-                </div>
-                <div class="project-content">
-                    <h3>Modern Residence Design</h3>
-                    <p>Complete 3D modeling and architectural planning for luxury residential project.</p>
-                    <div class="project-meta">
-                        <span>Residential</span>
-                        <span>•</span>
-                        <span>5,000 sq ft</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 2 -->
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="{% static 'images/project_commercial_complex.png' %}" alt="Commercial Complex"
-                        style="width: 100%; height: 100%; object-fit: cover;">
-                </div>
-                <div class="project-content">
-                    <h3>Commercial Complex</h3>
-                    <p>CAD drafting and estimation for multi-story commercial building project.</p>
-                    <div class="project-meta">
-                        <span>Commercial</span>
-                        <span>•</span>
-                        <span>25,000 sq ft</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Project 3 -->
-            <div class="project-card">
-                <div class="project-image">
-                    <img src="{% static 'images/project_kitchen_cabinetry.png' %}" alt="Kitchen Cabinetry"
-                        style="width: 100%; height: 100%; object-fit: cover;">
-                </div>
-                <div class="project-content">
-                    <h3>Kitchen Cabinetry Design</h3>
-                    <p>Detailed millwork drawings and CNC programming for custom cabinetry.</p>
-                    <div class="project-meta">
-                        <span>Interior</span>
-                        <span>•</span>
-                        <span>Custom Design</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- Stats Section -->
-<section class="stats-opt-7">
-    <div class="wrapper-pills">
-        <div class="stat-item">
-            <span class="num" data-target="10" data-suffix="+">0+</span> Years
-        </div>
-        <div class="stat-item">
-            <span class="num" data-target="26">0</span> Team
-        </div>
-        <div class="stat-item">
-            <span class="num" data-target="40" data-suffix="+">0+</span> Clients
-        </div>
-        <div class="stat-item">
-            <span class="num" data-target="11.5" data-suffix="K">0K</span> Projects
-        </div>
-    </div>
-</section>
 
 
 {% endblock %}

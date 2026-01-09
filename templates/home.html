@@ -7,74 +7,31 @@
 <!-- OPTION 3: Full Width Background -->
 <section class="hero-opt-3"
     style="background-image: url('{% static 'images/hero_background_dark.png' %}'); background-size: cover; background-position: center;">
-    <div class="hero-bg-overlay"></div>
-    <div class="hero-content-3">
-        <div class="hero-badge-3">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                <path
-                    d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
-            </svg>
-            Success in Engineering
-        </div>
-        <h1 class="hero-title-3">
+    <div class="hero-bg-overlay"
+        style="background: linear-gradient(90deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0) 100%);"></div>
+    <div class="hero-content-3" style="text-align: left; max-width: 800px; margin: 0; padding-left: 5%;">
+        <h1 class="hero-title-3" style="text-transform: capitalize; font-size: clamp(3rem, 6vw, 4.5rem);">
             Building with<br>
             <span class="text-gradient">Nature's Wisdom</span>
         </h1>
-        <p class="hero-desc-3">
+        <p class="hero-desc-3"
+            style="border-left: 4px solid var(--primary-color); padding-left: 1.5rem; text-shadow: none;">
             Thoughtful construction advancing the balance between sustainability and architectural global
-            innovation.<br>
-            Your partner in creating lasting value.
+            innovation.
         </p>
-        <div class="hero-buttons-3">
-            <button class="btn-primary">Start Journey →</button>
-            <button class="btn-secondary">Our Story</button>
-        </div>
-        <div class="trust-badges">
-            <div class="badge-item">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
-                    <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" />
-                </svg>
-                <span>ISO Certified</span>
-            </div>
-            <div class="badge-item">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
-                    <path
-                        d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
-                </svg>
-                <span>Award Winner</span>
-            </div>
-            <div class="badge-item">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
-                    <path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z" />
-                </svg>
-                <span>Trusted Partner</span>
-            </div>
-        </div>
+
     </div>
 </section>
+
+
 
 <!-- About Section -->
 <section class="about-section">
     <div class="container">
-        <div class="about-content">
-            <div class="about-image-wrapper scroll-animate">
-                <div class="about-image">
-                    <img src="{% static 'images/construction_workspace.png' %}" alt="ConstructPro Workspace">
-                    <div class="about-badge">
-                        <svg width="48" height="48" viewBox="0 0 24 24" fill="white">
-                            <path
-                                d="M9 11H7v2h2v-2m4 0h-2v2h2v-2m4 0h-2v2h2v-2m2-7h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2m0 16H5V9h14v11z" />
-                        </svg>
-                        <div class="badge-text">
-                            <span class="badge-number">15+</span>
-                            <span class="badge-label">Years of Excellence</span>
-                        </div>
-                    </div>
-                    <div class="about-accent-shape"></div>
-                </div>
-            </div>
+        <div class="about-content" style="grid-template-columns: 1fr;">
 
-            <div class="about-text about-text-content scroll-animate">
+
+            <div class="about-text about-text-content scroll-animate" style="padding-left: 0;">
                 <div class="section-subtitle">About Us</div>
                 <h2 class="section-title">Building <span class="text-gradient">Global Partnerships</span></h2>
 
@@ -103,531 +60,92 @@
                     developing new business relationships.
                 </p>
 
-                <a href="#services" class="btn-primary">Explore Our Services →</a>
+
             </div>
         </div>
     </div>
 </section>
 <!-- Services Section -->
 <section class="services" id="services">
-    <div class="container">
-        <div class="section-header scroll-animate">
-            <div class="section-subtitle">Our Services</div>
-            <h2 class="section-title">Comprehensive Solutions for Every Project</h2>
-            <p class="section-description">
-                From CAD drafting to interior design, we deliver expert services tailored to your construction and
-                architectural needs.
-            </p>
-        </div>
+    <!-- Premium Section Header (Option 4) -->
+    <div class="section-header-premium" style="background-image: url('{% static 'images/services_header_bg.png' %}');">
+        <div class="overlay"></div>
+        <div class="content container">
+            <div class="section-subtitle-premium">Our Services</div>
+            <h2>Comprehensive Solutions for Every Project</h2>
+            <p>From CAD drafting to interior design, we deliver expert services tailored to your construction and
+                architectural needs.</p>
+            <div class="highlight-line"></div>
 
-        <div class="services-grid">
-            {% for service in services %}
-            <div class="service-card scroll-animate">
-                <div class="organic-blob"></div>
-                <div class="organic-content">
-                    <div class="service-icon-float">
-                        {% if service.icon == 'calculator' %}
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
-                            <path
-                                d="M7 2H17C18.1 2 19 2.9 19 4V20C19 21.1 18.1 22 17 22H7C5.9 22 5 21.1 5 20V4C5 2.9 5.9 2 7 2M7 4V9H17V4H7M7 11V13H9V11H7M11 11V13H13V11H11M15 11V13H17V11H15M7 15V17H9V15H7M11 15V17H13V15H11M15 15V17H17V15H15M7 19V21H9V19H7M11 19V21H13V19H11M15 19V21H17V19H15Z" />
-                        </svg>
-                        {% elif service.icon == 'cabinet' %}
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
-                            <path
-                                d="M4 2H20C21.1 2 22 2.9 22 4V20C22 21.1 21.1 22 20 22H4C2.9 22 2 21.1 2 20V4C2 2.9 2.9 2 4 2M4 4V20H20V4H4M6 6H11V18H6V6M13 6H18V18H13V6M8 8V11H9V8H8M15 8V11H16V8H15Z" />
-                        </svg>
-                        {% elif service.icon == 'cad' %}
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
-                            <path
-                                d="M21 16.5C21 16.88 20.79 17.21 20.47 17.38L12.57 21.82C12.41 21.94 12.21 22 12 22C11.79 22 11.59 21.94 11.43 21.82L3.53 17.38C3.21 17.21 3 16.88 3 16.5V7.5C3 7.12 3.21 6.79 3.53 6.62L11.43 2.18C11.59 2.06 11.79 2 12 2C12.21 2 12.41 2.06 12.57 2.18L20.47 6.62C20.79 6.79 21 7.12 21 7.5V16.5M12 4.15L5 8.09V15.91L12 19.85L19 15.91V8.09L12 4.15Z" />
-                        </svg>
-                        {% elif service.icon == 'cnc' %}
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M3 3H21V21H3V3M5 5V19H19V5H5M7 7H17V9H7V7M7 11H17V13H7V11M7 15H17V17H7V15Z" />
-                        </svg>
-                        {% elif service.icon == 'architecture' %}
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2L2 12H5V20H19V12H22L12 2M12 6.5L16 10.5V18H8V10.5L12 6.5Z" />
-                        </svg>
-                        {% elif service.icon == 'interior' %}
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
-                            <path
-                                d="M17 11V5C17 3.9 16.1 3 15 3H9C7.9 3 7 3.9 7 5V11C5.3 11.5 4 12.9 4 15V21H6V19H18V21H20V15C20 12.9 18.7 11.5 17 11M9 5H15V11H9V5M18 17H6V15C6 14.2 6.5 13.5 7.3 13.2L8 13V12.7C8 12.3 8.3 12 8.8 12H15.3C15.7 12 16 12.3 16 12.8V13.1L16.8 13.3C17.5 13.5 18 14.2 18 15V17Z" />
-                        </svg>
-                        {% else %}
-                        <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2L1 21H23L12 2M12 6L19.53 19H4.47L12 6Z" />
-                        </svg>
-                        {% endif %}
+            <div class="services-grid" style="margin-top: 2rem; text-align: left;">
+                {% for service in services %}
+                <div class="service-card scroll-animate">
+                    <div class="organic-blob"></div>
+                    <div class="organic-content">
+                        <div class="service-icon-float">
+                            <i class="{{ service.icon }}" style="font-size: 28px;"></i>
+                        </div>
+                        <h3 style="margin-bottom:1rem;">{{ service.title }}</h3>
+
+                        <ul class="service-list" style="max-height: 160px; overflow-y: auto; padding-right: 8px;">
+                            {% for item in service.features.all %}
+                            <li class="service-list-item">{{ item.title }}</li>
+                            {% endfor %}
+                        </ul>
+
+                        <a href="{% url 'service_detail' service.slug %}" class="btn-service-read-more">
+                            Read More
+                        </a>
                     </div>
-                    <h3 style="margin-bottom:1rem;">{{ service.title }}</h3>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
 
-                    <ul class="service-list">
-                        {% for item in service.get_preview_items %}
-                        <li class="service-list-item">{{ item }}</li>
-                        {% endfor %}
-                    </ul>
+</section>
 
-                    <a href="{% url 'service_detail' service.slug %}" class="btn-service-read-more">
-                        Read More
-                    </a>
+<!-- ========================================= -->
+<!-- SOFTWARE SECTION - OPTION 2 (CLEAN GRID) -->
+<!-- ========================================= -->
+<section class="variant-section v2-bg" style="padding: 6rem 0;">
+    <div class="sw-split-layout">
+        <div class="sw-text-side v2">
+            <span class="sw-label lbl-primary">Toolset</span>
+            <h2>Technical <br><span>Precision</span></h2>
+            <p>Our software stack ensures millimeter-perfect execution.</p>
+        </div>
+        <div class="sw-separator"></div>
+        <div class="sw-content-side">
+            <div class="layout-clean-grid">
+                <div class="track-clean-grid animate-right">
+                    {% for i in "123" %}
+                    <div class="sw-item item-square"><img src="{% static 'images/software/autodesk autocad.png' %}">
+                    </div>
+                    <div class="sw-item item-square"><img src="{% static 'images/software/Revit.png' %}"></div>
+                    <div class="sw-item item-square"><img src="{% static 'images/software/sketchUP.png' %}"></div>
+                    <div class="sw-item item-square"><img src="{% static 'images/software/alphacam.png' %}"></div>
+                    <div class="sw-item item-square"><img src="{% static 'images/software/bluebeam.png' %}"></div>
+                    {% endfor %}
+                </div>
+                <!-- Duplicate Row for fullness -->
+                <div class="track-clean-grid animate-left">
+                    {% for i in "123" %}
+                    <div class="sw-item item-square"><img src="{% static 'images/software/mastercam.png' %}"></div>
+                    <div class="sw-item item-square"><img src="{% static 'images/software/mozaik.png' %}"></div>
+                    <div class="sw-item item-square"><img src="{% static 'images/software/design 2020.png' %}"></div>
+                    <div class="sw-item item-square"><img src="{% static 'images/software/inventor cam.png' %}"></div>
+                    <div class="sw-item item-square"><img src="{% static 'images/software/Capture.png' %}"></div>
+                    {% endfor %}
                 </div>
             </div>
-            {% endfor %}
         </div>
     </div>
 </section>
 
-<!-- Mastered Software Section -->
-<section class="software-section scroll-animate">
-    <div class="container">
-        <div class="section-header">
-            <div class="section-subtitle">Our Skills</div>
-            <h2 class="section-title">Mastered <span class="text-gradient">Software</span></h2>
-        </div>
 
-        <div class="software-carousel-wrapper">
-            <!-- Left fade overlay -->
-            <div class="carousel-fade-left"></div>
 
-            <div class="software-carousel-track">
-                <!-- First Set -->
-                <div class="carousel-item">
-                    <div class="software-strip-token">
-                        <img src="{% static 'images/software/alphacam.png' %}" alt="AlphaCAM" class="software-logo-img">
-                        <div class="token-divider"></div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="software-strip-token">
-                        <img src="{% static 'images/software/autodesk autocad.png' %}" alt="AutoCAD"
-                            class="software-logo-img">
-                        <div class="token-divider"></div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="software-strip-token">
-                        <img src="{% static 'images/software/baca systems.png' %}" alt="Baca Systems"
-                            class="software-logo-img">
-                        <div class="token-divider"></div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="software-strip-token">
-                        <img src="{% static 'images/software/bluebeam.png' %}" alt="Bluebeam" class="software-logo-img">
-                        <div class="token-divider"></div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="software-strip-token">
-                        <img src="{% static 'images/software/Capture.png' %}" alt="Capture" class="software-logo-img">
-                        <div class="token-divider"></div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="software-strip-token">
-                        <img src="{% static 'images/software/design 2020.png' %}" alt="Design 2020"
-                            class="software-logo-img">
-                        <div class="token-divider"></div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="software-strip-token">
-                        <img src="{% static 'images/software/ezcam.png' %}" alt="EzCAM" class="software-logo-img">
-                        <div class="token-divider"></div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="software-strip-token">
-                        <img src="{% static 'images/software/inventor cam.png' %}" alt="Inventor CAM"
-                            class="software-logo-img">
-                        <div class="token-divider"></div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="software-strip-token">
-                        <img src="{% static 'images/software/mastercam.png' %}" alt="Mastercam"
-                            class="software-logo-img">
-                        <div class="token-divider"></div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="software-strip-token">
-                        <img src="{% static 'images/software/Measure by RFMS.png' %}" alt="Measure by RFMS"
-                            class="software-logo-img">
-                        <div class="token-divider"></div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="software-strip-token">
-                        <img src="{% static 'images/software/moraware.png' %}" alt="Moraware" class="software-logo-img">
-                        <div class="token-divider"></div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="software-strip-token">
-                        <img src="{% static 'images/software/mozaik.png' %}" alt="Mozaik" class="software-logo-img">
-                        <div class="token-divider"></div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="software-strip-token">
-                        <img src="{% static 'images/software/planswift.png' %}" alt="PlanSwift"
-                            class="software-logo-img">
-                        <div class="token-divider"></div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="software-strip-token">
-                        <img src="{% static 'images/software/Revit.png' %}" alt="Revit" class="software-logo-img">
-                        <div class="token-divider"></div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="software-strip-token">
-                        <img src="{% static 'images/software/sketchUP.png' %}" alt="SketchUp" class="software-logo-img">
-                        <div class="token-divider"></div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="software-strip-token">
-                        <img src="{% static 'images/software/SLABSMITH.png' %}" alt="SlabSmith"
-                            class="software-logo-img">
-                        <div class="token-divider"></div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="software-strip-token">
-                        <img src="{% static 'images/software/SQUARE.png' %}" alt="Square" class="software-logo-img">
-                        <div class="token-divider"></div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="software-strip-token">
-                        <img src="{% static 'images/software/Stack.png' %}" alt="Stack" class="software-logo-img">
-                        <div class="token-divider"></div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="software-strip-token">
-                        <img src="{% static 'images/software/STONE APP.png' %}" alt="Stone App"
-                            class="software-logo-img">
-                        <div class="token-divider"></div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="software-strip-token">
-                        <img src="{% static 'images/software/stone profit systems.png' %}" alt="Stone Profit Systems"
-                            class="software-logo-img">
-                        <div class="token-divider"></div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="software-strip-token">
-                        <img src="{% static 'images/software/vray.png' %}" alt="V-Ray" class="software-logo-img">
-                        <div class="token-divider"></div>
-                    </div>
-                </div>
 
-                <!-- Duplicate Set for Infinite Scroll -->
-                <div class="carousel-item">
-                    <div class="software-strip-token">
-                        <img src="{% static 'images/software/alphacam.png' %}" alt="AlphaCAM" class="software-logo-img">
-                        <div class="token-divider"></div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="software-strip-token">
-                        <img src="{% static 'images/software/autodesk autocad.png' %}" alt="AutoCAD"
-                            class="software-logo-img">
-                        <div class="token-divider"></div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="software-strip-token">
-                        <img src="{% static 'images/software/baca systems.png' %}" alt="Baca Systems"
-                            class="software-logo-img">
-                        <div class="token-divider"></div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="software-strip-token">
-                        <img src="{% static 'images/software/bluebeam.png' %}" alt="Bluebeam" class="software-logo-img">
-                        <div class="token-divider"></div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="software-strip-token">
-                        <img src="{% static 'images/software/Capture.png' %}" alt="Capture" class="software-logo-img">
-                        <div class="token-divider"></div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="software-strip-token">
-                        <img src="{% static 'images/software/design 2020.png' %}" alt="Design 2020"
-                            class="software-logo-img">
-                        <div class="token-divider"></div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="software-strip-token">
-                        <img src="{% static 'images/software/ezcam.png' %}" alt="EzCAM" class="software-logo-img">
-                        <div class="token-divider"></div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="software-strip-token">
-                        <img src="{% static 'images/software/inventor cam.png' %}" alt="Inventor CAM"
-                            class="software-logo-img">
-                        <div class="token-divider"></div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="software-strip-token">
-                        <img src="{% static 'images/software/mastercam.png' %}" alt="Mastercam"
-                            class="software-logo-img">
-                        <div class="token-divider"></div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="software-strip-token">
-                        <img src="{% static 'images/software/Measure by RFMS.png' %}" alt="Measure by RFMS"
-                            class="software-logo-img">
-                        <div class="token-divider"></div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="software-strip-token">
-                        <img src="{% static 'images/software/moraware.png' %}" alt="Moraware" class="software-logo-img">
-                        <div class="token-divider"></div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="software-strip-token">
-                        <img src="{% static 'images/software/mozaik.png' %}" alt="Mozaik" class="software-logo-img">
-                        <div class="token-divider"></div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="software-strip-token">
-                        <img src="{% static 'images/software/planswift.png' %}" alt="PlanSwift"
-                            class="software-logo-img">
-                        <div class="token-divider"></div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="software-strip-token">
-                        <img src="{% static 'images/software/Revit.png' %}" alt="Revit" class="software-logo-img">
-                        <div class="token-divider"></div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="software-strip-token">
-                        <img src="{% static 'images/software/sketchUP.png' %}" alt="SketchUp" class="software-logo-img">
-                        <div class="token-divider"></div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="software-strip-token">
-                        <img src="{% static 'images/software/SLABSMITH.png' %}" alt="SlabSmith"
-                            class="software-logo-img">
-                        <div class="token-divider"></div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="software-strip-token">
-                        <img src="{% static 'images/software/SQUARE.png' %}" alt="Square" class="software-logo-img">
-                        <div class="token-divider"></div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="software-strip-token">
-                        <img src="{% static 'images/software/Stack.png' %}" alt="Stack" class="software-logo-img">
-                        <div class="token-divider"></div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="software-strip-token">
-                        <img src="{% static 'images/software/STONE APP.png' %}" alt="Stone App"
-                            class="software-logo-img">
-                        <div class="token-divider"></div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="software-strip-token">
-                        <img src="{% static 'images/software/stone profit systems.png' %}" alt="Stone Profit Systems"
-                            class="software-logo-img">
-                        <div class="token-divider"></div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="software-strip-token">
-                        <img src="{% static 'images/software/vray.png' %}" alt="V-Ray" class="software-logo-img">
-                        <div class="token-divider"></div>
-                    </div>
-                </div>
-
-                <!-- Triplicate Set for wider screens -->
-                <div class="carousel-item">
-                    <div class="software-strip-token">
-                        <img src="{% static 'images/software/alphacam.png' %}" alt="AlphaCAM" class="software-logo-img">
-                        <div class="token-divider"></div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="software-strip-token">
-                        <img src="{% static 'images/software/autodesk autocad.png' %}" alt="AutoCAD"
-                            class="software-logo-img">
-                        <div class="token-divider"></div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="software-strip-token">
-                        <img src="{% static 'images/software/baca systems.png' %}" alt="Baca Systems"
-                            class="software-logo-img">
-                        <div class="token-divider"></div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="software-strip-token">
-                        <img src="{% static 'images/software/bluebeam.png' %}" alt="Bluebeam" class="software-logo-img">
-                        <div class="token-divider"></div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="software-strip-token">
-                        <img src="{% static 'images/software/Capture.png' %}" alt="Capture" class="software-logo-img">
-                        <div class="token-divider"></div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="software-strip-token">
-                        <img src="{% static 'images/software/design 2020.png' %}" alt="Design 2020"
-                            class="software-logo-img">
-                        <div class="token-divider"></div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="software-strip-token">
-                        <img src="{% static 'images/software/ezcam.png' %}" alt="EzCAM" class="software-logo-img">
-                        <div class="token-divider"></div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="software-strip-token">
-                        <img src="{% static 'images/software/inventor cam.png' %}" alt="Inventor CAM"
-                            class="software-logo-img">
-                        <div class="token-divider"></div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="software-strip-token">
-                        <img src="{% static 'images/software/mastercam.png' %}" alt="Mastercam"
-                            class="software-logo-img">
-                        <div class="token-divider"></div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="software-strip-token">
-                        <img src="{% static 'images/software/Measure by RFMS.png' %}" alt="Measure by RFMS"
-                            class="software-logo-img">
-                        <div class="token-divider"></div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="software-strip-token">
-                        <img src="{% static 'images/software/moraware.png' %}" alt="Moraware" class="software-logo-img">
-                        <div class="token-divider"></div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="software-strip-token">
-                        <img src="{% static 'images/software/mozaik.png' %}" alt="Mozaik" class="software-logo-img">
-                        <div class="token-divider"></div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="software-strip-token">
-                        <img src="{% static 'images/software/planswift.png' %}" alt="PlanSwift"
-                            class="software-logo-img">
-                        <div class="token-divider"></div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="software-strip-token">
-                        <img src="{% static 'images/software/Revit.png' %}" alt="Revit" class="software-logo-img">
-                        <div class="token-divider"></div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="software-strip-token">
-                        <img src="{% static 'images/software/sketchUP.png' %}" alt="SketchUp" class="software-logo-img">
-                        <div class="token-divider"></div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="software-strip-token">
-                        <img src="{% static 'images/software/SLABSMITH.png' %}" alt="SlabSmith"
-                            class="software-logo-img">
-                        <div class="token-divider"></div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="software-strip-token">
-                        <img src="{% static 'images/software/SQUARE.png' %}" alt="Square" class="software-logo-img">
-                        <div class="token-divider"></div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="software-strip-token">
-                        <img src="{% static 'images/software/Stack.png' %}" alt="Stack" class="software-logo-img">
-                        <div class="token-divider"></div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="software-strip-token">
-                        <img src="{% static 'images/software/STONE APP.png' %}" alt="Stone App"
-                            class="software-logo-img">
-                        <div class="token-divider"></div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="software-strip-token">
-                        <img src="{% static 'images/software/stone profit systems.png' %}" alt="Stone Profit Systems"
-                            class="software-logo-img">
-                        <div class="token-divider"></div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="software-strip-token">
-                        <img src="{% static 'images/software/vray.png' %}" alt="V-Ray" class="software-logo-img">
-                        <div class="token-divider"></div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Right fade overlay -->
-            <div class="carousel-fade-right"></div>
-        </div>
-    </div>
-</section>
-
-<section class="stats-opt-7 scroll-animate">
-    <div class="wrapper-pills">
-        <div class="stat-item">
-            <span class="num" data-target="10" data-suffix="+">0+</span> Years
-        </div>
-        <div class="stat-item">
-            <span class="num" data-target="26">0</span> Team
-        </div>
-        <div class="stat-item">
-            <span class="num" data-target="40" data-suffix="+">0+</span> Clients
-        </div>
-        <div class="stat-item">
-            <span class="num" data-target="11.5" data-suffix="K">0K</span> Projects
-        </div>
-    </div>
-</section>
 
 <!-- Why Choose Our Outsourcing Services Section -->
 <section class="why-choose-section scroll-animate">
@@ -765,69 +283,9 @@
     </div>
 </section>
 
+
 <!-- How It Works Section -->
-<section class="process-section scroll-animate">
-    <div class="container">
-        <div class="section-header">
-            <div class="section-subtitle">HOW IT WORKS</div>
-            <h2 class="section-title">Our Working <span class="text-gradient">Process</span></h2>
-        </div>
 
-        <div class="process-grid">
-            <!-- Step 1 -->
-            <div class="process-card">
-                <div class="process-number">01</div>
-                <div class="process-icon">
-                    <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
-                        <path
-                            d="M19,3H14.82C14.4,1.84 13.3,1 12,1C10.7,1 9.6,1.84 9.18,3H5A2,2 0 0,0 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3M12,3A1,1 0 0,1 13,4A1,1 0 0,1 12,5A1,1 0 0,1 11,4A1,1 0 0,1 12,3M7,7H17V5H19V19H5V5H7V7M17,11H7V9H17V11M15,15H7V13H15V15Z" />
-                    </svg>
-                </div>
-                <h3>Planning Stage</h3>
-                <p>First we understand the need and plan the project accordingly.</p>
-            </div>
-
-            <!-- Step 2 -->
-            <div class="process-card">
-                <div class="process-number">02</div>
-                <div class="process-icon">
-                    <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
-                        <path
-                            d="M21.71,5.29L18.71,2.29C18.32,1.9 17.69,1.9 17.3,2.29L14.29,5.29C13.9,5.68 13.9,6.32 14.29,6.71L17.29,9.71C17.68,10.1 18.32,10.1 18.71,9.71L21.71,6.71C22.1,6.32 22.1,5.68 21.71,5.29M17,14.25V13C17,12.45 16.55,12 16,12C15.45,12 15,12.45 15,13V15C15,15.55 15.45,16 16,16H18C18.55,16 19,15.55 19,15C19,14.45 18.55,14 18,14H17.79L19.92,11.87L18.5,10.45L17,14.25M12,2C11.45,2 11,2.45 11,3V5C11,5.55 11.45,6 12,6C12.55,6 13,5.55 13,5V3C13,2.45 12.55,2 12,2M4.5,10.5V13.5C4.5,13.78 4.72,14 5,14H8C8.28,14 8.5,13.78 8.5,13.5V10.5C8.5,10.22 8.28,10 8,10H5C4.72,10 4.5,10.22 4.5,10.5M20,20C20,21.1 19.1,22 18,22H6C4.9,22 4,21.1 4,20V8C4,6.9 4.9,6 6,6H9C9,7.66 10.34,9 12,9C13.66,9 15,7.66 15,6H18C19.1,6 20,6.9 20,8V20Z" />
-                    </svg>
-                </div>
-                <h3>Design Process</h3>
-                <p>Discussed with the design team and start designing work.</p>
-            </div>
-
-            <!-- Step 3 -->
-            <div class="process-card">
-                <div class="process-number">03</div>
-                <div class="process-icon">
-                    <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
-                        <path
-                            d="M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M12,6A6,6 0 0,0 6,12A6,6 0 0,0 12,18A6,6 0 0,0 18,12A6,6 0 0,0 12,6M12,8A4,4 0 0,1 16,12A4,4 0 0,1 12,16A4,4 0 0,1 8,12A4,4 0 0,1 12,8Z" />
-                    </svg>
-                </div>
-                <h3>Execution Phase</h3>
-                <p>Give the client wireframe to execute the same according to the approval.</p>
-            </div>
-
-            <!-- Step 4 -->
-            <div class="process-card">
-                <div class="process-number">04</div>
-                <div class="process-icon">
-                    <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
-                        <path
-                            d="M12,3L2,12H5V20H19V12H22L12,3M12,8.75A2.25,2.25 0 0,1 14.25,11A2.25,2.25 0 0,1 12,13.25A2.25,2.25 0 0,1 9.75,11A2.25,2.25 0 0,1 12,8.75M12,15C13.5,15 16.5,15.75 16.5,17.25V18H7.5V17.25C7.5,15.75 10.5,15 12,15Z" />
-                    </svg>
-                </div>
-                <h3>Completed Projects</h3>
-                <p>After approval, get the final phase and touch as per client feedback.</p>
-            </div>
-        </div>
-    </div>
-</section>
 
 <!-- TESTIMONIALS OPTION 1: Classic Grid -->
 <section class="testimonials-section testimonials-opt-1 scroll-animate">
@@ -946,22 +404,9 @@
     </div>
 </section>
 
-<!-- Quote Section -->
-<section class="quote-section scroll-animate">
-    <div class="container">
-        <div class="quote-content">
-            <h2 class="quote-text">
-                "Building isn't just about structures.<br>
-                It's about creating lasting value."
-            </h2>
-            <p class="quote-description">
-                We believe in sustainable practices, honest communication, and delivering results that stand the test of
-                time.
-            </p>
-            <a href="{% url 'about' %}" class="btn-primary">Learn More</a>
-        </div>
-    </div>
-</section>
+
+
+
 
 
 
@@ -969,8 +414,8 @@
     // Scroll-triggered animations using Intersection Observer
     document.addEventListener('DOMContentLoaded', function () {
         const observerOptions = {
-            threshold: 0.15,
-            rootMargin: '0px 0px -50px 0px'
+            threshold: 0.1,
+            rootMargin: '0px 0px 0px 0px'
         };
 
         const observer = new IntersectionObserver(function (entries) {

@@ -445,13 +445,14 @@ div[style*="background:#eee"] {
 
 /* OPTION 3: Full Width Background */
 .hero-opt-3 {
-    min-height: 100vh;
+    min-height: 500px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    padding: 100px 0 60px;
+    justify-content: flex-start;
+    padding: 120px 0 40px;
     position: relative;
-    background: linear-gradient(135deg, #1A3D52 0%, #2C5F7C 100%);
+    background-size: cover;
+    background-position: center;
     overflow: hidden;
 }
 

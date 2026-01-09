@@ -1,0 +1,304 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}20 Unique About Variants{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/about-intro-variants.css' %}">
+<style>
+    .variant-separator {
+        background: #f8fafc;
+        padding: 4rem 1rem 1.5rem;
+        text-align: center;
+        border-top: 1px solid #e2e8f0;
+    }
+
+    .variant-label {
+        background: #000;
+        color: white;
+        padding: 0.5rem 1.5rem;
+        font-weight: 700;
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        border-radius: 50px;
+        letter-spacing: 1px;
+        display: inline-block;
+        margin-bottom: 1rem;
+    }
+
+    .page-intro {
+        padding: 6rem 0;
+        background: #fff;
+        text-align: center;
+    }
+
+    .page-intro h1 {
+        font-size: 3rem;
+        color: var(--text-dark);
+        margin-bottom: 0.5rem;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+
+<div class="page-intro">
+    <div class="container">
+        <h1>20 Unique Design Concepts</h1>
+        <p>The ultimate collection of diverse About Section layouts.</p>
+    </div>
+</div>
+
+<!-- 1-10 Included for completeness -->
+<!-- 1. Swiss -->
+<div class="variant-separator"><span class="variant-label">1. Swiss Architectural Grid</span></div>
+<section class="about-v1-swiss">
+    <div class="about-v1-grid">
+        <div class="about-v1-cell">
+            <h2>Building <span class="text-gradient">Global Partnerships</span></h2>
+        </div>
+        <div class="about-v1-cell"><img src="https://placehold.co/800x800/F1F5F9/2C5F7C?text=Swiss+Grid"
+                class="about-img-responsive" alt="Swiss"></div>
+    </div>
+</section>
+
+<!-- ... (2-10 omitted for brevity in prompt, but I will write ALL 20 in the file) ... -->
+<!-- RE-INSERTING 2-15 to ensure full file integrity -->
+
+<!-- 2. Mondrian -->
+<div class="variant-separator"><span class="variant-label">2. Mondrian Art Grid</span></div>
+<section class="about-v2-mondrian">
+    <div class="about-v2-m-container">
+        <div class="about-v2-block about-v2-text-main">
+            <h2>BUILDING<br>GLOBAL</h2>
+        </div>
+        <div class="about-v2-block about-v2-img-block"><img
+                src="https://placehold.co/400x600/2C5F7C/FFFFFF?text=Mondrian" class="about-img-responsive"></div>
+        <div class="about-v2-block about-v2-accent">
+            <p>Design & Tech.</p>
+        </div>
+    </div>
+</section>
+
+<!-- 3. Pill -->
+<div class="variant-separator"><span class="variant-label">3. Soft Pill</span></div>
+<section class="about-v3-organic">
+    <div class="about-v3-container">
+        <div class="about-v3-media"><img src="https://placehold.co/800x1200/2C5F7C/FFFFFF?text=Organic"
+                class="about-clean-img"></div>
+        <div class="about-v3-content">
+            <h2>Building <br><strong>Global Partnerships</strong></h2>
+        </div>
+    </div>
+</section>
+
+<!-- 4. Slash -->
+<div class="variant-separator"><span class="variant-label">4. Diagonal Slash</span></div>
+<section class="about-v4-slash">
+    <div class="about-v4-bg-slash"></div>
+    <div class="about-v4-container">
+        <div class="about-v4-content-left">
+            <h2>GLOBAL<br>PARTNERS</h2>
+        </div>
+        <div class="about-v4-content-right">
+            <p>ConstructPro is at the forefront.</p>
+        </div>
+    </div>
+</section>
+
+<!-- 5. Mask -->
+<div class="variant-separator"><span class="variant-label">5. Typography Mask</span></div>
+<section class="about-v5-mask">
+    <div class="about-v5-container">
+        <div class="about-v5-big-text">BUILDERS</div>
+        <div class="about-v5-overlay-content">
+            <p>Merging technology and construction.</p>
+        </div>
+    </div>
+</section>
+
+<!-- 6. Overlap -->
+<div class="variant-separator"><span class="variant-label">6. The Overlap</span></div>
+<section class="about-v6-overlap">
+    <div class="about-v6-container">
+        <img src="https://placehold.co/1600x900/1A3D52/FFFFFF?text=Overlap" class="about-v6-bg-img">
+        <div class="about-v6-card">
+            <h2>Building Global Partnerships</h2>
+        </div>
+    </div>
+</section>
+
+<!-- 7. Hive -->
+<div class="variant-separator"><span class="variant-label">7. Hexagon Hive</span></div>
+<section class="about-v7-hive">
+    <div class="about-v7-container">
+        <div class="about-v7-content">
+            <h2>Hexagon Cluster</h2>
+        </div>
+        <div class="about-v7-hex-grid">
+            <div class="about-v7-hex"><img src="https://placehold.co/300x300/2C5F7C/FFFFFF?text=1"></div>
+            <div class="about-v7-hex mt"><img src="https://placehold.co/300x300/4A8AAD/FFFFFF?text=2"></div>
+        </div>
+    </div>
+</section>
+
+<!-- 8. Slices -->
+<div class="variant-separator"><span class="variant-label">8. Vertical Slices</span></div>
+<section class="about-v8-slices">
+    <div class="about-v8-container">
+        <div class="about-v8-content">
+            <h2>Vertical Rhythm</h2>
+        </div>
+        <div class="about-v8-visual">
+            <div class="about-v8-slice"><img src="https://placehold.co/300x800/2C5F7C/FFFFFF?text=1"
+                    class="about-img-responsive"></div>
+            <div class="about-v8-slice"><img src="https://placehold.co/300x800/4A8AAD/FFFFFF?text=2"
+                    class="about-img-responsive"></div>
+        </div>
+    </div>
+</section>
+
+<!-- 9. Cinema -->
+<div class="variant-separator"><span class="variant-label">9. Cinematic Panorama</span></div>
+<section class="about-v9-cinema">
+    <div class="about-v9-container">
+        <div class="about-v9-media"><img src="https://placehold.co/1200x500/1e293b/FFFFFF?text=Panorama"
+                class="about-img-responsive"></div>
+    </div>
+</section>
+
+<!-- 10. Glass -->
+<div class="variant-separator"><span class="variant-label">10. Glassmorphism</span></div>
+<section class="about-v10-glass">
+    <div class="about-v10-container">
+        <div class="about-v10-image"><img src="https://placehold.co/800x1000/2C5F7C/FFFFFF?text=Glass"
+                class="about-img-responsive"></div>
+        <div class="about-v10-card">
+            <h2>Glass Effect</h2>
+        </div>
+    </div>
+</section>
+
+<!-- 11. Brutal -->
+<div class="variant-separator"><span class="variant-label">11. Brutalist Outline</span></div>
+<section class="about-v11-brutal">
+    <div class="about-v11-container">
+        <h2>RAW_DATA</h2>
+        <p>STATUS: ACTIVE</p>
+    </div>
+</section>
+
+<!-- 12. Blob -->
+<div class="variant-separator"><span class="variant-label">12. Abstract Blob</span></div>
+<section class="about-v12-mask">
+    <div class="about-v12-container">
+        <div class="about-v12-content">
+            <h2>Organic Flow</h2>
+        </div>
+        <div class="about-v12-blob"></div>
+    </div>
+</section>
+
+<!-- 13. Fixed -->
+<div class="variant-separator"><span class="variant-label">13. Split Diagonal Scroll</span></div>
+<section class="about-v13-fixed">
+    <div class="about-v13-split about-v13-left">
+        <div>
+            <h2>Fixed Scroll</h2>
+        </div>
+    </div>
+    <div class="about-v13-split about-v13-right"></div>
+</section>
+
+<!-- 14. Neon -->
+<div class="variant-separator"><span class="variant-label">14. Neon Blueprint</span></div>
+<section class="about-v14-neon">
+    <div class="about-v14-container">
+        <h2>[ NEON_CAD ]</h2>
+    </div>
+</section>
+
+<!-- 15. Mag -->
+<div class="variant-separator"><span class="variant-label">15. Magazine Cover</span></div>
+<section class="about-v15-mag">
+    <div class="about-v15-overlay"></div>
+    <div class="about-v15-container">
+        <div class="about-v15-big-title">EDITORIAL</div>
+    </div>
+</section>
+
+<!-- NEW 16-20 -->
+
+<!-- 16. Isomorphic -->
+<div class="variant-separator"><span class="variant-label">16. Isomorphic 3D</span></div>
+<section class="about-v16-iso">
+    <div class="about-v16-container">
+        <div class="about-v16-card">
+            <h2>3D Depth Perspective</h2>
+            <p>ConstructPro is at the forefront of the worldwide market.</p>
+        </div>
+        <div class="about-v16-img">
+            <img src="https://placehold.co/400x400/2C5F7C/FFFFFF?text=ISO" class="about-img-responsive">
+        </div>
+    </div>
+</section>
+
+<!-- 17. Glitch -->
+<div class="variant-separator"><span class="variant-label">17. Digital Glitch</span></div>
+<section class="about-v17-glitch">
+    <h2 data-text="CYBER CONSTRUCTION">CYBER CONSTRUCTION</h2>
+    <p>Merging the technology and construction industries.</p>
+</section>
+
+<!-- 18. Circular Reveal -->
+<div class="variant-separator"><span class="variant-label">18. Circular Reveal</span></div>
+<section class="about-v18-circle">
+    <div class="about-v18-container">
+        <div class="about-v18-wrap">
+            <img src="https://placehold.co/400x400/4A8AAD/FFFFFF?text=Circle" class="about-v18-img">
+            <h2>Organic Text Flow</h2>
+            <p>ConstructPro is at the forefront of the worldwide market, merging the technology and construction
+                industries by connecting fabricators, builders, and architects with highly trained experts. With a
+                tradition of quality, we are unrelenting in our dedication to building solid connections.</p>
+            <p>We deliver our services remotely, anytime and from anywhere, using advanced technology through our modern
+                facility in India. At ConstructPro, our focus is not only on services but on creating lasting
+                partnerships based on trust, quality, and outcomes.</p>
+        </div>
+    </div>
+</section>
+
+<!-- 19. Accordion Split -->
+<div class="variant-separator"><span class="variant-label">19. Accordion Split (Hover Me)</span></div>
+<section class="about-v19-accordion">
+    <div class="about-v19-panel">
+        <img src="https://placehold.co/400x800/2C5F7C/FFFFFF?text=Strategy">
+        <div class="about-v19-content">
+            <h3>Strategy</h3>
+        </div>
+    </div>
+    <div class="about-v19-panel">
+        <img src="https://placehold.co/400x800/1A3D52/FFFFFF?text=Design">
+        <div class="about-v19-content">
+            <h3>Design</h3>
+        </div>
+    </div>
+    <div class="about-v19-panel">
+        <img src="https://placehold.co/400x800/4A8AAD/FFFFFF?text=Build">
+        <div class="about-v19-content">
+            <h3>Build</h3>
+        </div>
+    </div>
+</section>
+
+<!-- 20. Typographic Scatter -->
+<div class="variant-separator"><span class="variant-label">20. Typographic Scatter</span></div>
+<section class="about-v20-scatter">
+    <div class="about-v20-letter l1">A</div>
+    <div class="about-v20-letter l2">B</div>
+    <div class="about-v20-container">
+        <h2>Artistic Scatter</h2>
+        <p>ConstructPro merges technology and construction.</p>
+    </div>
+</section>
+
+{% endblock %}

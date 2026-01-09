@@ -1,0 +1,212 @@
+/* ===================================
+   ABOUT PAGE - EQUALIZER SECTION
+   =================================== */
+
+.about-equalizer-section {
+    padding: 3rem 0;
+    /* Reduced from 8rem for better visibility on load */
+    background: #fff;
+    border-top: 1px solid #f1f5f9;
+    overflow: visible;
+    /* Allow content to be seen if slight overflow */
+}
+
+.about-equalizer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+    /* Aligned with Vision section (removed 2rem) */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+/* --- Left Content (Redesigned: Clean Horizontal) --- */
+.about-equalizer-content {
+    position: relative;
+    padding-right: 2rem;
+    /* Give some breathing room from the images */
+    color: #64748b;
+    line-height: 1.8;
+    text-align: left;
+}
+
+.about-equalizer-content h5 {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 0.9rem !important;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--primary-color) !important;
+    margin-bottom: 1.5rem;
+    opacity: 1;
+    /* Reset opacity */
+    position: static;
+    /* Remove absolute positioning */
+    writing-mode: horizontal-tb;
+    /* Reset direction */
+    transform: none;
+    /* Reset rotation */
+    white-space: normal;
+}
+
+.about-equalizer-content h5::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 2px;
+    background: var(--primary-color);
+    opacity: 0.5;
+}
+
+.about-equalizer-content::before {
+    display: none;
+    /* Remove the vertical line */
+}
+
+.about-equalizer-content h2 {
+    font-size: 3.5rem;
+    line-height: 1;
+    margin-bottom: 2rem;
+    color: var(--text-dark);
+    font-weight: 700;
+}
+
+.about-equalizer-content p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* --- Right Visuals (Equalizer Strips) --- */
+.about-equalizer-visual {
+    display: flex;
+    gap: 10px;
+    height: 500px;
+    align-items: center;
+}
+
+.equalizer-strip {
+    flex: 1;
+    background: #eee;
+    border-radius: 50px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: height 0.3s ease, transform 0.3s ease;
+}
+
+.equalizer-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Initial Heights & Animation */
+.equalizer-strip:nth-child(1) {
+    height: 60%;
+    animation: eq-oscillate 3s infinite ease-in-out;
+}
+
+.equalizer-strip:nth-child(2) {
+    height: 85%;
+    animation: eq-oscillate 4s infinite ease-in-out 0.5s;
+}
+
+.equalizer-strip:nth-child(3) {
+    height: 100%;
+    animation: eq-oscillate 3.5s infinite ease-in-out 1s;
+}
+
+.equalizer-strip:nth-child(4) {
+    height: 70%;
+    animation: eq-oscillate 4.5s infinite ease-in-out 0.2s;
+}
+
+.equalizer-strip:nth-child(5) {
+    height: 90%;
+    animation: eq-oscillate 3.2s infinite ease-in-out 0.8s;
+}
+
+@keyframes eq-oscillate {
+
+    0%,
+    100% {
+        transform: scaleY(1);
+    }
+
+    50% {
+        transform: scaleY(0.9);
+    }
+}
+
+/* Hover Interaction */
+.about-equalizer-visual:hover .equalizer-strip {
+    animation-play-state: paused;
+}
+
+.equalizer-strip:hover {
+    transform: scale(1.05);
+    z-index: 2;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .about-equalizer-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+
+    .about-equalizer-content {
+        padding-left: 0;
+    }
+
+    .about-equalizer-content h5 {
+        position: static;
+        writing-mode: horizontal-tb;
+        transform: none;
+        height: auto;
+        font-size: 1.2rem !important;
+        margin-bottom: 1rem;
+        opacity: 0.5;
+        background: none;
+    }
+
+    .about-equalizer-content::before {
+        display: none;
+    }
+
+    .about-equalizer-visual {
+        height: 300px;
+    }
+
+    /* Disable animation on mobile for performance/layout stability */
+    .equalizer-strip:nth-child(1) {
+        height: 60% !important;
+        animation: none;
+    }
+
+    .equalizer-strip:nth-child(2) {
+        height: 80% !important;
+        animation: none;
+    }
+
+    .equalizer-strip:nth-child(3) {
+        height: 100% !important;
+        animation: none;
+    }
+
+    .equalizer-strip:nth-child(4) {
+        height: 70% !important;
+        animation: none;
+    }
+
+    .equalizer-strip:nth-child(5) {
+        height: 90% !important;
+        animation: none;
+    }
+}

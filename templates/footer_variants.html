@@ -162,7 +162,7 @@
         </div>
 
         <div class="d5-col">
-            <h4>Expertise</h4>
+            <h4>Services</h4>
             {% for service in services|slice:":3" %}
             <a href="{% url 'service_detail' service.slug %}" class="d5-link">{{ service.title }}</a>
             {% endfor %}

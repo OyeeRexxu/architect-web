@@ -1,0 +1,112 @@
+<!-- FAQ Section - BACKUP -->
+<section class="faq-section">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-subtitle">FAQ</div>
+            <h2>Frequently Asked Questions</h2>
+            <p>Quick answers to common questions about our services</p>
+        </div>
+        <div class="faq-container">
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>What is your typical turnaround time?</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <p>Our standard turnaround time is 24-48 hours for most projects. Rush services are available
+                        upon request for urgent deadlines.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>What file formats do you accept?</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <p>We accept PDF, DWG, DXF, RVT (Revit), SKP (SketchUp), and most common CAD file formats. If
+                        you have a different format, contact us and we'll accommodate.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>How much do your services cost?</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <p>Pricing varies based on project complexity, size, and deadline. Upload your plans for a free,
+                        no-obligation quote within 24 hours.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>Do you offer rush or expedited services?</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <p>Yes! We offer rush services for tight deadlines. Contact us with your timeline and we'll
+                        accommodate your schedule whenever possible.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>What geographic areas do you serve?</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <p>We serve clients globally. As a remote estimating team, we work with architects, contractors,
+                        and builders worldwide.</p>
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <button class="faq-question">
+                    <span>How do I get started?</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M19 9l-7 7-7-7" />
+                    </svg>
+                </button>
+                <div class="faq-answer">
+                    <p>Simply upload your project files above, fill out the contact form, or reach out via WhatsApp
+                        or phone. We'll respond with a quote within 24 hours.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ JavaScript -->
+<script>
+    // FAQ Accordion
+    const faqQuestions = document.querySelectorAll('.faq-question');
+
+    faqQuestions.forEach(question => {
+        question.addEventListener('click', () => {
+            const faqItem = question.parentElement;
+            const isActive = faqItem.classList.contains('active');
+
+            // Close all FAQ items
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+            });
+
+            // Open clicked item if it wasn't active
+            if (!isActive) {
+                faqItem.classList.add('active');
+            }
+        });
+    });
+</script>

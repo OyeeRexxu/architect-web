@@ -1,0 +1,595 @@
+/* Software Variants - PROFESSIONAL CORPORATE EDITION */
+
+:root {
+    --gold: #c4a05e;
+    --dark: #0f172a;
+    --slate: #1e293b;
+    --silver: #cbd5e1;
+    --glass-dark: rgba(15, 23, 42, 0.6);
+    --glass-light: rgba(255, 255, 255, 0.05);
+}
+
+/* Base Layout (Preserved) */
+.sw-split-layout {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4rem;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 2rem;
+    overflow: hidden;
+    /* Removed perspective for flatter, cleaner look unless needed */
+}
+
+.sw-text-side {
+    flex: 0 0 350px;
+    text-align: left;
+    z-index: 10;
+}
+
+.sw-separator {
+    width: 1px;
+    height: 120px;
+    background: rgba(255, 255, 255, 0.2);
+    margin: 0 2rem;
+    position: relative;
+    z-index: 10;
+}
+
+.sw-content-side {
+    flex: 1;
+    overflow: hidden;
+    mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%);
+    background: transparent;
+    padding: 20px 0;
+}
+
+/* TRACK ANIMATIONS - ALL SMOOTH & LINEAR */
+.track-base {
+    display: flex;
+    width: max-content;
+    gap: 20px;
+}
+
+.animate-left {
+    animation: scroll-left 50s linear infinite;
+}
+
+.animate-right {
+    animation: scroll-right 50s linear infinite;
+}
+
+.animate-slow {
+    animation-duration: 70s;
+}
+
+.animate-fast {
+    animation-duration: 40s;
+}
+
+@keyframes scroll-left {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+@keyframes scroll-right {
+    0% {
+        transform: translateX(-50%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* COMMON ITEM */
+.sw-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.sw-item img {
+    max-width: 50%;
+    transition: 0.3s;
+}
+
+
+/* ========================================= */
+/* 1. GOLD WALL (HEXAGONS - PRESERVED)       */
+/* ========================================= */
+.layout-wall {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+}
+
+.wall-row {
+    margin-bottom: -35px;
+    width: 100%;
+    overflow: hidden;
+    padding: 10px 0;
+}
+
+.wall-row:nth-child(even) {
+    margin-left: 75px;
+}
+
+.item-hex {
+    width: 130px;
+    height: 150px;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    background: #050510;
+}
+
+.item-hex::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--gold);
+    clip-path: inherit;
+    z-index: -2;
+}
+
+.item-hex::before {
+    content: '';
+    position: absolute;
+    inset: 1px;
+    background: #050510;
+    clip-path: inherit;
+    z-index: -1;
+}
+
+.item-hex:hover {
+    transform: scale(1.05);
+    z-index: 10;
+}
+
+
+/* ========================================= */
+/* 2. SQUARED GRID (Clean Box)               */
+/* ========================================= */
+.v2-bg {
+    background: #111;
+}
+
+.sw-text-side.v2 h2 span {
+    color: white;
+    border-bottom: 2px solid white;
+}
+
+.layout-clean-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: #333;
+    /* Gap color */
+}
+
+.track-clean-grid {
+    display: flex;
+    gap: 1px;
+}
+
+/* Grid lines */
+.item-square {
+    width: 120px;
+    height: 120px;
+    background: #1a1a1a;
+    border: none;
+}
+
+.item-square:hover {
+    background: #252525;
+}
+
+.item-square img {
+    filter: grayscale(100%);
+    opacity: 0.5;
+}
+
+.item-square:hover img {
+    filter: none;
+    opacity: 1;
+}
+
+
+/* ========================================= */
+/* 3. CIRCULAR BADGES (Minimal)              */
+/* ========================================= */
+.v3-bg {
+    background: #f5f5f7;
+}
+
+/* Light Theme */
+.sw-text-side.v3 h2 {
+    color: #333;
+}
+
+.sw-text-side.v3 p {
+    color: #666;
+}
+
+.sw-text-side.v3 span {
+    color: #333;
+}
+
+.layout-badges {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.item-badge {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    border: 1px solid #eee;
+}
+
+.item-badge:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.08);
+}
+
+
+/* ========================================= */
+/* 4. GLASS CARDS (Modern UI)                */
+/* ========================================= */
+.v4-bg {
+    background: radial-gradient(circle at center, #2d3748 0%, #1a202c 100%);
+}
+
+.layout-glass {
+    display: flex;
+    align-items: center;
+    height: 200px;
+}
+
+.item-glass {
+    width: 140px;
+    height: 180px;
+    background: rgba(255, 255, 255, 0.03);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 12px;
+}
+
+.item-glass:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.item-glass img {
+    max-width: 60px;
+    filter: brightness(0) invert(1);
+    opacity: 0.8;
+}
+
+
+/* ========================================= */
+/* 5. BLUEPRINT (Technical)                  */
+/* ========================================= */
+.v5-bg {
+    background: #002b36;
+}
+
+/* Solarized Dark Blue */
+.sw-text-side.v5 h2 span {
+    color: #2aa198;
+}
+
+.layout-blueprint {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.item-blueprint {
+    width: 120px;
+    height: 120px;
+    border-right: 1px dashed rgba(42, 161, 152, 0.3);
+    border-bottom: 1px dashed rgba(42, 161, 152, 0.3);
+    background: transparent;
+}
+
+.item-blueprint img {
+    filter: brightness(0) sepia(1) hue-rotate(130deg) saturate(3);
+    opacity: 0.7;
+}
+
+/* Cyan tint */
+.item-blueprint:hover img {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+
+/* ========================================= */
+/* 6. LINEAR TRACK (Timeline)                */
+/* ========================================= */
+.v6-bg {
+    background: #000;
+    border-top: 1px solid #222;
+    border-bottom: 1px solid #222;
+}
+
+.layout-linear {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #333;
+    border-bottom: 1px solid #333;
+    padding: 20px 0;
+}
+
+/* Single track */
+.item-linear {
+    width: 160px;
+    height: 60px;
+    /* Wide, short */
+    background: transparent;
+    border-right: 1px solid #333;
+}
+
+.item-linear img {
+    max-height: 30px;
+    width: auto;
+    filter: grayscale(100%);
+}
+
+.item-linear:hover img {
+    filter: none;
+}
+
+
+/* ========================================= */
+/* 7. COMPACT CHIPS (Vertical)               */
+/* ========================================= */
+.v7-bg {
+    background: #0f0f0f;
+}
+
+.layout-chips {
+    height: 300px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    mask-image: linear-gradient(to bottom, transparent, black 15%, black 85%, transparent);
+}
+
+.col-chips {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    animation: scroll-up 40s linear infinite;
+}
+
+.col-chips.down {
+    animation: scroll-down 40s linear infinite;
+}
+
+.item-chip {
+    width: 140px;
+    height: 50px;
+    background: #1f1f1f;
+    border-radius: 4px;
+    border-left: 3px solid #333;
+}
+
+.item-chip img {
+    max-height: 25px;
+    width: auto;
+}
+
+.item-chip:hover {
+    background: #2a2a2a;
+    border-left-color: white;
+}
+
+@keyframes scroll-up {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-50%);
+    }
+}
+
+@keyframes scroll-down {
+    0% {
+        transform: translateY(-50%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+
+/* ========================================= */
+/* 8. MONO PILLS (Tag)                       */
+/* ========================================= */
+.v8-bg {
+    background: #fff;
+}
+
+/* White Theme */
+.sw-text-side.v8 h2 {
+    color: black;
+}
+
+.sw-text-side.v8 span {
+    color: #666;
+}
+
+.sw-text-side.v8 p {
+    color: #888;
+}
+
+.sw-separator.v8 {
+    background: #eee;
+}
+
+.layout-pills {
+    display: flex;
+    align-items: center;
+}
+
+.item-pill {
+    padding: 8px 24px;
+    border-radius: 100px;
+    border: 1px solid #ddd;
+    background: white;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: #444;
+    font-weight: 500;
+    margin: 0 10px;
+}
+
+.item-pill:hover {
+    border-color: #000;
+    color: #000;
+    background: #fff;
+}
+
+.item-pill img {
+    display: none;
+}
+
+.item-pill::after {
+    content: attr(data-name);
+}
+
+
+/* ========================================= */
+/* 9. DARK MOSAIC (Dense)                    */
+/* ========================================= */
+.v9-bg {
+    background: #050505;
+}
+
+.layout-mosaic {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.track-mosaic {
+    gap: 2px;
+}
+
+.item-mosaic {
+    width: 80px;
+    height: 80px;
+    /* Small */
+    background: #111;
+}
+
+.item-mosaic img {
+    max-width: 40%;
+    filter: brightness(0.6);
+}
+
+.item-mosaic:hover {
+    background: #222;
+}
+
+.item-mosaic:hover img {
+    filter: brightness(1);
+}
+
+
+/* ========================================= */
+/* 10. LOGO STRIP (Classic)                  */
+/* ========================================= */
+.v10-bg {
+    background: white;
+    border-top: 1px solid #eaeaea;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.sw-text-side.v10 h2 {
+    color: black;
+}
+
+.sw-text-side.v10 span {
+    color: #444;
+}
+
+.sw-text-side.v10 p {
+    color: #888;
+}
+
+.sw-separator.v10 {
+    background: #ddd;
+}
+
+.layout-strip {
+    display: flex;
+    align-items: center;
+    height: 120px;
+}
+
+.item-strip {
+    width: 150px;
+    height: 100px;
+    margin: 0 20px;
+    background: transparent;
+}
+
+.item-strip img {
+    filter: grayscale(100%);
+    opacity: 0.6;
+    width: auto;
+    max-height: 40px;
+    max-width: 100%;
+    transition: 0.3s;
+}
+
+.item-strip:hover img {
+    filter: none;
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+
+/* LABEL COLORS */
+.sw-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 4px 8px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-top: 1rem;
+    color: white;
+    background: #333;
+}
+
+.lbl-gold {
+    background: var(--gold);
+    color: black;
+}
+
+.lbl-white {
+    background: white;
+    color: black;
+}
+
+.lbl-dark {
+    background: black;
+    color: white;
+}
