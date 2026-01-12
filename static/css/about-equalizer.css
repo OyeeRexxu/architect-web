@@ -126,19 +126,302 @@
     .deck-container {
         grid-template-columns: 1fr;
         gap: 60px;
+        padding: 0 20px;
+        /* Add side padding back for smaller screens */
     }
 
     .deck-stack {
         height: 500px;
+        max-width: 600px;
+        /* Limit width on tablet so cards aren't huge */
+        margin: 0 auto;
+        /* Center the stack */
     }
 }
 
 @media (max-width: 768px) {
     .about-deck-section {
-        padding: 60px 0;
+        padding: 100px 0;
+        overflow: hidden;
+        /* Prevent horizontal scroll */
+    }
+
+    .deck-container {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        padding: 0 20px;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .deck-stack {
+        /* order: 1; -> REMOVED to let text come first */
+        /* Cards First */
+        height: 320px;
+        /* Adjusted height */
+        max-width: 100%;
+        width: 100%;
+        transform: scale(0.9);
+        margin: 0 auto;
+    }
+
+    .deck-text {
+        /* order: 2; -> REMOVED to let text come first */
+        /* Text Second */
+        text-align: center;
+        padding: 0 10px;
     }
 
     .deck-text h2 {
-        font-size: 2.5rem;
+        font-size: 2.2rem;
+        margin-bottom: 20px;
+        line-height: 1.2;
+        /* Better line height for mobile */
+    }
+
+    .deck-text p {
+        font-size: 1rem;
+        max-width: 100%;
+        /* Ensure text doesn't overflow */
+    }
+
+    .deck-stack {
+        height: 350px;
+        max-width: 100%;
+        width: 100%;
+        transform: scale(0.9);
+        /* Slightly scale down to ensure fit */
+        margin-top: 10px;
+    }
+
+    .deck-card {
+        height: 280px;
+        width: 100%;
+        /* Ensure card fits container */
+        max-width: 350px;
+        /* Max width for aesthetics */
+        left: 50%;
+        transform: translateX(-50%);
+        /* Center absolutely positioned element */
+        transform-origin: center center;
+    }
+
+    /* Adjust animations for smaller screens - reset transforms to ensure centering works */
+    .deck-card[data-pos="1"] {
+        transform: translateX(-50%) translateY(0px) rotate(-3deg) scale(0.9);
+    }
+
+    .deck-card[data-pos="2"] {
+        transform: translateX(-50%) translateY(15px) rotate(-2deg) scale(0.925);
+    }
+
+    .deck-card[data-pos="3"] {
+        transform: translateX(-50%) translateY(30px) rotate(0deg) scale(0.95);
+    }
+
+    .deck-card[data-pos="4"] {
+        transform: translateX(-50%) translateY(45px) rotate(2deg) scale(0.975);
+    }
+
+    .deck-card[data-pos="5"] {
+        transform: translateX(-50%) translateY(60px) rotate(3deg) scale(1);
+    }
+
+    .deck-card.shuffling {
+        transform: translateX(100%) translateY(20px) rotate(15deg) scale(1.05) !important;
+        /* Move off screen right */
+        opacity: 0;
+    }
+}
+
+/* ===================================
+   GENERAL ABOUT PAGE RESPONSIVENESS
+   =================================== */
+
+@media (max-width: 768px) {
+
+    /* Global Container Fix */
+    .container {
+        padding-left: 20px;
+        padding-right: 20px;
+        max-width: 100%;
+        width: 100%;
+    }
+
+    /* Section Headers */
+    .section-header {
+        margin-bottom: 40px !important;
+        text-align: center;
+    }
+
+    .section-title {
+        font-size: 2rem !important;
+        line-height: 1.3;
+    }
+
+    /* 1. About Hero */
+    .about-hero {
+        padding: 60px 0 30px !important;
+        min-height: auto;
+    }
+
+    .about-hero h1 {
+        font-size: 2.5rem !important;
+    }
+
+    /* 2. Vision & Mission (.variant-5) */
+    .variant-5 {
+        padding: 40px !important;
+    }
+
+    .vm-layout {
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+        padding-left: 40px;
+        padding-right: 40px;
+    }
+
+    .variant-5 h2 {
+        font-size: 2rem !important;
+    }
+
+    .vm-row {
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+        align-items: center;
+        text-align: center;
+    }
+
+    /* Ensure even rows reverse order if needed, or just keep flow */
+    /* Usually desktop might alternate, but on mobile standard column is best */
+    .vm-row:nth-child(even) {
+        flex-direction: column;
+    }
+
+    .vm-main {
+        width: 100% !important;
+        padding: 0 !important;
+        order: 1;
+    }
+
+    .vm-side {
+        width: 100% !important;
+        justify-content: center !important;
+        order: 2;
+    }
+
+    .vm-stat {
+        margin: 0 auto !important;
+        text-align: center;
+    }
+
+    /* 3. Why Choose Us */
+    .why-choose-section {
+        padding: 60px 0 !important;
+    }
+
+    .why-choose-grid {
+        display: grid;
+        grid-template-columns: 1fr !important;
+        gap: 30px;
+    }
+
+    /* 4. Commitment Section */
+    .commitment-section {
+        padding: 60px 0 !important;
+    }
+
+    .commitment-grid {
+        display: grid;
+        grid-template-columns: 1fr !important;
+        gap: 30px;
+    }
+
+    /* 5. Process Section */
+    .process-section {
+        padding: 60px 0 !important;
+    }
+
+    .process-grid {
+        display: grid;
+        grid-template-columns: 1fr !important;
+        gap: 40px;
+    }
+
+    .process-card {
+        padding: 30px 20px !important;
+    }
+
+
+    /* 6. Testimonials - Swipeable Carousel */
+    .testimonials-section {
+        padding: 60px 0 !important;
+    }
+}
+
+/* ===================================
+   GLOBAL TESTIMONIALS CAROUSEL
+   =================================== */
+.testimonials-grid {
+    display: flex !important;
+    /* Horizontal layout */
+    flex-wrap: nowrap !important;
+    overflow-x: auto;
+    /* Allow manual scroll/swipe */
+    scroll-snap-type: x mandatory;
+    /* Snap to cards */
+    -webkit-overflow-scrolling: touch;
+    /* Smooth scroll on iOS */
+    gap: 20px !important;
+    padding: 20px;
+    /* Space for scrollbar if visible */
+
+    /* Hide Scrollbar */
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE 10+ */
+}
+
+.testimonials-grid::-webkit-scrollbar {
+    display: none;
+    /* Chrome/Safari/Webkit */
+}
+
+.testimonial-card {
+    flex: 0 0 85%;
+    /* Sized to let next card peek on mobile */
+    max-width: 350px;
+    /* Cap width */
+    scroll-snap-align: center;
+    /* Snap to center */
+    margin: 0 !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    /* Enhance shadow for depth */
+}
+
+/* Adjustments for desktop to not look too small if keeping 85% width? 
+   Actually, for desktop we probably want card width to be fixed or smaller % so we see multiple.
+   Let's override for desktop logic if needed. 
+   But user said "loop like that" implying single/swipe view. 
+   However, 85% width on desktop will look huge. 
+   Let's set a max-width and maybe showing 3 cards? 
+   No, user said "loop all screen". 
+   Let's stick to the card css requested but maybe tweak flex-basis for larger screens?
+   If I leave flex: 0 0 85% it will be one giant card. 
+   Usually "loop" on desktop means showing 3 cards sliding.
+   Let's default to the requested style but maybe 30% width on desktop.
+*/
+
+@media (min-width: 769px) {
+    .testimonial-card {
+        flex: 0 0 30%;
+        /* Show ~3 cards on desktop */
+        max-width: none;
+        /* Reset max-width */
     }
 }
