@@ -1,0 +1,719 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}5 Professional Variants{% endblock %}
+
+{% block extra_css %}
+<style>
+    /* Common Professional Styles */
+    .variant-section {
+        padding: 120px 0;
+        min-height: 600px;
+    }
+
+    .variant-header {
+        text-align: center;
+        padding: 40px;
+        background: linear-gradient(135deg, #1A3D52, #2C5F7C);
+        color: white;
+        margin-bottom: 60px;
+    }
+
+    /* ==========================================
+       VARIANT 1: CORPORATE MINIMAL CLEAN
+       ========================================== */
+    .variant-1 {
+        background: #FFFFFF;
+    }
+
+    .corporate-container {
+        max-width: 1300px;
+        margin: 0 auto;
+        padding: 0 60px;
+    }
+
+    .corporate-intro {
+        text-align: center;
+        max-width: 900px;
+        margin: 0 auto 80px;
+    }
+
+    .corporate-intro .label {
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+        color: #2C5F7C;
+        font-weight: 600;
+        margin-bottom: 20px;
+        display: inline-block;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #2C5F7C;
+    }
+
+    .corporate-intro h2 {
+        font-size: 4rem;
+        color: #1A3D52;
+        margin-bottom: 30px;
+        font-weight: 700;
+        line-height: 1.1;
+    }
+
+    .corporate-intro .lead {
+        font-size: 1.3rem;
+        color: #64748B;
+        line-height: 1.8;
+        margin-bottom: 20px;
+    }
+
+    .corporate-intro p {
+        font-size: 1.1rem;
+        color: #64748B;
+        line-height: 1.8;
+    }
+
+    .corporate-features {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 40px;
+        margin-top: 80px;
+    }
+
+    .feature-box {
+        background: #F8FAFC;
+        padding: 50px 40px;
+        border-radius: 8px;
+        border-left: 4px solid #2C5F7C;
+        transition: all 0.3s ease;
+    }
+
+    .feature-box:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(44, 95, 124, 0.1);
+        background: white;
+    }
+
+    .feature-box .icon {
+        width: 70px;
+        height: 70px;
+        background: linear-gradient(135deg, #2C5F7C, #4A8AAD);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 2rem;
+        margin-bottom: 25px;
+    }
+
+    .feature-box h4 {
+        font-size: 1.4rem;
+        color: #1A3D52;
+        margin-bottom: 15px;
+        font-weight: 600;
+    }
+
+    .feature-box p {
+        color: #64748B;
+        line-height: 1.7;
+        margin: 0;
+    }
+
+    /* ==========================================
+       VARIANT 2: SPLIT SCREEN ELEGANT
+       ========================================== */
+    .variant-2 {
+        background: #F9FAFB;
+    }
+
+    .split-elegant-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1.1fr 1fr;
+        min-height: 700px;
+    }
+
+    .split-content {
+        padding: 100px 80px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background: white;
+    }
+
+    .split-content .eyebrow {
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        color: #2C5F7C;
+        margin-bottom: 20px;
+        font-weight: 600;
+    }
+
+    .split-content h2 {
+        font-size: 3.8rem;
+        color: #1A3D52;
+        margin-bottom: 35px;
+        line-height: 1.1;
+        font-weight: 700;
+    }
+
+    .split-content .highlight {
+        font-size: 1.25rem;
+        color: #2C5F7C;
+        font-weight: 600;
+        margin-bottom: 25px;
+        line-height: 1.6;
+    }
+
+    .split-content p {
+        font-size: 1.05rem;
+        color: #64748B;
+        line-height: 1.8;
+        margin-bottom: 25px;
+    }
+
+    .split-image {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .split-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .split-image::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, rgba(26, 61, 82, 0.1), transparent);
+    }
+
+    /* ==========================================
+       VARIANT 3: GRID SHOWCASE MODERN
+       ========================================== */
+    .variant-3 {
+        background: #FFFFFF;
+    }
+
+    .grid-showcase-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 60px;
+    }
+
+    .grid-showcase-header {
+        text-align: center;
+        margin-bottom: 80px;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .grid-showcase-header .tag {
+        display: inline-block;
+        background: #EBF5FF;
+        color: #2C5F7C;
+        padding: 8px 20px;
+        border-radius: 50px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        letter-spacing: 1px;
+        margin-bottom: 25px;
+    }
+
+    .grid-showcase-header h2 {
+        font-size: 3.5rem;
+        color: #1A3D52;
+        margin-bottom: 25px;
+        font-weight: 700;
+    }
+
+    .grid-showcase-header p {
+        font-size: 1.15rem;
+        color: #64748B;
+        line-height: 1.8;
+    }
+
+    .showcase-grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 30px;
+    }
+
+    .showcase-item {
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+    }
+
+    .showcase-item:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    }
+
+    .showcase-item.large {
+        grid-column: span 7;
+        grid-row: span 2;
+    }
+
+    .showcase-item.medium {
+        grid-column: span 5;
+    }
+
+    .showcase-item.small {
+        grid-column: span 4;
+    }
+
+    .showcase-item.full {
+        grid-column: span 12;
+        height: 300px;
+    }
+
+    .showcase-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    .showcase-item.text-card {
+        background: linear-gradient(135deg, #1A3D52, #2C5F7C);
+        color: white;
+        padding: 50px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .showcase-item.text-card h3 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        font-weight: 600;
+    }
+
+    .showcase-item.text-card p {
+        font-size: 1.05rem;
+        line-height: 1.7;
+        opacity: 0.95;
+    }
+
+    /* ==========================================
+       VARIANT 4: PREMIUM LAYERED
+       ========================================== */
+    .variant-4 {
+        background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
+    }
+
+    .premium-container {
+        max-width: 1300px;
+        margin: 0 auto;
+        padding: 0 60px;
+    }
+
+    .premium-header {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 80px;
+        align-items: center;
+        margin-bottom: 100px;
+    }
+
+    .premium-header-text h5 {
+        font-size: 0.85rem;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        color: #2C5F7C;
+        margin-bottom: 20px;
+        font-weight: 600;
+    }
+
+    .premium-header-text h2 {
+        font-size: 4rem;
+        color: #1A3D52;
+        margin-bottom: 30px;
+        line-height: 1.1;
+        font-weight: 700;
+    }
+
+    .premium-header-text p {
+        font-size: 1.1rem;
+        color: #64748B;
+        line-height: 1.8;
+    }
+
+    .premium-header-image {
+        position: relative;
+    }
+
+    .premium-frame {
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.15);
+        position: relative;
+    }
+
+    .premium-frame img {
+        width: 100%;
+        height: 450px;
+        object-fit: cover;
+        display: block;
+    }
+
+    .premium-frame::before {
+        content: '';
+        position: absolute;
+        top: -10px;
+        left: -10px;
+        right: -10px;
+        bottom: -10px;
+        background: linear-gradient(135deg, #2C5F7C, #4A8AAD);
+        border-radius: 16px;
+        z-index: -1;
+    }
+
+    .premium-cards {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+    }
+
+    .premium-card {
+        background: white;
+        padding: 45px;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+        border-top: 3px solid #2C5F7C;
+        transition: all 0.3s ease;
+    }
+
+    .premium-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 50px rgba(0, 0, 0, 0.12);
+    }
+
+    .premium-card .number {
+        font-size: 3rem;
+        font-weight: 900;
+        color: rgba(44, 95, 124, 0.15);
+        line-height: 1;
+        margin-bottom: 20px;
+    }
+
+    .premium-card h4 {
+        font-size: 1.5rem;
+        color: #1A3D52;
+        margin-bottom: 15px;
+        font-weight: 600;
+    }
+
+    .premium-card p {
+        color: #64748B;
+        line-height: 1.7;
+        margin: 0;
+    }
+
+    /* ==========================================
+       VARIANT 5: EXECUTIVE SOPHISTICATED
+       ========================================== */
+    .variant-5 {
+        background: #0F172A;
+        color: white;
+    }
+
+    .executive-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 60px;
+    }
+
+    .executive-hero {
+        text-align: center;
+        max-width: 900px;
+        margin: 0 auto 100px;
+        padding-bottom: 60px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .executive-hero .badge {
+        display: inline-block;
+        background: rgba(74, 138, 173, 0.2);
+        color: #4A8AAD;
+        padding: 8px 20px;
+        border-radius: 50px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        letter-spacing: 2px;
+        margin-bottom: 30px;
+        border: 1px solid rgba(74, 138, 173, 0.3);
+    }
+
+    .executive-hero h2 {
+        font-size: 4.5rem;
+        margin-bottom: 35px;
+        font-weight: 700;
+        line-height: 1.1;
+    }
+
+    .executive-hero .lead {
+        font-size: 1.35rem;
+        line-height: 1.8;
+        color: #CBD5E1;
+    }
+
+    .executive-content {
+        display: grid;
+        grid-template-columns: 1fr 1.2fr;
+        gap: 100px;
+        align-items: start;
+    }
+
+    .executive-text p {
+        font-size: 1.1rem;
+        line-height: 1.9;
+        color: #94A3B8;
+        margin-bottom: 25px;
+    }
+
+    .executive-images {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+    }
+
+    .executive-img {
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+        transition: all 0.4s ease;
+    }
+
+    .executive-img:hover {
+        transform: scale(1.05);
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+    }
+
+    .executive-img img {
+        width: 100%;
+        height: 280px;
+        object-fit: cover;
+        display: block;
+    }
+
+    .executive-img.tall {
+        grid-row: span 2;
+    }
+
+    .executive-img.tall img {
+        height: 100%;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+
+        .corporate-features,
+        .premium-cards,
+        .executive-images {
+            grid-template-columns: 1fr;
+        }
+
+        .split-elegant-container,
+        .premium-header,
+        .executive-content {
+            grid-template-columns: 1fr;
+        }
+
+        .showcase-item.large,
+        .showcase-item.medium,
+        .showcase-item.small,
+        .showcase-item.full {
+            grid-column: span 12;
+        }
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="variant-header">
+    <h1>5 Professional & Perfect Variants</h1>
+    <p>Premium corporate designs for professional presentation</p>
+</div>
+
+<!-- VARIANT 1: CORPORATE MINIMAL CLEAN -->
+<section class="variant-section variant-1">
+    <div class="corporate-container">
+        <div class="corporate-intro">
+            <span class="label">ABOUT US</span>
+            <h2>Building Global Partnerships</h2>
+            <p class="lead">ConstructPro is at the forefront of the worldwide market, merging the technology and
+                construction industries by connecting fabricators, builders, and architects with highly trained experts.
+            </p>
+            <p>With a tradition of quality spanning over two decades, we are unrelenting in our dedication to building
+                solid connections and providing our partners and clients with the best technical and design expertise.
+            </p>
+        </div>
+
+        <div class="corporate-features">
+            <div class="feature-box">
+                <div class="icon">🌐</div>
+                <h4>Global Technology Partner</h4>
+                <p>Trusted partner delivering reliable, scalable remote services that enable businesses to operate
+                    seamlessly worldwide.</p>
+            </div>
+            <div class="feature-box">
+                <div class="icon">📐</div>
+                <h4>2D-3D CAD Expertise</h4>
+                <p>Innovative engineering design solutions with precise estimation, comprehensive take-offs, and
+                    advanced CAD technology.</p>
+            </div>
+            <div class="feature-box">
+                <div class="icon">⭐</div>
+                <h4>Quality Tradition</h4>
+                <p>Generational experience ensuring impactful and reliable results, built on a tradition of quality and
+                    excellence.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- VARIANT 2: SPLIT SCREEN ELEGANT -->
+<section class="variant-section variant-2">
+    <div class="split-elegant-container">
+        <div class="split-content">
+            <span class="eyebrow">ABOUT CONSTRUCTPRO</span>
+            <h2>Building Global Partnerships</h2>
+            <p class="highlight">ConstructPro is at the forefront of the worldwide market, merging technology and
+                construction industries.</p>
+            <p>With a tradition of quality spanning over two decades, we connect fabricators, builders, and architects
+                with highly trained experts worldwide.</p>
+            <p>We deliver our services remotely, anytime and from anywhere, using advanced technology through our modern
+                facility in India.</p>
+            <p>At ConstructPro, our focus is on creating lasting partnerships based on trust, quality, and outcomes.</p>
+        </div>
+        <div class="split-image">
+            <img src="{% static 'images/generated/blueprint.png' %}" alt="Architecture">
+        </div>
+    </div>
+</section>
+
+<!-- VARIANT 3: GRID SHOWCASE MODERN -->
+<section class="variant-section variant-3">
+    <div class="grid-showcase-container">
+        <div class="grid-showcase-header">
+            <span class="tag">ABOUT US</span>
+            <h2>Building Global Partnerships</h2>
+            <p>ConstructPro is at the forefront of the worldwide market, merging the technology and construction
+                industries by connecting fabricators, builders, and architects with highly trained experts.</p>
+        </div>
+
+        <div class="showcase-grid">
+            <div class="showcase-item large">
+                <img src="{% static 'images/generated/blueprint.png' %}" alt="Tech">
+            </div>
+            <div class="showcase-item medium text-card">
+                <h3>Global Partner</h3>
+                <p>Trusted technology partner delivering reliable remote services worldwide with proven expertise.</p>
+            </div>
+            <div class="showcase-item small">
+                <img src="{% static 'images/generated/facade.png' %}" alt="Build">
+            </div>
+            <div class="showcase-item small">
+                <img src="{% static 'images/generated/detail.png' %}" alt="Design">
+            </div>
+            <div class="showcase-item small text-card">
+                <h3>CAD Excellence</h3>
+                <p>Innovative 2D-3D design solutions with precision.</p>
+            </div>
+            <div class="showcase-item full">
+                <img src="{% static 'images/generated/global.png' %}" alt="Global">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- VARIANT 4: PREMIUM LAYERED -->
+<section class="variant-section variant-4">
+    <div class="premium-container">
+        <div class="premium-header">
+            <div class="premium-header-text">
+                <h5>ABOUT US</h5>
+                <h2>Building Global Partnerships</h2>
+                <p>ConstructPro is at the forefront of the worldwide market, merging the technology and construction
+                    industries by connecting fabricators, builders, and architects with highly trained experts.</p>
+            </div>
+            <div class="premium-header-image">
+                <div class="premium-frame">
+                    <img src="{% static 'images/generated/blueprint.png' %}" alt="Architecture">
+                </div>
+            </div>
+        </div>
+
+        <div class="premium-cards">
+            <div class="premium-card">
+                <div class="number">01</div>
+                <h4>Global Technology Partner</h4>
+                <p>Trusted partner delivering reliable, scalable remote services that enable businesses to operate
+                    seamlessly worldwide.</p>
+            </div>
+            <div class="premium-card">
+                <div class="number">02</div>
+                <h4>2D-3D CAD Expertise</h4>
+                <p>Innovative engineering design solutions with precise estimation and comprehensive take-offs.</p>
+            </div>
+            <div class="premium-card">
+                <div class="number">03</div>
+                <h4>Quality Tradition</h4>
+                <p>With over two decades of experience, we provide the best technical and design expertise.</p>
+            </div>
+            <div class="premium-card">
+                <div class="number">04</div>
+                <h4>Remote Excellence</h4>
+                <p>Services delivered anytime, anywhere through advanced technology and modern facilities.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- VARIANT 5: EXECUTIVE SOPHISTICATED -->
+<section class="variant-section variant-5">
+    <div class="executive-container">
+        <div class="executive-hero">
+            <span class="badge">ABOUT CONSTRUCTPRO</span>
+            <h2>Building Global Partnerships</h2>
+            <p class="lead">ConstructPro is at the forefront of the worldwide market, merging the technology and
+                construction industries by connecting fabricators, builders, and architects with highly trained experts.
+            </p>
+        </div>
+
+        <div class="executive-content">
+            <div class="executive-text">
+                <p>With a tradition of quality spanning over two decades, we are unrelenting in our dedication to
+                    building solid connections and providing our partners and clients with the best technical and design
+                    expertise.</p>
+                <p>We deliver our services remotely, anytime and from anywhere, using advanced technology through our
+                    modern facility in India.</p>
+                <p>At ConstructPro, our focus is not only on services but on creating lasting partnerships based on
+                    trust, quality, and outcomes.</p>
+            </div>
+            <div class="executive-images">
+                <div class="executive-img">
+                    <img src="{% static 'images/generated/blueprint.png' %}" alt="Tech">
+                </div>
+                <div class="executive-img tall">
+                    <img src="{% static 'images/generated/facade.png' %}" alt="Build">
+                </div>
+                <div class="executive-img">
+                    <img src="{% static 'images/generated/detail.png' %}" alt="Design">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

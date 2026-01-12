@@ -1,0 +1,722 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}About Us - 5 Unique Variants{% endblock %}
+
+{% block extra_css %}
+<style>
+    /* Common Styles */
+    .variant-section {
+        padding: 100px 0;
+        min-height: 600px;
+    }
+
+    .variant-header {
+        text-align: center;
+        padding: 30px;
+        background: linear-gradient(135deg, #2C5F7C, #4A8AAD);
+        color: white;
+        margin-bottom: 50px;
+    }
+
+    /* ==========================================
+       VARIANT 1: DIAGONAL CASCADING CARDS
+       ========================================== */
+    .variant-1 {
+        background: #FAFAFA;
+    }
+
+    .diagonal-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 40px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 80px;
+        align-items: center;
+    }
+
+    .diagonal-text h5 {
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        color: #2C5F7C;
+        margin-bottom: 20px;
+    }
+
+    .diagonal-text h2 {
+        font-size: 3.5rem;
+        margin-bottom: 30px;
+        color: #1A3D52;
+    }
+
+    .diagonal-text p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #64748B;
+        margin-bottom: 20px;
+    }
+
+    .diagonal-cards {
+        position: relative;
+        height: 550px;
+    }
+
+    .diagonal-card {
+        position: absolute;
+        width: 280px;
+        height: 180px;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        transition: all 0.4s ease;
+    }
+
+    .diagonal-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .diagonal-card:nth-child(1) {
+        top: 0;
+        left: 0;
+        transform: rotate(-8deg);
+        z-index: 5;
+    }
+
+    .diagonal-card:nth-child(2) {
+        top: 80px;
+        left: 200px;
+        transform: rotate(5deg);
+        z-index: 4;
+    }
+
+    .diagonal-card:nth-child(3) {
+        top: 180px;
+        left: 50px;
+        transform: rotate(-3deg);
+        z-index: 3;
+    }
+
+    .diagonal-card:nth-child(4) {
+        top: 280px;
+        left: 220px;
+        transform: rotate(7deg);
+        z-index: 2;
+    }
+
+    .diagonal-card:nth-child(5) {
+        top: 370px;
+        left: 80px;
+        transform: rotate(-5deg);
+        z-index: 1;
+    }
+
+    .diagonal-card:hover {
+        transform: rotate(0deg) scale(1.1);
+        z-index: 10;
+    }
+
+    /* ==========================================
+       VARIANT 2: CIRCULAR ORBIT LAYOUT
+       ========================================== */
+    .variant-2 {
+        background: #fff;
+    }
+
+    .orbit-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 40px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 80px;
+    }
+
+    .orbit-visual {
+        position: relative;
+        height: 600px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .orbit-center {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #2C5F7C, #4A8AAD);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.5rem;
+        font-weight: 700;
+        text-align: center;
+        box-shadow: 0 10px 40px rgba(44, 95, 124, 0.3);
+        z-index: 10;
+    }
+
+    .orbit-item {
+        position: absolute;
+        width: 140px;
+        height: 140px;
+        border-radius: 50%;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        border: 4px solid white;
+        animation: orbit-float 3s ease-in-out infinite;
+    }
+
+    .orbit-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .orbit-item:nth-child(1) {
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        animation-delay: 0s;
+    }
+
+    .orbit-item:nth-child(2) {
+        top: 25%;
+        right: 10%;
+        animation-delay: 0.6s;
+    }
+
+    .orbit-item:nth-child(3) {
+        bottom: 25%;
+        right: 10%;
+        animation-delay: 1.2s;
+    }
+
+    .orbit-item:nth-child(4) {
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        animation-delay: 1.8s;
+    }
+
+    .orbit-item:nth-child(5) {
+        top: 25%;
+        left: 10%;
+        animation-delay: 2.4s;
+    }
+
+    @keyframes orbit-float {
+
+        0%,
+        100% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-20px);
+        }
+    }
+
+    /* ==========================================
+       VARIANT 3: ZIGZAG TIMELINE
+       ========================================== */
+    .variant-3 {
+        background: #F8F9FA;
+    }
+
+    .zigzag-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 40px;
+    }
+
+    .zigzag-header {
+        text-align: center;
+        margin-bottom: 80px;
+    }
+
+    .zigzag-header h5 {
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        color: #2C5F7C;
+        margin-bottom: 20px;
+    }
+
+    .zigzag-header h2 {
+        font-size: 3.5rem;
+        color: #1A3D52;
+        margin-bottom: 20px;
+    }
+
+    .zigzag-timeline {
+        position: relative;
+    }
+
+    .zigzag-timeline::before {
+        content: '';
+        position: absolute;
+        left: 50%;
+        top: 0;
+        bottom: 0;
+        width: 3px;
+        background: linear-gradient(180deg, #2C5F7C, #4A8AAD);
+        transform: translateX(-50%);
+    }
+
+    .zigzag-item {
+        display: flex;
+        margin-bottom: 60px;
+        align-items: center;
+    }
+
+    .zigzag-item:nth-child(odd) {
+        flex-direction: row-reverse;
+        text-align: right;
+    }
+
+    .zigzag-content {
+        flex: 1;
+        padding: 0 40px;
+    }
+
+    .zigzag-content h4 {
+        font-size: 1.8rem;
+        color: #1A3D52;
+        margin-bottom: 15px;
+    }
+
+    .zigzag-content p {
+        font-size: 1.05rem;
+        line-height: 1.7;
+        color: #64748B;
+    }
+
+    .zigzag-image {
+        flex: 1;
+        margin: 0 40px;
+    }
+
+    .zigzag-image img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+        border-radius: 16px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+    }
+
+    .zigzag-dot {
+        width: 20px;
+        height: 20px;
+        background: #2C5F7C;
+        border-radius: 50%;
+        border: 4px solid white;
+        box-shadow: 0 0 0 4px #2C5F7C;
+        position: relative;
+        z-index: 2;
+    }
+
+    /* ==========================================
+       VARIANT 4: FLOATING 3D BLOCKS
+       ========================================== */
+    .variant-4 {
+        background: linear-gradient(135deg, #F0F4F8 0%, #E2E8F0 100%);
+    }
+
+    .blocks-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 40px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 80px;
+        align-items: center;
+    }
+
+    .blocks-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 25px;
+        perspective: 1000px;
+    }
+
+    .float-block {
+        height: 280px;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        transform-style: preserve-3d;
+    }
+
+    .float-block img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .float-block:nth-child(1) {
+        animation: float-1 4s ease-in-out infinite;
+    }
+
+    .float-block:nth-child(2) {
+        animation: float-2 5s ease-in-out infinite 0.5s;
+    }
+
+    .float-block:nth-child(3) {
+        animation: float-3 4.5s ease-in-out infinite 1s;
+    }
+
+    .float-block:nth-child(4) {
+        animation: float-4 5.5s ease-in-out infinite 1.5s;
+        grid-column: span 2;
+        height: 200px;
+    }
+
+    .float-block:hover {
+        transform: translateY(-15px) rotateY(5deg);
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.25);
+    }
+
+    @keyframes float-1 {
+
+        0%,
+        100% {
+            transform: translateY(0) rotateX(0);
+        }
+
+        50% {
+            transform: translateY(-15px) rotateX(2deg);
+        }
+    }
+
+    @keyframes float-2 {
+
+        0%,
+        100% {
+            transform: translateY(0) rotateY(0);
+        }
+
+        50% {
+            transform: translateY(-20px) rotateY(-2deg);
+        }
+    }
+
+    @keyframes float-3 {
+
+        0%,
+        100% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-10px);
+        }
+    }
+
+    @keyframes float-4 {
+
+        0%,
+        100% {
+            transform: translateY(0) rotateX(0);
+        }
+
+        50% {
+            transform: translateY(-12px) rotateX(-1deg);
+        }
+    }
+
+    /* ==========================================
+       VARIANT 5: SPLIT REVEAL CURTAIN
+       ========================================== */
+    .variant-5 {
+        background: #FFFFFF;
+    }
+
+    .curtain-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        height: 600px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .curtain-left,
+    .curtain-right {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 50%;
+        transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .curtain-left {
+        left: 0;
+        background: #1A3D52;
+        padding: 80px 60px;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .curtain-left h5 {
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        margin-bottom: 20px;
+        opacity: 0.8;
+    }
+
+    .curtain-left h2 {
+        font-size: 3rem;
+        margin-bottom: 30px;
+    }
+
+    .curtain-left p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        margin-bottom: 20px;
+        opacity: 0.95;
+    }
+
+    .curtain-right {
+        right: 0;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 0;
+    }
+
+    .curtain-img {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .curtain-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+
+    .curtain-img:hover img {
+        transform: scale(1.15);
+    }
+
+    .curtain-img:nth-child(1) {
+        grid-column: span 2;
+    }
+
+    .curtain-img:nth-child(3) {
+        grid-row: span 2;
+    }
+
+    .curtain-container:hover .curtain-left {
+        transform: translateX(-10%);
+    }
+
+    .curtain-container:hover .curtain-right {
+        transform: translateX(10%);
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+
+        .diagonal-container,
+        .orbit-container,
+        .blocks-container {
+            grid-template-columns: 1fr;
+            gap: 60px;
+        }
+
+        .diagonal-cards,
+        .orbit-visual {
+            height: 400px;
+        }
+
+        .zigzag-item {
+            flex-direction: column !important;
+            text-align: center !important;
+        }
+
+        .zigzag-timeline::before {
+            display: none;
+        }
+
+        .curtain-container {
+            height: auto;
+        }
+
+        .curtain-left,
+        .curtain-right {
+            position: relative;
+            width: 100%;
+        }
+
+        .curtain-right {
+            height: 400px;
+        }
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="variant-header">
+    <h1>5 UNIQUE About Section Variants</h1>
+    <p>Scroll down to see each unique design concept</p>
+</div>
+
+<!-- VARIANT 1: DIAGONAL CASCADING CARDS -->
+<section class="variant-section variant-1">
+    <div class="diagonal-container">
+        <div class="diagonal-text">
+            <h5>ABOUT US</h5>
+            <h2>Building Global<br>Partnerships</h2>
+            <p>ConstructPro is at the forefront of the worldwide market, merging the technology and construction
+                industries by connecting fabricators, builders, and architects with highly trained experts.</p>
+            <p>With a tradition of quality, we are unrelenting in our dedication to building solid connections and
+                providing our partners and clients with the best technical and design expertise.</p>
+            <p>We deliver our services remotely, anytime and from anywhere, using advanced technology through our modern
+                facility in India.</p>
+        </div>
+        <div class="diagonal-cards">
+            <div class="diagonal-card"><img src="{% static 'images/generated/blueprint.png' %}" alt="Tech"></div>
+            <div class="diagonal-card"><img src="{% static 'images/generated/facade.png' %}" alt="Build"></div>
+            <div class="diagonal-card"><img src="{% static 'images/generated/detail.png' %}" alt="Design"></div>
+            <div class="diagonal-card"><img src="{% static 'images/generated/global.png' %}" alt="Global"></div>
+            <div class="diagonal-card"><img src="{% static 'images/generated/team.png' %}" alt="Team"></div>
+        </div>
+    </div>
+</section>
+
+<!-- VARIANT 2: CIRCULAR ORBIT LAYOUT -->
+<section class="variant-section variant-2">
+    <div class="orbit-container">
+        <div class="orbit-visual">
+            <div class="orbit-center">ConstructPro</div>
+            <div class="orbit-item"><img src="{% static 'images/generated/blueprint.png' %}" alt="Tech"></div>
+            <div class="orbit-item"><img src="{% static 'images/generated/facade.png' %}" alt="Build"></div>
+            <div class="orbit-item"><img src="{% static 'images/generated/detail.png' %}" alt="Design"></div>
+            <div class="orbit-item"><img src="{% static 'images/generated/global.png' %}" alt="Global"></div>
+            <div class="orbit-item"><img src="{% static 'images/generated/team.png' %}" alt="Team"></div>
+        </div>
+        <div class="diagonal-text">
+            <h5>ABOUT US</h5>
+            <h2>Building Global<br>Partnerships</h2>
+            <p>ConstructPro is at the forefront of the worldwide market, merging the technology and construction
+                industries by connecting fabricators, builders, and architects with highly trained experts.</p>
+            <p>With a tradition of quality, we are unrelenting in our dedication to building solid connections and
+                providing our partners and clients with the best technical and design expertise.</p>
+            <p>We deliver our services remotely, anytime and from anywhere, using advanced technology through our modern
+                facility in India.</p>
+        </div>
+    </div>
+</section>
+
+<!-- VARIANT 3: ZIGZAG TIMELINE -->
+<section class="variant-section variant-3">
+    <div class="zigzag-container">
+        <div class="zigzag-header">
+            <h5>ABOUT US</h5>
+            <h2>Building Global Partnerships</h2>
+            <p style="max-width: 700px; margin: 0 auto; font-size: 1.1rem; color: #64748B;">ConstructPro is at the
+                forefront of the worldwide market, merging the technology and construction industries.</p>
+        </div>
+        <div class="zigzag-timeline">
+            <div class="zigzag-item">
+                <div class="zigzag-content">
+                    <h4>Global Technology Partner</h4>
+                    <p>Trusted partner delivering reliable, scalable remote services worldwide</p>
+                </div>
+                <div class="zigzag-dot"></div>
+                <div class="zigzag-image">
+                    <img src="{% static 'images/generated/blueprint.png' %}" alt="Tech">
+                </div>
+            </div>
+
+            <div class="zigzag-item">
+                <div class="zigzag-content">
+                    <h4>2D-3D CAD Expertise</h4>
+                    <p>Innovative engineering design solutions with precise estimation and take-offs</p>
+                </div>
+                <div class="zigzag-dot"></div>
+                <div class="zigzag-image">
+                    <img src="{% static 'images/generated/facade.png' %}" alt="Build">
+                </div>
+            </div>
+
+            <div class="zigzag-item">
+                <div class="zigzag-content">
+                    <h4>Quality Tradition</h4>
+                    <p>With a tradition of quality, we provide the best technical expertise</p>
+                </div>
+                <div class="zigzag-dot"></div>
+                <div class="zigzag-image">
+                    <img src="{% static 'images/generated/detail.png' %}" alt="Design">
+                </div>
+            </div>
+
+            <div class="zigzag-item">
+                <div class="zigzag-content">
+                    <h4>Remote Excellence</h4>
+                    <p>Services delivered anytime, anywhere through advanced technology</p>
+                </div>
+                <div class="zigzag-dot"></div>
+                <div class="zigzag-image">
+                    <img src="{% static 'images/generated/team.png' %}" alt="Team">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- VARIANT 4: FLOATING 3D BLOCKS -->
+<section class="variant-section variant-4">
+    <div class="blocks-container">
+        <div class="diagonal-text">
+            <h5>ABOUT US</h5>
+            <h2>Building Global<br>Partnerships</h2>
+            <p>ConstructPro is at the forefront of the worldwide market, merging the technology and construction
+                industries by connecting fabricators, builders, and architects with highly trained experts.</p>
+            <p>With a tradition of quality, we are unrelenting in our dedication to building solid connections and
+                providing our partners and clients with the best technical and design expertise.</p>
+            <p>We deliver our services remotely, anytime and from anywhere, using advanced technology through our modern
+                facility in India.</p>
+        </div>
+        <div class="blocks-grid">
+            <div class="float-block"><img src="{% static 'images/generated/blueprint.png' %}" alt="Tech"></div>
+            <div class="float-block"><img src="{% static 'images/generated/facade.png' %}" alt="Build"></div>
+            <div class="float-block"><img src="{% static 'images/generated/detail.png' %}" alt="Design"></div>
+            <div class="float-block"><img src="{% static 'images/generated/global.png' %}" alt="Global"></div>
+        </div>
+    </div>
+</section>
+
+<!-- VARIANT 5: SPLIT REVEAL CURTAIN -->
+<section class="variant-section variant-5">
+    <div class="curtain-container">
+        <div class="curtain-left">
+            <h5>ABOUT US</h5>
+            <h2>Building Global Partnerships</h2>
+            <p>ConstructPro is at the forefront of the worldwide market, merging the technology and construction
+                industries by connecting fabricators, builders, and architects with highly trained experts.</p>
+            <p>With a tradition of quality, we are unrelenting in our dedication to building solid connections and
+                providing our partners and clients with the best technical and design expertise.</p>
+            <p>We deliver our services remotely, anytime and from anywhere.</p>
+        </div>
+        <div class="curtain-right">
+            <div class="curtain-img"><img src="{% static 'images/generated/blueprint.png' %}" alt="Tech"></div>
+            <div class="curtain-img"><img src="{% static 'images/generated/facade.png' %}" alt="Build"></div>
+            <div class="curtain-img"><img src="{% static 'images/generated/detail.png' %}" alt="Design"></div>
+            <div class="curtain-img"><img src="{% static 'images/generated/global.png' %}" alt="Global"></div>
+            <div class="curtain-img"><img src="{% static 'images/generated/team.png' %}" alt="Team"></div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

@@ -546,8 +546,8 @@
                     {% for item in section.get_items_list %}
                     <div class="ls-step" style="display: flex; gap: 15px; margin-bottom: 20px;">
                         <span class="ls-step-num"
-                            style="background: #2c5f7c; color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0;">{{
-                            forloop.counter }}</span>
+                            style="background: #2c5f7c; color: white; width: 30px; height: 30px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; flex-shrink: 0;">
+                            {{ forloop.counter }}</span>
                         <p style="margin: 0; padding-top: 4px;">{{ item }}</p>
                     </div>
                     {% endfor %}

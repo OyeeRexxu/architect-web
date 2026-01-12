@@ -1,0 +1,761 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}5 Brand New Unique Variants{% endblock %}
+
+{% block extra_css %}
+<style>
+    /* Common Styles */
+    .variant-section {
+        padding: 100px 0;
+        min-height: 600px;
+    }
+
+    .variant-header {
+        text-align: center;
+        padding: 30px;
+        background: linear-gradient(135deg, #2C5F7C, #4A8AAD);
+        color: white;
+        margin-bottom: 50px;
+    }
+
+    /* ==========================================
+       VARIANT A: MASONRY PINTEREST STYLE
+       ========================================== */
+    .variant-a {
+        background: #F9FAFB;
+    }
+
+    .masonry-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 40px;
+    }
+
+    .masonry-header {
+        text-align: center;
+        margin-bottom: 60px;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .masonry-header h2 {
+        font-size: 3.5rem;
+        color: #1A3D52;
+        margin-bottom: 20px;
+    }
+
+    .masonry-header p {
+        font-size: 1.2rem;
+        color: #64748B;
+        line-height: 1.8;
+    }
+
+    .masonry-grid {
+        column-count: 3;
+        column-gap: 25px;
+    }
+
+    .masonry-item {
+        break-inside: avoid;
+        margin-bottom: 25px;
+        background: white;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+    }
+
+    .masonry-item:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    }
+
+    .masonry-item.tall {
+        height: 450px;
+    }
+
+    .masonry-item.medium {
+        height: 320px;
+    }
+
+    .masonry-item.short {
+        height: 250px;
+    }
+
+    .masonry-item.text-only {
+        padding: 40px;
+    }
+
+    .masonry-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    .masonry-text h4 {
+        font-size: 1.5rem;
+        color: #1A3D52;
+        margin-bottom: 15px;
+    }
+
+    .masonry-text p {
+        color: #64748B;
+        line-height: 1.7;
+    }
+
+    /* ==========================================
+       VARIANT B: LAYERED PARALLAX CARDS
+       ========================================== */
+    .variant-b {
+        background: linear-gradient(180deg, #FFFFFF 0%, #F0F4F8 100%);
+        position: relative;
+    }
+
+    .parallax-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 40px;
+        perspective: 1000px;
+    }
+
+    .parallax-scene {
+        height: 700px;
+        position: relative;
+    }
+
+    .parallax-layer {
+        position: absolute;
+        width: 600px;
+        background: white;
+        border-radius: 20px;
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.2);
+        padding: 50px;
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .parallax-layer:hover {
+        transform: translateZ(50px) scale(1.05);
+        z-index: 100 !important;
+    }
+
+    .parallax-layer.layer-1 {
+        top: 50px;
+        left: 50px;
+        z-index: 5;
+    }
+
+    .parallax-layer.layer-2 {
+        top: 150px;
+        right: 100px;
+        z-index: 4;
+        background: linear-gradient(135deg, #2C5F7C, #4A8AAD);
+        color: white;
+    }
+
+    .parallax-layer.layer-3 {
+        top: 350px;
+        left: 150px;
+        z-index: 3;
+    }
+
+    .parallax-layer h3 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+    }
+
+    .parallax-layer p {
+        font-size: 1.05rem;
+        line-height: 1.7;
+        opacity: 0.95;
+    }
+
+    .parallax-layer img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+        border-radius: 12px;
+        margin-bottom: 20px;
+    }
+
+    /* ==========================================
+       VARIANT C: CARD DECK STACK
+       ========================================== */
+    .variant-c {
+        background: #1A1A1A;
+        color: white;
+    }
+
+    .deck-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 40px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 100px;
+        align-items: center;
+    }
+
+    .deck-stack {
+        position: relative;
+        height: 500px;
+        width: 100%;
+    }
+
+    .deck-card {
+        position: absolute;
+        width: 100%;
+        height: 400px;
+        background: white;
+        border-radius: 24px;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        cursor: pointer;
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        overflow: hidden;
+    }
+
+    .deck-card:nth-child(1) {
+        top: 0;
+        transform: translateX(-20px) rotate(-5deg);
+        z-index: 1;
+    }
+
+    .deck-card:nth-child(2) {
+        top: 20px;
+        transform: translateX(-10px) rotate(-3deg);
+        z-index: 2;
+    }
+
+    .deck-card:nth-child(3) {
+        top: 40px;
+        transform: translateX(0) rotate(0deg);
+        z-index: 3;
+    }
+
+    .deck-card:nth-child(4) {
+        top: 60px;
+        transform: translateX(10px) rotate(3deg);
+        z-index: 4;
+    }
+
+    .deck-card:nth-child(5) {
+        top: 80px;
+        transform: translateX(20px) rotate(5deg);
+        z-index: 5;
+    }
+
+    .deck-stack:hover .deck-card:nth-child(1) {
+        transform: translateX(-60px) translateY(-20px) rotate(-8deg);
+    }
+
+    .deck-stack:hover .deck-card:nth-child(2) {
+        transform: translateX(-30px) translateY(-10px) rotate(-4deg);
+    }
+
+    .deck-stack:hover .deck-card:nth-child(3) {
+        transform: translateX(0) translateY(0) rotate(0deg);
+    }
+
+    .deck-stack:hover .deck-card:nth-child(4) {
+        transform: translateX(30px) translateY(10px) rotate(4deg);
+    }
+
+    .deck-stack:hover .deck-card:nth-child(5) {
+        transform: translateX(60px) translateY(20px) rotate(8deg);
+    }
+
+    .deck-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .deck-text h5 {
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        color: #4A8AAD;
+        margin-bottom: 20px;
+    }
+
+    .deck-text h2 {
+        font-size: 3.5rem;
+        margin-bottom: 30px;
+    }
+
+    .deck-text p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        opacity: 0.9;
+        margin-bottom: 20px;
+    }
+
+    /* ==========================================
+       VARIANT D: ISOMETRIC 3D CUBES
+       ========================================== */
+    .variant-d {
+        background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%);
+        color: white;
+    }
+
+    .isometric-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 40px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 80px;
+        align-items: center;
+    }
+
+    .isometric-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        perspective: 1500px;
+    }
+
+    .iso-cube {
+        width: 100%;
+        height: 250px;
+        position: relative;
+        transform-style: preserve-3d;
+        transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .iso-cube:hover {
+        transform: rotateX(-10deg) rotateY(10deg) translateZ(20px);
+    }
+
+    .cube-face {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+    }
+
+    .cube-front {
+        transform: translateZ(125px);
+    }
+
+    .cube-face img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 12px;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    }
+
+    .iso-text h5 {
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        margin-bottom: 20px;
+        opacity: 0.9;
+    }
+
+    .iso-text h2 {
+        font-size: 3.5rem;
+        margin-bottom: 30px;
+    }
+
+    .iso-text p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        opacity: 0.95;
+        margin-bottom: 20px;
+    }
+
+    /* ==========================================
+       VARIANT E: LIQUID BLOB MORPHING
+       ========================================== */
+    .variant-e {
+        background: #0F172A;
+        color: white;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .blob-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 40px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 80px;
+        align-items: center;
+        position: relative;
+        z-index: 2;
+    }
+
+    .blob-shapes {
+        position: relative;
+        height: 600px;
+    }
+
+    .blob {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(40px);
+        animation: blob-float 8s ease-in-out infinite;
+        opacity: 0.4;
+    }
+
+    .blob-1 {
+        width: 300px;
+        height: 300px;
+        background: linear-gradient(135deg, #667EEA, #764BA2);
+        top: 0;
+        left: 0;
+        animation-delay: 0s;
+    }
+
+    .blob-2 {
+        width: 250px;
+        height: 250px;
+        background: linear-gradient(135deg, #F093FB, #F5576C);
+        top: 100px;
+        right: 50px;
+        animation-delay: 2s;
+    }
+
+    .blob-3 {
+        width: 200px;
+        height: 200px;
+        background: linear-gradient(135deg, #4FACFE, #00F2FE);
+        bottom: 50px;
+        left: 100px;
+        animation-delay: 4s;
+    }
+
+    @keyframes blob-float {
+
+        0%,
+        100% {
+            transform: translate(0, 0) scale(1);
+        }
+
+        33% {
+            transform: translate(30px, -30px) scale(1.1);
+        }
+
+        66% {
+            transform: translate(-20px, 20px) scale(0.9);
+        }
+    }
+
+    .blob-images {
+        position: relative;
+        height: 600px;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .blob-img {
+        border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+        overflow: hidden;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        animation: morph 8s ease-in-out infinite;
+    }
+
+    .blob-img:nth-child(2) {
+        animation-delay: 2s;
+    }
+
+    .blob-img:nth-child(3) {
+        animation-delay: 4s;
+    }
+
+    .blob-img:nth-child(4) {
+        animation-delay: 6s;
+    }
+
+    .blob-img img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    @keyframes morph {
+
+        0%,
+        100% {
+            border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+        }
+
+        25% {
+            border-radius: 58% 42% 75% 25% / 76% 46% 54% 24%;
+        }
+
+        50% {
+            border-radius: 50% 50% 33% 67% / 55% 27% 73% 45%;
+        }
+
+        75% {
+            border-radius: 33% 67% 58% 42% / 63% 68% 32% 37%;
+        }
+    }
+
+    .blob-text h5 {
+        font-size: 0.9rem;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        color: #60A5FA;
+        margin-bottom: 20px;
+    }
+
+    .blob-text h2 {
+        font-size: 3.5rem;
+        margin-bottom: 30px;
+        background: linear-gradient(135deg, #667EEA, #F093FB);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .blob-text p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        opacity: 0.9;
+        margin-bottom: 20px;
+        color: #CBD5E1;
+    }
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+        .masonry-grid {
+            column-count: 2;
+        }
+
+        .parallax-layer,
+        .deck-container,
+        .isometric-container,
+        .blob-container {
+            position: relative;
+            width: 100%;
+        }
+
+        .deck-container,
+        .isometric-container,
+        .blob-container {
+            grid-template-columns: 1fr;
+        }
+
+        .parallax-scene,
+        .deck-stack,
+        .blob-shapes {
+            height: 500px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .masonry-grid {
+            column-count: 1;
+        }
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="variant-header">
+    <h1>5 Brand New Unique Variants (A-E)</h1>
+    <p>Masonry, Parallax, Card Deck, Isometric 3D, Liquid Blobs</p>
+</div>
+
+<!-- VARIANT A: MASONRY PINTEREST STYLE -->
+<section class="variant-section variant-a">
+    <div class="masonry-container">
+        <div class="masonry-header">
+            <h2>Building Global Partnerships</h2>
+            <p>ConstructPro is at the forefront of the worldwide market, merging the technology and construction
+                industries by connecting fabricators, builders, and architects with highly trained experts.</p>
+        </div>
+        <div class="masonry-grid">
+            <div class="masonry-item tall">
+                <img src="{% static 'images/generated/blueprint.png' %}" alt="Tech">
+            </div>
+            <div class="masonry-item text-only medium">
+                <div class="masonry-text">
+                    <h4>Global Technology Partner</h4>
+                    <p>Trusted partner delivering reliable, scalable remote services that enable businesses to operate
+                        seamlessly worldwide.</p>
+                </div>
+            </div>
+            <div class="masonry-item short">
+                <img src="{% static 'images/generated/facade.png' %}" alt="Build">
+            </div>
+            <div class="masonry-item medium">
+                <img src="{% static 'images/generated/detail.png' %}" alt="Design">
+            </div>
+            <div class="masonry-item text-only short">
+                <div class="masonry-text">
+                    <h4>CAD Expertise</h4>
+                    <p>Innovative 2D-3D design solutions with precision.</p>
+                </div>
+            </div>
+            <div class="masonry-item tall">
+                <img src="{% static 'images/generated/global.png' %}" alt="Global">
+            </div>
+            <div class="masonry-item medium">
+                <img src="{% static 'images/generated/team.png' %}" alt="Team">
+            </div>
+            <div class="masonry-item text-only medium">
+                <div class="masonry-text">
+                    <h4>Remote Excellence</h4>
+                    <p>We deliver our services remotely, anytime and from anywhere, using advanced technology.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- VARIANT B: LAYERED PARALLAX CARDS -->
+<section class="variant-section variant-b">
+    <div class="parallax-container">
+        <div class="parallax-scene">
+            <div class="parallax-layer layer-1">
+                <img src="{% static 'images/generated/blueprint.png' %}" alt="Tech">
+                <h3>Technology Partner</h3>
+                <p>ConstructPro merges technology and construction industries worldwide.</p>
+            </div>
+            <div class="parallax-layer layer-2">
+                <h3>Global Reach</h3>
+                <p>With a tradition of quality, we deliver remote services using advanced technology through our modern
+                    facility in India.</p>
+                <p>Building lasting partnerships based on trust, quality, and outcomes.</p>
+            </div>
+            <div class="parallax-layer layer-3">
+                <img src="{% static 'images/generated/facade.png' %}" alt="Build">
+                <h3>CAD Excellence</h3>
+                <p>Innovative engineering design and 2D-3D CAD solutions with precise estimation.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- VARIANT C: CARD DECK STACK -->
+<section class="variant-section variant-c">
+    <div class="deck-container">
+        <div class="deck-text">
+            <h5>ABOUT US</h5>
+            <h2>Building Global<br>Partnerships</h2>
+            <p>ConstructPro is at the forefront of the worldwide market, merging the technology and construction
+                industries by connecting fabricators, builders, and architects with highly trained experts.</p>
+            <p>With a tradition of quality, we are unrelenting in our dedication to building solid connections.</p>
+        </div>
+        <div class="deck-stack">
+            <div class="deck-card"><img src="{% static 'images/generated/blueprint.png' %}" alt="Tech"></div>
+            <div class="deck-card"><img src="{% static 'images/generated/facade.png' %}" alt="Build"></div>
+            <div class="deck-card"><img src="{% static 'images/generated/detail.png' %}" alt="Design"></div>
+            <div class="deck-card"><img src="{% static 'images/generated/global.png' %}" alt="Global"></div>
+            <div class="deck-card"><img src="{% static 'images/generated/team.png' %}" alt="Team"></div>
+        </div>
+    </div>
+</section>
+
+<!-- VARIANT D: ISOMETRIC 3D CUBES -->
+<section class="variant-section variant-d">
+    <div class="isometric-container">
+        <div class="iso-text">
+            <h5>ABOUT US</h5>
+            <h2>Building Global<br>Partnerships</h2>
+            <p>ConstructPro is at the forefront of the worldwide market, merging the technology and construction
+                industries by connecting fabricators, builders, and architects with highly trained experts.</p>
+            <p>We deliver our services remotely, anytime and from anywhere.</p>
+        </div>
+        <div class="isometric-grid">
+            <div class="iso-cube">
+                <div class="cube-face cube-front">
+                    <img src="{% static 'images/generated/blueprint.png' %}" alt="Tech">
+                </div>
+            </div>
+            <div class="iso-cube">
+                <div class="cube-face cube-front">
+                    <img src="{% static 'images/generated/facade.png' %}" alt="Build">
+                </div>
+            </div>
+            <div class="iso-cube">
+                <div class="cube-face cube-front">
+                    <img src="{% static 'images/generated/detail.png' %}" alt="Design">
+                </div>
+            </div>
+            <div class="iso-cube">
+                <div class="cube-face cube-front">
+                    <img src="{% static 'images/generated/global.png' %}" alt="Global">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- VARIANT E: LIQUID BLOB MORPHING -->
+<section class="variant-section variant-e">
+    <div class="blob-container">
+        <div class="blob-text">
+            <h5>ABOUT US</h5>
+            <h2>Building Global<br>Partnerships</h2>
+            <p>ConstructPro is at the forefront of the worldwide market, merging the technology and construction
+                industries by connecting fabricators, builders, and architects with highly trained experts.</p>
+            <p>With a tradition of quality, we are unrelenting in our dedication to building solid connections and
+                providing our partners and clients with the best technical and design expertise.</p>
+        </div>
+        <div class="blob-images">
+            <div class="blob-img"><img src="{% static 'images/generated/blueprint.png' %}" alt="Tech"></div>
+            <div class="blob-img"><img src="{% static 'images/generated/facade.png' %}" alt="Build"></div>
+            <div class="blob-img"><img src="{% static 'images/generated/detail.png' %}" alt="Design"></div>
+            <div class="blob-img"><img src="{% static 'images/generated/global.png' %}" alt="Global"></div>
+        </div>
+    </div>
+    <div class="blob-shapes">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+</section>
+
+<script>
+    // Card Deck Image Rotation Animation
+    document.addEventListener('DOMContentLoaded', function () {
+        const deckCards = document.querySelectorAll('.deck-card img');
+
+        // Array of all available images
+        const images = [
+            "{% static 'images/generated/blueprint.png' %}",
+            "{% static 'images/generated/facade.png' %}",
+            "{% static 'images/generated/detail.png' %}",
+            "{% static 'images/generated/global.png' %}",
+            "{% static 'images/generated/team.png' %}"
+        ];
+
+        let currentIndices = [0, 1, 2, 3, 4]; // Initial indices for each card
+        let currentCardIndex = 0; // Which card to update
+
+        // Rotate images one by one
+        setInterval(function () {
+            if (deckCards.length > 0) {
+                const card = deckCards[currentCardIndex];
+
+                // Fade out
+                card.style.opacity = '0';
+                card.style.transition = 'opacity 0.5s ease';
+
+                setTimeout(function () {
+                    // Update to next image
+                    currentIndices[currentCardIndex] = (currentIndices[currentCardIndex] + 1) % images.length;
+                    card.src = images[currentIndices[currentCardIndex]];
+
+                    // Fade in
+                    card.style.opacity = '1';
+                }, 500);
+
+                // Move to next card
+                currentCardIndex = (currentCardIndex + 1) % deckCards.length;
+            }
+        }, 3000); // Change one image every 3 seconds
+    });
+</script>
+
+{% endblock %}

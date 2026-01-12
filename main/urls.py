@@ -20,4 +20,8 @@ urlpatterns = [
     path('about-intro-variants/', TemplateView.as_view(template_name='about_intro_variants.html'), name='about_intro_variants'),
     path('backup/', views.backup_files, name='backup_files'),
     path('vertical-slice-variants/', TemplateView.as_view(template_name='vertical_slice_variants.html'), name='vertical_slice_variants'),
+    path('about-5-unique-variants/', TemplateView.as_view(template_name='about_5_unique_variants.html'), name='about_5_unique_variants'),
+    path('about-variants-6-10/', TemplateView.as_view(template_name='about_variants_6_10.html'), name='about_variants_6_10'),
+    path('about-new-variants/', TemplateView.as_view(template_name='about_new_variants.html'), name='about_new_variants'),
+    path('about-final-variants/', TemplateView.as_view(template_name='about_final_variants.html'), name='about_final_variants'),
 ]

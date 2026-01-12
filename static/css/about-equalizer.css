@@ -1,212 +1,144 @@
 /* ===================================
-   ABOUT PAGE - EQUALIZER SECTION
+   CARD DECK STACK - ABOUT SECTION
    =================================== */
 
-.about-equalizer-section {
-    padding: 3rem 0;
-    /* Reduced from 8rem for better visibility on load */
-    background: #fff;
-    border-top: 1px solid #f1f5f9;
-    overflow: visible;
-    /* Allow content to be seen if slight overflow */
+.about-deck-section {
+    background: var(--bg-cream, #FAF8F5);
+    color: var(--text-dark, #1F2937);
+    padding: 100px 0;
 }
 
-.about-equalizer-container {
-    max-width: 1200px;
+.deck-container {
+    max-width: 1400px;
     margin: 0 auto;
-    padding: 0;
-    /* Aligned with Vision section (removed 2rem) */
+    padding: 0 40px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    gap: 100px;
     align-items: center;
 }
 
-/* --- Left Content (Redesigned: Clean Horizontal) --- */
-.about-equalizer-content {
+.deck-stack {
     position: relative;
-    padding-right: 2rem;
-    /* Give some breathing room from the images */
-    color: #64748b;
-    line-height: 1.8;
-    text-align: left;
-}
-
-.about-equalizer-content h5 {
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-    font-size: 0.9rem !important;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    color: var(--primary-color) !important;
-    margin-bottom: 1.5rem;
-    opacity: 1;
-    /* Reset opacity */
-    position: static;
-    /* Remove absolute positioning */
-    writing-mode: horizontal-tb;
-    /* Reset direction */
-    transform: none;
-    /* Reset rotation */
-    white-space: normal;
-}
-
-.about-equalizer-content h5::after {
-    content: '';
-    display: block;
-    width: 60px;
-    height: 2px;
-    background: var(--primary-color);
-    opacity: 0.5;
-}
-
-.about-equalizer-content::before {
-    display: none;
-    /* Remove the vertical line */
-}
-
-.about-equalizer-content h2 {
-    font-size: 3.5rem;
-    line-height: 1;
-    margin-bottom: 2rem;
-    color: var(--text-dark);
-    font-weight: 700;
-}
-
-.about-equalizer-content p {
-    font-size: 1.1rem;
-    margin-bottom: 1.5rem;
-}
-
-/* --- Right Visuals (Equalizer Strips) --- */
-.about-equalizer-visual {
-    display: flex;
-    gap: 10px;
     height: 500px;
-    align-items: center;
+    width: 100%;
+    perspective: 1000px;
 }
 
-.equalizer-strip {
-    flex: 1;
-    background: #eee;
-    border-radius: 50px;
+.deck-card {
+    position: absolute;
+    width: 100%;
+    height: 400px;
+    background: white;
+    border-radius: 24px;
+    box-shadow: 0 20px 60px rgba(44, 95, 124, 0.15);
+    cursor: pointer;
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
     overflow: hidden;
-    position: relative;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-    transition: height 0.3s ease, transform 0.3s ease;
+    border: 1px solid rgba(44, 95, 124, 0.1);
+    top: 0;
+    left: 0;
+    transform-origin: center center;
 }
 
-.equalizer-img {
+/* Positions 1 (Back) to 5 (Front) */
+.deck-card[data-pos="1"] {
+    transform: translateY(0px) translateX(-20px) rotate(-5deg) scale(0.9);
+    z-index: 1;
+    opacity: 1;
+}
+
+.deck-card[data-pos="2"] {
+    transform: translateY(20px) translateX(-10px) rotate(-3deg) scale(0.925);
+    z-index: 2;
+    opacity: 1;
+}
+
+.deck-card[data-pos="3"] {
+    transform: translateY(40px) translateX(0px) rotate(0deg) scale(0.95);
+    z-index: 3;
+    opacity: 1;
+}
+
+.deck-card[data-pos="4"] {
+    transform: translateY(60px) translateX(10px) rotate(3deg) scale(0.975);
+    z-index: 4;
+    opacity: 1;
+}
+
+.deck-card[data-pos="5"] {
+    transform: translateY(80px) translateX(20px) rotate(5deg) scale(1);
+    z-index: 5;
+    opacity: 1;
+    box-shadow: 0 30px 70px rgba(44, 95, 124, 0.25);
+}
+
+/* Animation state: Moving out to back */
+.deck-card.shuffling {
+    transform: translateY(20px) translateX(250px) rotate(15deg) scale(1.05) !important;
+    opacity: 0;
+    z-index: 10;
+}
+
+/* State: Returning to back instantly (no animation) */
+.deck-card.return {
+    transition: none !important;
+    transform: translateY(0px) translateX(-20px) rotate(-5deg) scale(0.9) !important;
+    opacity: 0 !important;
+    z-index: 0;
+}
+
+.deck-stack:hover .deck-card[data-pos="5"] {
+    transform: translateY(70px) translateX(30px) rotate(8deg) scale(1.05);
+}
+
+.deck-card img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
 }
 
-/* Initial Heights & Animation */
-.equalizer-strip:nth-child(1) {
-    height: 60%;
-    animation: eq-oscillate 3s infinite ease-in-out;
+.deck-text h5 {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: var(--primary-color, #2C5F7C);
+    margin-bottom: 20px;
+    font-weight: 600;
 }
 
-.equalizer-strip:nth-child(2) {
-    height: 85%;
-    animation: eq-oscillate 4s infinite ease-in-out 0.5s;
+.deck-text h2 {
+    font-size: 3.5rem;
+    margin-bottom: 30px;
+    color: var(--primary-dark, #1A3D52);
+    font-weight: 700;
 }
 
-.equalizer-strip:nth-child(3) {
-    height: 100%;
-    animation: eq-oscillate 3.5s infinite ease-in-out 1s;
-}
-
-.equalizer-strip:nth-child(4) {
-    height: 70%;
-    animation: eq-oscillate 4.5s infinite ease-in-out 0.2s;
-}
-
-.equalizer-strip:nth-child(5) {
-    height: 90%;
-    animation: eq-oscillate 3.2s infinite ease-in-out 0.8s;
-}
-
-@keyframes eq-oscillate {
-
-    0%,
-    100% {
-        transform: scaleY(1);
-    }
-
-    50% {
-        transform: scaleY(0.9);
-    }
-}
-
-/* Hover Interaction */
-.about-equalizer-visual:hover .equalizer-strip {
-    animation-play-state: paused;
-}
-
-.equalizer-strip:hover {
-    transform: scale(1.05);
-    z-index: 2;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+.deck-text p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--text-light, #6B7280);
+    margin-bottom: 20px;
 }
 
 /* Responsive */
-@media (max-width: 900px) {
-    .about-equalizer-container {
+@media (max-width: 1024px) {
+    .deck-container {
         grid-template-columns: 1fr;
-        gap: 3rem;
+        gap: 60px;
     }
 
-    .about-equalizer-content {
-        padding-left: 0;
+    .deck-stack {
+        height: 500px;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-deck-section {
+        padding: 60px 0;
     }
 
-    .about-equalizer-content h5 {
-        position: static;
-        writing-mode: horizontal-tb;
-        transform: none;
-        height: auto;
-        font-size: 1.2rem !important;
-        margin-bottom: 1rem;
-        opacity: 0.5;
-        background: none;
-    }
-
-    .about-equalizer-content::before {
-        display: none;
-    }
-
-    .about-equalizer-visual {
-        height: 300px;
-    }
-
-    /* Disable animation on mobile for performance/layout stability */
-    .equalizer-strip:nth-child(1) {
-        height: 60% !important;
-        animation: none;
-    }
-
-    .equalizer-strip:nth-child(2) {
-        height: 80% !important;
-        animation: none;
-    }
-
-    .equalizer-strip:nth-child(3) {
-        height: 100% !important;
-        animation: none;
-    }
-
-    .equalizer-strip:nth-child(4) {
-        height: 70% !important;
-        animation: none;
-    }
-
-    .equalizer-strip:nth-child(5) {
-        height: 90% !important;
-        animation: none;
+    .deck-text h2 {
+        font-size: 2.5rem;
     }
 }

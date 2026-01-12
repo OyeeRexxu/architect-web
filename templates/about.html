@@ -48,38 +48,68 @@
     </div>
 </section>
 
-<!-- About Section: Finalized Equalizer Layout -->
-<section class="about-equalizer-section">
-    <div class="about-equalizer-container">
-        <!-- Left Content -->
-        <div class="about-equalizer-content">
-            <h5>About Us</h5>
-            <h2>Building <span class="text-gradient">Global Partnerships</span></h2>
+<!-- About Section: Card Deck Stack with Rotating Images -->
+<section class="about-deck-section">
+    <div class="deck-container">
+        <div class="deck-text">
+            <h5>ABOUT US</h5>
+            <h2>Building Global<br>Partnerships</h2>
             <p>ConstructPro is at the forefront of the worldwide market, merging the technology and construction
-                industries by connecting fabricators, builders, and architects with highly trained experts. With a
-                tradition of quality, we are unrelenting in our dedication to building solid connections and providing
-                our partners and clients with the best technical and design expertise.</p>
-            <p>We deliver our services remotely, anytime and from anywhere, using advanced technology through our modern
-                facility in India.</p>
-            <p>At ConstructPro, our focus is not only on services but on creating lasting partnerships based on trust,
-                quality, and outcomes.</p>
+                industries by connecting fabricators, builders, and architects with highly trained experts.</p>
+            <p>With a tradition of quality, we are unrelenting in our dedication to building solid connections and
+                providing our partners and clients with the best technical and design expertise.</p>
         </div>
-
-        <!-- Right Visuals -->
-        <div class="about-equalizer-visual">
-            <div class="equalizer-strip"><img src="{% static 'images/generated/blueprint.png' %}" class="equalizer-img"
-                    alt="Tech"></div>
-            <div class="equalizer-strip"><img src="{% static 'images/generated/facade.png' %}" class="equalizer-img"
-                    alt="Build"></div>
-            <div class="equalizer-strip"><img src="{% static 'images/generated/detail.png' %}" class="equalizer-img"
-                    alt="Design"></div>
-            <div class="equalizer-strip"><img src="{% static 'images/generated/global.png' %}" class="equalizer-img"
-                    alt="Global"></div>
-            <div class="equalizer-strip"><img src="{% static 'images/generated/team.png' %}" class="equalizer-img"
-                    alt="Team"></div>
+        <div class="deck-stack">
+            <div class="deck-card" data-pos="1"><img src="{% static 'images/generated/blueprint.png' %}" alt="Tech">
+            </div>
+            <div class="deck-card" data-pos="2"><img src="{% static 'images/generated/facade.png' %}" alt="Build"></div>
+            <div class="deck-card" data-pos="3"><img src="{% static 'images/generated/detail.png' %}" alt="Design">
+            </div>
+            <div class="deck-card" data-pos="4"><img src="{% static 'images/generated/global.png' %}" alt="Global">
+            </div>
+            <div class="deck-card" data-pos="5"><img src="{% static 'images/generated/team.png' %}" alt="Team"></div>
         </div>
     </div>
 </section>
+
+<script>
+    // Card Deck Shuffle Animation
+    document.addEventListener('DOMContentLoaded', function () {
+        const cards = document.querySelectorAll('.deck-card');
+
+        setInterval(() => {
+            // 1. Find the card currently at the front (pos 5)
+            const frontCard = document.querySelector('.deck-card[data-pos="5"]');
+            if (!frontCard) return;
+
+            // 2. Animate it moving out
+            frontCard.classList.add('shuffling');
+
+            // 3. Shift everyone else forward shortly after
+            setTimeout(() => {
+                cards.forEach(card => {
+                    if (card === frontCard) return;
+                    let currentPos = parseInt(card.getAttribute('data-pos'));
+                    card.setAttribute('data-pos', currentPos + 1);
+                });
+            }, 200);
+
+            // 4. After fly-out is mostly done, SNAP to back (no animation)
+            setTimeout(() => {
+                frontCard.classList.add('return'); // Disable transition
+                frontCard.classList.remove('shuffling');
+                frontCard.setAttribute('data-pos', '1'); // Move to back position physically
+
+                // 5. Re-enable transition for next time (wait a tick)
+                setTimeout(() => {
+                    frontCard.classList.remove('return');
+                }, 50);
+
+            }, 600); // Wait for shuffle animation to complete
+
+        }, 3500); // Shuffle every 3.5 seconds
+    });
+</script>
 
 <!-- Vision & Mission - Variant 5: Asymmetric Professional -->
 <section class="variant-5">
