@@ -19,7 +19,7 @@
 
     <!-- Stylesheet -->
     {% load static %}
-    <link rel="stylesheet" href="{% static 'css/style.css' %}?v=29">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}?v=30">
     <link rel="stylesheet" href="{% static 'css/hero-options.css' %}">
     <link rel="stylesheet" href="{% static 'css/process-section.css' %}">
     <link rel="stylesheet" href="{% static 'css/testimonials-options.css' %}">
@@ -31,6 +31,17 @@
 </head>
 
 <body>
+    <!-- Top Contact Bar -->
+    <div class="top-contact-bar">
+        <div class="container">
+            <div class="top-contact-info">
+                <a href="tel:+11234567895"><i class="fa-solid fa-phone"></i> +1 123 456 7895</a>
+                <a href="mailto:info@constructorpro.com"><i class="fa-solid fa-envelope"></i>
+                    info@constructorpro.com</a>
+            </div>
+        </div>
+    </div>
+
     <!-- Navbar -->
     <nav class="navbar">
         <div class="container">
@@ -59,12 +70,6 @@
                 </li>
                 <li><a href="{% url 'contact' %}">Contact</a></li>
             </ul>
-
-            <div class="nav-contact-info">
-                <a href="tel:+1123456789"><i class="fa-solid fa-phone"></i> +1 123 456 7895</a>
-                <a href="mailto:info@cunstructorpro.com"><i class="fa-solid fa-envelope"></i>
-                    info@cunstructorpro.com</a>
-            </div>
 
             <!-- Hamburger Menu Button (Mobile) -->
             <button class="hamburger-menu" id="hamburger-btn" aria-label="Toggle menu">
@@ -157,8 +162,8 @@
                 <!-- Inquiries -->
                 <div class="footer-col-executive">
                     <div class="footer-header">Inquiries</div>
-                    <a href="mailto:hello@construct.pro" class="footer-link">hello@construct.pro</a>
-                    <a href="tel:+11234567890add " class="footer-link">+1 123 456 7890</a>
+                    <a href="mailto:info@constructorpro.com" class="footer-link">info@constructorpro.com</a>
+                    <a href="tel:+11234567895" class="footer-link">+1 123 456 7895</a>
                     <div class="footer-address">
                         111 Main St<br> New York, NY 10001
                     </div>

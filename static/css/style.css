@@ -203,12 +203,54 @@ img {
 }
 
 /* ===================================
+   TOP CONTACT BAR
+   =================================== */
+
+.top-contact-bar {
+    background: var(--primary-dark);
+    color: white;
+    padding: 0.75rem 0;
+    font-size: 0.875rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1001;
+}
+
+.top-contact-info {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2rem;
+}
+
+.top-contact-info a {
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: var(--transition-fast);
+    opacity: 0.95;
+}
+
+.top-contact-info a:hover {
+    opacity: 1;
+    color: var(--accent-color);
+}
+
+.top-contact-info i {
+    font-size: 0.85rem;
+}
+
+/* ===================================
    NAVBAR
    =================================== */
 
 .navbar {
     position: fixed;
-    top: 0;
+    top: 42px;
+    /* Height of top contact bar */
     left: 0;
     right: 0;
     z-index: 1000;
@@ -2384,15 +2426,7 @@ html {
     }
 }
 
-/* Adjust Navbar to sit at top */
-.navbar {
-    top: 0;
-}
-
-/* Revert Hero padding used for top bar */
-.hero {
-    padding-top: 80px;
-}
+/* Navbar and Hero are now styled in the main sections above to accommodate top contact bar */
 
 /* ========================================= */
 /* SOFTWARE SECTION - OPTION 2 (THEMED GRID) */
@@ -2715,5 +2749,128 @@ html {
     padding-bottom: 2rem !important;
 }
 
-. f o o t e r - c t a - c l e a n       p a d d i n g - t o p :   5 0 p x ;
-       
+/* ===================================
+   RESPONSIVE STYLES FOR TOP CONTACT BAR
+   =================================== */
+
+@media (max-width: 768px) {
+
+    /* Show top contact bar on mobile with compact styling */
+    .top-contact-bar {
+        display: flex;
+        /* Override the default display to show on mobile */
+        padding: 10px 0;
+        font-size: 13px;
+    }
+
+    .top-contact-info {
+        flex-direction: row;
+        gap: 12px;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .top-contact-info a {
+        font-size: 12px;
+    }
+
+    .top-contact-info i {
+        font-size: 13px;
+    }
+
+    /* Adjust navbar to sit below contact bar on mobile */
+    .navbar {
+        top: 42px;
+        /* Position below the single-line contact bar */
+    }
+
+    /* Adjust hero section padding on mobile */
+    .hero {
+        padding-top: 114px;
+        /* Account for navbar (72px) + mobile contact bar (42px) */
+    }
+
+    /* Reduce h1 size on mobile */
+    h1 {
+        font-size: clamp(1.75rem, 5vw, 2.5rem);
+    }
+}
+
+@media (min-width: 769px) {
+
+    /* Account for top contact bar height on desktop */
+    .hero {
+        padding-top: 120px;
+    }
+}
+
+/* ===================================
+   TESTIMONIALS CAROUSEL (COPIED FROM ABOUT US)
+   =================================== */
+.testimonials-grid {
+    display: flex !important;
+    /* Horizontal layout */
+    flex-wrap: nowrap !important;
+    overflow-x: auto;
+    /* Allow manual scroll/swipe */
+    scroll-snap-type: x mandatory;
+    /* Snap to cards */
+    -webkit-overflow-scrolling: touch;
+    /* Smooth scroll on iOS */
+    gap: 20px !important;
+    padding: 20px;
+    /* Space for scrollbar if visible */
+
+    /* Hide Scrollbar */
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE 10+ */
+}
+
+.testimonials-grid::-webkit-scrollbar {
+    display: none;
+    /* Chrome/Safari/Webkit */
+}
+
+.testimonial-card {
+    flex: 0 0 85%;
+    /* Sized to let next card peek on mobile */
+    max-width: 350px;
+    /* Cap width */
+    scroll-snap-align: center;
+    /* Snap to center */
+    margin: 0 !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    /* Enhance shadow for depth */
+}
+
+@media (min-width: 769px) {
+    .testimonial-card {
+        flex: 0 0 30%;
+        /* Show ~3 cards on desktop */
+        max-width: none;
+        /* Reset max-width */
+    }
+}
+
+/* ===================================
+   HERO DESCRIPTION BORDER ADJUSTMENT
+   =================================== */
+.hero-desc-3 {
+    position: relative;
+    border-left: none !important;
+    /* Remove default border */
+}
+
+.hero-desc-3::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: -5px;
+    /* Extend upwards */
+    bottom: -5px;
+    /* Extend downwards */
+    width: 4px;
+    background-color: var(--primary-color);
+}

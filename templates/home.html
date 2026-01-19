@@ -10,7 +10,7 @@
     <div class="hero-bg-overlay"
         style="background: linear-gradient(90deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0) 100%);"></div>
     <div class="hero-content-3" style="text-align: left; max-width: 800px; margin: 0; padding-left: 5%;">
-        <h1 class="hero-title-3" style="text-transform: capitalize; font-size: clamp(3rem, 6vw, 4.5rem);">
+        <h1 class="hero-title-3" style="text-transform: capitalize; font-size: clamp(2rem, 4vw, 3rem);">
             Building with<br>
             <span class="text-gradient">Nature's Wisdom</span>
         </h1>
@@ -32,7 +32,7 @@
 
 
             <div class="about-text about-text-content scroll-animate" style="padding-left: 0;">
-                <div class="section-subtitle">About Us</div>
+
                 <h2 class="section-title">Building <span class="text-gradient">Global Partnerships</span></h2>
 
                 <p class="about-description">
@@ -432,6 +432,102 @@
         const elementsToAnimate = document.querySelectorAll('.scroll-animate');
         elementsToAnimate.forEach(el => {
             observer.observe(el);
+        });
+    });
+</script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const testimonialGrid = document.querySelector('.testimonials-grid');
+        if (!testimonialGrid) return;
+
+        // Clone items to ensure loop
+        const originalCards = Array.from(testimonialGrid.children);
+        // Duplicate the set to allow for loop
+        originalCards.forEach(card => {
+            const clone = card.cloneNode(true);
+            testimonialGrid.appendChild(clone);
+        });
+
+        let autoScrollInterval;
+        const scrollDelay = 3000;
+        let currentIndex = 0;
+        const totalOriginal = originalCards.length;
+
+        function startAutoScroll() {
+            stopAutoScroll(); // Clear any existing
+            autoScrollInterval = setInterval(() => {
+                const card = testimonialGrid.firstElementChild;
+                if (!card) return;
+
+                const cardWidth = card.offsetWidth;
+                const gap = 20;
+                const itemWidth = cardWidth + gap;
+
+                currentIndex++;
+
+                // If we reach the start of the cloned set (index == totalOriginal)
+                // We let it animate to this position (viewing the first clone)
+                // Then AFTER animation, we quickly swap back to index 0 (real first item)
+                // However, waiting for animation is tricky with set interval.
+                // Alternative: 
+                // If we are currently AT the last original item, we scroll to the first clone.
+                // Then immediately reset to the first original item? No, that would flicker.
+                // WE WANT: 0 -> 1 -> 2 ... -> last -> clone0 -> (instantly reset to 0) -> 1
+
+                // If we just moved to the first clone (index == totalOriginal)
+                // We perform the scroll to that clone.
+                // Then we set a timeout matching smooth scroll duration to reset scrollLeft to 0 and index to 0.
+
+                if (currentIndex > totalOriginal) {
+                    // Safety reset if somehow went way past
+                    currentIndex = 0;
+                    testimonialGrid.scrollTo({ left: 0, behavior: 'auto' });
+                    return;
+                }
+
+                const targetScroll = currentIndex * itemWidth;
+                testimonialGrid.scrollTo({
+                    left: targetScroll,
+                    behavior: 'smooth'
+                });
+
+                // Check loop condition
+                if (currentIndex === totalOriginal) {
+                    // We just scrolled to the first clone. It looks identical to index 0.
+                    // Wait for digest/scroll (approx 500ms for smooth scroll) then reset.
+                    setTimeout(() => {
+                        currentIndex = 0;
+                        testimonialGrid.scrollTo({
+                            left: 0,
+                            behavior: 'auto'
+                        });
+                    }, 600); // 600ms buffer roughly covers css smooth scroll
+                }
+
+            }, scrollDelay);
+        }
+
+        function stopAutoScroll() {
+            if (autoScrollInterval) {
+                clearInterval(autoScrollInterval);
+            }
+        }
+
+        // Initialize
+        startAutoScroll();
+
+        // Pause on interaction
+        testimonialGrid.addEventListener('mouseenter', stopAutoScroll);
+        testimonialGrid.addEventListener('mouseleave', startAutoScroll);
+        testimonialGrid.addEventListener('touchstart', stopAutoScroll);
+        testimonialGrid.addEventListener('touchend', startAutoScroll);
+
+        // Handle resize
+        window.addEventListener('resize', () => {
+            stopAutoScroll();
+            currentIndex = 0; // Reset to start on resize to avoid misalignment
+            testimonialGrid.scrollTo({ left: 0, behavior: 'auto' });
+            startAutoScroll();
         });
     });
 </script>

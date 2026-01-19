@@ -234,50 +234,60 @@
 }
 
 .contact-methods-inline {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    border: 1px solid #E5E7EB;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
 }
 
 .contact-method-inline {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 1rem;
+    align-items: flex-start;
+    /* Left align */
+    text-align: left;
+    gap: 0.25rem;
+    padding: 1.5rem 2rem;
     background: white;
-    border: 2px solid #E5E7EB;
-    border-radius: var(--radius-md);
+    border: none;
+    border-bottom: 1px solid #F3F4F6;
+    border-radius: 0;
     text-decoration: none;
-    transition: all var(--transition-base);
+    transition: background-color 0.2s ease;
+}
+
+.contact-method-inline:last-child {
+    border-bottom: none;
 }
 
 .contact-method-inline:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 16px rgba(44, 95, 124, 0.12);
+    background-color: #FAFBFC;
+    transform: none;
+    box-shadow: none;
 }
 
-.contact-method-inline.whatsapp {
-    border-color: #25D366;
+.contact-method-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--text-light);
+    /* Muted color for label */
+    margin-bottom: 4px;
 }
 
-.contact-method-inline.whatsapp:hover {
-    background: rgba(37, 211, 102, 0.05);
-}
-
-.contact-method-inline.whatsapp svg {
-    color: #25D366;
-}
-
-.contact-method-inline.phone svg,
-.contact-method-inline.email svg {
-    color: var(--primary-color);
-}
-
-.contact-method-inline span {
-    font-size: 0.875rem;
-    font-weight: 600;
+.contact-method-value {
+    font-size: 1.125rem;
+    font-weight: 500;
     color: var(--text-dark);
+}
+
+.contact-method-inline:hover .contact-method-value {
+    color: var(--primary-color);
 }
 
 /* File Upload Section */
