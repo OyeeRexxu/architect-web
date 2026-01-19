@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'base_cms.html' %}
 {% load static %}
 
 {% block title %}Contact Us - ConstructPro{% endblock %}
@@ -224,10 +224,9 @@
         <!-- Left Side: Architectural Illustration -->
         <div class="contact-visual">
             <div class="visual-content">
-                <span class="visual-badge">EST. 2005</span>
-                <h2>Design your<br>legacy.</h2>
-                <img src="{% static 'images/contact_illustration.png' %}" alt="Architectural Study"
-                    class="illustration-img">
+                <span class="visual-badge">{{ contact_page.visual_badge|safe }}</span>
+                <h2>{{ contact_page.visual_heading|safe }}</h2>
+                <img src="{% static contact_page.visual_image %}" alt="Architectural Study" class="illustration-img">
             </div>
             <div class="visual-overlay"></div>
         </div>
@@ -235,10 +234,9 @@
         <!-- Right Side: Contact Form & Info -->
         <div class="contact-form-area">
             <div class="contact-header">
-                <div class="subtitle">Get in Touch</div>
-                <h1>Start the Conversation</h1>
-                <p>Ready to bring your vision to life? Our team of architects and engineers is here to help you every
-                    step of the way.</p>
+                <div class="subtitle">{{ contact_page.form_subtitle }}</div>
+                <h1>{{ contact_page.form_heading }}</h1>
+                <p>{{ contact_page.form_description }}</p>
             </div>
 
             <form class="clean-form">
@@ -296,18 +294,17 @@
             <div class="alternative-contact-inline">
                 <h3>Prefer a Different Way to Connect?</h3>
                 <div class="contact-methods-inline">
-                    <a href="https://maps.google.com/?q=1234+Builder+Lane,+Architect+City,+AC+54321" target="_blank"
-                        class="contact-method-inline">
+                    <a href="#" class="contact-method-inline location">
                         <span class="contact-method-label">Address</span>
-                        <span class="contact-method-value">1234 Builder Lane, Architect City, AC 54321</span>
+                        <span class="contact-method-value">{{ global_site_settings.address|linebreaksbr }}</span>
                     </a>
-                    <a href="tel:+11234567895" class="contact-method-inline phone">
+                    <a href="tel:{{ global_site_settings.phone_number }}" class="contact-method-inline phone">
                         <span class="contact-method-label">Phone</span>
-                        <span class="contact-method-value">+1 123 456 7895</span>
+                        <span class="contact-method-value">{{ global_site_settings.phone_number }}</span>
                     </a>
-                    <a href="mailto:info@constructorpro.com" class="contact-method-inline email">
+                    <a href="mailto:{{ global_site_settings.email }}" class="contact-method-inline email">
                         <span class="contact-method-label">Email</span>
-                        <span class="contact-method-value">info@constructorpro.com</span>
+                        <span class="contact-method-value">{{ global_site_settings.email }}</span>
                     </a>
                 </div>
             </div>
@@ -326,8 +323,8 @@
                 </svg>
             </div>
             <div class="promise-content">
-                <h3>24-Hour Response Guarantee</h3>
-                <p>We typically respond within 24 hours. Most projects have a 24-48 hour turnaround time.</p>
+                <h3>{{ contact_page.response_title }}</h3>
+                <p>{{ contact_page.response_description }}</p>
             </div>
             <div class="promise-badge">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">

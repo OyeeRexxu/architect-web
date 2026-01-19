@@ -1,34 +1,38 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.conf import settings
-from .models import Service
+from .models import (
+    Service, HomePage, AboutPage, ContactPage, Testimonial, 
+    SoftwareTool, WhyChooseUsItem, CommitmentItem, AboutGalleryImage,
+    ProcessStep
+)
 import os
 
 def home(request):
     """Home page view with hero section, services, and statistics"""
-    services = Service.objects.all()
+    home_page = HomePage.load()
+    services = Service.objects.all().order_by('order')
+    testimonials = Testimonial.objects.all().order_by('order')
+    software_tools = SoftwareTool.objects.all().order_by('order')
+    why_choose_us = WhyChooseUsItem.objects.all().order_by('order')
+    commitments = CommitmentItem.objects.all().order_by('order')
+    
     context = {
-        'stats': [
-            {'number': '500+', 'label': 'Projects'},
-            {'number': '24-48h', 'label': 'Turnaround'},
-            {'number': '98%', 'label': 'Satisfaction'},
-            {'number': '50+', 'label': 'Team'},
-        ],
-        'services': services
-    }
-    context = {
-        'stats': [
-            {'number': '500+', 'label': 'Projects'},
-            {'number': '24-48h', 'label': 'Turnaround'},
-            {'number': '98%', 'label': 'Satisfaction'},
-            {'number': '50+', 'label': 'Team'},
-        ],
-        'services': services
+        'home_page': home_page,
+        'services': services,
+        'testimonials': testimonials,
+        'software_tools': software_tools,
+        'why_choose_us': why_choose_us,
+        'commitments': commitments,
     }
     return render(request, 'home.html', context)
 
 def contact(request):
     """Contact page view"""
-    return render(request, 'contact.html')
+    contact_page = ContactPage.load()
+    context = {
+        'contact_page': contact_page
+    }
+    return render(request, 'contact.html', context)
 
 def portfolio(request):
     """Portfolio/gallery page view"""
@@ -55,7 +59,20 @@ def portfolio(request):
 
 def about(request):
     """About page view with company information, vision, and mission"""
-    return render(request, 'about.html')
+    about_page = AboutPage.load()
+    deck_images = AboutGalleryImage.objects.all().order_by('order')
+    why_choose_us = WhyChooseUsItem.objects.all().order_by('order')
+    commitments = CommitmentItem.objects.all().order_by('order')
+    process_steps = ProcessStep.objects.all().order_by('order')
+    
+    context = {
+        'about_page': about_page,
+        'deck_images': deck_images,
+        'why_choose_us': why_choose_us,
+        'commitments': commitments,
+        'process_steps': process_steps,
+    }
+    return render(request, 'about.html', context)
 
 def new_home(request):
     """Backup page with old Vision/Mission content"""

@@ -35,9 +35,18 @@
     <div class="top-contact-bar">
         <div class="container">
             <div class="top-contact-info">
-                <a href="tel:+11234567895"><i class="fa-solid fa-phone"></i> +1 123 456 7895</a>
-                <a href="mailto:info@constructorpro.com"><i class="fa-solid fa-envelope"></i>
-                    info@constructorpro.com</a>
+                <a href="tel:{{ phone_number }}"><i class="fa-solid fa-phone"></i> {{ phone_number }}</a>
+                <a href="mailto:{{ email }}"><i class="fa-solid fa-envelope"></i> {{ email }}</a>
+            </div>
+            <div class="top-social-actions">
+                {% if global_site_settings.facebook_url %}<a href="{{ global_site_settings.facebook_url }}"><i
+                        class="fab fa-facebook-f"></i></a>{% endif %}
+                {% if global_site_settings.twitter_url %}<a href="{{ global_site_settings.twitter_url }}"><i
+                        class="fab fa-twitter"></i></a>{% endif %}
+                {% if global_site_settings.instagram_url %}<a href="{{ global_site_settings.instagram_url }}"><i
+                        class="fab fa-instagram"></i></a>{% endif %}
+                {% if global_site_settings.linkedin_url %}<a href="{{ global_site_settings.linkedin_url }}"><i
+                        class="fab fa-linkedin-in"></i></a>{% endif %}
             </div>
         </div>
     </div>
@@ -128,17 +137,20 @@
                 <!-- Brand Area -->
                 <div class="footer-brand-area">
                     <a href="{% url 'home' %}" class="footer-logo-executive">
-                        Construct<span>Pro</span>.
+                        {{ global_site_settings.site_name|default:"ConstructPro" }}
                     </a>
                     <p class="footer-desc">
-                        Setting the gold standard in modern architecture. We don't just build structures; we forge
-                        legacies.
+                        {{ global_site_settings.footer_description }}
                     </p>
                     <div class="footer-socials">
-                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                        {% if global_site_settings.facebook_url %}<a href="{{ global_site_settings.facebook_url }}"
+                            class="social-link"><i class="fab fa-facebook-f"></i></a>{% endif %}
+                        {% if global_site_settings.twitter_url %}<a href="{{ global_site_settings.twitter_url }}"
+                            class="social-link"><i class="fab fa-twitter"></i></a>{% endif %}
+                        {% if global_site_settings.instagram_url %}<a href="{{ global_site_settings.instagram_url }}"
+                            class="social-link"><i class="fab fa-instagram"></i></a>{% endif %}
+                        {% if global_site_settings.linkedin_url %}<a href="{{ global_site_settings.linkedin_url }}"
+                            class="social-link"><i class="fab fa-linkedin-in"></i></a>{% endif %}
                     </div>
                 </div>
 
@@ -154,7 +166,7 @@
                 <!-- Services -->
                 <div class="footer-col-executive">
                     <div class="footer-header">Services</div>
-                    {% for service in footer_services %}
+                    {% for service in global_services|slice:":5" %}
                     <a href="{% url 'service_detail' service.slug %}" class="footer-link">{{ service.title }}</a>
                     {% endfor %}
                 </div>
@@ -162,10 +174,10 @@
                 <!-- Inquiries -->
                 <div class="footer-col-executive">
                     <div class="footer-header">Inquiries</div>
-                    <a href="mailto:info@constructorpro.com" class="footer-link">info@constructorpro.com</a>
-                    <a href="tel:+11234567895" class="footer-link">+1 123 456 7895</a>
+                    <a href="mailto:{{ email }}" class="footer-link">{{ email }}</a>
+                    <a href="tel:{{ phone_number }}" class="footer-link">{{ phone_number }}</a>
                     <div class="footer-address">
-                        111 Main St<br> New York, NY 10001
+                        {{ global_site_settings.address|linebreaksbr }}
                     </div>
                 </div>
             </div>

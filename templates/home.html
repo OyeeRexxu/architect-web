@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'base_cms.html' %}
 {% load static %}
 
 {% block title %}ConstructPro - Building with Nature's Wisdom{% endblock %}
@@ -6,18 +6,16 @@
 {% block content %}
 <!-- OPTION 3: Full Width Background -->
 <section class="hero-opt-3"
-    style="background-image: url('{% static 'images/hero_background_dark.png' %}'); background-size: cover; background-position: center;">
+    style="background-image: url('{% if home_page.hero_bg_image %}{{ home_page.hero_bg_image.url }}{% else %}{% static 'images/hero_background_dark.png' %}{% endif %}'); background-size: cover; background-position: center;">
     <div class="hero-bg-overlay"
         style="background: linear-gradient(90deg, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.2) 60%, rgba(0,0,0,0) 100%);"></div>
     <div class="hero-content-3" style="text-align: left; max-width: 800px; margin: 0; padding-left: 5%;">
         <h1 class="hero-title-3" style="text-transform: capitalize; font-size: clamp(2rem, 4vw, 3rem);">
-            Building with<br>
-            <span class="text-gradient">Nature's Wisdom</span>
+            {{ home_page.hero_title|safe }}
         </h1>
         <p class="hero-desc-3"
             style="border-left: 4px solid var(--primary-color); padding-left: 1.5rem; text-shadow: none;">
-            Thoughtful construction advancing the balance between sustainability and architectural global
-            innovation.
+            {{ home_page.hero_subtitle }}
         </p>
 
     </div>
@@ -33,34 +31,11 @@
 
             <div class="about-text about-text-content scroll-animate" style="padding-left: 0;">
 
-                <h2 class="section-title">Building <span class="text-gradient">Global Partnerships</span></h2>
+                <h2 class="section-title">{{ home_page.about_heading|safe }}</h2>
 
-                <p class="about-description">
-                    <strong>ConstructPro</strong> is at the forefront of the worldwide market, merging the technology
-                    and construction industries by connecting fabricators, builders, and architects with highly trained
-                    experts. With a tradition of quality, we are unrelenting in our dedication to building solid
-                    connections and providing our partners and clients with the best technical and design expertise.
-                </p>
-
-                <p class="about-description">
-                    We deliver our services remotely, anytime and from anywhere, using advanced technology through our
-                    modern facility in India.
-                </p>
-
-                <p class="about-description">
-                    At <strong>ConstructPro</strong>, our focus is not only on services but on creating lasting
-                    partnerships based on trust, quality, and outcomes.
-                </p>
-
-                <p class="about-description">
-                    We provide unrivaled, cost-effective engineering design and technology solutions to our clients
-                    throughout the world, 24 hours a day, 365 days a year, to meet the needs of an ever-changing
-                    industry. Our extensive expertise spanning two decades has allowed us to partner with organizations
-                    all over the world, offering support and services that enable firms to focus on growth and
-                    developing new business relationships.
-                </p>
-
-
+                <div class="about-description">
+                    {{ home_page.about_content|safe|linebreaks }}
+                </div>
             </div>
         </div>
     </div>
@@ -68,13 +43,12 @@
 <!-- Services Section -->
 <section class="services" id="services">
     <!-- Premium Section Header (Option 4) -->
-    <div class="section-header-premium" style="background-image: url('{% static 'images/services_header_bg.png' %}');">
+    <div class="section-header-premium" style="background-image: url('{% static home_page.services_bg_image %}');">
         <div class="overlay"></div>
         <div class="content container">
-            <div class="section-subtitle-premium">Our Services</div>
-            <h2>Comprehensive Solutions for Every Project</h2>
-            <p>From CAD drafting to interior design, we deliver expert services tailored to your construction and
-                architectural needs.</p>
+            <div class="section-subtitle-premium">{{ home_page.services_subtitle }}</div>
+            <h2>{{ home_page.services_heading }}</h2>
+            <p>{{ home_page.services_description }}</p>
             <div class="highlight-line"></div>
 
             <div class="services-grid" style="margin-top: 2rem; text-align: left;">
@@ -111,31 +85,28 @@
 <section class="variant-section v2-bg" style="padding: 6rem 0;">
     <div class="sw-split-layout">
         <div class="sw-text-side v2">
-            <span class="sw-label lbl-primary">Toolset</span>
-            <h2>Technical <br><span>Precision</span></h2>
-            <p>Our software stack ensures millimeter-perfect execution.</p>
+            <span class="sw-label lbl-primary">{{ home_page.software_label }}</span>
+            <div style="font-size: 3rem; font-weight: 700; line-height: 1.1; margin-bottom: 1rem;">
+                {{ home_page.software_heading|safe }}
+            </div>
+            <p>{{ home_page.software_description }}</p>
         </div>
         <div class="sw-separator"></div>
         <div class="sw-content-side">
             <div class="layout-clean-grid">
                 <div class="track-clean-grid animate-right">
                     {% for i in "123" %}
-                    <div class="sw-item item-square"><img src="{% static 'images/software/autodesk autocad.png' %}">
-                    </div>
-                    <div class="sw-item item-square"><img src="{% static 'images/software/Revit.png' %}"></div>
-                    <div class="sw-item item-square"><img src="{% static 'images/software/sketchUP.png' %}"></div>
-                    <div class="sw-item item-square"><img src="{% static 'images/software/alphacam.png' %}"></div>
-                    <div class="sw-item item-square"><img src="{% static 'images/software/bluebeam.png' %}"></div>
+                    {% for tool in software_tools %}
+                    <div class="sw-item item-square"><img src="{% static tool.image %}" alt="{{ tool.name }}"></div>
+                    {% endfor %}
                     {% endfor %}
                 </div>
                 <!-- Duplicate Row for fullness -->
                 <div class="track-clean-grid animate-left">
                     {% for i in "123" %}
-                    <div class="sw-item item-square"><img src="{% static 'images/software/mastercam.png' %}"></div>
-                    <div class="sw-item item-square"><img src="{% static 'images/software/mozaik.png' %}"></div>
-                    <div class="sw-item item-square"><img src="{% static 'images/software/design 2020.png' %}"></div>
-                    <div class="sw-item item-square"><img src="{% static 'images/software/inventor cam.png' %}"></div>
-                    <div class="sw-item item-square"><img src="{% static 'images/software/Capture.png' %}"></div>
+                    {% for tool in software_tools %}
+                    <div class="sw-item item-square"><img src="{% static tool.image %}" alt="{{ tool.name }}"></div>
+                    {% endfor %}
                     {% endfor %}
                 </div>
             </div>
@@ -156,70 +127,15 @@
         </div>
 
         <div class="why-choose-grid">
+            {% for item in why_choose_us %}
             <div class="why-choose-card">
                 <div class="why-choose-icon">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z" />
-                    </svg>
+                    {{ item.icon_svg|safe }}
                 </div>
-                <h3>Highly Accurate Take-offs</h3>
-                <p>Precision-driven quantity take-offs ensuring error-free estimates every time.</p>
+                <h3>{{ item.title }}</h3>
+                <p>{{ item.description }}</p>
             </div>
-
-            <div class="why-choose-card">
-                <div class="why-choose-icon">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
-                        <path
-                            d="M12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22C6.47,22 2,17.5 2,12A10,10 0 0,1 12,2M12.5,7V12.25L17,14.92L16.25,16.15L11,13V7H12.5Z" />
-                    </svg>
-                </div>
-                <h3>Fast Turnaround Time</h3>
-                <p>Quick delivery without compromising on quality or accuracy.</p>
-            </div>
-
-            <div class="why-choose-card">
-                <div class="why-choose-icon">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
-                        <path
-                            d="M7,15H9C9,16.08 10.37,17 12,17C13.63,17 15,16.08 15,15C15,13.9 13.96,13.5 11.76,12.97C9.64,12.44 7,11.78 7,9C7,7.21 8.47,5.69 10.5,5.18V3H13.5V5.18C15.53,5.69 17,7.21 17,9H15C15,7.92 13.63,7 12,7C10.37,7 9,7.92 9,9C9,10.1 10.04,10.5 12.24,11.03C14.36,11.56 17,12.22 17,15C17,16.79 15.53,18.31 13.5,18.82V21H10.5V18.82C8.47,18.31 7,16.79 7,15Z" />
-                    </svg>
-                </div>
-                <h3>Cost-Effective Pricing</h3>
-                <p>Competitive offshore pricing that maximizes your project budget.</p>
-            </div>
-
-            <div class="why-choose-card">
-                <div class="why-choose-icon">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
-                        <path
-                            d="M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M11,17V16H9V14H13V13H10A1,1 0 0,1 9,12V9A1,1 0 0,1 10,8H11V7H13V8H15V10H11V11H14A1,1 0 0,1 15,12V15A1,1 0 0,1 14,16H13V17H11Z" />
-                    </svg>
-                </div>
-                <h3>Experienced Team</h3>
-                <p>Skilled estimators and engineers with industry expertise.</p>
-            </div>
-
-            <div class="why-choose-card">
-                <div class="why-choose-icon">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
-                        <path
-                            d="M21,16.5C21,16.88 20.79,17.21 20.47,17.38L12.57,21.82C12.41,21.94 12.21,22 12,22C11.79,22 11.59,21.94 11.43,21.82L3.53,17.38C3.21,17.21 3,16.88 3,16.5V7.5C3,7.12 3.21,6.79 3.53,6.62L11.43,2.18C11.59,2.06 11.79,2 12,2C12.21,2 12.41,2.06 12.57,2.18L20.47,6.62C20.79,6.79 21,7.12 21,7.5V16.5M12,4.15L5,8.09V15.91L12,19.85L19,15.91V8.09L12,4.15Z" />
-                    </svg>
-                </div>
-                <h3>Industry-Standard Software</h3>
-                <p>Utilizing the latest tools for maximum precision and efficiency.</p>
-            </div>
-
-            <div class="why-choose-card">
-                <div class="why-choose-icon">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
-                        <path
-                            d="M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,5A3,3 0 0,1 15,8A3,3 0 0,1 12,11A3,3 0 0,1 9,8A3,3 0 0,1 12,5M17.13,17C15.92,18.85 14.11,20.24 12,20.92C9.89,20.24 8.08,18.85 6.87,17C6.53,16.5 6.24,16 6,15.47C6,13.82 8.71,12.47 12,12.47C15.29,12.47 18,13.79 18,15.47C17.76,16 17.47,16.5 17.13,17Z" />
-                    </svg>
-                </div>
-                <h3>Secure Data Handling</h3>
-                <p>Confidential and secure management of all your project data.</p>
-            </div>
+            {% endfor %}
         </div>
 
         <div class="service-tagline">
@@ -238,29 +154,13 @@
         </div>
 
         <div class="commitment-grid">
+            {% for item in commitments %}
             <div class="commitment-card">
-                <div class="commitment-number">01</div>
-                <h3>100% Accuracy & Quality Assurance</h3>
-                <p>Every deliverable undergoes rigorous quality checks to ensure absolute accuracy.</p>
+                <div class="commitment-number">{{ item.number }}</div>
+                <h3>{{ item.title }}</h3>
+                <p>{{ item.description }}</p>
             </div>
-
-            <div class="commitment-card">
-                <div class="commitment-number">02</div>
-                <h3>On-Time Delivery</h3>
-                <p>We respect your deadlines and ensure timely completion of all projects.</p>
-            </div>
-
-            <div class="commitment-card">
-                <div class="commitment-number">03</div>
-                <h3>Clear Communication</h3>
-                <p>Transparent and continuous communication throughout the project lifecycle.</p>
-            </div>
-
-            <div class="commitment-card">
-                <div class="commitment-number">04</div>
-                <h3>Long-Term Partnership</h3>
-                <p>We build lasting relationships, becoming an extension of your team.</p>
-            </div>
+            {% endfor %}
         </div>
     </div>
 </section>
@@ -275,8 +175,8 @@
                         d="M14,2H6A2,2 0 0,0 4,4V20A2,2 0 0,0 6,22H18A2,2 0 0,0 20,20V8L14,2M18,20H6V4H13V9H18V20M12,19L8,15H10.5V12H13.5V15H16L12,19Z" />
                 </svg>
             </div>
-            <h2>Get a Free Sample</h2>
-            <p>Send us your drawings (PDF/DWG) and receive a complimentary sample to evaluate our quality and accuracy.
+            <h2>{{ home_page.free_sample_heading }}</h2>
+            <p>{{ home_page.free_sample_description }}
             </p>
             <a href="{% url 'contact' %}" class="btn-primary">Request Free Sample →</a>
         </div>
@@ -296,110 +196,26 @@
         </div>
 
         <div class="testimonials-grid">
-            <!-- Testimonial 1 -->
+            {% for testimonial in testimonials %}
             <div class="testimonial-card">
                 <div class="testimonial-stars">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                    {% for i in "12345"|make_list %}
+                    {% if forloop.counter <= testimonial.rating %} <svg width="20" height="20" viewBox="0 0 24 24"
+                        fill="currentColor">
                         <path
                             d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
-                    </svg>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path
-                            d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
-                    </svg>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path
-                            d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
-                    </svg>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path
-                            d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
-                    </svg>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path
-                            d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
-                    </svg>
+                        </svg>
+                        {% endif %}
+                        {% endfor %}
                 </div>
                 <div class="testimonial-quote-mark">"</div>
-                <p class="testimonial-text">
-                    When we first met the team we knew we had found what we needed a group of highly experienced,
-                    sensitive designers and technicians.
-                </p>
+                <p class="testimonial-text">{{ testimonial.content }}</p>
                 <div class="testimonial-author">
-                    <div class="author-name">Emily</div>
-                    <div class="author-role">Customer</div>
+                    <div class="author-name">{{ testimonial.name }}</div>
+                    <div class="author-role">{{ testimonial.role }}</div>
                 </div>
             </div>
-
-            <!-- Testimonial 2 -->
-            <div class="testimonial-card">
-                <div class="testimonial-stars">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path
-                            d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
-                    </svg>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path
-                            d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
-                    </svg>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path
-                            d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
-                    </svg>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path
-                            d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
-                    </svg>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path
-                            d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
-                    </svg>
-                </div>
-                <div class="testimonial-quote-mark">"</div>
-                <p class="testimonial-text">
-                    I just wanted to take a moment to send a special thank you for the work you done to provide us with
-                    the countertop estimation take out with this type of project.
-                </p>
-                <div class="testimonial-author">
-                    <div class="author-name">Adam</div>
-                    <div class="author-role">Customer</div>
-                </div>
-            </div>
-
-            <!-- Testimonial 3 -->
-            <div class="testimonial-card">
-                <div class="testimonial-stars">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path
-                            d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
-                    </svg>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path
-                            d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
-                    </svg>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path
-                            d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
-                    </svg>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path
-                            d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
-                    </svg>
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path
-                            d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" />
-                    </svg>
-                </div>
-                <div class="testimonial-quote-mark">"</div>
-                <p class="testimonial-text">
-                    Outstanding work! The team delivered exactly what we needed on time and within budget. Highly
-                    professional and creative approach to our project.
-                </p>
-                <div class="testimonial-author">
-                    <div class="author-name">Michael</div>
-                    <div class="author-role">Customer</div>
-                </div>
-            </div>
+            {% endfor %}
         </div>
     </div>
 </section>
@@ -440,94 +256,82 @@
         const testimonialGrid = document.querySelector('.testimonials-grid');
         if (!testimonialGrid) return;
 
-        // Clone items to ensure loop
         const originalCards = Array.from(testimonialGrid.children);
-        // Duplicate the set to allow for loop
+        const totalCards = originalCards.length;
+
+        // Clone all cards for seamless looping
         originalCards.forEach(card => {
             const clone = card.cloneNode(true);
             testimonialGrid.appendChild(clone);
         });
 
         let autoScrollInterval;
-        const scrollDelay = 3000;
+        const scrollDelay = 4000; // 4 seconds between slides
         let currentIndex = 0;
-        const totalOriginal = originalCards.length;
+
+        function getCardWidth() {
+            const card = testimonialGrid.firstElementChild;
+            if (!card) return 0;
+            const style = getComputedStyle(testimonialGrid);
+            const gap = parseInt(style.gap) || 20;
+            return card.offsetWidth + gap;
+        }
+
+        function scrollToIndex(index, smooth = true) {
+            const cardWidth = getCardWidth();
+            const targetScroll = index * cardWidth;
+            testimonialGrid.scrollTo({
+                left: targetScroll,
+                behavior: smooth ? 'smooth' : 'auto'
+            });
+        }
 
         function startAutoScroll() {
-            stopAutoScroll(); // Clear any existing
+            stopAutoScroll();
             autoScrollInterval = setInterval(() => {
-                const card = testimonialGrid.firstElementChild;
-                if (!card) return;
-
-                const cardWidth = card.offsetWidth;
-                const gap = 20;
-                const itemWidth = cardWidth + gap;
-
                 currentIndex++;
 
-                // If we reach the start of the cloned set (index == totalOriginal)
-                // We let it animate to this position (viewing the first clone)
-                // Then AFTER animation, we quickly swap back to index 0 (real first item)
-                // However, waiting for animation is tricky with set interval.
-                // Alternative: 
-                // If we are currently AT the last original item, we scroll to the first clone.
-                // Then immediately reset to the first original item? No, that would flicker.
-                // WE WANT: 0 -> 1 -> 2 ... -> last -> clone0 -> (instantly reset to 0) -> 1
+                // If we've scrolled past original cards, reset to beginning
+                if (currentIndex >= totalCards) {
+                    scrollToIndex(currentIndex, true);
 
-                // If we just moved to the first clone (index == totalOriginal)
-                // We perform the scroll to that clone.
-                // Then we set a timeout matching smooth scroll duration to reset scrollLeft to 0 and index to 0.
-
-                if (currentIndex > totalOriginal) {
-                    // Safety reset if somehow went way past
-                    currentIndex = 0;
-                    testimonialGrid.scrollTo({ left: 0, behavior: 'auto' });
-                    return;
-                }
-
-                const targetScroll = currentIndex * itemWidth;
-                testimonialGrid.scrollTo({
-                    left: targetScroll,
-                    behavior: 'smooth'
-                });
-
-                // Check loop condition
-                if (currentIndex === totalOriginal) {
-                    // We just scrolled to the first clone. It looks identical to index 0.
-                    // Wait for digest/scroll (approx 500ms for smooth scroll) then reset.
+                    // After animation completes, instantly reset to first card
                     setTimeout(() => {
                         currentIndex = 0;
-                        testimonialGrid.scrollTo({
-                            left: 0,
-                            behavior: 'auto'
-                        });
-                    }, 600); // 600ms buffer roughly covers css smooth scroll
+                        scrollToIndex(0, false);
+                    }, 600);
+                } else {
+                    scrollToIndex(currentIndex, true);
                 }
-
             }, scrollDelay);
         }
 
         function stopAutoScroll() {
             if (autoScrollInterval) {
                 clearInterval(autoScrollInterval);
+                autoScrollInterval = null;
             }
         }
 
-        // Initialize
+        // Initialize auto-scroll
         startAutoScroll();
 
-        // Pause on interaction
+        // Pause on hover/touch
         testimonialGrid.addEventListener('mouseenter', stopAutoScroll);
         testimonialGrid.addEventListener('mouseleave', startAutoScroll);
-        testimonialGrid.addEventListener('touchstart', stopAutoScroll);
-        testimonialGrid.addEventListener('touchend', startAutoScroll);
+        testimonialGrid.addEventListener('touchstart', stopAutoScroll, { passive: true });
+        testimonialGrid.addEventListener('touchend', () => setTimeout(startAutoScroll, 1000));
 
-        // Handle resize
+        // Handle window resize
+        let resizeTimeout;
         window.addEventListener('resize', () => {
-            stopAutoScroll();
-            currentIndex = 0; // Reset to start on resize to avoid misalignment
-            testimonialGrid.scrollTo({ left: 0, behavior: 'auto' });
-            startAutoScroll();
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                stopAutoScroll();
+                currentIndex = 0;
+                scrollToIndex(0, false);
+                startAutoScroll();
+            }, 250);
         });
     });
 </script>

@@ -2805,52 +2805,64 @@ html {
 }
 
 /* ===================================
-   TESTIMONIALS CAROUSEL (COPIED FROM ABOUT US)
+   TESTIMONIALS CAROUSEL - 3 CARDS WITH AUTO-SWIPE
    =================================== */
 .testimonials-grid {
     display: flex !important;
-    /* Horizontal layout */
     flex-wrap: nowrap !important;
-    overflow-x: auto;
-    /* Allow manual scroll/swipe */
-    scroll-snap-type: x mandatory;
-    /* Snap to cards */
-    -webkit-overflow-scrolling: touch;
-    /* Smooth scroll on iOS */
+    overflow: hidden;
+    /* Hide overflow to show only 3 cards */
     gap: 20px !important;
-    padding: 20px;
-    /* Space for scrollbar if visible */
-
-    /* Hide Scrollbar */
-    scrollbar-width: none;
-    /* Firefox */
-    -ms-overflow-style: none;
-    /* IE 10+ */
-}
-
-.testimonials-grid::-webkit-scrollbar {
-    display: none;
-    /* Chrome/Safari/Webkit */
+    padding: 40px 20px;
+    /* Vertical space for shadow, reduced side gap */
+    scroll-behavior: smooth;
+    will-change: scroll-position;
+    mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
 }
 
 .testimonial-card {
-    flex: 0 0 85%;
-    /* Sized to let next card peek on mobile */
-    max-width: 350px;
-    /* Cap width */
-    scroll-snap-align: center;
-    /* Snap to center */
+    flex: 0 0 calc((100% - 40px) / 3);
+    /* Exactly 3 cards with gap */
+    min-width: calc((100% - 40px) / 3);
+    scroll-snap-align: start;
     margin: 0 !important;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
-    /* Enhance shadow for depth */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-@media (min-width: 769px) {
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+@media (max-width: 992px) {
     .testimonial-card {
-        flex: 0 0 30%;
-        /* Show ~3 cards on desktop */
-        max-width: none;
-        /* Reset max-width */
+        flex: 0 0 calc((100% - 20px) / 2);
+        /* 2 cards on tablet */
+        min-width: calc((100% - 20px) / 2);
+    }
+}
+
+@media (max-width: 600px) {
+    .testimonials-grid {
+        overflow-x: auto;
+        /* Allow swipe on mobile */
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .testimonials-grid::-webkit-scrollbar {
+        display: none;
+    }
+
+    .testimonial-card {
+        flex: 0 0 85%;
+        /* Single card on mobile with peek */
+        min-width: 85%;
+        scroll-snap-align: center;
     }
 }
 
@@ -2873,4 +2885,16 @@ html {
     /* Extend downwards */
     width: 4px;
     background-color: var(--primary-color);
+}
+
+/* ===================================
+   ABOUT SECTION TEXT FORMATTING
+   =================================== */
+.about-description p {
+    margin-bottom: 1.5rem;
+    line-height: 1.8;
+}
+
+.about-description p:last-child {
+    margin-bottom: 0;
 }
