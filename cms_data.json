@@ -1,0 +1,1858 @@
+[
+{
+  "model": "main.service",
+  "pk": 106,
+  "fields": {
+    "title": "Estimation & Quantity Take-Off Services",
+    "subtitle": "Accurate and detailed cost estimation for your construction projects.",
+    "slug": "estimation-quantity-take-off-services",
+    "icon": "fa-solid fa-calculator",
+    "image": "services/estimation.png",
+    "overview": "We provide accurate, detailed, and cost-effective Construction Estimation & Quantity Take-Off Services to contractors, builders, developers, and consultants across the globe. By outsourcing your estimating work to us in India, you save time, reduce overhead costs, and improve bidding accuracy.",
+    "order": 1
+  }
+},
+{
+  "model": "main.service",
+  "pk": 107,
+  "fields": {
+    "title": "Cabinetry, Tops & Millwork Solutions",
+    "subtitle": "End-to-end drafting and design solutions for fabricators.",
+    "slug": "cabinetry-tops-millwork-solutions",
+    "icon": "fa-solid fa-box",
+    "image": "services/cabinetry.png",
+    "overview": "We provide end-to-end Cabinetry, Countertop (Tops), and Millwork Drafting & Design Solutions to support fabricators and suppliers across the USA and Europe. Our outsourcing services are designed to streamline production, reduce errors, and ensure smooth coordination between design and fabrication. With deep industry understanding, we help you convert concepts, sketches, and specifications into precise, shop-ready drawings and 3D models.",
+    "order": 2
+  }
+},
+{
+  "model": "main.service",
+  "pk": 108,
+  "fields": {
+    "title": "2D & 3D CAD Drafting Outsourcing Services",
+    "subtitle": "Reliable and cost-effective drafting for global construction.",
+    "slug": "2d-3d-cad-drafting-outsourcing-services",
+    "icon": "fa-solid fa-pen-to-square",
+    "image": "services/cad.png",
+    "overview": "We offer reliable and cost-effective 2D & 3D CAD Drafting Outsourcing Services to support architects, engineers, contractors, and manufacturing companies worldwide. By outsourcing your CAD drafting needs to us, you gain high-quality drawings, faster turnaround, and reduced operational costs without compromising accuracy.",
+    "order": 3
+  }
+},
+{
+  "model": "main.service",
+  "pk": 109,
+  "fields": {
+    "title": "CNC Programming Support",
+    "subtitle": "Professional CNC programming for countertops fabrication.",
+    "slug": "cnc-programming-support",
+    "icon": "fa-solid fa-microchip",
+    "image": "services/cnc.png",
+    "overview": "We provide professional CNC programming support for companies in the countertops industry. Whether you work with granite, marble, quartz, or other materials, our experts create precise and optimized CNC programs tailored to your designs.",
+    "order": 4
+  }
+},
+{
+  "model": "main.service",
+  "pk": 110,
+  "fields": {
+    "title": "Architecture, Interior & Structural Design",
+    "subtitle": "Transforming vision into reality with comprehensive design services.",
+    "slug": "architecture-interior-structural-design",
+    "icon": "fa-solid fa-compass-drafting",
+    "image": "services/architecture.png",
+    "overview": "We specialize in transforming your vision into reality with our comprehensive architecture, interior, and structural design services. Whether it’s a residential project, commercial space, or industrial building, our expert team ensures innovative, functional, and sustainable designs that exceed expectations.",
+    "order": 5
+  }
+},
+{
+  "model": "main.service",
+  "pk": 111,
+  "fields": {
+    "title": "Data Entry Services",
+    "subtitle": "Fast, accurate, and reliable data management solutions.",
+    "slug": "data-entry-services",
+    "icon": "fa-solid fa-keyboard",
+    "image": "services/data_entry.png",
+    "overview": "We provide fast, accurate, and reliable data entry services to help businesses manage, organize, and utilize their data efficiently. Our experienced team ensures high-quality results while maintaining strict confidentiality.",
+    "order": 6
+  }
+},
+{
+  "model": "main.servicesection",
+  "pk": 299,
+  "fields": {
+    "service": 106,
+    "heading": "Note",
+    "section_type": "text",
+    "content": "Whether you bid on 2 projects per month or 50, we scale our services as per your needs.",
+    "items": "",
+    "is_subsection": true,
+    "order": 1
+  }
+},
+{
+  "model": "main.servicesection",
+  "pk": 300,
+  "fields": {
+    "service": 106,
+    "heading": "Who Can Benefit?",
+    "section_type": "tags",
+    "content": "",
+    "items": "General Contractors\nSubcontractors\nBuilders & Developers\nArchitects & Engineers\nConstruction Consultants",
+    "is_subsection": true,
+    "order": 2
+  }
+},
+{
+  "model": "main.servicesection",
+  "pk": 301,
+  "fields": {
+    "service": 107,
+    "heading": "Why Fabricators & Suppliers Choose Us",
+    "section_type": "benefits",
+    "content": "",
+    "items": "Specialized Support for USA & European Markets\nFabrication-Ready Drawings with High Accuracy\nReduced Rework & Production Errors\nFast Turnaround & Scalable Outsourcing\nCost-Effective Offshore Support\nConfidentiality & Secure Data Handling",
+    "is_subsection": true,
+    "order": 1
+  }
+},
+{
+  "model": "main.servicesection",
+  "pk": 302,
+  "fields": {
+    "service": 107,
+    "heading": "Who We Support",
+    "section_type": "tags",
+    "content": "",
+    "items": "Cabinet Fabricators\nMillwork Manufacturers\nCountertop Fabricators\nKitchen & Bath Suppliers\nInterior Fit-Out Companies\nCommercial & Residential Project Suppliers",
+    "is_subsection": true,
+    "order": 2
+  }
+},
+{
+  "model": "main.servicesection",
+  "pk": 303,
+  "fields": {
+    "service": 108,
+    "heading": "Why Outsource CAD Drafting to Us?",
+    "section_type": "benefits",
+    "content": "",
+    "items": "Significant Cost Savings\r\nHigh Accuracy & Quality Control\r\nQuick Turnaround Time\r\nScalable Team Support\r\nStrict Confidentiality & Data Security\r\nEasy Communication & Time-Zone Flexibility",
+    "is_subsection": true,
+    "order": 1
+  }
+},
+{
+  "model": "main.servicesection",
+  "pk": 304,
+  "fields": {
+    "service": 108,
+    "heading": "Industries We Support",
+    "section_type": "tags",
+    "content": "",
+    "items": "Architecture & Construction Firms\r\nEngineering & Manufacturing Companies\r\nInterior Design Studios\r\nReal Estate Developers\r\nProduct Design & Fabrication Firms\r\nContractors & Consultants",
+    "is_subsection": true,
+    "order": 2
+  }
+},
+{
+  "model": "main.servicesection",
+  "pk": 305,
+  "fields": {
+    "service": 109,
+    "heading": "Why Choose Us",
+    "section_type": "benefits",
+    "content": "",
+    "items": "Expertise: Years of experience in CNC programming for countertops\nAccuracy: Programs optimized for minimal waste and maximum efficiency\nFlexible Outsourcing: Scale your production without hiring extra staff\nFast Turnaround: Get your programs when you need them\nCost-Effective: Reduce overhead and production downtime",
+    "is_subsection": true,
+    "order": 1
+  }
+},
+{
+  "model": "main.servicesection",
+  "pk": 306,
+  "fields": {
+    "service": 109,
+    "heading": "How It Works",
+    "section_type": "process",
+    "content": "",
+    "items": "Send Your Designs: Upload your CAD files or drawings\nWe Program: Our team creates precise CNC programs\nReceive & Produce: Download ready-to-run programs and start production immediately",
+    "is_subsection": true,
+    "order": 2
+  }
+},
+{
+  "model": "main.servicesection",
+  "pk": 307,
+  "fields": {
+    "service": 110,
+    "heading": "Why Choose Us",
+    "section_type": "benefits",
+    "content": "",
+    "items": "Experienced Team of Architects, Interior Designers, and Structural Engineers\r\nInnovative & Client-Centric Designs\r\nFocus on Sustainability & Safety\r\nTimely Delivery & Budget-Friendly Solutions",
+    "is_subsection": true,
+    "order": 1
+  }
+},
+{
+  "model": "main.servicesection",
+  "pk": 308,
+  "fields": {
+    "service": 110,
+    "heading": "Our Process",
+    "section_type": "process",
+    "content": "",
+    "items": "Consultation – Understand your needs, preferences, and project goals.\r\nDesign & Planning – Creative conceptual designs with detailed planning.\r\nExecution & Oversight – Structural and interior planning to ensure flawless execution.\r\nDelivery & Support – On-time delivery with ongoing support for modifications.",
+    "is_subsection": true,
+    "order": 2
+  }
+},
+{
+  "model": "main.servicesection",
+  "pk": 309,
+  "fields": {
+    "service": 111,
+    "heading": "Why Choose Us",
+    "section_type": "benefits",
+    "content": "",
+    "items": "Experienced Team of Data Entry Specialists\r\nHigh Accuracy & Attention to Detail\r\nFast Turnaround Time & Timely Delivery\r\nConfidentiality & Data Security Guaranteed\r\nCost-Effective Outsourcing Solutions",
+    "is_subsection": true,
+    "order": 1
+  }
+},
+{
+  "model": "main.servicesection",
+  "pk": 310,
+  "fields": {
+    "service": 111,
+    "heading": "Our Process",
+    "section_type": "process",
+    "content": "",
+    "items": "Understanding Your Requirements – We start by analyzing your data needs.\r\nData Collection & Entry – Efficient and accurate input of all your information.\r\nQuality Check – Thorough verification to ensure 100% accuracy.\r\nDelivery & Support – Timely submission and ongoing support for any modifications.",
+    "is_subsection": true,
+    "order": 2
+  }
+},
+{
+  "model": "main.serviceimage",
+  "pk": 356,
+  "fields": {
+    "service": 106,
+    "image": "services/estimation.png",
+    "caption": "Estimation & Quantity Take-Off Services Example 1",
+    "order": 0
+  }
+},
+{
+  "model": "main.serviceimage",
+  "pk": 357,
+  "fields": {
+    "service": 106,
+    "image": "services/estimation.png",
+    "caption": "Estimation & Quantity Take-Off Services Example 2",
+    "order": 1
+  }
+},
+{
+  "model": "main.serviceimage",
+  "pk": 358,
+  "fields": {
+    "service": 106,
+    "image": "services/estimation.png",
+    "caption": "Estimation & Quantity Take-Off Services Example 3",
+    "order": 2
+  }
+},
+{
+  "model": "main.serviceimage",
+  "pk": 359,
+  "fields": {
+    "service": 106,
+    "image": "services/estimation.png",
+    "caption": "Estimation & Quantity Take-Off Services Example 4",
+    "order": 3
+  }
+},
+{
+  "model": "main.serviceimage",
+  "pk": 360,
+  "fields": {
+    "service": 106,
+    "image": "services/estimation.png",
+    "caption": "Estimation & Quantity Take-Off Services Example 5",
+    "order": 4
+  }
+},
+{
+  "model": "main.serviceimage",
+  "pk": 361,
+  "fields": {
+    "service": 106,
+    "image": "services/estimation.png",
+    "caption": "Estimation & Quantity Take-Off Services Example 6",
+    "order": 5
+  }
+},
+{
+  "model": "main.serviceimage",
+  "pk": 362,
+  "fields": {
+    "service": 106,
+    "image": "services/estimation.png",
+    "caption": "Estimation & Quantity Take-Off Services Example 7",
+    "order": 6
+  }
+},
+{
+  "model": "main.serviceimage",
+  "pk": 363,
+  "fields": {
+    "service": 106,
+    "image": "services/estimation.png",
+    "caption": "Estimation & Quantity Take-Off Services Example 8",
+    "order": 7
+  }
+},
+{
+  "model": "main.serviceimage",
+  "pk": 364,
+  "fields": {
+    "service": 106,
+    "image": "services/estimation.png",
+    "caption": "Estimation & Quantity Take-Off Services Example 9",
+    "order": 8
+  }
+},
+{
+  "model": "main.serviceimage",
+  "pk": 365,
+  "fields": {
+    "service": 106,
+    "image": "services/estimation.png",
+    "caption": "Estimation & Quantity Take-Off Services Example 10",
+    "order": 9
+  }
+},
+{
+  "model": "main.serviceimage",
+  "pk": 366,
+  "fields": {
+    "service": 106,
+    "image": "services/estimation.png",
+    "caption": "Estimation & Quantity Take-Off Services Example 11",
+    "order": 10
+  }
+},
+{
+  "model": "main.serviceimage",
+  "pk": 367,
+  "fields": {
+    "service": 106,
+    "image": "services/estimation.png",
+    "caption": "Estimation & Quantity Take-Off Services Example 12",
+    "order": 11
+  }
+},
+{
+  "model": "main.serviceimage",
+  "pk": 368,
+  "fields": {
+    "service": 107,
+    "image": "services/cabinetry.png",
+    "caption": "Cabinetry, Tops & Millwork Solutions Example 1",
+    "order": 0
+  }
+},
+{
+  "model": "main.serviceimage",
+  "pk": 369,
+  "fields": {
+    "service": 107,
+    "image": "services/cabinetry.png",
+    "caption": "Cabinetry, Tops & Millwork Solutions Example 2",
+    "order": 1
+  }
+},
+{
+  "model": "main.serviceimage",
+  "pk": 370,
+  "fields": {
+    "service": 107,
+    "image": "services/cabinetry.png",
+    "caption": "Cabinetry, Tops & Millwork Solutions Example 3",
+    "order": 2
+  }
+},
+{
+  "model": "main.serviceimage",
+  "pk": 371,
+  "fields": {
+    "service": 107,
+    "image": "services/cabinetry.png",
+    "caption": "Cabinetry, Tops & Millwork Solutions Example 4",
+    "order": 3
+  }
+},
+{
+  "model": "main.serviceimage",
+  "pk": 372,
+  "fields": {
+    "service": 107,
+    "image": "services/cabinetry.png",
+    "caption": "Cabinetry, Tops & Millwork Solutions Example 5",
+    "order": 4
+  }
+},
+{
+  "model": "main.serviceimage",
+  "pk": 373,
+  "fields": {
+    "service": 107,
+    "image": "services/cabinetry.png",
+    "caption": "Cabinetry, Tops & Millwork Solutions Example 6",
+    "order": 5
+  }
+},
+{
+  "model": "main.serviceimage",
+  "pk": 374,
+  "fields": {
+    "service": 107,
+    "image": "services/cabinetry.png",
+    "caption": "Cabinetry, Tops & Millwork Solutions Example 7",
+    "order": 6
+  }
+},
+{
+  "model": "main.serviceimage",
+  "pk": 375,
+  "fields": {
+    "service": 107,
+    "image": "services/cabinetry.png",
+    "caption": "Cabinetry, Tops & Millwork Solutions Example 8",
+    "order": 7
+  }
+},
+{
+  "model": "main.serviceimage",
+  "pk": 376,
+  "fields": {
+    "service": 107,
+    "image": "services/cabinetry.png",
+    "caption": "Cabinetry, Tops & Millwork Solutions Example 9",
+    "order": 8
+  }
+},
+{
+  "model": "main.serviceimage",
+  "pk": 377,
+  "fields": {
+    "service": 107,
+    "image": "services/cabinetry.png",
+    "caption": "Cabinetry, Tops & Millwork Solutions Example 10",
+    "order": 9
+  }
+},
+{
+  "model": "main.serviceimage",
+  "pk": 378,
+  "fields": {
+    "service": 107,
+    "image": "services/cabinetry.png",
+    "caption": "Cabinetry, Tops & Millwork Solutions Example 11",
+    "order": 10
+  }
+},
+{
+  "model": "main.serviceimage",
+  "pk": 379,
+  "fields": {
+    "service": 107,
+    "image": "services/cabinetry.png",
+    "caption": "Cabinetry, Tops & Millwork Solutions Example 12",
+    "order": 11
+  }
+},
+{
+  "model": "main.serviceimage",
+  "pk": 380,
+  "fields": {
+    "service": 108,
+    "image": "services/cad.png",
+    "caption": "2D & 3D CAD Drafting Outsourcing Services Example 1",
+    "order": 0
+  }
+},
+{
+  "model": "main.serviceimage",
+  "pk": 381,
+  "fields": {
+    "service": 108,
+    "image": "services/cad.png",
+    "caption": "2D & 3D CAD Drafting Outsourcing Services Example 2",
+    "order": 1
+  }
+},
+{
+  "model": "main.serviceimage",
+  "pk": 382,
+  "fields": {
+    "service": 108,
+    "image": "services/cad.png",
+    "caption": "2D & 3D CAD Drafting Outsourcing Services Example 3",
+    "order": 2
+  }
+},
+{
+  "model": "main.serviceimage",
+  "pk": 383,
+  "fields": {
+    "service": 108,
+    "image": "services/cad.png",
+    "caption": "2D & 3D CAD Drafting Outsourcing Services Example 4",
+    "order": 3
+  }
+},
+{
+  "model": "main.serviceimage",
+  "pk": 384,
+  "fields": {
+    "service": 108,
+    "image": "services/cad.png",
+    "caption": "2D & 3D CAD Drafting Outsourcing Services Example 5",
+    "order": 4
+  }
+},
+{
+  "model": "main.serviceimage",
+  "pk": 385,
+  "fields": {
+    "service": 108,
+    "image": "services/cad.png",
+    "caption": "2D & 3D CAD Drafting Outsourcing Services Example 6",
+    "order": 5
+  }
+},
+{
+  "model": "main.serviceimage",
+  "pk": 386,
+  "fields": {
+    "service": 108,
+    "image": "services/cad.png",
+    "caption": "2D & 3D CAD Drafting Outsourcing Services Example 7",
+    "order": 6
+  }
+},
+{
+  "model": "main.serviceimage",
+  "pk": 387,
+  "fields": {
+    "service": 108,
+    "image": "services/cad.png",
+    "caption": "2D & 3D CAD Drafting Outsourcing Services Example 8",
+    "order": 7
+  }
+},
+{
+  "model": "main.serviceimage",
+  "pk": 388,
+  "fields": {
+    "service": 108,
+    "image": "services/cad.png",
+    "caption": "2D & 3D CAD Drafting Outsourcing Services Example 9",
+    "order": 8
+  }
+},
+{
+  "model": "main.serviceimage",
+  "pk": 389,
+  "fields": {
+    "service": 108,
+    "image": "services/cad.png",
+    "caption": "2D & 3D CAD Drafting Outsourcing Services Example 10",
+    "order": 9
+  }
+},
+{
+  "model": "main.serviceimage",
+  "pk": 390,
+  "fields": {
+    "service": 108,
+    "image": "services/cad.png",
+    "caption": "2D & 3D CAD Drafting Outsourcing Services Example 11",
+    "order": 10
+  }
+},
+{
+  "model": "main.serviceimage",
+  "pk": 391,
+  "fields": {
+    "service": 108,
+    "image": "services/cad.png",
+    "caption": "2D & 3D CAD Drafting Outsourcing Services Example 12",
+    "order": 11
+  }
+},
+{
+  "model": "main.serviceimage",
+  "pk": 392,
+  "fields": {
+    "service": 109,
+    "image": "services/cnc.png",
+    "caption": "CNC Programming Support Example 1",
+    "order": 0
+  }
+},
+{
+  "model": "main.serviceimage",
+  "pk": 393,
+  "fields": {
+    "service": 109,
+    "image": "services/cnc.png",
+    "caption": "CNC Programming Support Example 2",
+    "order": 1
+  }
+},
+{
+  "model": "main.serviceimage",
+  "pk": 394,
+  "fields": {
+    "service": 109,
+    "image": "services/cnc.png",
+    "caption": "CNC Programming Support Example 3",
+    "order": 2
+  }
+},
+{
+  "model": "main.serviceimage",
+  "pk": 395,
+  "fields": {
+    "service": 109,
+    "image": "services/cnc.png",
+    "caption": "CNC Programming Support Example 4",
+    "order": 3
+  }
+},
+{
+  "model": "main.serviceimage",
+  "pk": 396,
+  "fields": {
+    "service": 109,
+    "image": "services/cnc.png",
+    "caption": "CNC Programming Support Example 5",
+    "order": 4
+  }
+},
+{
+  "model": "main.serviceimage",
+  "pk": 397,
+  "fields": {
+    "service": 109,
+    "image": "services/cnc.png",
+    "caption": "CNC Programming Support Example 6",
+    "order": 5
+  }
+},
+{
+  "model": "main.serviceimage",
+  "pk": 398,
+  "fields": {
+    "service": 109,
+    "image": "services/cnc.png",
+    "caption": "CNC Programming Support Example 7",
+    "order": 6
+  }
+},
+{
+  "model": "main.serviceimage",
+  "pk": 399,
+  "fields": {
+    "service": 109,
+    "image": "services/cnc.png",
+    "caption": "CNC Programming Support Example 8",
+    "order": 7
+  }
+},
+{
+  "model": "main.serviceimage",
+  "pk": 400,
+  "fields": {
+    "service": 109,
+    "image": "services/cnc.png",
+    "caption": "CNC Programming Support Example 9",
+    "order": 8
+  }
+},
+{
+  "model": "main.serviceimage",
+  "pk": 401,
+  "fields": {
+    "service": 109,
+    "image": "services/cnc.png",
+    "caption": "CNC Programming Support Example 10",
+    "order": 9
+  }
+},
+{
+  "model": "main.serviceimage",
+  "pk": 402,
+  "fields": {
+    "service": 109,
+    "image": "services/cnc.png",
+    "caption": "CNC Programming Support Example 11",
+    "order": 10
+  }
+},
+{
+  "model": "main.serviceimage",
+  "pk": 403,
+  "fields": {
+    "service": 109,
+    "image": "services/cnc.png",
+    "caption": "CNC Programming Support Example 12",
+    "order": 11
+  }
+},
+{
+  "model": "main.serviceimage",
+  "pk": 404,
+  "fields": {
+    "service": 110,
+    "image": "services/architecture.png",
+    "caption": "Architecture, Interior & Structural Design Example 1",
+    "order": 0
+  }
+},
+{
+  "model": "main.serviceimage",
+  "pk": 405,
+  "fields": {
+    "service": 110,
+    "image": "services/architecture.png",
+    "caption": "Architecture, Interior & Structural Design Example 2",
+    "order": 1
+  }
+},
+{
+  "model": "main.serviceimage",
+  "pk": 406,
+  "fields": {
+    "service": 110,
+    "image": "services/architecture.png",
+    "caption": "Architecture, Interior & Structural Design Example 3",
+    "order": 2
+  }
+},
+{
+  "model": "main.serviceimage",
+  "pk": 407,
+  "fields": {
+    "service": 110,
+    "image": "services/architecture.png",
+    "caption": "Architecture, Interior & Structural Design Example 4",
+    "order": 3
+  }
+},
+{
+  "model": "main.serviceimage",
+  "pk": 408,
+  "fields": {
+    "service": 110,
+    "image": "services/architecture.png",
+    "caption": "Architecture, Interior & Structural Design Example 5",
+    "order": 4
+  }
+},
+{
+  "model": "main.serviceimage",
+  "pk": 409,
+  "fields": {
+    "service": 110,
+    "image": "services/architecture.png",
+    "caption": "Architecture, Interior & Structural Design Example 6",
+    "order": 5
+  }
+},
+{
+  "model": "main.serviceimage",
+  "pk": 410,
+  "fields": {
+    "service": 110,
+    "image": "services/architecture.png",
+    "caption": "Architecture, Interior & Structural Design Example 7",
+    "order": 6
+  }
+},
+{
+  "model": "main.serviceimage",
+  "pk": 411,
+  "fields": {
+    "service": 110,
+    "image": "services/architecture.png",
+    "caption": "Architecture, Interior & Structural Design Example 8",
+    "order": 7
+  }
+},
+{
+  "model": "main.serviceimage",
+  "pk": 412,
+  "fields": {
+    "service": 110,
+    "image": "services/architecture.png",
+    "caption": "Architecture, Interior & Structural Design Example 9",
+    "order": 8
+  }
+},
+{
+  "model": "main.serviceimage",
+  "pk": 413,
+  "fields": {
+    "service": 110,
+    "image": "services/architecture.png",
+    "caption": "Architecture, Interior & Structural Design Example 10",
+    "order": 9
+  }
+},
+{
+  "model": "main.serviceimage",
+  "pk": 414,
+  "fields": {
+    "service": 110,
+    "image": "services/architecture.png",
+    "caption": "Architecture, Interior & Structural Design Example 11",
+    "order": 10
+  }
+},
+{
+  "model": "main.serviceimage",
+  "pk": 415,
+  "fields": {
+    "service": 110,
+    "image": "services/architecture.png",
+    "caption": "Architecture, Interior & Structural Design Example 12",
+    "order": 11
+  }
+},
+{
+  "model": "main.serviceimage",
+  "pk": 416,
+  "fields": {
+    "service": 111,
+    "image": "services/data_entry.png",
+    "caption": "Data Entry Services Example 1",
+    "order": 0
+  }
+},
+{
+  "model": "main.serviceimage",
+  "pk": 417,
+  "fields": {
+    "service": 111,
+    "image": "services/data_entry.png",
+    "caption": "Data Entry Services Example 2",
+    "order": 1
+  }
+},
+{
+  "model": "main.serviceimage",
+  "pk": 418,
+  "fields": {
+    "service": 111,
+    "image": "services/data_entry.png",
+    "caption": "Data Entry Services Example 3",
+    "order": 2
+  }
+},
+{
+  "model": "main.serviceimage",
+  "pk": 419,
+  "fields": {
+    "service": 111,
+    "image": "services/data_entry.png",
+    "caption": "Data Entry Services Example 4",
+    "order": 3
+  }
+},
+{
+  "model": "main.serviceimage",
+  "pk": 420,
+  "fields": {
+    "service": 111,
+    "image": "services/data_entry.png",
+    "caption": "Data Entry Services Example 5",
+    "order": 4
+  }
+},
+{
+  "model": "main.serviceimage",
+  "pk": 421,
+  "fields": {
+    "service": 111,
+    "image": "services/data_entry.png",
+    "caption": "Data Entry Services Example 6",
+    "order": 5
+  }
+},
+{
+  "model": "main.serviceimage",
+  "pk": 422,
+  "fields": {
+    "service": 111,
+    "image": "services/data_entry.png",
+    "caption": "Data Entry Services Example 7",
+    "order": 6
+  }
+},
+{
+  "model": "main.serviceimage",
+  "pk": 423,
+  "fields": {
+    "service": 111,
+    "image": "services/data_entry.png",
+    "caption": "Data Entry Services Example 8",
+    "order": 7
+  }
+},
+{
+  "model": "main.serviceimage",
+  "pk": 424,
+  "fields": {
+    "service": 111,
+    "image": "services/data_entry.png",
+    "caption": "Data Entry Services Example 9",
+    "order": 8
+  }
+},
+{
+  "model": "main.serviceimage",
+  "pk": 425,
+  "fields": {
+    "service": 111,
+    "image": "services/data_entry.png",
+    "caption": "Data Entry Services Example 10",
+    "order": 9
+  }
+},
+{
+  "model": "main.serviceimage",
+  "pk": 426,
+  "fields": {
+    "service": 111,
+    "image": "services/data_entry.png",
+    "caption": "Data Entry Services Example 11",
+    "order": 10
+  }
+},
+{
+  "model": "main.serviceimage",
+  "pk": 427,
+  "fields": {
+    "service": 111,
+    "image": "services/data_entry.png",
+    "caption": "Data Entry Services Example 12",
+    "order": 11
+  }
+},
+{
+  "model": "main.servicefeature",
+  "pk": 256,
+  "fields": {
+    "service": 106,
+    "title": "Countertop & Cabinet",
+    "icon": "fa-solid fa-layer-group",
+    "order": 1
+  }
+},
+{
+  "model": "main.servicefeature",
+  "pk": 257,
+  "fields": {
+    "service": 106,
+    "title": "Flooring & Walls",
+    "icon": "fa-solid fa-border-all",
+    "order": 2
+  }
+},
+{
+  "model": "main.servicefeature",
+  "pk": 258,
+  "fields": {
+    "service": 106,
+    "title": "Stone & Tile",
+    "icon": "fa-solid fa-shapes",
+    "order": 3
+  }
+},
+{
+  "model": "main.servicefeature",
+  "pk": 259,
+  "fields": {
+    "service": 106,
+    "title": "Door & Window",
+    "icon": "fa-solid fa-door-open",
+    "order": 4
+  }
+},
+{
+  "model": "main.servicefeature",
+  "pk": 260,
+  "fields": {
+    "service": 106,
+    "title": "Plumbing Fixture",
+    "icon": "fa-solid fa-faucet",
+    "order": 5
+  }
+},
+{
+  "model": "main.servicefeature",
+  "pk": 261,
+  "fields": {
+    "service": 106,
+    "title": "Electrical & Lighting",
+    "icon": "fa-regular fa-lightbulb",
+    "order": 6
+  }
+},
+{
+  "model": "main.servicefeature",
+  "pk": 262,
+  "fields": {
+    "service": 106,
+    "title": "Paint",
+    "icon": "fa-solid fa-paint-roller",
+    "order": 7
+  }
+},
+{
+  "model": "main.servicefeature",
+  "pk": 263,
+  "fields": {
+    "service": 106,
+    "title": "Roofing & Siding",
+    "icon": "fa-solid fa-house-chimney",
+    "order": 8
+  }
+},
+{
+  "model": "main.servicefeature",
+  "pk": 264,
+  "fields": {
+    "service": 106,
+    "title": "Appliances",
+    "icon": "fa-solid fa-blender",
+    "order": 9
+  }
+},
+{
+  "model": "main.servicefeature",
+  "pk": 265,
+  "fields": {
+    "service": 106,
+    "title": "Shower and Tub",
+    "icon": "fa-solid fa-bath",
+    "order": 10
+  }
+},
+{
+  "model": "main.servicefeature",
+  "pk": 266,
+  "fields": {
+    "service": 106,
+    "title": "Door Hardware",
+    "icon": "fa-solid fa-key",
+    "order": 11
+  }
+},
+{
+  "model": "main.servicefeature",
+  "pk": 267,
+  "fields": {
+    "service": 106,
+    "title": "Blinds",
+    "icon": "fa-solid fa-align-justify",
+    "order": 12
+  }
+},
+{
+  "model": "main.servicefeature",
+  "pk": 268,
+  "fields": {
+    "service": 107,
+    "title": "Design 2020, Cabinet Vision & Mozaik",
+    "icon": "fa-solid fa-pen-ruler",
+    "order": 1
+  }
+},
+{
+  "model": "main.servicefeature",
+  "pk": 269,
+  "fields": {
+    "service": 107,
+    "title": "Countertop & Cabinet Shop Drawing",
+    "icon": "fa-solid fa-file-invoice",
+    "order": 2
+  }
+},
+{
+  "model": "main.servicefeature",
+  "pk": 270,
+  "fields": {
+    "service": 107,
+    "title": "Stone Slab Nesting/Layout Support",
+    "icon": "fa-solid fa-cubes",
+    "order": 3
+  }
+},
+{
+  "model": "main.servicefeature",
+  "pk": 271,
+  "fields": {
+    "service": 107,
+    "title": "LT-55 software Template Files Support",
+    "icon": "fa-solid fa-file-code",
+    "order": 4
+  }
+},
+{
+  "model": "main.servicefeature",
+  "pk": 272,
+  "fields": {
+    "service": 107,
+    "title": "Fabrication-Ready Layouts",
+    "icon": "fa-solid fa-industry",
+    "order": 5
+  }
+},
+{
+  "model": "main.servicefeature",
+  "pk": 273,
+  "fields": {
+    "service": 107,
+    "title": "CNC-Ready Drawings",
+    "icon": "fa-solid fa-memory",
+    "order": 6
+  }
+},
+{
+  "model": "main.servicefeature",
+  "pk": 274,
+  "fields": {
+    "service": 107,
+    "title": "Stone Profit System - Quote Preparation",
+    "icon": "fa-solid fa-file-invoice-dollar",
+    "order": 7
+  }
+},
+{
+  "model": "main.servicefeature",
+  "pk": 275,
+  "fields": {
+    "service": 107,
+    "title": "Moraware & StoneApp",
+    "icon": "fa-solid fa-calculator",
+    "order": 8
+  }
+},
+{
+  "model": "main.servicefeature",
+  "pk": 276,
+  "fields": {
+    "service": 108,
+    "title": "Architectural Floor Plans, Elevations & Sections",
+    "icon": "fa-solid fa-building",
+    "order": 1
+  }
+},
+{
+  "model": "main.servicefeature",
+  "pk": 277,
+  "fields": {
+    "service": 108,
+    "title": "Construction & Permit Drawings",
+    "icon": "fa-solid fa-file-signature",
+    "order": 2
+  }
+},
+{
+  "model": "main.servicefeature",
+  "pk": 278,
+  "fields": {
+    "service": 108,
+    "title": "Mechanical, Electrical & Plumbing (MEP) Drafting",
+    "icon": "fa-solid fa-bolt",
+    "order": 3
+  }
+},
+{
+  "model": "main.servicefeature",
+  "pk": 279,
+  "fields": {
+    "service": 108,
+    "title": "Shop Drawings & As-Built Drawings",
+    "icon": "fa-solid fa-clipboard-check",
+    "order": 4
+  }
+},
+{
+  "model": "main.servicefeature",
+  "pk": 280,
+  "fields": {
+    "service": 108,
+    "title": "PDF / Hand Sketch to AutoCAD Conversion",
+    "icon": "fa-solid fa-file-pdf",
+    "order": 5
+  }
+},
+{
+  "model": "main.servicefeature",
+  "pk": 281,
+  "fields": {
+    "service": 108,
+    "title": "3D Architectural & Structural Models",
+    "icon": "fa-solid fa-cube",
+    "order": 6
+  }
+},
+{
+  "model": "main.servicefeature",
+  "pk": 282,
+  "fields": {
+    "service": 108,
+    "title": "Mechanical Parts & Assembly Modeling",
+    "icon": "fa-solid fa-gears",
+    "order": 7
+  }
+},
+{
+  "model": "main.servicefeature",
+  "pk": 283,
+  "fields": {
+    "service": 108,
+    "title": "Product & Industrial 3D Models",
+    "icon": "fa-solid fa-box-open",
+    "order": 8
+  }
+},
+{
+  "model": "main.servicefeature",
+  "pk": 284,
+  "fields": {
+    "service": 108,
+    "title": "Interior & Exterior 3D Visualization",
+    "icon": "fa-solid fa-eye",
+    "order": 9
+  }
+},
+{
+  "model": "main.servicefeature",
+  "pk": 285,
+  "fields": {
+    "service": 108,
+    "title": "Concept & Presentation Models",
+    "icon": "fa-solid fa-lightbulb",
+    "order": 10
+  }
+},
+{
+  "model": "main.servicefeature",
+  "pk": 286,
+  "fields": {
+    "service": 109,
+    "title": "Countertop Programming",
+    "icon": "fa-solid fa-code",
+    "order": 1
+  }
+},
+{
+  "model": "main.servicefeature",
+  "pk": 287,
+  "fields": {
+    "service": 109,
+    "title": "Countertop Toolpaths",
+    "icon": "fa-solid fa-route",
+    "order": 2
+  }
+},
+{
+  "model": "main.servicefeature",
+  "pk": 288,
+  "fields": {
+    "service": 109,
+    "title": "AlphaCAM Software",
+    "icon": "fa-solid fa-compact-disc",
+    "order": 3
+  }
+},
+{
+  "model": "main.servicefeature",
+  "pk": 289,
+  "fields": {
+    "service": 109,
+    "title": "Slabsmith Software",
+    "icon": "fa-solid fa-layer-group",
+    "order": 4
+  }
+},
+{
+  "model": "main.servicefeature",
+  "pk": 290,
+  "fields": {
+    "service": 110,
+    "title": "Conceptual Design & Planning",
+    "icon": "fa-regular fa-paper-plane",
+    "order": 1
+  }
+},
+{
+  "model": "main.servicefeature",
+  "pk": 291,
+  "fields": {
+    "service": 110,
+    "title": "3D Modeling & Visualization",
+    "icon": "fa-solid fa-cube",
+    "order": 2
+  }
+},
+{
+  "model": "main.servicefeature",
+  "pk": 292,
+  "fields": {
+    "service": 110,
+    "title": "Building Layout",
+    "icon": "fa-solid fa-ruler-combined",
+    "order": 3
+  }
+},
+{
+  "model": "main.servicefeature",
+  "pk": 293,
+  "fields": {
+    "service": 110,
+    "title": "Sustainable Solutions",
+    "icon": "fa-solid fa-leaf",
+    "order": 4
+  }
+},
+{
+  "model": "main.servicefeature",
+  "pk": 294,
+  "fields": {
+    "service": 110,
+    "title": "Residential & Commercial Interiors",
+    "icon": "fa-solid fa-couch",
+    "order": 5
+  }
+},
+{
+  "model": "main.servicefeature",
+  "pk": 295,
+  "fields": {
+    "service": 110,
+    "title": "Space Optimization",
+    "icon": "fa-solid fa-arrows-to-dot",
+    "order": 6
+  }
+},
+{
+  "model": "main.servicefeature",
+  "pk": 296,
+  "fields": {
+    "service": 110,
+    "title": "Customized Designs",
+    "icon": "fa-solid fa-palette",
+    "order": 7
+  }
+},
+{
+  "model": "main.servicefeature",
+  "pk": 297,
+  "fields": {
+    "service": 110,
+    "title": "Material Selection",
+    "icon": "fa-solid fa-swatchbook",
+    "order": 8
+  }
+},
+{
+  "model": "main.servicefeature",
+  "pk": 298,
+  "fields": {
+    "service": 110,
+    "title": "Structural Analysis",
+    "icon": "fa-solid fa-building-shield",
+    "order": 9
+  }
+},
+{
+  "model": "main.servicefeature",
+  "pk": 299,
+  "fields": {
+    "service": 110,
+    "title": "Building Safety",
+    "icon": "fa-solid fa-helmet-safety",
+    "order": 10
+  }
+},
+{
+  "model": "main.servicefeature",
+  "pk": 300,
+  "fields": {
+    "service": 110,
+    "title": "Concrete, Steel & Timber",
+    "icon": "fa-solid fa-cubes-stacked",
+    "order": 11
+  }
+},
+{
+  "model": "main.servicefeature",
+  "pk": 301,
+  "fields": {
+    "service": 110,
+    "title": "Cost-Effective Solutions",
+    "icon": "fa-solid fa-piggy-bank",
+    "order": 12
+  }
+},
+{
+  "model": "main.servicefeature",
+  "pk": 302,
+  "fields": {
+    "service": 111,
+    "title": "Manual Data",
+    "icon": "fa-solid fa-hand-holding",
+    "order": 1
+  }
+},
+{
+  "model": "main.servicefeature",
+  "pk": 303,
+  "fields": {
+    "service": 111,
+    "title": "Data Processing",
+    "icon": "fa-solid fa-server",
+    "order": 2
+  }
+},
+{
+  "model": "main.servicefeature",
+  "pk": 304,
+  "fields": {
+    "service": 111,
+    "title": "Database Management",
+    "icon": "fa-solid fa-database",
+    "order": 3
+  }
+},
+{
+  "model": "main.servicefeature",
+  "pk": 305,
+  "fields": {
+    "service": 111,
+    "title": "Online & Offline Data Entry",
+    "icon": "fa-solid fa-wifi",
+    "order": 4
+  }
+},
+{
+  "model": "main.servicefeature",
+  "pk": 306,
+  "fields": {
+    "service": 111,
+    "title": "Data Conversion",
+    "icon": "fa-solid fa-file-export",
+    "order": 5
+  }
+},
+{
+  "model": "main.sitesettings",
+  "pk": 1,
+  "fields": {
+    "site_name": "ConstructProo",
+    "logo": "site_logos/ChatGPT_Image_Jan_21_2026_02_22_27_PM.png",
+    "phone_number": "+1 123 456 7896",
+    "email": "info@constructorpro.com",
+    "address": "1234 Builder Lane, Architect City, AC 54321",
+    "footer_description": "Building with Nature's Wisdom",
+    "facebook_url": "",
+    "twitter_url": "",
+    "linkedin_url": "",
+    "instagram_url": ""
+  }
+},
+{
+  "model": "main.homepage",
+  "pk": 1,
+  "fields": {
+    "hero_title": "Building with Nature's Wisdom",
+    "hero_subtitle": "Thoughtful construction advancing the balance between sustainability and architectural global innovation.",
+    "hero_bg_image": "",
+    "about_heading": "Building Global Partnerships",
+    "about_content": "ConstructPro is at the forefront of the worldwide market, merging the technology and construction industries by connecting fabricators, builders, and architects with highly trained experts. With a tradition of quality, we are unrelenting in our dedication to building solid connections and providing our partners and clients with the best technical and design expertise.\r\n\r\nWe deliver our services remotely, anytime and from anywhere, using advanced technology through our modern facility in India.\r\n\r\nAt ConstructPro, our focus is not only on services but on creating lasting partnerships based on trust, quality, and outcomes.\r\n\r\nWe provide unrivaled, cost-effective engineering design and technology solutions to our clients throughout the world, 24 hours a day, 365 days a year, to meet the needs of an ever-changing industry. Our extensive expertise spanning two decades has allowed us to partner with organizations all over the world, offering support and services that enable firms to focus on growth and developing new business relationships.",
+    "services_subtitle": "Our Services",
+    "services_heading": "Comprehensive Solutions for Every Project",
+    "services_description": "From CAD drafting to interior design, we deliver expert services tailored to your construction and architectural needs.",
+    "services_bg_image": "images/services_header_bg.png",
+    "software_label": "Toolset",
+    "software_heading": "Technical Precision",
+    "software_description": "Our software stack ensures millimeter-perfect execution.",
+    "free_sample_heading": "Get a Free Sample",
+    "free_sample_description": "Send us your drawings (PDF/DWG) and receive a complimentary sample to evaluate our quality and accuracy."
+  }
+},
+{
+  "model": "main.aboutpage",
+  "pk": 1,
+  "fields": {
+    "deck_subtitle": "ABOUT US",
+    "deck_heading": "Building Global Partnerships",
+    "deck_content_1": "ConstructPro is at the forefront of the worldwide market, merging the technology and construction industries by connecting fabricators, builders, and architects with highly trained experts.",
+    "deck_content_2": "With a tradition of quality, we are unrelenting in our dedication to building solid connections and providing our partners and clients with the best technical and design expertise.",
+    "vision_heading": "Shaping the Future Together",
+    "vision_content": "Our vision is to become a trusted global technology partner by delivering reliable, scalable, and remote services that enable businesses to operate seamlessly beyond geographical boundaries.\r\n\r\nWe strive to create long-term value by leveraging modern technology, industry expertise, and proven processes, while building strong and lasting relationships founded on trust, quality, and consistency.\r\n\r\nThrough innovation and commitment, we aim to support our clients' growth and help them achieve sustainable success in an ever-evolving digital landscape.",
+    "mission_heading": "Delivering Excellence in Every Project",
+    "mission_content": "Our mission is to provide innovative engineering design and technology solutions, with expertise in 2D-3D CAD designing and precise estimation & take-offs.\r\n\r\nWe are dedicated to delivering excellence in every project by leveraging over 20 years of generational experience, ensuring impactful and reliable results for our clients.",
+    "stat_1_value": "15+",
+    "stat_1_label": "Years of Excellence",
+    "stat_2_value": "11.5K",
+    "stat_2_label": "Projects Completed"
+  }
+},
+{
+  "model": "main.contactpage",
+  "pk": 1,
+  "fields": {
+    "visual_badge": "EST. 2005",
+    "visual_heading": "Design your legacy.",
+    "visual_image": "images/contact_illustration.png",
+    "form_subtitle": "Get in Touch",
+    "form_heading": "Start the Conversation",
+    "form_description": "Ready to bring your vision to life? Our team of architects and engineers is here to help you every step of the way.",
+    "response_title": "24-Hour Response Guarantee",
+    "response_description": "We typically respond within 24 hours. Most projects have a 24-48 hour turnaround time."
+  }
+},
+{
+  "model": "main.testimonial",
+  "pk": 1,
+  "fields": {
+    "name": "Emily",
+    "role": "Customer",
+    "content": "When we first met the team we knew we had found what we needed a group of highly experienced, sensitive designers and technicians.",
+    "rating": 5,
+    "order": 1
+  }
+},
+{
+  "model": "main.testimonial",
+  "pk": 2,
+  "fields": {
+    "name": "Adam",
+    "role": "Customer",
+    "content": "I just wanted to take a moment to send a special thank you for the work you done to provide us with the countertop estimation take out with this type of project.",
+    "rating": 5,
+    "order": 2
+  }
+},
+{
+  "model": "main.testimonial",
+  "pk": 3,
+  "fields": {
+    "name": "Michael",
+    "role": "Customer",
+    "content": "Outstanding work! The team delivered exactly what we needed on time and within budget. Highly professional and creative approach to our project.",
+    "rating": 5,
+    "order": 3
+  }
+},
+{
+  "model": "main.softwaretool",
+  "pk": 1,
+  "fields": {
+    "name": "autodesk autocad",
+    "image": "images/software/autodesk autocad.png",
+    "order": 1
+  }
+},
+{
+  "model": "main.softwaretool",
+  "pk": 2,
+  "fields": {
+    "name": "Revit",
+    "image": "images/software/Revit.png",
+    "order": 2
+  }
+},
+{
+  "model": "main.softwaretool",
+  "pk": 3,
+  "fields": {
+    "name": "sketchUP",
+    "image": "images/software/sketchUP.png",
+    "order": 3
+  }
+},
+{
+  "model": "main.softwaretool",
+  "pk": 4,
+  "fields": {
+    "name": "alphacam",
+    "image": "images/software/alphacam.png",
+    "order": 4
+  }
+},
+{
+  "model": "main.softwaretool",
+  "pk": 5,
+  "fields": {
+    "name": "bluebeam",
+    "image": "images/software/bluebeam.png",
+    "order": 5
+  }
+},
+{
+  "model": "main.softwaretool",
+  "pk": 6,
+  "fields": {
+    "name": "mastercam",
+    "image": "images/software/mastercam.png",
+    "order": 6
+  }
+},
+{
+  "model": "main.softwaretool",
+  "pk": 7,
+  "fields": {
+    "name": "mozaik",
+    "image": "images/software/mozaik.png",
+    "order": 7
+  }
+},
+{
+  "model": "main.softwaretool",
+  "pk": 8,
+  "fields": {
+    "name": "design 2020",
+    "image": "images/software/design 2020.png",
+    "order": 8
+  }
+},
+{
+  "model": "main.softwaretool",
+  "pk": 9,
+  "fields": {
+    "name": "inventor cam",
+    "image": "images/software/inventor cam.png",
+    "order": 9
+  }
+},
+{
+  "model": "main.softwaretool",
+  "pk": 10,
+  "fields": {
+    "name": "Capture",
+    "image": "images/software/Capture.png",
+    "order": 10
+  }
+},
+{
+  "model": "main.whychooseusitem",
+  "pk": 1,
+  "fields": {
+    "title": "Highly Accurate Take-offs",
+    "description": "Precision-driven quantity take-offs ensuring error-free estimates every time.",
+    "icon_svg": "<svg width=\"32\" height=\"32\" viewBox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M9,20.42L2.79,14.21L5.62,11.38L9,14.77L18.88,4.88L21.71,7.71L9,20.42Z\" /></svg>",
+    "order": 1
+  }
+},
+{
+  "model": "main.whychooseusitem",
+  "pk": 2,
+  "fields": {
+    "title": "Fast Turnaround Time",
+    "description": "Quick delivery without compromising on quality or accuracy.",
+    "icon_svg": "<svg width=\"32\" height=\"32\" viewBox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22C6.47,22 2,17.5 2,12A10,10 0 0,1 12,2M12.5,7V12.25L17,14.92L16.25,16.15L11,13V7H12.5Z\" /></svg>",
+    "order": 2
+  }
+},
+{
+  "model": "main.whychooseusitem",
+  "pk": 3,
+  "fields": {
+    "title": "Cost-Effective Pricing",
+    "description": "Competitive offshore pricing that maximizes your project budget.",
+    "icon_svg": "<svg width=\"32\" height=\"32\" viewBox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M7,15H9C9,16.08 10.37,17 12,17C13.63,17 15,16.08 15,15C15,13.9 13.96,13.5 11.76,12.97C9.64,12.44 7,11.78 7,9C7,7.21 8.47,5.69 10.5,5.18V3H13.5V5.18C15.53,5.69 17,7.21 17,9H15C15,7.92 13.63,7 12,7C10.37,7 9,7.92 9,9C9,10.1 10.04,10.5 12.24,11.03C14.36,11.56 17,12.22 17,15C17,16.79 15.53,18.31 13.5,18.82V21H10.5V18.82C8.47,18.31 7,16.79 7,15Z\" /></svg>",
+    "order": 3
+  }
+},
+{
+  "model": "main.whychooseusitem",
+  "pk": 4,
+  "fields": {
+    "title": "Experienced Team",
+    "description": "Skilled estimators and engineers with industry expertise.",
+    "icon_svg": "<svg width=\"32\" height=\"32\" viewBox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M12,2A10,10 0 0,1 22,12A10,10 0 0,1 12,22A10,10 0 0,1 2,12A10,10 0 0,1 12,2M12,4A8,8 0 0,0 4,12A8,8 0 0,0 12,20A8,8 0 0,0 20,12A8,8 0 0,0 12,4M11,17V16H9V14H13V13H10A1,1 0 0,1 9,12V9A1,1 0 0,1 10,8H11V7H13V8H15V10H11V11H14A1,1 0 0,1 15,12V15A1,1 0 0,1 14,16H13V17H11Z\" /></svg>",
+    "order": 4
+  }
+},
+{
+  "model": "main.whychooseusitem",
+  "pk": 5,
+  "fields": {
+    "title": "Industry-Standard Software",
+    "description": "Utilizing the latest tools for maximum precision and efficiency.",
+    "icon_svg": "<svg width=\"32\" height=\"32\" viewBox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M21,16.5C21,16.88 20.79,17.21 20.47,17.38L12.57,21.82C12.41,21.94 12.21,22 12,22C11.79,22 11.59,21.94 11.43,21.82L3.53,17.38C3.21,17.21 3,16.88 3,16.5V7.5C3,7.12 3.21,6.79 3.53,6.62L11.43,2.18C11.59,2.06 11.79,2 12,2C12.21,2 12.41,2.06 12.57,2.18L20.47,6.62C20.79,6.79 21,7.12 21,7.5V16.5M12,4.15L5,8.09V15.91L12,19.85L19,15.91V8.09L12,4.15Z\" /></svg>",
+    "order": 5
+  }
+},
+{
+  "model": "main.whychooseusitem",
+  "pk": 6,
+  "fields": {
+    "title": "Secure Data Handling",
+    "description": "Confidential and secure management of all your project data.",
+    "icon_svg": "<svg width=\"32\" height=\"32\" viewBox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M12,1L3,5V11C3,16.55 6.84,21.74 12,23C17.16,21.74 21,16.55 21,11V5L12,1M12,5A3,3 0 0,1 15,8A3,3 0 0,1 12,11A3,3 0 0,1 9,8A3,3 0 0,1 12,5M17.13,17C15.92,18.85 14.11,20.24 12,20.92C9.89,20.24 8.08,18.85 6.87,17C6.53,16.5 6.24,16 6,15.47C6,13.82 8.71,12.47 12,12.47C15.29,12.47 18,13.79 18,15.47C17.76,16 17.47,16.5 17.13,17Z\" /></svg>",
+    "order": 6
+  }
+},
+{
+  "model": "main.commitmentitem",
+  "pk": 1,
+  "fields": {
+    "title": "100% Accuracy & Quality Assurance",
+    "description": "Every deliverable undergoes rigorous quality checks to ensure absolute accuracy.",
+    "number": "01",
+    "order": 1
+  }
+},
+{
+  "model": "main.commitmentitem",
+  "pk": 2,
+  "fields": {
+    "title": "On-Time Delivery",
+    "description": "We respect your deadlines and ensure timely completion of all projects.",
+    "number": "02",
+    "order": 2
+  }
+},
+{
+  "model": "main.commitmentitem",
+  "pk": 3,
+  "fields": {
+    "title": "Clear Communication",
+    "description": "Transparent and continuous communication throughout the project lifecycle.",
+    "number": "03",
+    "order": 3
+  }
+},
+{
+  "model": "main.commitmentitem",
+  "pk": 4,
+  "fields": {
+    "title": "Long-Term Partnership",
+    "description": "We build lasting relationships, becoming an extension of your team.",
+    "number": "04",
+    "order": 4
+  }
+},
+{
+  "model": "main.aboutgalleryimage",
+  "pk": 1,
+  "fields": {
+    "title": "Tech",
+    "image": "images/generated/blueprint.png",
+    "order": 1
+  }
+},
+{
+  "model": "main.aboutgalleryimage",
+  "pk": 2,
+  "fields": {
+    "title": "Build",
+    "image": "images/generated/facade.png",
+    "order": 2
+  }
+},
+{
+  "model": "main.aboutgalleryimage",
+  "pk": 3,
+  "fields": {
+    "title": "Design",
+    "image": "images/generated/detail.png",
+    "order": 3
+  }
+},
+{
+  "model": "main.aboutgalleryimage",
+  "pk": 4,
+  "fields": {
+    "title": "Global",
+    "image": "images/generated/global.png",
+    "order": 4
+  }
+},
+{
+  "model": "main.aboutgalleryimage",
+  "pk": 5,
+  "fields": {
+    "title": "Team",
+    "image": "images/generated/team.png",
+    "order": 5
+  }
+},
+{
+  "model": "main.processstep",
+  "pk": 1,
+  "fields": {
+    "title": "Planning Stage",
+    "description": "First we understand the need and plan the project accordingly.",
+    "number": "01",
+    "icon_svg": "<svg width=\"48\" height=\"48\" viewBox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M19,3H14.82C14.4,1.84 13.3,1 12,1C10.7,1 9.6,1.84 9.18,3H5A2,2 0 0,0 3,5V19A2,2 0 0,0 5,21H19A2,2 0 0,0 21,19V5A2,2 0 0,0 19,3M12,3A1,1 0 0,1 13,4A1,1 0 0,1 12,5A1,1 0 0,1 11,4A1,1 0 0,1 12,3M7,7H17V5H19V19H5V5H7V7M17,11H7V9H17V11M15,15H7V13H15V15Z\"/></svg>",
+    "order": 1
+  }
+},
+{
+  "model": "main.processstep",
+  "pk": 2,
+  "fields": {
+    "title": "Design Process",
+    "description": "Discussed with the design team and start designing work.",
+    "number": "02",
+    "icon_svg": "<svg width=\"48\" height=\"48\" viewBox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M21.71,5.29L18.71,2.29C18.32,1.9 17.69,1.9 17.3,2.29L14.29,5.29C13.9,5.68 13.9,6.32 14.29,6.71L17.29,9.71C17.68,10.1 18.32,10.1 18.71,9.71L21.71,6.71C22.1,6.32 22.1,5.68 21.71,5.29M17,14.25V13C17,12.45 16.55,12 16,12C15.45,12 15,12.45 15,13V15C15,15.55 15.45,16 16,16H18C18.55,16 19,15.55 19,15C19,14.45 18.55,14 18,14H17.79L19.92,11.87L18.5,10.45L17,14.25M12,2C11.45,2 11,2.45 11,3V5C11,5.55 11.45,6 12,6C12.55,6 13,5.55 13,5V3C13,2.45 12.55,2 12,2M4.5,10.5V13.5C4.5,13.78 4.72,14 5,14H8C8.28,14 8.5,13.78 8.5,13.5V10.5C8.5,10.22 8.28,10 8,10H5C4.72,10 4.5,10.22 4.5,10.5M20,20C20,21.1 19.1,22 18,22H6C4.9,22 4,21.1 4,20V8C4,6.9 4.9,6 6,6H9C9,7.66 10.34,9 12,9C13.66,9 15,7.66 15,6H18C19.1,6 20,6.9 20,8V20Z\"/></svg>",
+    "order": 2
+  }
+},
+{
+  "model": "main.processstep",
+  "pk": 3,
+  "fields": {
+    "title": "Execution Phase",
+    "description": "Give the client wireframe to execute the same according to the approval.",
+    "number": "03",
+    "icon_svg": "<svg width=\"48\" height=\"48\" viewBox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M12,4A8,8 0 0,1 20,12A8,8 0 0,1 12,20A8,8 0 0,1 4,12A8,8 0 0,1 12,4M12,6A6,6 0 0,0 6,12A6,6 0 0,0 12,18A6,6 0 0,0 18,12A6,6 0 0,0 12,6M12,8A4,4 0 0,1 16,12A4,4 0 0,1 12,16A4,4 0 0,1 8,12A4,4 0 0,1 12,8Z\"/></svg>",
+    "order": 3
+  }
+},
+{
+  "model": "main.processstep",
+  "pk": 4,
+  "fields": {
+    "title": "Completed Projects",
+    "description": "After approval, get the final phase and touch as per client feedback.",
+    "number": "04",
+    "icon_svg": "<svg width=\"48\" height=\"48\" viewBox=\"0 0 24 24\" fill=\"currentColor\"><path d=\"M12,3L2,12H5V20H19V12H22L12,3M12,8.75A2.25,2.25 0 0,1 14.25,11A2.25,2.25 0 0,1 12,13.25A2.25,2.25 0 0,1 9.75,11A2.25,2.25 0 0,1 12,8.75M12,15C13.5,15 16.5,15.75 16.5,17.25V18H7.5V17.25C7.5,15.75 10.5,15 12,15Z\"/></svg>",
+    "order": 4
+  }
+},
+{
+  "model": "main.contactsubmission",
+  "pk": 1,
+  "fields": {
+    "name": "Test User",
+    "email": "test@example.com",
+    "subject": "project",
+    "message": "This is a test message.",
+    "file": "",
+    "created_at": "2026-01-21T08:05:08.204Z"
+  }
+}
+]
