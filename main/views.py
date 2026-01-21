@@ -3,8 +3,10 @@ from django.conf import settings
 from .models import (
     Service, HomePage, AboutPage, ContactPage, Testimonial, 
     SoftwareTool, WhyChooseUsItem, CommitmentItem, AboutGalleryImage,
-    ProcessStep
+    SoftwareTool, WhyChooseUsItem, CommitmentItem, AboutGalleryImage,
+    ProcessStep, ContactSubmission
 )
+from django.contrib import messages
 import os
 
 def home(request):
@@ -28,6 +30,23 @@ def home(request):
 
 def contact(request):
     """Contact page view"""
+    if request.method == 'POST':
+        name = request.POST.get('name')
+        email = request.POST.get('email')
+        subject = request.POST.get('subject')
+        message = request.POST.get('message')
+        file = request.FILES.get('file')
+
+        ContactSubmission.objects.create(
+            name=name,
+            email=email,
+            subject=subject,
+            message=message,
+            file=file
+        )
+        messages.success(request, 'Message sent successfully! We will get back to you soon.')
+        return redirect('contact')
+
     contact_page = ContactPage.load()
     context = {
         'contact_page': contact_page

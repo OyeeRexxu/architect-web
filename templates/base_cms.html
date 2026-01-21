@@ -19,7 +19,7 @@
 
     <!-- Stylesheet -->
     {% load static %}
-    <link rel="stylesheet" href="{% static 'css/style.css' %}?v=30">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}?v=31">
     <link rel="stylesheet" href="{% static 'css/hero-options.css' %}">
     <link rel="stylesheet" href="{% static 'css/process-section.css' %}">
     <link rel="stylesheet" href="{% static 'css/testimonials-options.css' %}">
@@ -34,10 +34,6 @@
     <!-- Top Contact Bar -->
     <div class="top-contact-bar">
         <div class="container">
-            <div class="top-contact-info">
-                <a href="tel:{{ phone_number }}"><i class="fa-solid fa-phone"></i> {{ phone_number }}</a>
-                <a href="mailto:{{ email }}"><i class="fa-solid fa-envelope"></i> {{ email }}</a>
-            </div>
             <div class="top-social-actions">
                 {% if global_site_settings.facebook_url %}<a href="{{ global_site_settings.facebook_url }}"><i
                         class="fab fa-facebook-f"></i></a>{% endif %}
@@ -48,19 +44,28 @@
                 {% if global_site_settings.linkedin_url %}<a href="{{ global_site_settings.linkedin_url }}"><i
                         class="fab fa-linkedin-in"></i></a>{% endif %}
             </div>
+            <div class="top-contact-info">
+                <a href="tel:{{ phone_number }}"><i class="fa-solid fa-phone"></i> {{ phone_number }}</a>
+                <a href="mailto:{{ email }}"><i class="fa-solid fa-envelope"></i> {{ email }}</a>
+            </div>
         </div>
     </div>
 
     <!-- Navbar -->
-    <nav class="navbar">
+    <nav class="navbar" style="top: 40px !important;">
         <div class="container">
             <a href="{% url 'home' %}" class="logo">
                 <div class="logo-icon">
+                    {% if global_site_settings.logo %}
+                    <img src="{{ global_site_settings.logo.url }}" alt="{{ global_site_settings.site_name }}"
+                        style="width: 100%; height: 100%; object-fit: contain;">
+                    {% else %}
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="white">
                         <path d="M12 3L2 12h3v8h6v-6h2v6h6v-8h3L12 3z" />
                     </svg>
+                    {% endif %}
                 </div>
-                <span>ConstructPro</span>
+                <span>{{ global_site_settings.site_name|default:"ConstructPro" }}</span>
             </a>
 
             <ul class="nav-links">

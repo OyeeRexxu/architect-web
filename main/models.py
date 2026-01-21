@@ -99,7 +99,7 @@ class SingletonModel(models.Model):
 
 class SiteSettings(SingletonModel):
     site_name = models.CharField(max_length=100, default="ConstructPro")
-    logo = models.CharField(max_length=200, blank=True, help_text="Path to logo image")
+    logo = models.ImageField(upload_to='site_logos/', blank=True, null=True, help_text="Upload logo image")
     phone_number = models.CharField(max_length=20, default="+1 123 456 7895")
     email = models.EmailField(default="info@constructorpro.com")
     address = models.TextField(default="1234 Builder Lane, Architect City, AC 54321")
@@ -266,3 +266,20 @@ class ProcessStep(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class ContactSubmission(models.Model):
+    name = models.CharField(max_length=100)
+    email = models.EmailField()
+    subject = models.CharField(max_length=50, choices=[
+        ('project', 'New Project Inquiry'),
+        ('career', 'Careers'),
+        ('other', 'Other')
+    ], blank=True)
+    message = models.TextField()
+    file = models.FileField(upload_to='contact_uploads/', blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return f"{self.name} - {self.subject}"
+

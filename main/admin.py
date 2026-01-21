@@ -3,7 +3,7 @@ from .models import (
     Service, ServiceSection, ServiceImage, ServiceFeature,
     SiteSettings, HomePage, AboutPage, ContactPage,
     Testimonial, SoftwareTool, WhyChooseUsItem, CommitmentItem, AboutGalleryImage,
-    ProcessStep
+    ProcessStep, ContactSubmission
 )
 
 # Register your models here.
@@ -104,3 +104,11 @@ class AboutGalleryImageAdmin(admin.ModelAdmin):
 class ProcessStepAdmin(admin.ModelAdmin):
     list_display = ('number', 'title', 'order')
     list_editable = ('order',)
+
+@admin.register(ContactSubmission)
+class ContactSubmissionAdmin(admin.ModelAdmin):
+    list_display = ('name', 'email', 'subject', 'created_at')
+    list_filter = ('subject', 'created_at')
+    search_fields = ('name', 'email', 'message')
+    readonly_fields = ('created_at',)
+

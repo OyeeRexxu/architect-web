@@ -209,13 +209,24 @@ img {
 .top-contact-bar {
     background: var(--primary-dark);
     color: white;
-    padding: 0.75rem 0;
+    height: 40px;
+    padding: 0;
+    display: flex;
+    align-items: center;
     font-size: 0.875rem;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1001;
+}
+
+.top-contact-bar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
 }
 
 .top-contact-info {
@@ -225,32 +236,14 @@ img {
     gap: 2rem;
 }
 
-.top-contact-info a {
-    color: white;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    transition: var(--transition-fast);
-    opacity: 0.95;
-}
-
-.top-contact-info a:hover {
-    opacity: 1;
-    color: var(--accent-color);
-}
-
-.top-contact-info i {
-    font-size: 0.85rem;
-}
-
 /* ===================================
    NAVBAR
    =================================== */
 
 .navbar {
     position: fixed;
-    top: 42px;
-    /* Height of top contact bar */
+    top: 40px;
+    /* Clean contact with top bar */
     left: 0;
     right: 0;
     z-index: 1000;
