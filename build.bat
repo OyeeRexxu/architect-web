@@ -33,5 +33,9 @@ python manage.py migrate
 echo Collecting Static Files...
 python manage.py collectstatic --noinput
 
+:: Ensure Media Files (Seed defaults)
+echo Checking Media Files...
+python scripts/ensure_media.py
+
 echo Build Process Completed Successfully!
 pause
