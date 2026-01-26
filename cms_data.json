@@ -82,7 +82,7 @@
   "pk": 299,
   "fields": {
     "service": 106,
-    "heading": "Note",
+    "heading": "",
     "section_type": "text",
     "content": "Whether you bid on 2 projects per month or 50, we scale our services as per your needs.",
     "items": "",
@@ -98,7 +98,7 @@
     "heading": "Who Can Benefit?",
     "section_type": "tags",
     "content": "",
-    "items": "General Contractors\nSubcontractors\nBuilders & Developers\nArchitects & Engineers\nConstruction Consultants",
+    "items": "General Contractors\r\nSubcontractors\r\nBuilders & Developers\r\nArchitects & Engineers\r\nConstruction Consultants",
     "is_subsection": true,
     "order": 2
   }
@@ -235,122 +235,12 @@
 },
 {
   "model": "main.serviceimage",
-  "pk": 356,
-  "fields": {
-    "service": 106,
-    "image": "services/estimation.png",
-    "caption": "Estimation & Quantity Take-Off Services Example 1",
-    "order": 0
-  }
-},
-{
-  "model": "main.serviceimage",
-  "pk": 357,
-  "fields": {
-    "service": 106,
-    "image": "services/estimation.png",
-    "caption": "Estimation & Quantity Take-Off Services Example 2",
-    "order": 1
-  }
-},
-{
-  "model": "main.serviceimage",
-  "pk": 358,
-  "fields": {
-    "service": 106,
-    "image": "services/estimation.png",
-    "caption": "Estimation & Quantity Take-Off Services Example 3",
-    "order": 2
-  }
-},
-{
-  "model": "main.serviceimage",
   "pk": 359,
   "fields": {
     "service": 106,
     "image": "services/estimation.png",
     "caption": "Estimation & Quantity Take-Off Services Example 4",
     "order": 3
-  }
-},
-{
-  "model": "main.serviceimage",
-  "pk": 360,
-  "fields": {
-    "service": 106,
-    "image": "services/estimation.png",
-    "caption": "Estimation & Quantity Take-Off Services Example 5",
-    "order": 4
-  }
-},
-{
-  "model": "main.serviceimage",
-  "pk": 361,
-  "fields": {
-    "service": 106,
-    "image": "services/estimation.png",
-    "caption": "Estimation & Quantity Take-Off Services Example 6",
-    "order": 5
-  }
-},
-{
-  "model": "main.serviceimage",
-  "pk": 362,
-  "fields": {
-    "service": 106,
-    "image": "services/estimation.png",
-    "caption": "Estimation & Quantity Take-Off Services Example 7",
-    "order": 6
-  }
-},
-{
-  "model": "main.serviceimage",
-  "pk": 363,
-  "fields": {
-    "service": 106,
-    "image": "services/estimation.png",
-    "caption": "Estimation & Quantity Take-Off Services Example 8",
-    "order": 7
-  }
-},
-{
-  "model": "main.serviceimage",
-  "pk": 364,
-  "fields": {
-    "service": 106,
-    "image": "services/estimation.png",
-    "caption": "Estimation & Quantity Take-Off Services Example 9",
-    "order": 8
-  }
-},
-{
-  "model": "main.serviceimage",
-  "pk": 365,
-  "fields": {
-    "service": 106,
-    "image": "services/estimation.png",
-    "caption": "Estimation & Quantity Take-Off Services Example 10",
-    "order": 9
-  }
-},
-{
-  "model": "main.serviceimage",
-  "pk": 366,
-  "fields": {
-    "service": 106,
-    "image": "services/estimation.png",
-    "caption": "Estimation & Quantity Take-Off Services Example 11",
-    "order": 10
-  }
-},
-{
-  "model": "main.serviceimage",
-  "pk": 367,
-  "fields": {
-    "service": 106,
-    "image": "services/estimation.png",
-    "caption": "Estimation & Quantity Take-Off Services Example 12",
-    "order": 11
   }
 },
 {
@@ -1472,6 +1362,7 @@
     "phone_number": "+1 123 456 7896",
     "email": "info@constructorpro.com",
     "address": "1234 Builder Lane, Architect City, AC 54321",
+    "show_address": true,
     "footer_description": "Building with Nature's Wisdom",
     "facebook_url": "",
     "twitter_url": "",
@@ -1521,9 +1412,9 @@
   "model": "main.contactpage",
   "pk": 1,
   "fields": {
-    "visual_badge": "EST. 2005",
+    "visual_badge": "ES 2006",
     "visual_heading": "Design your legacy.",
-    "visual_image": "images/contact_illustration.png",
+    "visual_image": "contact_visuals/contact_illustration_Zh24l6g.png",
     "form_subtitle": "Get in Touch",
     "form_heading": "Start the Conversation",
     "form_description": "Ready to bring your vision to life? Our team of architects and engineers is here to help you every step of the way.",
@@ -1759,7 +1650,7 @@
   "pk": 1,
   "fields": {
     "title": "Tech",
-    "image": "images/generated/blueprint.png",
+    "image": "about_gallery/blueprint.png",
     "order": 1
   }
 },

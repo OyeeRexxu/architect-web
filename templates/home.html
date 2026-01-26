@@ -110,7 +110,11 @@
                 <div class="track-clean-grid animate-left">
                     {% for i in "123" %}
                     {% for tool in software_tools %}
-                    <div class="sw-item item-square"><img src="{% static tool.image %}" alt="{{ tool.name }}"></div>
+                    <div class="sw-item item-square">
+                        {% if tool.image %}
+                        <img src="{{ tool.image.url }}" alt="{{ tool.name }}">
+                        {% endif %}
+                    </div>
                     {% endfor %}
                     {% endfor %}
                 </div>
