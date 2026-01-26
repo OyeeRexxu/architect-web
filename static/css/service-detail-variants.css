@@ -161,12 +161,13 @@
 
 .ls-tag {
     display: inline-block;
-    background: #e0e7ec;
+    /* background: #e0e7ec; */
     padding: 4px 10px;
     border-radius: 4px;
     font-size: 0.8rem;
     margin: 0 5px 5px 0;
     color: #333;
+    border: 1px solid #e0e7ec;
 }
 
 .btn-sidebar {

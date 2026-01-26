@@ -96,7 +96,8 @@
     }
 
     .glass-card {
-        background: #fff;
+        background: #e0e7ec;
+        /* background: #fff; */
         padding: 0.6rem 1rem;
         border-radius: 50px;
         border: 1px solid #e2e8f0;
@@ -473,7 +474,7 @@
 {% block content %}
 <section class="layout-wrapper layout-sidebar">
     <div class="ls-hero"
-        style="{% if service.image %}background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('{% static 'images/' %}{{ service.image }}'); background-size: cover; background-position: center; color: white;{% endif %}">
+        style="{% if service.image %}background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('{{ service.image.url }}'); background-size: cover; background-position: center; color: white;{% endif %}">
         <div class="container">
             <a href="{% url 'home' %}#services" class="back-to-services-link">
                 <i class="fa-solid fa-arrow-left"></i>
@@ -604,8 +605,7 @@
                         <div class="carousel-track" id="galleryTrack">
                             {% for img in service.images.all %}
                             <div class="gallery-item-slide" onclick="openLightbox('{{ forloop.counter0 }}')">
-                                <img src="{% static 'images/' %}{{ img.image }}"
-                                    alt="{{ img.caption|default:service.title }}">
+                                <img src="{{ img.image.url }}" alt="{{ img.caption|default:service.title }}">
                                 <div class="gallery-overlay"><i class="fa-solid fa-magnifying-glass-plus"></i></div>
                             </div>
                             {% endfor %}
@@ -656,7 +656,7 @@
                 images = [
                     {% for img in service.images.all %}
                     {
-                    src: "{% static 'images/' %}{{ img.image }}",
+                    src: "{{ img.image.url }}",
                     caption: "{{ img.caption|default:service.title }}"
                 },
                 {% endfor %}

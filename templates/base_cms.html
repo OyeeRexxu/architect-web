@@ -171,7 +171,7 @@
                 <!-- Services -->
                 <div class="footer-col-executive">
                     <div class="footer-header">Services</div>
-                    {% for service in global_services|slice:":5" %}
+                    {% for service in global_services %}
                     <a href="{% url 'service_detail' service.slug %}" class="footer-link">{{ service.title }}</a>
                     {% endfor %}
                 </div>
@@ -181,9 +181,11 @@
                     <div class="footer-header">Inquiries</div>
                     <a href="mailto:{{ email }}" class="footer-link">{{ email }}</a>
                     <a href="tel:{{ phone_number }}" class="footer-link">{{ phone_number }}</a>
+                    {% if global_site_settings.show_address %}
                     <div class="footer-address">
                         {{ global_site_settings.address|linebreaksbr }}
                     </div>
+                    {% endif %}
                 </div>
             </div>
 

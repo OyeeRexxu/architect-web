@@ -2443,7 +2443,7 @@ html {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 4rem;
+    gap: 0rem;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 2rem;
@@ -2586,11 +2586,11 @@ html {
 
 /* Animations */
 .animate-left {
-    animation: scroll-left 50s linear infinite;
+    animation: scroll-left 10s linear infinite;
 }
 
 .animate-right {
-    animation: scroll-right 50s linear infinite;
+    animation: scroll-right 10s linear infinite;
 }
 
 @keyframes scroll-left {

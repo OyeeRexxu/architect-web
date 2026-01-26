@@ -52,8 +52,10 @@
         </div>
         <div class="deck-stack">
             {% for img in deck_images %}
-            <div class="deck-card" data-pos="{{ forloop.counter }}"><img src="{% static img.image %}"
-                    alt="{{ img.title }}">
+            <div class="deck-card" data-pos="{{ forloop.counter }}">
+                {% if img.image %}
+                <img src="{{ img.image.url }}" alt="{{ img.title }}">
+                {% endif %}
             </div>
             {% endfor %}
         </div>
@@ -184,7 +186,7 @@
 </section>
 
 <!-- How It Works Section -->
-<section class="process-section">
+<!-- <section class="process-section">
     <div class="container">
         <div class="section-header">
             <div class="section-subtitle">HOW IT WORKS</div>
@@ -204,7 +206,7 @@
             {% endfor %}
         </div>
     </div>
-</section>
+</section> -->
 
 
 

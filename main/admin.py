@@ -43,7 +43,7 @@ class ServiceAdmin(admin.ModelAdmin):
 class SiteSettingsAdmin(SingletonModelAdmin):
     fieldsets = (
         ('General', {'fields': ('site_name', 'logo', 'footer_description')}),
-        ('Contact Info', {'fields': ('phone_number', 'email', 'address')}),
+        ('Contact Info', {'fields': ('phone_number', 'email', 'address', 'show_address')}),
         ('Social Media', {'fields': ('facebook_url', 'twitter_url', 'linkedin_url', 'instagram_url')}),
     )
 

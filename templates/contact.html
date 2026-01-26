@@ -228,9 +228,11 @@
         <!-- Left Side: Architectural Illustration -->
         <div class="contact-visual">
             <div class="visual-content">
-                <span class="visual-badge">{{ contact_page.visual_badge|safe }}</span>
+                <!-- <span class="visual-badge">{{ contact_page.visual_badge|safe }}</span> -->
                 <h2>{{ contact_page.visual_heading|safe }}</h2>
-                <img src="{% static contact_page.visual_image %}" alt="Architectural Study" class="illustration-img">
+                {% if contact_page.visual_image %}
+                <img src="{{ contact_page.visual_image.url }}" alt="Architectural Study" class="illustration-img">
+                {% endif %}
             </div>
             <div class="visual-overlay"></div>
         </div>
@@ -311,10 +313,12 @@
             <div class="alternative-contact-inline">
                 <h3>Prefer a Different Way to Connect?</h3>
                 <div class="contact-methods-inline">
+                    {% if global_site_settings.show_address %}
                     <a href="#" class="contact-method-inline location">
                         <span class="contact-method-label">Address</span>
                         <span class="contact-method-value">{{ global_site_settings.address|linebreaksbr }}</span>
                     </a>
+                    {% endif %}
                     <a href="tel:{{ global_site_settings.phone_number }}" class="contact-method-inline phone">
                         <span class="contact-method-label">Phone</span>
                         <span class="contact-method-value">{{ global_site_settings.phone_number }}</span>

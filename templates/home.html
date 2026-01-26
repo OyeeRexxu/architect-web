@@ -43,7 +43,8 @@
 <!-- Services Section -->
 <section class="services" id="services">
     <!-- Premium Section Header (Option 4) -->
-    <div class="section-header-premium" style="background-image: url('{% static home_page.services_bg_image %}');">
+    <div class="section-header-premium"
+        style="background-image: url('{% if home_page.services_bg_image %}{{ home_page.services_bg_image.url }}{% endif %}');">
         <div class="overlay"></div>
         <div class="content container">
             <div class="section-subtitle-premium">{{ home_page.services_subtitle }}</div>
@@ -97,7 +98,11 @@
                 <div class="track-clean-grid animate-right">
                     {% for i in "123" %}
                     {% for tool in software_tools %}
-                    <div class="sw-item item-square"><img src="{% static tool.image %}" alt="{{ tool.name }}"></div>
+                    <div class="sw-item item-square">
+                        {% if tool.image %}
+                        <img src="{{ tool.image.url }}" alt="{{ tool.name }}">
+                        {% endif %}
+                    </div>
                     {% endfor %}
                     {% endfor %}
                 </div>

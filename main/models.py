@@ -5,7 +5,7 @@ class Service(models.Model):
     subtitle = models.CharField(max_length=300, blank=True)
     slug = models.SlugField(unique=True, blank=True)
     icon = models.CharField(max_length=50, help_text="Icon class name (e.g., 'calculator')")
-    image = models.CharField(max_length=200, blank=True, help_text="Path to service image (e.g., 'services/estimation.png')")
+    image = models.ImageField(upload_to='services/', blank=True, help_text="Path to service image (e.g., 'services/estimation.png')")
     overview = models.TextField(blank=True)
     order = models.IntegerField(default=0)
     
@@ -55,7 +55,7 @@ class ServiceSection(models.Model):
 
 class ServiceImage(models.Model):
     service = models.ForeignKey(Service, on_delete=models.CASCADE, related_name='images')
-    image = models.CharField(max_length=200, help_text="Path to image (e.g., 'services/gallery/1.jpg')")
+    image = models.ImageField(upload_to='services/gallery/', help_text="Path to image (e.g., 'services/gallery/1.jpg')")
     caption = models.CharField(max_length=200, blank=True)
     order = models.IntegerField(default=0)
 
@@ -103,6 +103,7 @@ class SiteSettings(SingletonModel):
     phone_number = models.CharField(max_length=20, default="+1 123 456 7895")
     email = models.EmailField(default="info@constructorpro.com")
     address = models.TextField(default="1234 Builder Lane, Architect City, AC 54321")
+    show_address = models.BooleanField(default=True, help_text="Toggle to show/hide address on the site")
     footer_description = models.TextField(blank=True, default="Building with Nature's Wisdom")
     
     facebook_url = models.URLField(blank=True)
@@ -130,7 +131,7 @@ class HomePage(SingletonModel):
     services_subtitle = models.CharField(max_length=100, default="Our Services")
     services_heading = models.CharField(max_length=200, default="Comprehensive Solutions for Every Project")
     services_description = models.TextField(blank=True, default="From CAD drafting to interior design, we deliver expert services tailored to your construction and architectural needs.")
-    services_bg_image = models.CharField(max_length=200, default="images/services_header_bg.png")
+    services_bg_image = models.ImageField(upload_to='images/', default="images/services_header_bg.png")
     
     # Software Section
     software_label = models.CharField(max_length=50, default="Toolset")
@@ -176,7 +177,7 @@ class ContactPage(SingletonModel):
     # Visual Side
     visual_badge = models.CharField(max_length=50, default="EST. 2005")
     visual_heading = models.CharField(max_length=200, default="Design your legacy.")
-    visual_image = models.CharField(max_length=200, default="images/contact_illustration.png")
+    visual_image = models.ImageField(upload_to='contact_visuals/', default='contact_visuals/contact_illustration.png')
     
     # Form Side
     form_subtitle = models.CharField(max_length=100, default="Get in Touch")
@@ -208,7 +209,7 @@ class Testimonial(models.Model):
 
 class SoftwareTool(models.Model):
     name = models.CharField(max_length=100)
-    image = models.CharField(max_length=200, help_text="Path to logo image")
+    image = models.ImageField(upload_to='images/software/', help_text="Path to logo image")
     order = models.IntegerField(default=0)
     
     class Meta:
@@ -245,7 +246,7 @@ class CommitmentItem(models.Model):
 class AboutGalleryImage(models.Model):
     """Images for the About Us card deck"""
     title = models.CharField(max_length=100)
-    image = models.CharField(max_length=200)
+    image = models.ImageField(upload_to='about_gallery/')
     order = models.IntegerField(default=0)
     
     class Meta:
