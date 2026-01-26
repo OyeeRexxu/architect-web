@@ -2,14 +2,8 @@
 
 echo "Starting Build Process..."
 
-# Try to active pythonanywhere virtualenv
-if [ -f "$HOME/venv/bin/activate" ]; then
-    source "$HOME/venv/bin/activate"
-    echo "Activated venv from $HOME/venv"
-elif [ -f "../venv/bin/activate" ]; then
-    source "../venv/bin/activate"
-    echo "Activated venv from ../venv"
-fi
+# Activate pythonanywhere virtualenv
+source /home/rexxu/venv/bin/activate
 
 # Pull latest code
 echo "Pulling latest code form git..."
@@ -32,6 +26,7 @@ rm db.sqlite3.bak
 
 # Install dependencies
 echo "Installing requirements..."
+pip install Pillow
 pip install -r requirements.txt
 
 # Apply Migrations
