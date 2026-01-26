@@ -2,6 +2,15 @@
 
 echo "Starting Build Process..."
 
+# Try to active pythonanywhere virtualenv
+if [ -f "$HOME/venv/bin/activate" ]; then
+    source "$HOME/venv/bin/activate"
+    echo "Activated venv from $HOME/venv"
+elif [ -f "../venv/bin/activate" ]; then
+    source "../venv/bin/activate"
+    echo "Activated venv from ../venv"
+fi
+
 # Pull latest code
 echo "Pulling latest code form git..."
 
