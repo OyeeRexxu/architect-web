@@ -2571,7 +2571,7 @@ html {
 }
 
 .item-square img {
-    max-width: 50%;
+    max-width: 75%;
     /* Show actual colors */
     filter: none;
     opacity: 1;
@@ -2890,4 +2890,35 @@ html {
 
 .about-description p:last-child {
     margin-bottom: 0;
+}
+
+/* FIX: Force Software Section Centering on Mobile */
+@media (max-width: 768px) {
+    .sw-split-layout {
+        flex-direction: column !important;
+        text-align: center !important;
+    }
+
+    .sw-text-side {
+        width: 100% !important;
+        text-align: center !important;
+        padding-bottom: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sw-text-side .sw-label {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    /* Remove separator on mobile */
+    .sw-separator {
+        display: none !important;
+    }
+
+    .sw-content-side {
+        width: 100% !important;
+    }
 }

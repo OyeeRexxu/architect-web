@@ -390,6 +390,7 @@
 .item-chip img {
     max-height: 25px;
     width: auto;
+    filter: grayscale(100%);
 }
 
 .item-chip:hover {
@@ -592,4 +593,31 @@
 .lbl-dark {
     background: black;
     color: white;
+}
+
+/* ========================================= */
+/* MOBILE RESPONSIVE                         */
+/* ========================================= */
+@media (max-width: 768px) {
+    .sw-split-layout {
+        flex-direction: column;
+        padding: 0 1rem;
+        text-align: center;
+    }
+
+    .sw-text-side {
+        flex: auto;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 2rem;
+        padding: 0;
+    }
+
+    .sw-separator {
+        display: none;
+    }
+
+    .sw-content-side {
+        width: 100%;
+    }
 }
