@@ -17,7 +17,7 @@ div[style*="background:#eee"] {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    padding: 100px 0 60px;
+    padding: 135px 0 60px;
     background: linear-gradient(135deg, #FAF8F5 0%, #FFF 100%);
 }
 
@@ -172,7 +172,7 @@ div[style*="background:#eee"] {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 100px 0 60px;
+    padding: 135px 0 60px;
     background: white;
 }
 
@@ -449,7 +449,7 @@ div[style*="background:#eee"] {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    padding: 120px 0 40px;
+    padding: 135px 0 40px;
     position: relative;
     background-size: cover;
     background-position: center;
@@ -546,7 +546,7 @@ div[style*="background:#eee"] {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    padding: 100px 0 60px;
+    padding: 135px 0 60px;
     background: #F9FAFB;
 }
 
@@ -683,7 +683,7 @@ div[style*="background:#eee"] {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    padding: 100px 0 60px;
+    padding: 135px 0 60px;
     background: white;
 }
 
@@ -912,5 +912,18 @@ div[style*="background:#eee"] {
     .hero-buttons-4 button,
     .hero-buttons-5 button {
         width: 100%;
+    }
+}
+
+/* ===================================
+   MOBILE FIX FOR HEADER OVERLAP
+   =================================== */
+@media (max-width: 992px) {
+    .hero-opt-1,
+    .hero-opt-2,
+    .hero-opt-3,
+    .hero-opt-4,
+    .hero-opt-5 {
+        padding-top: 135px !important;
     }
 }
